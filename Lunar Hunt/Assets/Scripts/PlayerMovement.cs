@@ -16,9 +16,13 @@ public class PlayerMovement : MonoBehaviour
     private Transform playerTransform;
 
     bool isControl = true;
+    bool isDead = false;
 
     float xValue;
     float yValue;
+    //Facing
+    float xFace;
+    float yFace;
     void Awake()
     {
         // Create a layer mask for the floor layer.
@@ -40,10 +44,12 @@ public class PlayerMovement : MonoBehaviour
             // Store the input axes.
             xValue = Input.GetAxisRaw("Horizontal");
             yValue = Input.GetAxisRaw("Vertical");
+            Facing();
         }
 
         else
         {
+            //return value back to 0
             xValue = 0f;
             yValue = 0f;
         }
@@ -59,7 +65,8 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Horizontal", movement.x);
         anim.SetFloat("Vertical", movement.y);
         anim.SetFloat("Speed", movement.sqrMagnitude);
-
+        anim.SetFloat("FaceHorizontal", xFace);
+        anim.SetFloat("FaceVertical", yFace);
         toggleControl();
     }
 
@@ -93,9 +100,17 @@ public class PlayerMovement : MonoBehaviour
         //transform.Translate(x * Time.deltaTime * speed, 0, 0);
         //transform.Translate(0, y * Time.deltaTime * speed, 0);
 
-
-
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+    }
+
+    void Facing()
+    {
+        if (xValue != 0 || yValue != 0)
+        {
+            //return facing direction
+            xFace = xValue;
+            yFace = yValue;
+        }
     }
     void Animating(float x, float y)
     {
@@ -103,7 +118,7 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
     }
 
-    void toggleControl()
+    public void toggleControl()
     {
         if (DialogueManager.ins.isDone == true)
         {
@@ -112,6 +127,14 @@ public class PlayerMovement : MonoBehaviour
         if (DialogueManager.ins.isDone == false)
         {
             isControl = false;
+        }
+        if (anim.GetBool("isDead") == true)
+        {
+            isControl = false;
+        }
+        if (anim.GetBool("isDead") == false)
+        {
+            isControl = true;
         }
     }
 }
