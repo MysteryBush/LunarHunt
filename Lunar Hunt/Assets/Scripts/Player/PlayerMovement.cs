@@ -54,7 +54,6 @@ public class PlayerMovement : MonoBehaviour
             yValue = 0f;
         }
 
-
         // Move the player around the scene.
         //Move(x, y);
         MoveZ(xValue, yValue);

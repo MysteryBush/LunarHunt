@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc31cbb7db8da344693335cc46bf1e7a, type: 3}
   m_Name: Test Item
   m_EditorClassIdentifier: 
-  name: New Item
-  icon: {fileID: 0}
+  name: Placeholder Item
+  icon: {fileID: 2780600700956608470, guid: b7ed744a49476ea4ba4d3164a4b89c7c, type: 3}
   isDefaultItem: 0
