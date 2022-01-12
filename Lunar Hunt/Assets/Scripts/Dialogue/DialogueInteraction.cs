@@ -5,6 +5,7 @@ using UnityEngine;
 public class DialogueInteraction : MonoBehaviour
 {
     private DialogueTrigger _dialogueTrigger;
+    private npcMovement _npcMovement;
     private bool firstChat = true;
     private bool chatRange = false;
     private bool chatOpen = false;
@@ -12,6 +13,7 @@ public class DialogueInteraction : MonoBehaviour
     void Start()
     {
         _dialogueTrigger = GetComponent<DialogueTrigger>();
+        _npcMovement = GetComponent<npcMovement>();
     }
 
     private void Update()
@@ -52,6 +54,7 @@ public class DialogueInteraction : MonoBehaviour
         {
             _dialogueTrigger.TriggerDialouge();
             chatOpen = true;
+            _npcMovement.faceToPlayer();
         }
     }
 }

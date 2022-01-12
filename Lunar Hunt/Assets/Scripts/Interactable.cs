@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Events;
 
 //INTERACTION - Making an RPG in Unity (E02)
 //https://www.youtube.com/watch?v=9tePzyL6dgc&ab_channel=Brackeys
@@ -16,6 +17,14 @@ to be used as a base class.
 
 public class Interactable : MonoBehaviour
 {
+    [SerializeField]
+    UnityEvent m_OnInteraction;
+
+    public void DoInteraction()
+    {
+        m_OnInteraction.Invoke();
+    }
+
     public float radius = 3f; // How close do we need to be to interact
     public Transform interactionTransform; // The transform from where we interact
 
