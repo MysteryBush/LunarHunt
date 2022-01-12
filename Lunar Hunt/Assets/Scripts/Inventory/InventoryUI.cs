@@ -63,8 +63,8 @@ public class InventoryUI : MonoBehaviour
         Debug.Log("UPDATING UI");
     }
 
-    public void toggleInventory()
-    {
-        inventoryUI.SetActive(!inventoryUI.activeSelf);
-    }
+    //public void toggleInventory()
+    //{
+    //    inventoryUI.SetActive(!inventoryUI.activeSelf);
+    //}
 }

@@ -33,8 +33,8 @@ public class PlayerControl : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Tab))
         {
             //trigger Inventory
-            InventoryUI.instance.toggleInventory();
-            Debug.Log("toggling inventory");
+            IngameMenu.instance.toggleIngameMenu();
+            Debug.Log("toggling In-game Menu");
         }
 
         // If we press left mouse

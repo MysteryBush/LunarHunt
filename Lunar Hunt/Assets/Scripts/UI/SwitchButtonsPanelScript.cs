@@ -29,7 +29,7 @@ public class SwitchButtonsPanelScript : MonoBehaviour
             return;
 
         SetAllButtonsInteractable();
-
+        IngameMenu.instance.selectMenuTab(buttonIndex);
         clickedButton.interactable = false;
     }
 }
