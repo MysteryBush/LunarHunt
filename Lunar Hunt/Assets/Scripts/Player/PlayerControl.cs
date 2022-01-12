@@ -30,7 +30,7 @@ public class PlayerControl : MonoBehaviour
         {
             //trigger interaction
         }
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.Tab))
         {
             //trigger Inventory
             InventoryUI.instance.toggleInventory();
