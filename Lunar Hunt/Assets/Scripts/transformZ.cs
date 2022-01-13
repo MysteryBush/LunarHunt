@@ -10,10 +10,4 @@ public class transformZ : MonoBehaviour
     {
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y + offsetZ);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

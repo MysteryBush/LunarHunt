@@ -12,6 +12,11 @@ public class PlayerCombat : MonoBehaviour
     public Transform attackPoint;
     public LayerMask enemyLayers;
 
+    //about playerControl
+    public bool isControl;
+    public bool doingAction = false;
+
+
     public int maxHealth = 100;
     public int currentHealth;
 
@@ -20,18 +25,28 @@ public class PlayerCombat : MonoBehaviour
 
     public float attackRate = 2f;
     float nextAttackTime = 0f;
+
+    public bool inputAttack = false;
     void Start()
     {
         currentHealth = maxHealth;
     }
     void Update()
     {
-        if (Time.time >= nextAttackTime)
+        if (GetComponent<PlayerControl>().isControl == true)
         {
-            if (Input.GetKeyDown(KeyCode.Mouse0))
+            if (Time.time >= nextAttackTime)
             {
-                Attack();
-                nextAttackTime = Time.time + 1f / attackRate;
+                GetComponent<PlayerControl>().doingAction = false;
+                //When attack time finished, able to move again
+                if (Input.GetKeyDown(KeyCode.Mouse0))
+                //if (inputAttack == true)
+                {
+                    inputAttack = false;
+                    GetComponent<PlayerControl>().doingAction = true;
+                    Attack();
+                    nextAttackTime = Time.time + 1f / attackRate;
+                }
             }
         }
 
@@ -77,17 +92,18 @@ public class PlayerCombat : MonoBehaviour
         // Play hurt animation
         anim.SetTrigger("Hurt");
 
-        //if (currentHealth <= 0)
-        //{
-        //    Die();
-        //}
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
     }
     void Die()
     {
         Debug.Log("Game Over!");
 
         anim.SetBool("isDead", true);
-        this.GetComponent<PlayerMovement>().toggleControl();
+        //this.GetComponent<PlayerControl>().toggleControl();
+        this.GetComponent<PlayerControl>().isDead = true;
         //GetComponent<Collider2D>().enabled = false;
         //this.enabled = false;
     }
@@ -97,7 +113,8 @@ public class PlayerCombat : MonoBehaviour
         Debug.Log("Arise!");
 
         anim.SetBool("isDead", false);
-        this.GetComponent<PlayerMovement>().toggleControl();
+        //this.GetComponent<PlayerControl>().toggleControl();
+        this.GetComponent<PlayerControl>().isDead = false;
     }
 }
 

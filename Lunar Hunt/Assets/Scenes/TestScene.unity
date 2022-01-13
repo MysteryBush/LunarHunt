@@ -10726,11 +10726,11 @@ GameObject:
   - component: {fileID: 1217016335}
   - component: {fileID: 1217016334}
   - component: {fileID: 1217016333}
-  - component: {fileID: 1217016332}
   - component: {fileID: 1217016331}
   - component: {fileID: 1217016330}
   - component: {fileID: 1217016329}
   - component: {fileID: 1217016328}
+  - component: {fileID: 1217016332}
   m_Layer: 0
   m_Name: Athena
   m_TagString: Untagged
@@ -10769,7 +10769,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: 0
+  offsetZ: -0.18
 --- !u!114 &1217016330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13797,7 +13797,7 @@ Transform:
   m_Children:
   - {fileID: 47923929}
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1315189084
 MonoBehaviour:
@@ -13811,7 +13811,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: -0.12
+  offsetZ: -0.18
 --- !u!114 &1315189085
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14469,7 +14469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: -0.05
+  offsetZ: -0.45
 --- !u!1 &1383075082
 GameObject:
   m_ObjectHideFlags: 0
@@ -15370,7 +15370,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: -0.05
+  offsetZ: -0.45
 --- !u!60 &1494350952
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -16407,13 +16407,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1631167877}
+  - component: {fileID: 1631167878}
   - component: {fileID: 1631167876}
   - component: {fileID: 1631167874}
-  - component: {fileID: 1631167878}
-  - component: {fileID: 1631167879}
-  - component: {fileID: 1631167875}
-  - component: {fileID: 1631167880}
   - component: {fileID: 1631167881}
+  - component: {fileID: 1631167879}
+  - component: {fileID: 1631167880}
+  - component: {fileID: 1631167875}
   - component: {fileID: 1631167882}
   m_Layer: 8
   m_Name: Sebastian
@@ -16456,6 +16456,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 8
+  isControl: 1
+  doingAction: 0
 --- !u!212 &1631167876
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16582,6 +16584,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   focus: {fileID: 0}
+  isControl: 1
+  isDead: 0
 --- !u!70 &1631167881
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -16619,7 +16623,8 @@ MonoBehaviour:
   currentHealth: 0
   attackRange: 0.94
   attackDamage: 40
-  attackRate: 2
+  attackRate: 3.5
+  inputAttack: 0
 --- !u!1 &1641246396
 GameObject:
   m_ObjectHideFlags: 0
@@ -18721,7 +18726,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: -0.05
+  offsetZ: -0.45
 --- !u!60 &1892770251
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -19788,7 +19793,7 @@ Transform:
   m_Children:
   - {fileID: 1848006693}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2067393559
 MonoBehaviour:
@@ -19802,7 +19807,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: -0.12
+  offsetZ: -0.18
 --- !u!114 &2067393560
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20960,7 +20965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e67cab423a272ad4faf05ce72d0386ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  offsetZ: -0.05
+  offsetZ: -0.45
 --- !u!60 &2095159720
 PolygonCollider2D:
   m_ObjectHideFlags: 0

@@ -17,6 +17,7 @@ public class npcMovement : MonoBehaviour
 
     float xValue;
     float yValue;
+    float offsetZ;
     //Facing
     float xFace;
     float yFace;
@@ -29,6 +30,7 @@ public class npcMovement : MonoBehaviour
         // Set up references.
         npcRigidbody = GetComponent<Rigidbody2D>();
         npcTransform = GetComponent<Transform>();
+        offsetZ = GetComponent<transformZ>().offsetZ;
 
         anim = GetComponent<Animator>();
 
@@ -73,7 +75,7 @@ public class npcMovement : MonoBehaviour
         //npcRigidbody.MovePosition(npcRigidbody.position + movement * speed * Time.fixedDeltaTime);
 
         //transform.position = new Vector3(transform.position.x + movement.x * speed * Time.fixedDeltaTime, transform.position.y + movement.y * speed * Time.fixedDeltaTime, transform.position.y);
-        transform.position = new Vector3(transform.position.x + movement.x * speed * Time.fixedDeltaTime, transform.position.y + movement.y * speed * Time.fixedDeltaTime, transform.position.y + movement.y * speed * Time.fixedDeltaTime);
+        transform.position = new Vector3(transform.position.x + movement.x * speed * Time.fixedDeltaTime, transform.position.y + movement.y * speed * Time.fixedDeltaTime, (transform.position.y + movement.y * speed * Time.fixedDeltaTime) + offsetZ);
     }
 
     void Move(float x, float y)

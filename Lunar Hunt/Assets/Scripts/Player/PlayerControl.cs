@@ -5,78 +5,53 @@ using UnityEngine;
 public class PlayerControl : MonoBehaviour
 {
     public Interactable focus;
+    public bool isControl = true;
+    public bool doingAction = false;
+    public bool isDead = false;
 
-    Camera cam; // Reference to our camera
-    //PlayerMotor motor; // Reference to our motor
-
-    //public Interactable focus;
-    bool isControl = true;
-
-    // Get references
     void Start()
     {
-        cam = Camera.main;
-        //motor = GetComponent<PlayerMotor>();
+
     }
     void Update()
     {
         controlInput();
+        toggleControl();
+        //GetComponent<PlayerMovement>().isControl = isControl;
     }
 
     void controlInput()
     {
-
-        if (Input.GetKeyDown(KeyCode.E))
+        if (isControl == true)
         {
-            //trigger interaction
-        }
-        if (Input.GetKeyDown(KeyCode.Tab))
-        {
-            //trigger Inventory
-            IngameMenu.instance.toggleIngameMenu();
-            Debug.Log("toggling In-game Menu");
-        }
 
-        // If we press left mouse
-        if (Input.GetMouseButtonDown(0))
-        {
-            ////Clicking on object to start interacting
-            ////We create a ray
-            //Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            //RaycastHit hit;
-
-            ////If the ray hits
-            //if (Physics.Raycast(ray, out hit, 106))
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                //trigger interaction
+            }
+            if (Input.GetKeyDown(KeyCode.Tab))
+            {
+                doingAction = true;
+                //trigger Inventory
+                IngameMenu.instance.toggleIngameMenu();
+                Debug.Log("toggling In-game Menu");
+            }
+            //if (Input.GetKeyDown(KeyCode.Mouse0))
             //{
-            //    Interactable interactable = hit.collider.GetComponent<Interactable>();
-            //    if (interactable != null)
-            //    {
-            //        SetFocus(interactable);
-            //    }
+            //    GetComponent<PlayerCombat>().inputAttack = true;
             //}
         }
     }
-    //void SetFocus(Interactable newFocus)
-    //{
-    //    if (newFocus != focus)
-    //    {
-    //        if (focus != null)
-    //            focus.OnDefocused();
-    //        focus = newFocus;
-    //        //motor.FollowTarget(newFocus);
-    //    }
 
-    //    focus = newFocus;
-    //    newFocus.OnFocused(transform);
-    //    //motor.MoveToPoint(newFocus.transform.position);
-    //}
-
-    //void RemoveFocus()
-    //{
-    //    if (focus != null)
-    //        focus.OnDefocused();
-
-    //    focus.OnDefocused();
-    //    focus = null;
-    //}
+    public void toggleControl()
+    {
+        if (DialogueManager.ins.isDone == true && isDead == false)
+        {
+            isControl = true;
+        }
+        else
+        {
+            isControl = false;
+        }
+    }
 }

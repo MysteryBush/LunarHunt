@@ -59,7 +59,6 @@ public class DialogueManager : MonoBehaviour
     {
         if (sentencesQueue.Count == 0)
         {
-            GiveReward();
             EndDialogue();
             anim.SetBool("IsOpen", false);
             isDone = true;
@@ -70,18 +69,6 @@ public class DialogueManager : MonoBehaviour
         mainText.text = outSentence;
 
         Debug.Log(outSentence);
-    }
-
-    public void GiveReward()
-    {
-        //if (rewardQueue.Count == 0)
-        //{
-
-        //}
-        if (isDone == false)
-        {
-            InventoryManager.potionCount = InventoryManager.potionCount + setDialogue.reward;
-        }
     }
 
     void EndDialogue()

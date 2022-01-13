@@ -15,7 +15,6 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementZ;
     private Transform playerTransform;
 
-    bool isControl = true;
     bool isDead = false;
 
     float xValue;
@@ -25,21 +24,18 @@ public class PlayerMovement : MonoBehaviour
     float yFace;
     void Awake()
     {
-        // Create a layer mask for the floor layer.
-        //floorMask = LayerMask.GetMask("Floor");
-
         // Set up references.
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
-
         anim = GetComponent<Animator>();
+        //isControl = GetComponent<PlayerControl>().isControl;
 
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
     }
 
     void FixedUpdate()
     {
-        if (isControl == true)
+        if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().doingAction == false)
         {
             // Store the input axes.
             xValue = Input.GetAxisRaw("Horizontal");
@@ -66,7 +62,6 @@ public class PlayerMovement : MonoBehaviour
         anim.SetFloat("Speed", movement.sqrMagnitude);
         anim.SetFloat("FaceHorizontal", xFace);
         anim.SetFloat("FaceVertical", yFace);
-        toggleControl();
     }
 
     void MoveZ(float x, float y)
@@ -117,23 +112,13 @@ public class PlayerMovement : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
     }
 
-    public void toggleControl()
-    {
-        if (DialogueManager.ins.isDone == true)
-        {
-            isControl = true;
-        }
-        if (DialogueManager.ins.isDone == false)
-        {
-            isControl = false;
-        }
-        if (anim.GetBool("isDead") == true)
-        {
-            isControl = false;
-        }
-        if (anim.GetBool("isDead") == false)
-        {
-            isControl = true;
-        }
-    }
+    //public void toggleControl()
+    //{
+    //    if (DialogueManager.ins.isDone == false || anim.GetBool("isDead") == true)
+    //    {
+    //        isControl = false;
+    //    }
+    //    else
+    //        isControl = true;
+    //}
 }
