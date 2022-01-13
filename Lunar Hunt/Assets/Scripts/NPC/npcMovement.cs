@@ -115,7 +115,7 @@ public class npcMovement : MonoBehaviour
         playerTransform = FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
     }
 
-    public void faceToPlayer()
+    public void targetFacing()
     {
         findPlayer();
         float distance1x = (float)transform.position.x;

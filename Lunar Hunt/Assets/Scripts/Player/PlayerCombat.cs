@@ -13,8 +13,8 @@ public class PlayerCombat : MonoBehaviour
     public LayerMask enemyLayers;
 
     //about playerControl
-    public bool isControl;
-    public bool doingAction = false;
+    //public bool isControl;
+    //public bool doingAction = false;
 
 
     public int maxHealth = 100;
@@ -33,7 +33,7 @@ public class PlayerCombat : MonoBehaviour
     }
     void Update()
     {
-        if (GetComponent<PlayerControl>().isControl == true)
+        if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().controlUI == false)
         {
             if (Time.time >= nextAttackTime)
             {

@@ -7,6 +7,7 @@ public class PlayerControl : MonoBehaviour
     public Interactable focus;
     public bool isControl = true;
     public bool doingAction = false;
+    public bool controlUI = false;
     public bool isDead = false;
 
     void Start()
@@ -24,17 +25,18 @@ public class PlayerControl : MonoBehaviour
     {
         if (isControl == true)
         {
-
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //trigger interaction
             }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
-                doingAction = true;
                 //trigger Inventory
                 IngameMenu.instance.toggleIngameMenu();
                 Debug.Log("toggling In-game Menu");
+                //doingAction = true;
+                //doingAction = IngameMenu.instance.ingameMenu.activeSelf;
+                controlUI = IngameMenu.instance.isOpen;
             }
             //if (Input.GetKeyDown(KeyCode.Mouse0))
             //{
@@ -48,6 +50,7 @@ public class PlayerControl : MonoBehaviour
         if (DialogueManager.ins.isDone == true && isDead == false)
         {
             isControl = true;
+            GetComponent<PlayerMovement>().isFacingTarget = false;
         }
         else
         {

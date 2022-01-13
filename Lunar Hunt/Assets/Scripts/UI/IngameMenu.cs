@@ -28,6 +28,8 @@ public class IngameMenu : MonoBehaviour
     private GameObject[] sections;
     int selectedTab;
 
+    //state to be called on other script
+    public bool isOpen;
 
     public void SetAllTabs()
     {
@@ -47,5 +49,6 @@ public class IngameMenu : MonoBehaviour
         selectMenuTab(0);
         firstButton.GetComponent<SwitchButtonsPanelScript>().OnButtonClicked(firstButton);
         ingameMenu.SetActive(!ingameMenu.activeSelf);
+        isOpen = ingameMenu.activeSelf;
     }
 }

@@ -9,6 +9,9 @@ public class DialogueInteraction : MonoBehaviour
     private bool firstChat = true;
     private bool chatRange = false;
     private bool chatOpen = false;
+    //target player
+    private GameObject targetPlayer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -36,6 +39,7 @@ public class DialogueInteraction : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             chatRange = true;
+            targetPlayer = collision.gameObject;
         }
     }
 
@@ -54,7 +58,9 @@ public class DialogueInteraction : MonoBehaviour
         {
             _dialogueTrigger.TriggerDialouge();
             chatOpen = true;
-            _npcMovement.faceToPlayer();
+            _npcMovement.targetFacing();
+            //make player face to NPC
+            targetPlayer.GetComponent<PlayerMovement>().targetFacing(transform);
         }
     }
 }

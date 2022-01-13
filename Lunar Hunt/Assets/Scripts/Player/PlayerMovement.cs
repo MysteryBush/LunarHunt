@@ -22,6 +22,9 @@ public class PlayerMovement : MonoBehaviour
     //Facing
     float xFace;
     float yFace;
+    //is it facing a target?
+    public bool isFacingTarget = false;
+
     void Awake()
     {
         // Set up references.
@@ -35,12 +38,13 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().doingAction == false)
+        if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().doingAction == false && GetComponent<PlayerControl>().controlUI == false)
         {
             // Store the input axes.
             xValue = Input.GetAxisRaw("Horizontal");
             yValue = Input.GetAxisRaw("Vertical");
-            Facing();
+            if (isFacingTarget == false)
+                Facing();
         }
 
         else
@@ -106,19 +110,20 @@ public class PlayerMovement : MonoBehaviour
             yFace = yValue;
         }
     }
+
+    public void targetFacing(Transform target)
+    {
+        isFacingTarget = true;
+        float distance1x = (float)transform.position.x;
+        float distance1y = (float)transform.position.y;
+        float distance2x = (float)target.position.x;
+        float distance2y = (float)target.position.y;
+        xFace = distance2x - distance1x;
+        yFace = distance2y - distance1y;
+    }
     void Animating(float x, float y)
     {
         bool isWalking = x != 0f || y != 0f;
         anim.SetBool("isWalking", isWalking);
     }
-
-    //public void toggleControl()
-    //{
-    //    if (DialogueManager.ins.isDone == false || anim.GetBool("isDead") == true)
-    //    {
-    //        isControl = false;
-    //    }
-    //    else
-    //        isControl = true;
-    //}
 }
