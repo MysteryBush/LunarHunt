@@ -8,8 +8,6 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 6f;    // The speed that the player will move at.
     private Rigidbody2D playerRigidbody;      // Reference to the player's rigidbody.
     private Vector2 movement;      // The vector to store the direction of the player's movement
-    //private int floorMask;               // A layer mask so that a ray can be cast just at the floor .
-    //private float camRayLength = 100f; // The length of the ray from the camera into the sceen
     private Animator anim;
 
     private Vector3 movementZ;

@@ -10,6 +10,12 @@ public class PlayerControl : MonoBehaviour
     public bool controlUI = false;
     public bool isDead = false;
 
+    //dialogue stuff
+    [SerializeField] private DialogueUI dialogueUI;
+    public DialogueUI DialogueUI => dialogueUI;
+    public IInteractable Interactable { get; set; }
+    private Rigidbody2D rb;
+
     void Start()
     {
 
@@ -23,11 +29,13 @@ public class PlayerControl : MonoBehaviour
 
     void controlInput()
     {
+        if (dialogueUI.IsOpen) return;
         if (isControl == true)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //trigger interaction
+                Interactable?.Interact(player: this);
             }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
@@ -47,7 +55,8 @@ public class PlayerControl : MonoBehaviour
 
     public void toggleControl()
     {
-        if (DialogueManager.ins.isDone == true && isDead == false)
+        //if (DialogueManager.ins.isDone == true && isDead == false)
+        if (isDead == false)
         {
             isControl = true;
             GetComponent<PlayerMovement>().isFacingTarget = false;
