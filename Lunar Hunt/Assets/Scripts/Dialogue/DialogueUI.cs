@@ -73,7 +73,6 @@ public class DialogueUI : MonoBehaviour
             yield return null;
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
-         
         if (dialogueObject.HasResponses && dialogueObject.HasNextDialogue == false)
         {
             responseHandler.ShowResponses(dialogueObject.Responses);
@@ -82,8 +81,7 @@ public class DialogueUI : MonoBehaviour
         {
             CloseDialogueBox();
         }
-        //Does this CloseDialogueBox() needed here?
-        //CloseDialogueBox();
+        //afterDialogue(dialogueObject);
     }
 
     private IEnumerator RunTypingEffect(string dialogue)
@@ -97,6 +95,22 @@ public class DialogueUI : MonoBehaviour
             {
                 typewriterEffect.Stop();
             }
+        }
+    }
+
+    private void afterDialogue(DialogueObject dialogueObject)
+    {
+        if (dialogueObject.HasNextDialogue == true)
+        {
+            StartCoroutine(routine: StepThroughDialogue(dialogueObject));
+        }
+        if (dialogueObject.HasResponses && dialogueObject.HasNextDialogue == false)
+        {
+            responseHandler.ShowResponses(dialogueObject.Responses);
+        }
+        else
+        {
+            CloseDialogueBox();
         }
     }
 
