@@ -12,12 +12,6 @@ public class GameManager : MonoBehaviour
         getRoot();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
     void getRoot()
     {
         // get root objects in scene

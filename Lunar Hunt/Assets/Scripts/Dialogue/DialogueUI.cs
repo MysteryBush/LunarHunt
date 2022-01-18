@@ -2,11 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System;
 
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
+    public float openTime = 2;
+    public Animator anim;
+    public PlayerControl player;
 
     public bool IsOpen { get; private set; }
 
@@ -16,17 +20,21 @@ public class DialogueUI : MonoBehaviour
     private void Start()
     {
         IsOpen = true;
-
         typewriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
 
         CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueobject)
+    public void ShowDialogue(DialogueObject dialogueobject, PlayerControl playercontrol)
     {
+        player = playercontrol;
         dialogueBox.SetActive(true);
+        //Let PlayerControl know controlUI = true
+        player.controlUI = true;
         StartCoroutine(routine: StepThroughDialogue(dialogueobject));
+        //animation start dialogue
+        anim.SetBool("IsOpen", true);
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)
@@ -36,6 +44,11 @@ public class DialogueUI : MonoBehaviour
 
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
+        textLabel.text = null;
+
+        if (anim.GetBool("IsOpen") == false)
+            yield return new WaitForSeconds(openTime);
+
         for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
         {
             string dialogue = dialogueObject.Dialogue[i];
@@ -58,7 +71,8 @@ public class DialogueUI : MonoBehaviour
         {
             CloseDialogueBox();
         }
-        CloseDialogueBox();
+        //Does this CloseDialogueBox() needed here?
+        //CloseDialogueBox();
     }
 
     private IEnumerator RunTypingEffect(string dialogue)
@@ -78,8 +92,10 @@ public class DialogueUI : MonoBehaviour
     public void CloseDialogueBox()
     {
         IsOpen = false;
-
-        dialogueBox.SetActive(false);
+        player.controlUI = false;
+        anim.SetBool("IsOpen", false);
+        //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        Debug.Log("End dialogue");
     }
 }

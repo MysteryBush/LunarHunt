@@ -30,12 +30,13 @@ public class PlayerControl : MonoBehaviour
     void controlInput()
     {
         if (dialogueUI.IsOpen) return;
-        if (isControl == true)
+        if (isControl == true && controlUI == false)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
                 //trigger interaction
                 Interactable?.Interact(player: this);
+                Debug.Log("Start dialogue");
             }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
