@@ -32,9 +32,8 @@ public class DialogueUI : MonoBehaviour
         CloseDialogueBox();
     }
 
-    public void ShowDialogue(DialogueObject dialogueobject, PlayerControl playercontrol)
+    public void ShowDialogue(DialogueObject dialogueobject)
     {
-        player = playercontrol;
         dialogueBox.SetActive(true);
         portraitBox.SetActive(true);
         //Let PlayerControl know controlUI = true
@@ -74,8 +73,8 @@ public class DialogueUI : MonoBehaviour
             yield return null;
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
-
-        if (dialogueObject.HasResponses)
+         
+        if (dialogueObject.HasResponses && dialogueObject.HasNextDialogue == false)
         {
             responseHandler.ShowResponses(dialogueObject.Responses);
         }
@@ -109,5 +108,10 @@ public class DialogueUI : MonoBehaviour
         //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
         Debug.Log("End dialogue");
+    }
+
+    public void findPlayer(PlayerControl playercontrol)
+    {
+        player = playercontrol;
     }
 }

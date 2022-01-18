@@ -14,12 +14,6 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] private DialogueUI dialogueUI;
     public DialogueUI DialogueUI => dialogueUI;
     public IInteractable Interactable { get; set; }
-    private Rigidbody2D rb;
-
-    void Start()
-    {
-
-    }
     void Update()
     {
         controlInput();
@@ -47,10 +41,6 @@ public class PlayerControl : MonoBehaviour
                 //doingAction = IngameMenu.instance.ingameMenu.activeSelf;
                 controlUI = IngameMenu.instance.isOpen;
             }
-            //if (Input.GetKeyDown(KeyCode.Mouse0))
-            //{
-            //    GetComponent<PlayerCombat>().inputAttack = true;
-            //}
         }
     }
 
