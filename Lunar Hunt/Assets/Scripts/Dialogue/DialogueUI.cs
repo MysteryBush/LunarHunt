@@ -29,6 +29,11 @@ public class DialogueUI : MonoBehaviour
         StartCoroutine(routine: StepThroughDialogue(dialogueobject));
     }
 
+    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    {
+        responseHandler.AddResponseEvents(responseEvents);
+    }
+
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
         for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
@@ -70,7 +75,7 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
-    private void CloseDialogueBox()
+    public void CloseDialogueBox()
     {
         IsOpen = false;
 
