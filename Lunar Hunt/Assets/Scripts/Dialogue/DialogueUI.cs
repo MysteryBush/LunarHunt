@@ -1,18 +1,25 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 using System;
+
 
 public class DialogueUI : MonoBehaviour
 {
     [SerializeField] private GameObject dialogueBox;
     [SerializeField] private TMP_Text textLabel;
+    [SerializeField] private TMP_Text nameLabel;
+    [SerializeField] private GameObject portraitBox;
     public float openTime = 2;
     public Animator anim;
+    //find player for playerControl script
     public PlayerControl player;
 
     public bool IsOpen { get; private set; }
+
+    private Sprite spriteImage;
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typewriterEffect;
@@ -22,7 +29,6 @@ public class DialogueUI : MonoBehaviour
         IsOpen = true;
         typewriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
-
         CloseDialogueBox();
     }
 
@@ -30,6 +36,7 @@ public class DialogueUI : MonoBehaviour
     {
         player = playercontrol;
         dialogueBox.SetActive(true);
+        portraitBox.SetActive(true);
         //Let PlayerControl know controlUI = true
         player.controlUI = true;
         StartCoroutine(routine: StepThroughDialogue(dialogueobject));
@@ -45,6 +52,11 @@ public class DialogueUI : MonoBehaviour
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
         textLabel.text = null;
+        nameLabel.text = dialogueObject.Speaker;
+        spriteImage = dialogueObject.Portrait;
+        portraitBox.GetComponent<Image>().sprite = spriteImage;
+        if (spriteImage == null)
+            portraitBox.SetActive(false);
 
         if (anim.GetBool("IsOpen") == false)
             yield return new WaitForSeconds(openTime);

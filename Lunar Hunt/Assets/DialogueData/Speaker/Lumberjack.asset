@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd7f702b2d324a428b136aa51db6000, type: 3}
-  m_Name: New Speaker
+  m_Name: Lumberjack
   m_EditorClassIdentifier: 
-  name: New Speaker
-  portrait: {fileID: 0}
+  name: Lumber Jack
+  portrait: {fileID: 21300000, guid: 1f07df453fd3e1e4d99ee049cf2e4c62, type: 3}

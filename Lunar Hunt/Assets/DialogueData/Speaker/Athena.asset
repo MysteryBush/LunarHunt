@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fd7f702b2d324a428b136aa51db6000, type: 3}
-  m_Name: Lumber Jack
+  m_Name: Athena
   m_EditorClassIdentifier: 
-  name: Lumber Jack
-  portrait: {fileID: 0}
+  name: Athena
+  portrait: {fileID: 21300000, guid: a1bca1eae47eb09459ec7cea3eeca785, type: 3}

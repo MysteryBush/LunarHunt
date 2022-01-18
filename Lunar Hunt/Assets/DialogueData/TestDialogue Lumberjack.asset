@@ -10,9 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac8e992c77c253649befedc9c1adef52, type: 3}
-  m_Name: No
+  m_Name: TestDialogue Lumberjack
   m_EditorClassIdentifier: 
   speakerObject: {fileID: 11400000, guid: 7416318eec0f6454f8fb81f3cafe0706, type: 2}
   dialogue:
-  - Why won't you agree?
-  responses: []
+  - 'This is my dialogue!
+
+    Hello.'
+  - This is our second dialogue. Goodbye!
+  responses:
+  - responseText: Yes
+    dialogueObject: {fileID: 11400000, guid: ff5231ea282470742b92d0f0da3f4eec, type: 2}
+  - responseText: No
+    dialogueObject: {fileID: 11400000, guid: cd821be30082961458f1e461301c0594, type: 2}

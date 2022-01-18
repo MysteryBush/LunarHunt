@@ -52,12 +52,14 @@ public class ResponseHandler : MonoBehaviour
     {
         responseBox.gameObject.SetActive(false);
 
+        //destroy choices button
         foreach (GameObject button in tempResponseButtons)
         {
             Destroy(button);
         }
         tempResponseButtons.Clear();
 
+        //if there is response, do something? or what is this?
         if (responseEvents != null && responseIndex <= responseEvents.Length)
         {
             responseEvents[responseIndex].OnPickedResponse?.Invoke();
@@ -65,6 +67,7 @@ public class ResponseHandler : MonoBehaviour
 
         responseEvents = null;
 
+        //If response is DialogueObject, change it to that instead
         if(response.DialogueObject)
         {
             dialogueUI.ShowDialogue(response.DialogueObject, dialogueUI.player);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 [CreateAssetMenu(fileName = "New Speaker", menuName = "Dialogue/SpeakerObject")]
 public class SpeakerObject : ScriptableObject
