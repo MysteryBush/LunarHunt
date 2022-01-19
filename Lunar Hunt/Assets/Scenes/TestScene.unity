@@ -7876,15 +7876,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogueObject: {fileID: 11400000, guid: e5776aac22aa80742bcc3fe650ea66b4, type: 2}
-  events:
-  - name: Yes
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: No
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls: []
+  events: []
 --- !u!114 &1217016337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10769,8 +10761,8 @@ GameObject:
   - component: {fileID: 1315189084}
   - component: {fileID: 1315189089}
   - component: {fileID: 1315189090}
+  - component: {fileID: 1315189094}
   - component: {fileID: 1315189091}
-  - component: {fileID: 1315189093}
   m_Layer: 0
   m_Name: Lumberjack
   m_TagString: Untagged
@@ -10955,10 +10947,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315189082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d92528ac69f7bc4c9a80ec887be2931, type: 3}
+  m_Script: {fileID: 11500000, guid: fbe11c577da7a2145879c940ffa7b935, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 8d23e71060c86a246bfc19e6f4a4bdc2, type: 2}
+  conversationObject: {fileID: 11400000, guid: f68963110cffd5b4f8c4ca13e275fda6, type: 2}
+  events:
+  - name: Yes
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls: []
+  - name: No
+    onPickedResponse:
+      m_PersistentCalls:
+        m_Calls: []
 --- !u!58 &1315189092
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10975,7 +10976,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 1.9
---- !u!114 &1315189093
+--- !u!114 &1315189094
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -10984,32 +10985,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1315189082}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb31cd6c734af014fbd0bfd0bac9d6b5, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7d80cd18fd67498081f3bf2c55df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: 8d23e71060c86a246bfc19e6f4a4bdc2, type: 2}
-  events:
-  - name: Yes
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1315189091}
-          m_TargetAssemblyTypeName: DialogueActivator, Assembly-CSharp
-          m_MethodName: UpdateDialogueObject
-          m_Mode: 2
-          m_Arguments:
-            m_ObjectArgument: {fileID: 11400000, guid: edfda493a1188e940a1eeb2c935773bc,
-              type: 2}
-            m_ObjectArgumentAssemblyTypeName: DialogueObject, Assembly-CSharp
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - name: No
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls: []
+  conversationObject: {fileID: 11400000, guid: f68963110cffd5b4f8c4ca13e275fda6, type: 2}
 --- !u!1 &1321122387
 GameObject:
   m_ObjectHideFlags: 0
@@ -18302,6 +18281,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
+  clues: []
+  evidences: []
 --- !u!1 &2101654845
 GameObject:
   m_ObjectHideFlags: 0
@@ -18903,6 +18884,8 @@ MonoBehaviour:
   openTime: 0.5
   anim: {fileID: 1059472236731408130}
   player: {fileID: 0}
+  dialogueactivator: {fileID: 0}
+  conversationactivator: {fileID: 0}
 --- !u!114 &1059472236731408146
 MonoBehaviour:
   m_ObjectHideFlags: 0

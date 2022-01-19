@@ -18,5 +18,5 @@ MonoBehaviour:
 
     Hello.'
   - This is our second dialogue. Goodbye!
-  nextDialogue: {fileID: 0}
+  nextDialogue: {fileID: 11400000, guid: 1b4ab2d6efcffe844afb55fd9f2003f6, type: 2}
   responses: []

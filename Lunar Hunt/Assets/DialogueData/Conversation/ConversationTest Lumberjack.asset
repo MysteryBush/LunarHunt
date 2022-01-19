@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: ConversationTest Lumberjack
+  m_EditorClassIdentifier: 
+  dialogue:
+  - {fileID: 11400000, guid: 8d23e71060c86a246bfc19e6f4a4bdc2, type: 2}
+  nextConversation: {fileID: 0}
+  responses:
+  - responseText: Yes
+    conversationObject: {fileID: 11400000, guid: 18eba60bddeea474d99b4d233137805b,
+      type: 2}
+  - responseText: No
+    conversationObject: {fileID: 11400000, guid: 372be31983dff4648b775d3728691c53,
+      type: 2}

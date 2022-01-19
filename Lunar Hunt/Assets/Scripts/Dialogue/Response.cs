@@ -4,9 +4,10 @@ using UnityEngine;
 public class Response
 {
     [SerializeField] private string responseText;
-    [SerializeField] private DialogueObject dialogueObject;
+    //[SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private ConversationObject conversationObject;
 
     public string ResponseText => responseText;
 
-    public DialogueObject DialogueObject => dialogueObject;
+    public ConversationObject ConversationObject => conversationObject;
 }

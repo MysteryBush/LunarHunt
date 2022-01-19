@@ -23,6 +23,9 @@ public class DialogueUI : MonoBehaviour
 
     private ResponseHandler responseHandler;
     private TypewriterEffect typewriterEffect;
+    //get from other game object
+    //public DialogueActivator dialogueactivator;
+    public ConversationActivator conversationactivator;
 
     private void Start()
     {
@@ -30,6 +33,18 @@ public class DialogueUI : MonoBehaviour
         typewriterEffect = GetComponent<TypewriterEffect>();
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
+    }
+
+    public void runConversation(ConversationObject conversationobject)
+    {
+        dialogueBox.SetActive(true);
+        portraitBox.SetActive(true);
+        //Let PlayerControl know controlUI = true
+        player.controlUI = true;
+        //run conversation
+        StartCoroutine(routine: StepThroughConversation(conversationobject));
+        //animation start dialogue
+        anim.SetBool("IsOpen", true);
     }
 
     public void ShowDialogue(DialogueObject dialogueobject)
@@ -48,6 +63,53 @@ public class DialogueUI : MonoBehaviour
         responseHandler.AddResponseEvents(responseEvents);
     }
 
+    //start conversation with this to run each dialogue
+    private IEnumerator StepThroughConversation(ConversationObject conversationObject)
+    {
+        for (int i = 0; i < conversationObject.Dialogue.Length; i++)
+        {
+            DialogueObject dialogue = conversationObject.Dialogue[i];
+            yield return StartCoroutine(runDialogues(dialogue));
+        }
+        if (conversationObject.HasResponses == true && conversationObject.HasNextConversation == false)
+        {
+            responseHandler.ShowResponses(conversationObject.Responses);
+        }
+        else
+        {
+            CloseDialogueBox();
+        }
+    }
+    //run a dialogue
+    private IEnumerator runDialogues(DialogueObject dialogueObject)
+    {
+        textLabel.text = null;
+        nameLabel.text = dialogueObject.Speaker;
+        spriteImage = dialogueObject.Portrait;
+        portraitBox.GetComponent<Image>().sprite = spriteImage;
+        if (spriteImage == null)
+            portraitBox.SetActive(false);
+
+        if (anim.GetBool("IsOpen") == false)
+            yield return new WaitForSeconds(openTime);
+
+        for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
+        {
+            string dialogue = dialogueObject.Dialogue[i];
+
+            yield return RunTypingEffect(dialogue);
+
+            textLabel.text = dialogue;
+
+            //break when there are response choices?
+            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
+
+            yield return null;
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+        }
+    }
+
+    //using as ref for this script
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
         textLabel.text = null;
@@ -68,12 +130,20 @@ public class DialogueUI : MonoBehaviour
 
             textLabel.text = dialogue;
 
+            //break when there are response choices?
             if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
+            ////break when new dialogue will come next
+            //if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasNextDialogue) break;
 
             yield return null;
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
-        if (dialogueObject.HasResponses && dialogueObject.HasNextDialogue == false)
+        //if (dialogueObject.HasNextDialogue == true)
+        //{
+        //    dialogueactivator.GetComponent<DialogueActivator>().UpdateDialogueObject(dialogueObject.NextDialogue);
+        //    ShowDialogue(dialogueObject.NextDialogue);
+        //}
+        if (dialogueObject.HasResponses == true && dialogueObject.HasNextDialogue == false)
         {
             responseHandler.ShowResponses(dialogueObject.Responses);
         }

@@ -47,6 +47,10 @@ public class Inventory : MonoBehaviour
     public int space = 20;
 
     public List<Item> items = new List<Item>();
+    public List<Clue> clues = new List<Clue>();
+    public List<Evidence> evidences = new List<Evidence>();
+    
+    #region Manage Item
     public bool Add(Item item)
     {
         if (!item.isDefaultItem)
@@ -72,5 +76,37 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }
+    #endregion
+
+    #region Manage Clue
+    //public bool Add(Item item)
+    //{
+    //    if (!item.isDefaultItem)
+    //    {
+    //        if (items.Count >= space)
+    //        {
+    //            Debug.Log("Not enough room.");
+    //            return false;
+    //        }
+
+    //        items.Add(item);
+    //        Debug.Log("Added " + item.name);
+    //        if (onItemChangedCallback != null)
+    //            onItemChangedCallback.Invoke();
+    //    }
+
+    //    return true;
+    //}
+    //public void Remove(Item item)
+    //{
+    //    items.Remove(item);
+    //    Debug.Log("Removed " + item.name);
+    //    if (onItemChangedCallback != null)
+    //        onItemChangedCallback.Invoke();
+    //}
+
+    #endregion
+    #region Manage Evidence
+    #endregion
 }
 

@@ -3,31 +3,31 @@ using System;
 
 public class DialogueResponseEvents : MonoBehaviour
 {
-    [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private ConversationObject conversationObject;
     [SerializeField] private ResponseEvent[] events;
 
-    public DialogueObject DialogueObject => dialogueObject;
+    public ConversationObject ConversationObject => conversationObject;
 
     public ResponseEvent[] Events => events;
 
     public void OnValidate()
     {
-        if (dialogueObject == null) return;
-        if (dialogueObject.Responses == null) return;
-        if (events != null && events.Length == dialogueObject.Responses.Length) return;
+        if (conversationObject == null) return;
+        if (conversationObject.Responses == null) return;
+        if (events != null && events.Length == conversationObject.Responses.Length) return;
         
         if (events == null)
         {
-            events = new ResponseEvent[dialogueObject.Responses.Length];
+            events = new ResponseEvent[conversationObject.Responses.Length];
         }
         else
         {
-            Array.Resize(ref events, dialogueObject.Responses.Length);
+            Array.Resize(ref events, conversationObject.Responses.Length);
         }
 
-        for (int i = 0; i < dialogueObject.Responses.Length; i++)
+        for (int i = 0; i < conversationObject.Responses.Length; i++)
         {
-            Response response = dialogueObject.Responses[i];
+            Response response = conversationObject.Responses[i];
 
             if (events[i] != null)
             {

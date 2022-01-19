@@ -18,4 +18,6 @@ MonoBehaviour:
   - I got unconscious and when I woke up again. My axe is gone!
   - I need the axe so I can clear this fallen tree that blocks the way to our town.
   nextDialogue: {fileID: 0}
-  responses: []
+  responses:
+  - responseText: 
+    dialogueObject: {fileID: 0}

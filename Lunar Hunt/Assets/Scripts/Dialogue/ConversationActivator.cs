@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DialogueActivator : MonoBehaviour, IInteractable
+public class ConversationActivator : MonoBehaviour, IInteractable
 {
-    [SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private ConversationObject conversationObject;
 
-    public void UpdateDialogueObject(DialogueObject dialogueObject)
+    public void UpdateConversationObject(ConversationObject conversationObject)
     {
-        this.dialogueObject = dialogueObject;
+        this.conversationObject = conversationObject;
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -33,14 +33,15 @@ public class DialogueActivator : MonoBehaviour, IInteractable
     {
         foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
         {
-            if (responseEvents.ConversationObject == dialogueObject)
+            if (responseEvents.ConversationObject == conversationObject)
             {
                 player.DialogueUI.AddResponseEvents(responseEvents.Events);
                 break;
             }
         }
-        //player.DialogueUI.dialogueactivator = this;
         player.DialogueUI.findPlayer(player);
-        player.DialogueUI.ShowDialogue(dialogueObject);
+        player.DialogueUI.conversationactivator = this;
+        //player.DialogueUI.ShowDialogue(dialogueObject);
+        player.DialogueUI.runConversation(conversationObject);
     }
 }
