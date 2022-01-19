@@ -10,9 +10,15 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
-  m_Name: ConversationTest Lumberjack No
+  m_Name: ConverTest LJ
   m_EditorClassIdentifier: 
   dialogue:
-  - {fileID: 11400000, guid: cd821be30082961458f1e461301c0594, type: 2}
+  - {fileID: 11400000, guid: 8d23e71060c86a246bfc19e6f4a4bdc2, type: 2}
   nextConversation: {fileID: 0}
-  responses: []
+  responses:
+  - responseText: Yes
+    conversationObject: {fileID: 11400000, guid: 18eba60bddeea474d99b4d233137805b,
+      type: 2}
+  - responseText: No
+    conversationObject: {fileID: 11400000, guid: 372be31983dff4648b775d3728691c53,
+      type: 2}

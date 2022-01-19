@@ -2301,8 +2301,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 86, y: 22.599998}
-  m_SizeDelta: {x: 586, y: 113.6}
+  m_AnchoredPosition: {x: 86, y: 41}
+  m_SizeDelta: {x: 586, y: 83.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &277130212
 MonoBehaviour:
@@ -2325,8 +2325,6 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: 'Dialogue Text
-
-    Dialogue Text
 
     Dialogue Text
 
@@ -2649,11 +2647,11 @@ RectTransform:
   m_Father: {fileID: 1059472235629168675}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -87, y: 13}
   m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 1}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &322821978
 GameObject:
   m_ObjectHideFlags: 0
@@ -3468,11 +3466,11 @@ RectTransform:
   m_Father: {fileID: 305040186}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0.000030517578, y: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -1}
   m_SizeDelta: {x: 800, y: 110}
-  m_Pivot: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0}
 --- !u!1 &443583706
 GameObject:
   m_ObjectHideFlags: 0
@@ -7685,8 +7683,8 @@ GameObject:
   - component: {fileID: 1217016329}
   - component: {fileID: 1217016328}
   - component: {fileID: 1217016332}
-  - component: {fileID: 1217016337}
   - component: {fileID: 1217016336}
+  - component: {fileID: 1217016337}
   m_Layer: 0
   m_Name: Athena
   m_TagString: Untagged
@@ -7886,10 +7884,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1217016327}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0d92528ac69f7bc4c9a80ec887be2931, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7d80cd18fd67498081f3bf2c55df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: e5776aac22aa80742bcc3fe650ea66b4, type: 2}
+  conversationObject: {fileID: 11400000, guid: 63953689252bd4a48ab3f55412dbf028, type: 2}
 --- !u!1 &1239276150
 GameObject:
   m_ObjectHideFlags: 0
@@ -10762,7 +10760,6 @@ GameObject:
   - component: {fileID: 1315189089}
   - component: {fileID: 1315189090}
   - component: {fileID: 1315189094}
-  - component: {fileID: 1315189091}
   m_Layer: 0
   m_Name: Lumberjack
   m_TagString: Untagged
@@ -10938,28 +10935,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
---- !u!114 &1315189091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315189082}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbe11c577da7a2145879c940ffa7b935, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  conversationObject: {fileID: 11400000, guid: f68963110cffd5b4f8c4ca13e275fda6, type: 2}
-  events:
-  - name: Yes
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls: []
-  - name: No
-    onPickedResponse:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!58 &1315189092
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18884,7 +18859,6 @@ MonoBehaviour:
   openTime: 0.5
   anim: {fileID: 1059472236731408130}
   player: {fileID: 0}
-  dialogueactivator: {fileID: 0}
   conversationactivator: {fileID: 0}
 --- !u!114 &1059472236731408146
 MonoBehaviour:
@@ -19033,12 +19007,12 @@ GameObject:
   - component: {fileID: 8157887568474099263}
   - component: {fileID: 8157887568474099260}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Button (unused)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &8157887568474099260
 MonoBehaviour:
   m_ObjectHideFlags: 0

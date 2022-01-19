@@ -71,6 +71,10 @@ public class DialogueUI : MonoBehaviour
             DialogueObject dialogue = conversationObject.Dialogue[i];
             yield return StartCoroutine(runDialogues(dialogue));
         }
+        if (conversationObject.HasNextConversation == true)
+        {
+            conversationactivator.UpdateConversationObject(conversationObject.NextConversation);
+        }
         if (conversationObject.HasResponses == true && conversationObject.HasNextConversation == false)
         {
             responseHandler.ShowResponses(conversationObject.Responses);
@@ -165,22 +169,6 @@ public class DialogueUI : MonoBehaviour
             {
                 typewriterEffect.Stop();
             }
-        }
-    }
-
-    private void afterDialogue(DialogueObject dialogueObject)
-    {
-        if (dialogueObject.HasNextDialogue == true)
-        {
-            StartCoroutine(routine: StepThroughDialogue(dialogueObject));
-        }
-        if (dialogueObject.HasResponses && dialogueObject.HasNextDialogue == false)
-        {
-            responseHandler.ShowResponses(dialogueObject.Responses);
-        }
-        else
-        {
-            CloseDialogueBox();
         }
     }
 
