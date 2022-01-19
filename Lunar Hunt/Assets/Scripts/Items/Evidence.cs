@@ -15,7 +15,7 @@ public class Evidence : ScriptableObject
     public int EvidenceAmount = 1;
     public virtual void Use()
     {
-        // Use the item
+        // Use the Evidence
         // Something might happen
 
         Debug.Log("Using " + name);

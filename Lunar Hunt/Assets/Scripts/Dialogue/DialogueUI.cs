@@ -75,10 +75,22 @@ public class DialogueUI : MonoBehaviour
         {
             conversationactivator.UpdateConversationObject(conversationObject.NextConversation);
         }
+        if (conversationObject.HasItem == true)
+        {
+            Inventory.instance.Add(conversationObject.Item);
+        }
         if (conversationObject.HasResponses == true && conversationObject.HasNextConversation == false)
         {
             responseHandler.ShowResponses(conversationObject.Responses);
         }
+        //if (conversationObject.HasClue == true)
+        //{
+        //    Inventory.instance.Add(conversationObject.Item);
+        //}
+        //if (conversationObject.HasEvidence == true)
+        //{
+        //    Inventory.instance.Add(conversationObject.Item);
+        //}
         else
         {
             CloseDialogueBox();

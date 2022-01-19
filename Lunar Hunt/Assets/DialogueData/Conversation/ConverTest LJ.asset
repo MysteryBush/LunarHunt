@@ -22,3 +22,5 @@ MonoBehaviour:
   - responseText: No
     conversationObject: {fileID: 11400000, guid: 372be31983dff4648b775d3728691c53,
       type: 2}
+  gameEvents: []
+  item: {fileID: 11400000, guid: 6d5bf1049178b03469f3625e94dd93c2, type: 2}

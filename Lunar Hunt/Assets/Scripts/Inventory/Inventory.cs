@@ -47,12 +47,17 @@ public class Inventory : MonoBehaviour
     public int space = 20;
 
     public List<Item> items = new List<Item>();
-    public List<Clue> clues = new List<Clue>();
-    public List<Evidence> evidences = new List<Evidence>();
-    
-    #region Manage Item
+
+    public InventoryKeyItem keyItem;
+
+
+    #region Manage correctly
     public bool Add(Item item)
     {
+        if (item.itemType == "Clue" || item.itemType == "Evidence")
+        {
+            keyItem.Add(item);
+        }    
         if (!item.isDefaultItem)
         {
             if (items.Count >= space)
@@ -78,35 +83,32 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    #region Manage Clue
-    //public bool Add(Item item)
-    //{
-    //    if (!item.isDefaultItem)
-    //    {
-    //        if (items.Count >= space)
-    //        {
-    //            Debug.Log("Not enough room.");
-    //            return false;
-    //        }
+    #region Manage Item
+    public bool AddItem(Item item)
+    {
+        if (!item.isDefaultItem)
+        {
+            if (items.Count >= space)
+            {
+                Debug.Log("Not enough room.");
+                return false;
+            }
 
-    //        items.Add(item);
-    //        Debug.Log("Added " + item.name);
-    //        if (onItemChangedCallback != null)
-    //            onItemChangedCallback.Invoke();
-    //    }
+            items.Add(item);
+            Debug.Log("Added " + item.name);
+            if (onItemChangedCallback != null)
+                onItemChangedCallback.Invoke();
+        }
 
-    //    return true;
-    //}
-    //public void Remove(Item item)
-    //{
-    //    items.Remove(item);
-    //    Debug.Log("Removed " + item.name);
-    //    if (onItemChangedCallback != null)
-    //        onItemChangedCallback.Invoke();
-    //}
-
-    #endregion
-    #region Manage Evidence
+        return true;
+    }
+    public void RemoveItem(Item item)
+    {
+        items.Remove(item);
+        Debug.Log("Removed " + item.name);
+        if (onItemChangedCallback != null)
+            onItemChangedCallback.Invoke();
+    }
     #endregion
 }
 

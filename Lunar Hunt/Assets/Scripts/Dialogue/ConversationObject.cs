@@ -10,6 +10,8 @@ public class ConversationObject : ScriptableObject
     [SerializeField] private DialogueObject[] dialogue;
     [SerializeField] private ConversationObject nextConversation;
     [SerializeField] private Response[] responses;
+    [SerializeField] private EventVar[] gameEvents;
+    [SerializeField] private Item item;
 
     //public string Speaker => speakerObject.name;
     //public Sprite Portrait => speakerObject.portrait;
@@ -18,4 +20,9 @@ public class ConversationObject : ScriptableObject
     public ConversationObject NextConversation => nextConversation;
     public bool HasResponses => Responses != null && Responses.Length > 0;
     public Response[] Responses => responses;
+    public bool HasEvents => gameEvents != null && gameEvents.Length > 0;
+    public EventVar[] GameEvents => gameEvents;
+    public bool HasItem => item != null;
+    public Item Item => item;
+
 }

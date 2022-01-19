@@ -7678,12 +7678,9 @@ GameObject:
   - component: {fileID: 1217016335}
   - component: {fileID: 1217016334}
   - component: {fileID: 1217016333}
-  - component: {fileID: 1217016331}
-  - component: {fileID: 1217016330}
   - component: {fileID: 1217016329}
   - component: {fileID: 1217016328}
   - component: {fileID: 1217016332}
-  - component: {fileID: 1217016336}
   - component: {fileID: 1217016337}
   m_Layer: 0
   m_Name: Athena
@@ -7724,37 +7721,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetZ: -0.18
---- !u!114 &1217016330
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217016327}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece6a887a442f3e44a580ffca063e28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Athena
-    portrait: {fileID: 21300000, guid: a1bca1eae47eb09459ec7cea3eeca785, type: 3}
-    reward: 1
-    sentences:
-    - Sorry, there's nothing interesting in here.
-    - But I can give you this potion, stay safe.
---- !u!114 &1217016331
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217016327}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802e28597d48c53478471cd0efa7c8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &1217016332
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7861,20 +7827,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1217016336
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1217016327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb31cd6c734af014fbd0bfd0bac9d6b5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueObject: {fileID: 11400000, guid: e5776aac22aa80742bcc3fe650ea66b4, type: 2}
-  events: []
 --- !u!114 &1217016337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10754,8 +10706,6 @@ GameObject:
   - component: {fileID: 1315189088}
   - component: {fileID: 1315189092}
   - component: {fileID: 1315189087}
-  - component: {fileID: 1315189086}
-  - component: {fileID: 1315189085}
   - component: {fileID: 1315189084}
   - component: {fileID: 1315189089}
   - component: {fileID: 1315189090}
@@ -10795,36 +10745,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   offsetZ: -0.18
---- !u!114 &1315189085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315189082}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece6a887a442f3e44a580ffca063e28d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogue:
-    name: Lumberjack
-    portrait: {fileID: 21300000, guid: 1f07df453fd3e1e4d99ee049cf2e4c62, type: 3}
-    reward: 0
-    sentences:
-    - "I'm cutting wood right now. \nPlease don't bother me."
---- !u!114 &1315189086
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1315189082}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802e28597d48c53478471cd0efa7c8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &1315189087
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16819,11 +16739,10 @@ GameObject:
   - component: {fileID: 2067393558}
   - component: {fileID: 2067393563}
   - component: {fileID: 2067393562}
-  - component: {fileID: 2067393561}
-  - component: {fileID: 2067393560}
   - component: {fileID: 2067393559}
   - component: {fileID: 2067393564}
   - component: {fileID: 2067393565}
+  - component: {fileID: 2067393560}
   m_Layer: 0
   m_Name: Merchant
   m_TagString: Untagged
@@ -16866,29 +16785,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2067393557}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ece6a887a442f3e44a580ffca063e28d, type: 3}
+  m_Script: {fileID: 11500000, guid: efc7d80cd18fd67498081f3bf2c55df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogue:
-    name: Vendor
-    portrait: {fileID: 21300000, guid: 1f07df453fd3e1e4d99ee049cf2e4c62, type: 3}
-    reward: 0
-    sentences:
-    - "I don't have anything on sale right now. \nThey will restock tomorrow."
---- !u!114 &2067393561
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067393557}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 802e28597d48c53478471cd0efa7c8c0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  conversationObject: {fileID: 0}
 --- !u!61 &2067393562
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -18209,6 +18111,7 @@ GameObject:
   - component: {fileID: 2099147406}
   - component: {fileID: 2099147405}
   - component: {fileID: 2099147407}
+  - component: {fileID: 2099147408}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: Untagged
@@ -18256,6 +18159,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   space: 20
   items: []
+  keyItem: {fileID: 2099147408}
+--- !u!114 &2099147408
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2099147404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 677fc88902730e5469c8560ea15df041, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
   clues: []
   evidences: []
 --- !u!1 &2101654845
@@ -18858,7 +18774,7 @@ MonoBehaviour:
   portraitBox: {fileID: 1531331645}
   openTime: 0.5
   anim: {fileID: 1059472236731408130}
-  player: {fileID: 0}
+  player: {fileID: 1631167880}
   conversationactivator: {fileID: 0}
 --- !u!114 &1059472236731408146
 MonoBehaviour:

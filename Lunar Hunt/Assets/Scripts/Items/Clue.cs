@@ -6,16 +6,17 @@ using UnityEngine;
 //INVENTORY CODE - Making an RPG in Unity (E06)
 //https://www.youtube.com/watch?v=YLhj7SfaxSE&ab_channel=Brackeys
 
-[CreateAssetMenu(fileName = "New Item", menuName = "Inventory/Clue")]
+[CreateAssetMenu(fileName = "New Clue", menuName = "Inventory/Clue")]
 public class Clue : ScriptableObject
 {
-    new public string name = "New Item";
+    new public string name = "New Clue";
     public Sprite icon = null;
+    public string clueFact = "Neutral";
     public bool isDefaultItem = false;
     public int itemAmount = 1;
     public virtual void Use()
     {
-        // Use the item
+        // Use the Clue
         // Something might happen
 
         Debug.Log("Using " + name);

@@ -9,12 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
-  m_Name: ConverTest LJ  No
+  m_Script: {fileID: 11500000, guid: fc31cbb7db8da344693335cc46bf1e7a, type: 3}
+  m_Name: Clue Item
   m_EditorClassIdentifier: 
-  dialogue:
-  - {fileID: 11400000, guid: cd821be30082961458f1e461301c0594, type: 2}
-  nextConversation: {fileID: 0}
-  responses: []
-  gameEvents: []
-  item: {fileID: 0}
+  name: Clue
+  icon: {fileID: 0}
+  itemType: Clue
+  isDefaultItem: 0
+  itemAmount: 1
+  clueFact: Neutral
