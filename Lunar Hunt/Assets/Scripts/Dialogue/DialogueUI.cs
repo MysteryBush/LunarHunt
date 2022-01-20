@@ -16,6 +16,8 @@ public class DialogueUI : MonoBehaviour
     public Animator anim;
     //find player for playerControl script
     public PlayerControl player;
+    //Is player in the chatRange?
+    public bool chatRange = false;
 
     public bool IsOpen { get; private set; }
 
@@ -51,9 +53,9 @@ public class DialogueUI : MonoBehaviour
     //start conversation with this to run each dialogue
     private IEnumerator StepThroughConversation(ConversationObject conversationObject)
     {
-        for (int i = 0; i < conversationObject.Dialogue.Length; i++)
+        for (int i = 0; i < conversationObject.Dialogues.Length; i++)
         {
-            Dialogue dialogue = conversationObject.Dialogue[i];
+            Dialogue dialogue = conversationObject.Dialogues[i];
             yield return StartCoroutine(runDialogues(dialogue));
         }
         if (conversationObject.HasNextConversation == true)

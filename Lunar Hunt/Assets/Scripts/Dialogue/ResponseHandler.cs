@@ -64,10 +64,9 @@ public class ResponseHandler : MonoBehaviour
         {
             responseEvents[responseIndex].OnPickedResponse?.Invoke();
         }
-
         responseEvents = null;
 
-        //If response is ConversationObject, change it to that instead
+        //If response has ConversationObject, use it
         if (response.ConversationObject)
         {
             dialogueUI.runConversation(response.ConversationObject);

@@ -15,7 +15,7 @@ public class ConversationObject : ScriptableObject
 
     //public string Speaker => speakerObject.name;
     //public Sprite Portrait => speakerObject.portrait;
-    public Dialogue[] Dialogue => dialogue;
+    public Dialogue[] Dialogues => dialogue;
     public bool HasNextConversation => nextConversation != null;
     public ConversationObject NextConversation => nextConversation;
     public bool HasResponses => Responses != null && Responses.Length > 0;

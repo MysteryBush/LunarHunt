@@ -10,10 +10,10 @@ public class npcMovement : MonoBehaviour
     private Animator anim;
 
     //finding player
-    private GameObject targetPlayer;
+    public GameObject targetPlayer;
 
     private Vector3 movementZ;
-    private Transform npcTransform;
+    public Transform npcTransform;
 
     bool isControl = true;
     bool isDead = false;
@@ -76,6 +76,7 @@ public class npcMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             targetPlayer = collision.gameObject;
+            targetPlayer.GetComponent<PlayerControl>().dialogueUI.chatRange = true;
         }
     }
 
@@ -83,6 +84,8 @@ public class npcMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            targetPlayer.GetComponent<PlayerControl>().dialogueUI.chatRange = false;
+            targetPlayer.GetComponent<PlayerControl>().dialogueUI.conversationactivator = null;
             targetPlayer = null;
         }
     }
@@ -142,14 +145,14 @@ public class npcMovement : MonoBehaviour
     //    playerTransform = FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
     //}
 
-    public void targetFacing(Transform playerTransform)
+    public void targetFacing()
     {
-        playerTransform = targetPlayer.transform;
+        //playerTransform = targetPlayer.transform;
         //findPlayer();
         float distance1x = (float)transform.position.x;
         float distance1y = (float)transform.position.y;
-        float distance2x = (float)playerTransform.transform.position.x;
-        float distance2y = (float)playerTransform.transform.position.y;
+        float distance2x = (float)targetPlayer.transform.position.x;
+        float distance2y = (float)targetPlayer.transform.position.y;
 
         xFace = distanceMath(distance1x, distance2x);
         yFace = distanceMath(distance1y, distance2y);

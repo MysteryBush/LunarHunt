@@ -11,7 +11,7 @@ public class PlayerControl : MonoBehaviour
     public bool isDead = false;
 
     //dialogue stuff
-    [SerializeField] private DialogueUI dialogueUI;
+    [SerializeField] public DialogueUI dialogueUI;
     public DialogueUI DialogueUI => dialogueUI;
     public IInteractable Interactable { get; set; }
     void Update()
@@ -28,8 +28,9 @@ public class PlayerControl : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                //trigger interaction
-                Interactable?.Interact(player: this);
+                if (dialogueUI.chatRange == true)
+                    //trigger interaction
+                    Interactable?.Interact(player: this);
             }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
