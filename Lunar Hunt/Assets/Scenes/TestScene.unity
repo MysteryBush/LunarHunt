@@ -18775,7 +18775,7 @@ MonoBehaviour:
   openTime: 0.5
   anim: {fileID: 1059472236731408130}
   player: {fileID: 1631167880}
-  conversationactivator: {fileID: 0}
+  conversationactivator: {fileID: 1315189094}
 --- !u!114 &1059472236731408146
 MonoBehaviour:
   m_ObjectHideFlags: 0

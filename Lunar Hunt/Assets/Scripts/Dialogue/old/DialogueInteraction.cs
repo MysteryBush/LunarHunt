@@ -58,7 +58,7 @@ public class DialogueInteraction : MonoBehaviour
         {
             _dialogueTrigger.TriggerDialouge();
             chatOpen = true;
-            _npcMovement.targetFacing();
+            _npcMovement.targetFacing(targetPlayer.transform);
             //make player face to NPC
             targetPlayer.GetComponent<PlayerMovement>().targetFacing(transform);
         }

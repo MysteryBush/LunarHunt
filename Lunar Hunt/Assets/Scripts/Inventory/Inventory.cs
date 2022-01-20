@@ -51,14 +51,14 @@ public class Inventory : MonoBehaviour
     public InventoryKeyItem keyItem;
 
 
-    #region Manage correctly
+    #region Manage item
     public bool Add(Item item)
     {
         if (item.itemType == "Clue" || item.itemType == "Evidence")
         {
             keyItem.Add(item);
         }    
-        if (!item.isDefaultItem)
+        if (!item.isDefaultItem && item.itemType == "Consumable")
         {
             if (items.Count >= space)
             {
@@ -83,32 +83,21 @@ public class Inventory : MonoBehaviour
     }
     #endregion
 
-    #region Manage Item
-    public bool AddItem(Item item)
+    public void AddList(Item[] item)
     {
-        if (!item.isDefaultItem)
+        for (int i = 0; i < item.Length; i++)
         {
-            if (items.Count >= space)
-            {
-                Debug.Log("Not enough room.");
-                return false;
-            }
-
-            items.Add(item);
-            Debug.Log("Added " + item.name);
-            if (onItemChangedCallback != null)
-                onItemChangedCallback.Invoke();
+            Add(item[i]);
+            Debug.Log("adding item #" + i);
         }
+    }
 
-        return true;
-    }
-    public void RemoveItem(Item item)
+    public void RemoveList(Item[] item)
     {
-        items.Remove(item);
-        Debug.Log("Removed " + item.name);
-        if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
+        for (int i = 0; i < item.Length; i++)
+        {
+            Remove(item[i]);
+        }
     }
-    #endregion
 }
 

@@ -67,17 +67,7 @@ public class ResponseHandler : MonoBehaviour
 
         responseEvents = null;
 
-        //If response is DialogueObject, change it to that instead
-        //if(response.DialogueObject)
-        //{
-        //    dialogueUI.ShowDialogue(response.DialogueObject);
-        //}
-        //else
-        //{
-        //    dialogueUI.CloseDialogueBox();
-        //}
-
-        //dialogueUI.ShowDialogue(response.DialogueObject);
+        //If response is ConversationObject, change it to that instead
         if (response.ConversationObject)
         {
             dialogueUI.runConversation(response.ConversationObject);
@@ -87,6 +77,6 @@ public class ResponseHandler : MonoBehaviour
             dialogueUI.CloseDialogueBox();
         }
 
-        dialogueUI.runConversation(response.ConversationObject);
+        //dialogueUI.runConversation(response.ConversationObject);
     }
 }

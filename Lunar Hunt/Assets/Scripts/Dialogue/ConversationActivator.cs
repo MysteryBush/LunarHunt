@@ -5,6 +5,7 @@ using UnityEngine;
 public class ConversationActivator : MonoBehaviour, IInteractable
 {
     [SerializeField] private ConversationObject conversationObject;
+    private npcMovement npcMovement;
 
     public void UpdateConversationObject(ConversationObject conversationObject)
     {
@@ -41,7 +42,7 @@ public class ConversationActivator : MonoBehaviour, IInteractable
         }
         player.DialogueUI.findPlayer(player);
         player.DialogueUI.conversationactivator = this;
-        //player.DialogueUI.ShowDialogue(dialogueObject);
         player.DialogueUI.runConversation(conversationObject);
+        //npcMovement.targetFacing(player.transform);
     }
 }

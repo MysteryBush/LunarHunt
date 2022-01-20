@@ -3,9 +3,10 @@ using UnityEngine;
 [System.Serializable]
 public class Dialogue
 {
-    [SerializeField] private string dialogueText;
+    [SerializeField] private SpeakerObject speakerObject;
     [SerializeField] [TextArea] private string[] dialogue;
 
-    public string DialogueText => dialogueText;
+    public string Speaker => speakerObject.name;
+    public Sprite Portrait => speakerObject.portrait;
     public string[] DialogueList => dialogue;
 }

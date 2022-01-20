@@ -9,6 +9,9 @@ public class npcMovement : MonoBehaviour
     private Vector2 movement;      // The vector to store the direction of the npc's movement
     private Animator anim;
 
+    //finding player
+    private GameObject targetPlayer;
+
     private Vector3 movementZ;
     private Transform npcTransform;
 
@@ -24,6 +27,7 @@ public class npcMovement : MonoBehaviour
 
     //player Transform
     Transform playerTransform;
+
 
     void Awake()
     {
@@ -65,6 +69,29 @@ public class npcMovement : MonoBehaviour
         anim.SetFloat("FaceHorizontal", xFace);
         anim.SetFloat("FaceVertical", yFace);
         toggleControl();
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            targetPlayer = collision.gameObject;
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            targetPlayer = null;
+        }
+    }
+
+    private void facingTalk()
+    {
+
+        //make player face to NPC
+        targetPlayer.GetComponent<PlayerMovement>().targetFacing(transform);
     }
 
     void MoveZ(float x, float y)
@@ -109,21 +136,20 @@ public class npcMovement : MonoBehaviour
         }
     }
 
-    void findPlayer()
-    {
-        Debug.Log("Finding player");
-        playerTransform = FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
-    }
+    //void findPlayer()
+    //{
+    //    Debug.Log("Finding player");
+    //    playerTransform = FindObjectOfType<PlayerMovement>().GetComponent<Transform>();
+    //}
 
-    public void targetFacing()
+    public void targetFacing(Transform playerTransform)
     {
-        findPlayer();
+        playerTransform = targetPlayer.transform;
+        //findPlayer();
         float distance1x = (float)transform.position.x;
         float distance1y = (float)transform.position.y;
         float distance2x = (float)playerTransform.transform.position.x;
         float distance2y = (float)playerTransform.transform.position.y;
-        //float distance2x = (float)FindObjectOfType<PlayerMovement>().GetComponent<Transform>().transform.position.x;
-        //float distance2y = (float)FindObjectOfType<PlayerMovement>().GetComponent<Transform>().transform.position.y;
 
         xFace = distanceMath(distance1x, distance2x);
         yFace = distanceMath(distance1y, distance2y);
@@ -131,22 +157,6 @@ public class npcMovement : MonoBehaviour
 
     float distanceMath(float distance1, float distance2)
     {
-        //if (distance1 > distance2)
-        //{
-        //    Debug.Log("-1");
-        //    return -1;
-        //}
-        //if (distance1 < distance2)
-        //{
-        //    Debug.Log("1");
-        //    return 1;
-        //}
-        //else
-        //{
-        //    Debug.Log("0");
-        //    return 0;
-        //}
-
         return distance2 - distance1;
     }
 
@@ -158,14 +168,6 @@ public class npcMovement : MonoBehaviour
 
     public void toggleControl()
     {
-        //if (DialogueManager.ins.isDone == true)
-        //{
-        //    isControl = true;
-        //}
-        //if (DialogueManager.ins.isDone == false)
-        //{
-        //    isControl = false;
-        //}
         if (anim.GetBool("isDead") == true)
         {
             isControl = false;

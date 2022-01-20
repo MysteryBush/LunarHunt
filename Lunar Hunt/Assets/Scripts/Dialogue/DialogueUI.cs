@@ -34,7 +34,7 @@ public class DialogueUI : MonoBehaviour
         responseHandler = GetComponent<ResponseHandler>();
         CloseDialogueBox();
     }
-
+    #region Conversation and Dialogue
     public void runConversation(ConversationObject conversationobject)
     {
         dialogueBox.SetActive(true);
@@ -47,28 +47,13 @@ public class DialogueUI : MonoBehaviour
         anim.SetBool("IsOpen", true);
     }
 
-    public void ShowDialogue(DialogueObject dialogueobject)
-    {
-        dialogueBox.SetActive(true);
-        portraitBox.SetActive(true);
-        //Let PlayerControl know controlUI = true
-        player.controlUI = true;
-        StartCoroutine(routine: StepThroughDialogue(dialogueobject));
-        //animation start dialogue
-        anim.SetBool("IsOpen", true);
-    }
-
-    public void AddResponseEvents(ResponseEvent[] responseEvents)
-    {
-        responseHandler.AddResponseEvents(responseEvents);
-    }
 
     //start conversation with this to run each dialogue
     private IEnumerator StepThroughConversation(ConversationObject conversationObject)
     {
         for (int i = 0; i < conversationObject.Dialogue.Length; i++)
         {
-            DialogueObject dialogue = conversationObject.Dialogue[i];
+            Dialogue dialogue = conversationObject.Dialogue[i];
             yield return StartCoroutine(runDialogues(dialogue));
         }
         if (conversationObject.HasNextConversation == true)
@@ -77,7 +62,7 @@ public class DialogueUI : MonoBehaviour
         }
         if (conversationObject.HasItem == true)
         {
-            Inventory.instance.Add(conversationObject.Item);
+            Inventory.instance.AddList(conversationObject.Items);
         }
         if (conversationObject.HasResponses == true && conversationObject.HasNextConversation == false)
         {
@@ -97,7 +82,7 @@ public class DialogueUI : MonoBehaviour
         }
     }
     //run a dialogue
-    private IEnumerator runDialogues(DialogueObject dialogueObject)
+    private IEnumerator runDialogues(Dialogue dialogueObject)
     {
         textLabel.text = null;
         nameLabel.text = dialogueObject.Speaker;
@@ -109,23 +94,37 @@ public class DialogueUI : MonoBehaviour
         if (anim.GetBool("IsOpen") == false)
             yield return new WaitForSeconds(openTime);
 
-        for (int i = 0; i < dialogueObject.Dialogue.Length; i++)
+        for (int i = 0; i < dialogueObject.DialogueList.Length; i++)
         {
-            string dialogue = dialogueObject.Dialogue[i];
+            string dialogue = dialogueObject.DialogueList[i];
 
             yield return RunTypingEffect(dialogue);
 
             textLabel.text = dialogue;
 
-            //break when there are response choices?
-            if (i == dialogueObject.Dialogue.Length - 1 && dialogueObject.HasResponses) break;
+            //break when there are no more dialogue
+            if (i == dialogueObject.DialogueList.Length - 0) break;
 
             yield return null;
             yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
     }
 
+    #endregion
+
+    #region ref
     //using as ref for this script
+
+    public void ShowDialogue(DialogueObject dialogueobject)
+    {
+        dialogueBox.SetActive(true);
+        portraitBox.SetActive(true);
+        //Let PlayerControl know controlUI = true
+        player.controlUI = true;
+        StartCoroutine(routine: StepThroughDialogue(dialogueobject));
+        //animation start dialogue
+        anim.SetBool("IsOpen", true);
+    }
     private IEnumerator StepThroughDialogue(DialogueObject dialogueObject)
     {
         textLabel.text = null;
@@ -169,6 +168,7 @@ public class DialogueUI : MonoBehaviour
         }
         //afterDialogue(dialogueObject);
     }
+    #endregion
 
     private IEnumerator RunTypingEffect(string dialogue)
     {
@@ -184,6 +184,11 @@ public class DialogueUI : MonoBehaviour
         }
     }
 
+    public void AddResponseEvents(ResponseEvent[] responseEvents)
+    {
+        responseHandler.AddResponseEvents(responseEvents);
+    }
+
     public void CloseDialogueBox()
     {
         IsOpen = false;
@@ -191,7 +196,6 @@ public class DialogueUI : MonoBehaviour
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
-        Debug.Log("End dialogue");
     }
 
     public void findPlayer(PlayerControl playercontrol)

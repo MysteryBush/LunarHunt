@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: ConverTest LJ Done
   m_EditorClassIdentifier: 
   dialogue:
-  - {fileID: 11400000, guid: edfda493a1188e940a1eeb2c935773bc, type: 2}
+  - speakerObject: {fileID: 11400000, guid: 7416318eec0f6454f8fb81f3cafe0706, type: 2}
+    dialogue:
+    - I'm done
   nextConversation: {fileID: 0}
   responses: []
+  gameEvents: []
+  items: []

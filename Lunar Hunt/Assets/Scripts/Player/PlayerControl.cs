@@ -30,7 +30,6 @@ public class PlayerControl : MonoBehaviour
             {
                 //trigger interaction
                 Interactable?.Interact(player: this);
-                Debug.Log("Start dialogue");
             }
             if (Input.GetKeyDown(KeyCode.Tab))
             {
