@@ -15,5 +15,5 @@ MonoBehaviour:
   name: The merchant got here this morning
   icon: {fileID: 0}
   clueFact: Truth
-  isDefaultItem: 0
+  isUniqueItem: 1
   itemAmount: 1

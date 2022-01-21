@@ -14,5 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: "The merchant took people\u2019s belonging and sell them"
   icon: {fileID: 0}
-  isDefaultItem: 0
+  clueFact: Neutral
+  isUniqueItem: 1
   itemAmount: 1

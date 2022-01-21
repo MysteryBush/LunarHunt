@@ -12,7 +12,7 @@ public class Clue : ScriptableObject
     new public string name = "New Clue";
     public Sprite icon = null;
     public string clueFact = "Neutral";
-    public bool isDefaultItem = false;
+    public bool isUniqueItem = true;
     public int itemAmount = 1;
     public virtual void Use()
     {

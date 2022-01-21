@@ -15,5 +15,5 @@ MonoBehaviour:
   name: Lumberjack was fainted this morning
   icon: {fileID: 0}
   clueFact: Truth
-  isDefaultItem: 0
+  isUniqueItem: 1
   itemAmount: 1

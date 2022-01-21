@@ -10,17 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
-  m_Name: ConverTest MC
+  m_Name: ConverTest MC Rumor
   m_EditorClassIdentifier: 
   dialogue:
   - speakerObject: {fileID: 11400000, guid: e529161c7b5460748b827f7aba4bfbd6, type: 2}
     dialogue:
-    - I didn't steal anything, promise
+    - No! that's not true!
   changeConversation: {fileID: 0}
-  responses:
-  - responseText: Actually... I heard a rumor
-    conversationObject: {fileID: 11400000, guid: 332b49e381cf7684a9976b8831ce5271,
-      type: 2}
-    requireEvent: {fileID: 11400000, guid: 7d42f678b7521c047bbad7a0397fd81c, type: 2}
+  responses: []
   gameEvents: []
   items: []

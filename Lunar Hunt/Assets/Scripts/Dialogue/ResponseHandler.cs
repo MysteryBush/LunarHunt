@@ -6,12 +6,14 @@ using UnityEngine.UI;
 
 public class ResponseHandler : MonoBehaviour
 {
+    private DialogueUI dialogueUI;
+    private ResponseEvent[] responseEvents;
+    [SerializeField] private EventTracking eventTracking;
+
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private RectTransform responseButtonTemplate;
     [SerializeField] private RectTransform responseContainer;
 
-    private DialogueUI dialogueUI;
-    private ResponseEvent[] responseEvents;
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
 
@@ -31,20 +33,27 @@ public class ResponseHandler : MonoBehaviour
 
         for (int i = 0; i < responses.Length; i++)
         {
-            Response response = responses[i];
-            int responseIndex = i;
+            if (responses[i].RequireEvent == null || eventTracking.eventObjects.Contains(responses[i].RequireEvent))
+            {
+                Response response = responses[i];
+                int responseIndex = i;
 
-            GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
-            responseButton.gameObject.SetActive(true);
-            responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
-            responseButton.GetComponent<Button>().onClick.AddListener(call: () => OnPickedResponse(response, responseIndex));
+                GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
+                responseButton.gameObject.SetActive(true);
+                responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
+                responseButton.GetComponent<Button>().onClick.AddListener(call: () => OnPickedResponse(response, responseIndex));
 
-            tempResponseButtons.Add(responseButton);
+                tempResponseButtons.Add(responseButton);
 
-            responseBoxHeight += responseButtonTemplate.sizeDelta.y;
+                responseBoxHeight += responseButtonTemplate.sizeDelta.y;
+            }
+            else
+            {
+                continue;
+            }
         }
 
-        responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, y:responseBoxHeight);
+        responseBox.sizeDelta = new Vector2(responseBox.sizeDelta.x, y: responseBoxHeight);
         responseBox.gameObject.SetActive(true);
     }
 
@@ -77,5 +86,27 @@ public class ResponseHandler : MonoBehaviour
         }
 
         //dialogueUI.runConversation(response.ConversationObject);
+    }
+
+    public bool checkResponsesOption(Response[] responses)
+    {
+        int disabledResponse = 0;
+        for (int i = 0; i < responses.Length; i++)
+        {
+            if (responses[i].RequireEvent != null && !eventTracking.eventObjects.Contains(responses[i].RequireEvent))
+            {
+                disabledResponse += 1;
+            }
+        }
+        if (disabledResponse >= responses.Length)
+        {
+            Debug.Log("no responses to choose!");
+            return false;
+        }
+        else
+        {
+            Debug.Log("has responses to choose!");
+            return true;
+        }
     }
 }

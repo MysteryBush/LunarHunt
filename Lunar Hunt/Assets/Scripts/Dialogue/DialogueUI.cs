@@ -58,26 +58,22 @@ public class DialogueUI : MonoBehaviour
             Dialogue dialogue = conversationObject.Dialogues[i];
             yield return StartCoroutine(runDialogues(dialogue));
         }
-        if (conversationObject.HasNextConversation == true)
+        if (conversationObject.HasChangeConversation == true)
         {
-            conversationactivator.UpdateConversationObject(conversationObject.NextConversation);
+            conversationactivator.UpdateConversationObject(conversationObject.ChangeConversation);
+        }
+        if (conversationObject.HasEvents == true)
+        {
+            EventTracking.instance.AddEvent(conversationObject.GameEvents);
         }
         if (conversationObject.HasItem == true)
         {
             Inventory.instance.AddList(conversationObject.Items);
         }
-        if (conversationObject.HasResponses == true && conversationObject.HasNextConversation == false)
+        if (conversationObject.HasResponses == true && conversationObject.HasChangeConversation == false && responseHandler.checkResponsesOption(conversationObject.Responses) == true)
         {
             responseHandler.ShowResponses(conversationObject.Responses);
         }
-        //if (conversationObject.HasClue == true)
-        //{
-        //    Inventory.instance.Add(conversationObject.Item);
-        //}
-        //if (conversationObject.HasEvidence == true)
-        //{
-        //    Inventory.instance.Add(conversationObject.Item);
-        //}
         else
         {
             CloseDialogueBox();

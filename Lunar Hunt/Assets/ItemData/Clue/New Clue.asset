@@ -15,5 +15,5 @@ MonoBehaviour:
   name: New Clue
   icon: {fileID: 0}
   clueFact: Neutral
-  isDefaultItem: 0
+  isUniqueItem: 1
   itemAmount: 1
