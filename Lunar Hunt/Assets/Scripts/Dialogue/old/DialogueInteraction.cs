@@ -6,9 +6,9 @@ public class DialogueInteraction : MonoBehaviour
 {
     private DialogueTrigger _dialogueTrigger;
     private npcMovement _npcMovement;
-    private bool firstChat = true;
+    //private bool firstChat = true;
     private bool chatRange = false;
-    private bool chatOpen = false;
+    //private bool chatOpen = false;
     //target player
     private GameObject targetPlayer;
 
@@ -57,7 +57,7 @@ public class DialogueInteraction : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && chatRange == true)
         {
             _dialogueTrigger.TriggerDialouge();
-            chatOpen = true;
+            //chatOpen = true;
             _npcMovement.targetFacing();
             //make player face to NPC
             targetPlayer.GetComponent<PlayerMovement>().targetFacing(transform);

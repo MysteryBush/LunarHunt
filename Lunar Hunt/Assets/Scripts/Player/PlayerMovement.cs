@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 movementZ;
     private Transform playerTransform;
 
-    bool isDead = false;
+    //bool isDead = false;
 
     float xValue;
     float yValue;

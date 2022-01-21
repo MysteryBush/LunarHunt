@@ -16,7 +16,7 @@ public class npcMovement : MonoBehaviour
     public Transform npcTransform;
 
     bool isControl = true;
-    bool isDead = false;
+    //bool isDead = false;
 
     float xValue;
     float yValue;

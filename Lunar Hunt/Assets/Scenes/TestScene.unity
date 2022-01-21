@@ -11758,6 +11758,8 @@ GameObject:
   - component: {fileID: 1388533717}
   - component: {fileID: 1388533716}
   - component: {fileID: 1388533715}
+  - component: {fileID: 1388533721}
+  - component: {fileID: 1388533722}
   m_Layer: 5
   m_Name: CanvasNotifier
   m_TagString: Untagged
@@ -11878,6 +11880,36 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1388533721
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388533714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf0872df4fd7f3e4c844780870f67eda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogueBox: {fileID: 1749059010}
+  textLabel: {fileID: 1160871469}
+  openTime: 2
+  anim: {fileID: 1388533716}
+  player: {fileID: 1631167880}
+--- !u!114 &1388533722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388533714}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ff9ab30e4cda13429a5c3dfbf5d88ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  notifierList: []
 --- !u!1 &1415838234
 GameObject:
   m_ObjectHideFlags: 0
