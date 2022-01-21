@@ -59,9 +59,9 @@ public class NotifierQueue : MonoBehaviour
             Remove(notifier[i]);
         }
     }
-    public Notifier formNotify(string title, string obj, string[] desc)
+    public Notifier formNotify(string title, string obj, string desc)
     {
-        Notifier newNotifier = null;
+        Notifier newNotifier = new Notifier();
         newNotifier.notificationTitle = title;
         newNotifier.notifyObj = obj;
         newNotifier.desc = desc;
@@ -70,16 +70,14 @@ public class NotifierQueue : MonoBehaviour
 
     public void notifyEvent(EventObject eventObject)
     {
-        string[] descList = null;
-        descList[0] = "You witnessed " + eventObject.name;
+        string descList = "You witnessed " + eventObject.name;
 
         Add(formNotify("Event", eventObject.name, descList));
     }
 
     public void notifyItem(Item item)
     {
-        string[] descList = null;
-        descList[0] = "You collected " + item.name;
+        string descList = "You collected " + item.name;
 
         Add(formNotify("Item", item.name, descList));
     }

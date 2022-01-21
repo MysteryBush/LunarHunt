@@ -56,7 +56,7 @@ public class EventTracking : MonoBehaviour
     {
         eventObjects.Remove(eventObject);
         Debug.Log("Removed " + eventObject.name);
-        NotifierQueue.instance.Remove(notifyEvent(eventObject));
+        //NotifierQueue.instance.Remove(notifyEvent(eventObject));
         if (onEventChangedCallback != null)
             onEventChangedCallback.Invoke();
     }
