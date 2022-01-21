@@ -55,7 +55,7 @@ public class NotifierUI : MonoBehaviour
 
         for (int i = 0; i < notifier.NotifyDesc.Length; i++)
         {
-            string notification = notifier.NotifyDesc;
+            string notification = notifier.NotifyDesc[i];
 
             yield return RunTypingEffect(notification);
 
