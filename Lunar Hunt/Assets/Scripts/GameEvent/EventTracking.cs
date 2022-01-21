@@ -37,6 +37,7 @@ public class EventTracking : MonoBehaviour
         {
             eventObjects.Add(eventObject);
             Debug.Log("Added " + eventObject.name);
+            NotifierQueue.instance.notifyEvent(eventObject);
             if (onEventChangedCallback != null)
                 onEventChangedCallback.Invoke();
         }
@@ -44,6 +45,7 @@ public class EventTracking : MonoBehaviour
         {
             eventObjects.Add(eventObject);
             Debug.Log("Added " + eventObject.name);
+            NotifierQueue.instance.notifyEvent(eventObject);
             if (onEventChangedCallback != null)
                 onEventChangedCallback.Invoke();
         }
@@ -54,12 +56,13 @@ public class EventTracking : MonoBehaviour
     {
         eventObjects.Remove(eventObject);
         Debug.Log("Removed " + eventObject.name);
+        NotifierQueue.instance.Remove(notifyEvent(eventObject));
         if (onEventChangedCallback != null)
             onEventChangedCallback.Invoke();
     }
     #endregion
 
-    public void AddEvent(EventObject[] eventObjects)
+    public void AddList(EventObject[] eventObjects)
     {
         for (int i = 0; i < eventObjects.Length; i++)
         {
@@ -68,7 +71,7 @@ public class EventTracking : MonoBehaviour
         }
     }
 
-    public void RemoveEvent(EventObject[] eventObjects)
+    public void RemoveList(EventObject[] eventObjects)
     {
         for (int i = 0; i < eventObjects.Length; i++)
         {

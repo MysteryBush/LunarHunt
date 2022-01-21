@@ -64,7 +64,7 @@ public class DialogueUI : MonoBehaviour
         }
         if (conversationObject.HasEvents == true)
         {
-            EventTracking.instance.AddEvent(conversationObject.GameEvents);
+            EventTracking.instance.AddList(conversationObject.GameEvents);
         }
         if (conversationObject.HasItem == true)
         {

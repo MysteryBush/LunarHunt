@@ -6,4 +6,7 @@ public class EventObject : ScriptableObject
     new public string name = "New Event Object";
     [SerializeField] [TextArea] private string desc;
     public bool isUniqueObj = true;
+
+    public string Name => name;
+    public string Desc => desc;
 }

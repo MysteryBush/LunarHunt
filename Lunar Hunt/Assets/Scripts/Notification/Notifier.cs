@@ -3,9 +3,11 @@ using UnityEngine;
 [System.Serializable]
 public class Notifier
 {
-    [SerializeField] private string notificationTitle;
-    [SerializeField] [TextArea] private string[] desc;
+    [SerializeField] public string notificationTitle;
+    [SerializeField] public string notifyObj;
+    [SerializeField] [TextArea] public string[] desc;
 
     public string NotifyTitle => notificationTitle;
+    public string NotifyObj => notifyObj;
     public string[] NotifyDesc => desc;
 }

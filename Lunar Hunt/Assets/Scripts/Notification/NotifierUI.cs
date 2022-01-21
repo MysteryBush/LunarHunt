@@ -38,7 +38,7 @@ public class NotifierUI : MonoBehaviour
     //start notification on each of them
     private IEnumerator StepThroughNotifications(NotifierQueue notifierQueue)
     {
-        for (int i = 0; i < notifierQueue.NotifierList.Length; i++)
+        for (int i = 0; i < notifierQueue.notifierList.Count; i++)
         {
             Notifier notifer = notifierQueue.notifierList[i];
             yield return StartCoroutine(runNotifer(notifierQueue.notifierList[i]));

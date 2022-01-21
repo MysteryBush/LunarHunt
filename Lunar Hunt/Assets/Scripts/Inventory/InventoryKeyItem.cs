@@ -37,6 +37,7 @@ public class InventoryKeyItem : MonoBehaviour
             evidences.Add(keyItem);
         }
         Debug.Log("Added " + keyItem.name);
+        NotifierQueue.instance.notifyItem(keyItem);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
 
@@ -54,6 +55,7 @@ public class InventoryKeyItem : MonoBehaviour
             evidences.Remove(keyItem);
         }
         Debug.Log("Removed " + keyItem.name);
+        NotifierQueue.instance.notifyItem(keyItem);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }
