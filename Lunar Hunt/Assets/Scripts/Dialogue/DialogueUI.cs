@@ -28,6 +28,7 @@ public class DialogueUI : MonoBehaviour
     //get from other game object
     //public DialogueActivator dialogueactivator;
     public ConversationActivator conversationactivator;
+    public NotifierUI notiferUI;
 
     private void Start()
     {
@@ -104,7 +105,9 @@ public class DialogueUI : MonoBehaviour
             if (i == dialogueObject.DialogueList.Length - 0) break;
 
             yield return null;
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            //Don't go on if There's still a notification box
+            if (notiferUI.IsNotifyOpen == false)
+                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
     }
 

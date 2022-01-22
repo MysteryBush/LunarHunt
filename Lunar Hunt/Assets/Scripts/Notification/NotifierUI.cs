@@ -8,26 +8,26 @@ using System;
 
 public class NotifierUI : MonoBehaviour
 {
-    [SerializeField] private GameObject dialogueBox;
+    [SerializeField] private GameObject notificationBox;
     [SerializeField] private TMP_Text textLabel;
     public float openTime = 2;
     public Animator anim;
     //find player for playerControl script
     public PlayerControl player;
 
-    public bool IsOpen { get; private set; }
+    public bool IsNotifyOpen { get; private set; }
     private TypewriterEffect typewriterEffect;
 
     private void Start()
     {
-        IsOpen = true;
+        IsNotifyOpen = true;
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseNotifierBox();
     }
     #region Conversation and Dialogue
     public void runNotifications(NotifierQueue notifierQueue)
     {
-        dialogueBox.SetActive(true);
+        notificationBox.SetActive(true);
         //Let PlayerControl know controlUI = true
         player.controlUI = true;
         //run conversation
@@ -86,7 +86,7 @@ public class NotifierUI : MonoBehaviour
 
     public void CloseNotifierBox()
     {
-        IsOpen = false;
+        IsNotifyOpen = false;
         player.controlUI = false;
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);

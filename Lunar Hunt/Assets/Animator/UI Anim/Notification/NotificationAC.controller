@@ -7,7 +7,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dialouge_Close
+  m_Name: Notification_Close
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -21,7 +21,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 80380cf9e37e56345b9ad1f70ab9dff8, type: 2}
+  m_Motion: {fileID: 7400000, guid: bb0307ce8033b424c9962da794e83aa4, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -110,7 +110,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: DialougeAC
+  m_Name: NotificationAC
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsOpen
@@ -218,7 +218,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Dialouge_Open
+  m_Name: Notification_Open
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -232,7 +232,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 3aa84597904b9cb4b93bb926991d5680, type: 2}
+  m_Motion: {fileID: 7400000, guid: d313cc7811dcfd242bf535351e3ba3b9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

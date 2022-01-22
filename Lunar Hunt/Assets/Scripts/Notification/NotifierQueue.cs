@@ -19,6 +19,8 @@ public class NotifierQueue : MonoBehaviour
 
     #endregion
 
+    public NotifierUI notifierUi;
+
     public delegate void OnEventChanged();
     public OnEventChanged onEventChangedCallback;
 
@@ -59,28 +61,47 @@ public class NotifierQueue : MonoBehaviour
             Remove(notifier[i]);
         }
     }
+
+    public void NotifyAlert()
+    {
+        notifierUi.runNotifications(this);
+        Remove(notifierList[0]);
+    }
+    //public Notifier formNotify(string title, string obj, string[] desc)
     public Notifier formNotify(string title, string obj, string[] desc)
     {
-        Notifier newNotifier = null;
-        newNotifier.notificationTitle = title;
-        newNotifier.notifyObj = obj;
-        newNotifier.desc = desc;
+        //Notifier newNotifier = GameObject.AddComponent<Notifier>();
+
+        //Notifier newNotifier = new Notifier();
+        //newNotifier.notificationTitle = title;
+        //newNotifier.notifyObj = obj;
+        //newNotifier.desc = desc;
+
+        Notifier newNotifier = new Notifier
+        {
+            notificationTitle = title,
+            notifyObj = obj,
+            desc = desc
+        };
+
         return newNotifier;
     }
 
     public void notifyEvent(EventObject eventObject)
     {
-        string[] descList = null;
-        descList[0] = "You witnessed " + eventObject.name;
+        string[] descList = new string[eventObject.DescList.Length];
+        descList = eventObject.DescList;
 
         Add(formNotify("Event", eventObject.name, descList));
+        NotifyAlert();
     }
 
     public void notifyItem(Item item)
     {
-        string[] descList = null;
+        string[] descList = new string[item.name.Length];
         descList[0] = "You collected " + item.name;
 
         Add(formNotify("Item", item.name, descList));
+        NotifyAlert();
     }
 }

@@ -14,3 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Talked to lumberjack
   desc: Talked to lumberjack about a lost axe.
+  descList:
+  - You agreed to help find lumberjack's axe
+  isUniqueObj: 1
