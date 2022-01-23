@@ -12,6 +12,7 @@ public class ConversationObject : ScriptableObject
     [SerializeField] private Response[] responses;
     [SerializeField] private EventObject[] gameEvents;
     [SerializeField] private Item[] items;
+    [SerializeField] private bool skipNotification;
 
     //public string Speaker => speakerObject.name;
     //public Sprite Portrait => speakerObject.portrait;
@@ -24,5 +25,6 @@ public class ConversationObject : ScriptableObject
     public EventObject[] GameEvents => gameEvents;
     public bool HasItem => items != null;
     public Item[] Items => items;
+    public bool SkipNotification => skipNotification;
 
 }

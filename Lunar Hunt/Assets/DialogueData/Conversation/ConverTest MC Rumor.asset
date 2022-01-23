@@ -20,3 +20,4 @@ MonoBehaviour:
   responses: []
   gameEvents: []
   items: []
+  skipNotification: 1

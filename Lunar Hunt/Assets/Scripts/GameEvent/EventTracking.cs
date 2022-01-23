@@ -36,7 +36,7 @@ public class EventTracking : MonoBehaviour
         if (eventObject.isUniqueObj)
         {
             eventObjects.Add(eventObject);
-            Debug.Log("Added " + eventObject.name);
+            //Debug.Log("Added " + eventObject.name);
             NotifierQueue.instance.notifyEvent(eventObject);
             if (onEventChangedCallback != null)
                 onEventChangedCallback.Invoke();
@@ -44,7 +44,7 @@ public class EventTracking : MonoBehaviour
         else
         {
             eventObjects.Add(eventObject);
-            Debug.Log("Added " + eventObject.name);
+            //Debug.Log("Added " + eventObject.name);
             NotifierQueue.instance.notifyEvent(eventObject);
             if (onEventChangedCallback != null)
                 onEventChangedCallback.Invoke();

@@ -71,14 +71,26 @@ public class DialogueUI : MonoBehaviour
         {
             Inventory.instance.AddList(conversationObject.Items);
         }
-        if (conversationObject.HasResponses == true && conversationObject.HasChangeConversation == false && responseHandler.checkResponsesOption(conversationObject.Responses) == true)
+        if (conversationObject.SkipNotification == true)
         {
-            responseHandler.ShowResponses(conversationObject.Responses);
+            afterDialogue(conversationObject);
         }
-        else
-        {
-            CloseDialogueBox();
-        }
+        //if (conversationObject.HasEvents == false && conversationObject.HasItem == false)
+        //{
+        //    Debug.Log("we're getting there");
+        //    if (conversationObject.HasResponses == true && conversationObject.HasChangeConversation == false && responseHandler.checkResponsesOption(conversationObject.Responses) == true)
+        //    {
+        //        responseHandler.ShowResponses(conversationObject.Responses);
+        //    }
+        //    else
+        //    {
+        //        CloseDialogueBox();
+        //    }
+        ////}
+        //else
+        //{
+        //    afterDialogue(conversationObject);
+        //}
     }
     //run a dialogue
     private IEnumerator runDialogues(Dialogue dialogueObject)
@@ -105,9 +117,7 @@ public class DialogueUI : MonoBehaviour
             if (i == dialogueObject.DialogueList.Length - 0) break;
 
             yield return null;
-            //Don't go on if There's still a notification box
-            if (notiferUI.IsNotifyOpen == false)
-                yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
         }
     }
 
@@ -202,5 +212,22 @@ public class DialogueUI : MonoBehaviour
     public void findPlayer(PlayerControl playercontrol)
     {
         player = playercontrol;
+    }
+
+    public void afterDialogue(ConversationObject conversationObject)
+    {
+        if (conversationObject.HasResponses == true && conversationObject.HasChangeConversation == false && responseHandler.checkResponsesOption(conversationObject.Responses) == true)
+        {
+            responseHandler.ShowResponses(conversationObject.Responses);
+        }
+        else
+        {
+            CloseDialogueBox();
+        }
+    }
+
+    private bool isNotifyOpen()
+    {
+        return notiferUI.IsOpen;
     }
 }

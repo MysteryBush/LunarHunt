@@ -30,7 +30,7 @@ public class NotifierQueue : MonoBehaviour
     public bool Add(Notifier notifier)
     {
         notifierList.Add(notifier);
-        Debug.Log("Added " + notifier.NotifyTitle);
+        //Debug.Log("Added " + notifier.NotifyTitle);
         if (onEventChangedCallback != null)
             onEventChangedCallback.Invoke();
         return true;
@@ -39,7 +39,7 @@ public class NotifierQueue : MonoBehaviour
     public void Remove(Notifier notifier)
     {
         notifierList.Remove(notifier);
-        Debug.Log("Removed " + notifier.NotifyTitle);
+        //Debug.Log("Removed " + notifier.NotifyTitle);
         if (onEventChangedCallback != null)
             onEventChangedCallback.Invoke();
     }
@@ -98,7 +98,7 @@ public class NotifierQueue : MonoBehaviour
 
     public void notifyItem(Item item)
     {
-        string[] descList = new string[item.name.Length];
+        string[] descList = new string[1];
         descList[0] = "You collected " + item.name;
 
         Add(formNotify("Item", item.name, descList));

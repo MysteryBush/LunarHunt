@@ -24,3 +24,4 @@ MonoBehaviour:
     requireEvent: {fileID: 11400000, guid: 7d42f678b7521c047bbad7a0397fd81c, type: 2}
   gameEvents: []
   items: []
+  skipNotification: 1

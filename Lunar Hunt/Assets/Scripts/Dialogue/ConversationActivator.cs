@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ConversationActivator : MonoBehaviour, IInteractable
 {
-    [SerializeField] private ConversationObject conversationObject;
+    [SerializeField] public ConversationObject conversationObject;
     public npcMovement npcMovement;
 
     private void Start()

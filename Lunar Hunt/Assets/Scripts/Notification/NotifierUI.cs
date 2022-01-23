@@ -15,12 +15,12 @@ public class NotifierUI : MonoBehaviour
     //find player for playerControl script
     public PlayerControl player;
 
-    public bool IsNotifyOpen { get; private set; }
+    public bool IsOpen { get; private set; }
     private TypewriterEffect typewriterEffect;
 
     private void Start()
     {
-        IsNotifyOpen = true;
+        IsOpen = true;
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseNotifierBox();
     }
@@ -86,15 +86,27 @@ public class NotifierUI : MonoBehaviour
 
     public void CloseNotifierBox()
     {
-        IsNotifyOpen = false;
-        player.controlUI = false;
+        IsOpen = false;
+        //check if other UI is closed then make player move
+        //if (!checkUIOpen())
+        //{
+        //    player.controlUI = false;
+        //}
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+        continueDialogue();
     }
 
     public void findPlayer(PlayerControl playercontrol)
     {
         player = playercontrol;
+    }
+
+    private void continueDialogue()
+    {
+        if (player.DialogueUI.conversationactivator == null)
+            return;
+        player.DialogueUI.afterDialogue(player.DialogueUI.conversationactivator.conversationObject);
     }
 }
