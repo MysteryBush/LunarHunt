@@ -28,7 +28,7 @@ public class Item : ScriptableObject
     new public string name = "New Item";
     public Sprite icon = null;
     public string itemType = "Consumable";
-    public bool isDefaultItem = false;
+    public bool isUniqueItem = false;
     public int itemAmount = 1;
     //for clue
     public string clueFact = "Neutral";

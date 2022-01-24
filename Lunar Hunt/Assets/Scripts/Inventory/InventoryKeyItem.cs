@@ -28,6 +28,10 @@ public class InventoryKeyItem : MonoBehaviour
 
     public bool Add(Item keyItem)
     {
+        if (keyItem.isUniqueItem == true && checkInList(keyItem))
+        {
+            return false;
+        }
         if (keyItem.itemType == "Clue")
         {
             clues.Add(keyItem);
@@ -58,5 +62,15 @@ public class InventoryKeyItem : MonoBehaviour
         NotifierQueue.instance.notifyItem(keyItem);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
+    }
+
+    private bool checkInList(Item item)
+    {
+        if (clues.Contains(item) || evidences.Contains(item))
+        {
+            return true;
+        }
+        else
+            return false;
     }
 }

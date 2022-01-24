@@ -50,7 +50,7 @@ public class NotifierQueue : MonoBehaviour
         for (int i = 0; i < notifier.Length; i++)
         {
             Add(notifier[i]);
-            Debug.Log("adding item #" + i);
+            Debug.Log("adding queue #" + i);
         }
     }
 
@@ -64,8 +64,9 @@ public class NotifierQueue : MonoBehaviour
 
     public void NotifyAlert()
     {
-        notifierUi.runNotifications(this);
-        Remove(notifierList[0]);
+        if (notifierList.Count > 0)
+            notifierUi.runNotifications(this);
+        //Remove(notifierList[0]);
     }
     //public Notifier formNotify(string title, string obj, string[] desc)
     public Notifier formNotify(string title, string obj, string[] desc)
@@ -93,15 +94,15 @@ public class NotifierQueue : MonoBehaviour
         descList = eventObject.DescList;
 
         Add(formNotify("Event", eventObject.name, descList));
-        NotifyAlert();
+        //NotifyAlert();
     }
 
     public void notifyItem(Item item)
     {
         string[] descList = new string[1];
-        descList[0] = "You collected " + item.name;
+        descList[0] = "Clue collected \"" + item.name + "\"";
 
         Add(formNotify("Item", item.name, descList));
-        NotifyAlert();
+        //NotifyAlert();
     }
 }

@@ -9,11 +9,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b3f2be89b8924c74b8ba9919aa839e3f, type: 3}
+  m_Script: {fileID: 11500000, guid: fc31cbb7db8da344693335cc46bf1e7a, type: 3}
   m_Name: Clue 0-5
   m_EditorClassIdentifier: 
-  name: The merchant found the axe by the river
-  icon: {fileID: 0}
-  clueFact: Fake
+  name: The merchant got here this morning
+  icon: {fileID: -7434387975494846865, guid: 626c8d1185a69714280619cde52b9734, type: 3}
+  itemType: Clue
   isUniqueItem: 1
   itemAmount: 1
+  clueFact: Fake

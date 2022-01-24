@@ -14,6 +14,7 @@ public class NotifierUI : MonoBehaviour
     public Animator anim;
     //find player for playerControl script
     public PlayerControl player;
+    public NotifierQueue notifierQueue;
 
     public bool IsOpen { get; private set; }
     private TypewriterEffect typewriterEffect;
@@ -38,10 +39,17 @@ public class NotifierUI : MonoBehaviour
     //start notification on each of them
     private IEnumerator StepThroughNotifications(NotifierQueue notifierQueue)
     {
-        for (int i = 0; i < notifierQueue.notifierList.Count; i++)
+        //for (int i = 0; i < notifierQueue.notifierList.Count; i++)
+        //{
+        //    Notifier notifer = notifierQueue.notifierList[i];
+        //    //notifierQueue.Remove(notifierQueue.notifierList[0]);
+        //    yield return StartCoroutine(runNotifer(notifer));
+        //}
+        while (notifierQueue.notifierList.Count > 0)
         {
-            Notifier notifer = notifierQueue.notifierList[i];
-            yield return StartCoroutine(runNotifer(notifierQueue.notifierList[i]));
+            Notifier notifer = notifierQueue.notifierList[0];
+            notifierQueue.Remove(notifierQueue.notifierList[0]);
+            yield return StartCoroutine(runNotifer(notifer));
         }
         CloseNotifierBox();
     }
@@ -88,14 +96,14 @@ public class NotifierUI : MonoBehaviour
     {
         IsOpen = false;
         //check if other UI is closed then make player move
-        //if (!checkUIOpen())
-        //{
-        //    player.controlUI = false;
-        //}
+        if (player.DialogueUI.IsOpen == false)
+        {
+            player.controlUI = false;
+        }
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
-        continueDialogue();
+        //continueDialogue();
     }
 
     public void findPlayer(PlayerControl playercontrol)

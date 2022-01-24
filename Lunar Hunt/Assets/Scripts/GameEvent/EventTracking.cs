@@ -32,6 +32,10 @@ public class EventTracking : MonoBehaviour
     #region Manage item
     public bool Add(EventObject eventObject)
     {
+        if (eventObject.isUniqueObj == true && checkInList(eventObject))
+        {
+            return false;
+        }
         //If event is unique, there can be only one added
         if (eventObject.isUniqueObj)
         {
@@ -77,6 +81,16 @@ public class EventTracking : MonoBehaviour
         {
             Remove(eventObjects[i]);
         }
+    }
+
+    private bool checkInList(EventObject eventObject)
+    {
+        if (eventObjects.Contains(eventObject))
+        {
+            return true;
+        }
+        else
+            return false;
     }
 }
 

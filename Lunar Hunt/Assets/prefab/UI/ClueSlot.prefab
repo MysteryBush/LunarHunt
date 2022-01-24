@@ -65,7 +65,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Clue Name
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 040e3f31f993b91478bd3456337a6767, type: 2}
   m_sharedMaterial: {fileID: -8058374301425813491, guid: 040e3f31f993b91478bd3456337a6767,
@@ -262,6 +262,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   icon: {fileID: 4895859407782169601}
   removeButton: {fileID: 0}
+  text: {fileID: 1403607581}
 --- !u!1 &4895859408702682643
 GameObject:
   m_ObjectHideFlags: 0

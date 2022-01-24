@@ -87,10 +87,10 @@ public class DialogueUI : MonoBehaviour
         //        CloseDialogueBox();
         //    }
         ////}
-        //else
-        //{
-        //    afterDialogue(conversationObject);
-        //}
+        else
+        {
+            afterDialogue(conversationObject);
+        }
     }
     //run a dialogue
     private IEnumerator runDialogues(Dialogue dialogueObject)
@@ -223,6 +223,7 @@ public class DialogueUI : MonoBehaviour
         else
         {
             CloseDialogueBox();
+            notiferUI.notifierQueue.NotifyAlert();
         }
     }
 

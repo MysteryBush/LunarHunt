@@ -24,19 +24,19 @@ public class PlayerControl : MonoBehaviour
     void controlInput()
     {
         if (dialogueUI.IsOpen) return;
-        if (isControl == true && controlUI == false)
+        if (isControl == true)
         {
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.E) && controlUI == false)
             {
                 if (dialogueUI.chatRange == true)
                     //trigger interaction
                     Interactable?.Interact(player: this);
             }
-            if (Input.GetKeyDown(KeyCode.Tab))
+            if (Input.GetKeyDown(KeyCode.Tab) && DialogueUI.IsOpen == false)
             {
                 //trigger Inventory
                 IngameMenu.instance.toggleIngameMenu();
-                Debug.Log("toggling In-game Menu");
+                //Debug.Log("toggling In-game Menu");
                 //doingAction = true;
                 //doingAction = IngameMenu.instance.ingameMenu.activeSelf;
                 controlUI = IngameMenu.instance.isOpen;

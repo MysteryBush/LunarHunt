@@ -58,7 +58,7 @@ public class Inventory : MonoBehaviour
         {
             keyItem.Add(item);
         }    
-        if (!item.isDefaultItem && item.itemType == "Consumable")
+        if (!item.isUniqueItem && item.itemType == "Consumable")
         {
             if (items.Count >= space)
             {
@@ -88,7 +88,7 @@ public class Inventory : MonoBehaviour
         for (int i = 0; i < item.Length; i++)
         {
             Add(item[i]);
-            Debug.Log("adding item #" + i);
+            //Debug.Log("adding item #" + i);
         }
     }
 

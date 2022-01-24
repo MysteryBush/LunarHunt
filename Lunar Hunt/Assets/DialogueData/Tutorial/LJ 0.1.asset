@@ -17,8 +17,8 @@ MonoBehaviour:
     dialogue:
     - Hey, can you help me out?
     - I got unconscious and when I woke up again. My axe is gone!
-    - I need the axe so I can clear this fallen tree that blocks the way to our town.
-  changeConversation: {fileID: 0}
+    - I need the axe so I can clear this tree that blocks the way to our town.
+  changeConversation: {fileID: 11400000, guid: b9174bb2047398647a2cf4c3cbbad794, type: 2}
   responses: []
   gameEvents:
   - {fileID: 11400000, guid: 7d42f678b7521c047bbad7a0397fd81c, type: 2}
