@@ -8,6 +8,20 @@ using System;
 
 public class NotifierUI : MonoBehaviour
 {
+    #region Singleton
+    public static NotifierUI instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            Debug.LogWarning("More than one instance of EventTracking found!");
+            return;
+        }
+        instance = this;
+    }
+
+    #endregion
     [SerializeField] private GameObject notificationBox;
     [SerializeField] private TMP_Text textLabel;
     public float openTime = 2;

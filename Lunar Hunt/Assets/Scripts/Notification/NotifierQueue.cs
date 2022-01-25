@@ -100,7 +100,7 @@ public class NotifierQueue : MonoBehaviour
     public void notifyItem(Item item)
     {
         string[] descList = new string[1];
-        descList[0] = "Clue collected \"" + item.name + "\"";
+        descList[0] = item.itemType + " collected \"" + item.name + "\"";
 
         Add(formNotify("Item", item.name, descList));
         //NotifyAlert();
