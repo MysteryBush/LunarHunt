@@ -90,6 +90,10 @@ public class NotifierQueue : MonoBehaviour
 
     public void notifyEvent(EventObject eventObject)
     {
+        if (eventObject.DescList.Length == 0)
+        {
+            return;
+        }    
         string[] descList = new string[eventObject.DescList.Length];
         descList = eventObject.DescList;
 

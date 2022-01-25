@@ -138,6 +138,7 @@ public class FormEvidence : MonoBehaviour
         if (!inventoryKeyItem.evidences.Contains(evidence))
         {
             inventoryKeyItem.Add(evidence);
+            evidence.Use();
             NotifierQueue.instance.NotifyAlert();
         }
     }

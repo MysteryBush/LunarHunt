@@ -34,6 +34,8 @@ public class Item : ScriptableObject
     public string clueFact = "Neutral";
     //for evidence
     [SerializeField] public Item[] clueList;
+    //for event
+    public EventObject eventObject;
     public virtual void Use()
     {
         // Use the item
@@ -41,9 +43,19 @@ public class Item : ScriptableObject
 
         Debug.Log("Using " + name);
 
-        if (itemType == "Clue")
+        //if (itemType == "Clue")
+        //{
+        //    FormEvidence.instance.toggleSelect(this);
+        //}
+
+        switch (itemType)
         {
-            FormEvidence.instance.toggleSelect(this);
+            case "Clue":
+                FormEvidence.instance.toggleSelect(this);
+                break;
+            case "Evidence":
+                EventTracking.instance.eventObjects.Add(eventObject);
+                break;
         }
     }
 }

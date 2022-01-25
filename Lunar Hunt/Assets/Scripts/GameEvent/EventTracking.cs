@@ -32,19 +32,28 @@ public class EventTracking : MonoBehaviour
     #region Manage item
     public bool Add(EventObject eventObject)
     {
+        //If event is unique, there can be only one added
         if (eventObject.isUniqueObj == true && checkInList(eventObject))
         {
             return false;
         }
-        //If event is unique, there can be only one added
-        if (eventObject.isUniqueObj)
+        //if (eventObject.isUniqueObj)
+        //{
+        //    eventObjects.Add(eventObject);
+        //    //Debug.Log("Added " + eventObject.name);
+        //    NotifierQueue.instance.notifyEvent(eventObject);
+        //    if (onEventChangedCallback != null)
+        //        onEventChangedCallback.Invoke();
+        //}
+        //if there is triggerCutscene
+        if (eventObject.triggerCutscene)
         {
             eventObjects.Add(eventObject);
-            //Debug.Log("Added " + eventObject.name);
-            NotifierQueue.instance.notifyEvent(eventObject);
+            eventObject.Trigger();
+            //NotifierQueue.instance.notifyEvent(eventObject);
             if (onEventChangedCallback != null)
                 onEventChangedCallback.Invoke();
-        }
+        }    
         else
         {
             eventObjects.Add(eventObject);

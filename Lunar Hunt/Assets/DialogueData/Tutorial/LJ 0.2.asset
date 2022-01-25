@@ -18,7 +18,7 @@ MonoBehaviour:
     - Hey kid, have you found my axe?
   changeConversation: {fileID: 0}
   responses:
-  - responseText: When were when you fainted?
+  - responseText: When were you when you fainted?
     conversationObject: {fileID: 11400000, guid: 39dddb171435d14428c759193959e9ea,
       type: 2}
     requireEvent: {fileID: 0}
@@ -26,6 +26,10 @@ MonoBehaviour:
     conversationObject: {fileID: 11400000, guid: 501435b07ad847240917cc18afd9a518,
       type: 2}
     requireEvent: {fileID: 11400000, guid: 118be65df8df6e445a26ca64d926d6b6, type: 2}
+  - responseText: I found the axe
+    conversationObject: {fileID: 11400000, guid: d6f2aabc0971d0047bc6bef68dcd8e2e,
+      type: 2}
+    requireEvent: {fileID: 11400000, guid: 1e65a76f05c818d4aac6a60b368ae0ef, type: 2}
   gameEvents: []
   items: []
-  skipNotification: 1
+  skipNotification: 0
