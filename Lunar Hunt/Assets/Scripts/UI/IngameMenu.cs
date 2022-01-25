@@ -34,6 +34,11 @@ public class IngameMenu : MonoBehaviour
     //state to be called on other script
     public bool isOpen;
 
+    private void Start()
+    {
+        ingameMenu.SetActive(false);
+    }
+
     public void SetAllTabs()
     {
         foreach (GameObject section in sections)

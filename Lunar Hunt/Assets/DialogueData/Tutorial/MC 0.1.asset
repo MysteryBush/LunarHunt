@@ -22,11 +22,11 @@ MonoBehaviour:
   - responseText: Have you seen an axe?
     conversationObject: {fileID: 11400000, guid: 0e308a4e3647c3349bbe1acfe7ba1799,
       type: 2}
-    requireEvent: {fileID: 0}
+    requireEvent: {fileID: 11400000, guid: 7d42f678b7521c047bbad7a0397fd81c, type: 2}
   - responseText: Were you there when the lumberjack fainted?
     conversationObject: {fileID: 11400000, guid: 9e9400a2d2bc2ae4b89678a4e9b831e4,
       type: 2}
-    requireEvent: {fileID: 0}
+    requireEvent: {fileID: 11400000, guid: 7d42f678b7521c047bbad7a0397fd81c, type: 2}
   gameEvents: []
   items: []
   skipNotification: 1
