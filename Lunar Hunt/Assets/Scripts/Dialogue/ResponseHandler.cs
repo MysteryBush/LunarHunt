@@ -16,10 +16,13 @@ public class ResponseHandler : MonoBehaviour
 
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
+    private float responseSpacing;
 
     private void Start()
     {
         dialogueUI = GetComponent<DialogueUI>();
+
+        responseSpacing = responseContainer.GetComponent<VerticalLayoutGroup>().spacing;
     }
 
     public void AddResponseEvents(ResponseEvent[] responseEvents)
@@ -37,15 +40,18 @@ public class ResponseHandler : MonoBehaviour
             {
                 Response response = responses[i];
                 int responseIndex = i;
+                float addSpacing = 0;
+                if (i > 0)
+                    addSpacing = responseSpacing;
 
                 GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
                 responseButton.gameObject.SetActive(true);
-                responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
+                //responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
+                responseButton.GetComponentInChildren<TMP_Text>().text = response.ResponseText;
                 responseButton.GetComponent<Button>().onClick.AddListener(call: () => OnPickedResponse(response, responseIndex));
 
                 tempResponseButtons.Add(responseButton);
-
-                responseBoxHeight += responseButtonTemplate.sizeDelta.y;
+                responseBoxHeight += responseButtonTemplate.sizeDelta.y + addSpacing;
             }
             else
             {
