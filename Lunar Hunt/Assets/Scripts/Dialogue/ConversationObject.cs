@@ -10,6 +10,7 @@ public class ConversationObject : ScriptableObject
     [SerializeField] private Dialogue[] dialogue;
     [SerializeField] private ConversationObject changeConversation;
     [SerializeField] private Response[] responses;
+    //[SerializeField] private Response responseCancel;
     [SerializeField] private EventObject[] gameEvents;
     [SerializeField] private Item[] items;
     [SerializeField] private bool skipNotification;
@@ -21,10 +22,11 @@ public class ConversationObject : ScriptableObject
     public ConversationObject ChangeConversation => changeConversation;
     public bool HasResponses => Responses != null && Responses.Length > 0;
     public Response[] Responses => responses;
+    //public bool HasResponseCancel => Responses != null && Responses.Length > 0;
+    //public Response ResponseCancel => responseCancel;
     public bool HasEvents => gameEvents != null && gameEvents.Length > 0;
     public EventObject[] GameEvents => gameEvents;
     public bool HasItem => items != null;
     public Item[] Items => items;
     public bool SkipNotification => skipNotification;
-
 }
