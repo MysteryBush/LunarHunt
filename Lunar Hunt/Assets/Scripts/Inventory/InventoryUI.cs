@@ -23,26 +23,19 @@ public class InventoryUI : MonoBehaviour
 
     public Transform itemsParent;
     public GameObject inventoryUI;
-    //for Key Items slots
-    public Transform keyItemsParent;
 
     Inventory inventory;
-    InventoryKeyItem inventoryKeyItem;
 
     InventorySlot[] slots;
-    InventorySlot[] keyItemSlots;
 
     // Use this for initialization
     void Start()
     {
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
-        inventoryKeyItem = InventoryKeyItem.instance;
-        inventoryKeyItem.onItemChangedCallback += UpdateKeyUI;
 
         //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
-        keyItemSlots = keyItemsParent.GetComponentsInChildren<InventorySlot>(true);
     }
 
     // Update is called once per frame
@@ -68,26 +61,6 @@ public class InventoryUI : MonoBehaviour
             }
         }
         Debug.Log("UPDATING UI");
-    }
-
-    void UpdateKeyUI()
-    {
-        for (int i = 0; i < keyItemSlots.Length; i++)
-        {
-            if (i < inventoryKeyItem.evidences.Count)
-            {
-                keyItemSlots[i].AddItem(inventoryKeyItem.evidences[i]);
-            }
-            if (i < inventoryKeyItem.clues.Count)
-            {
-                keyItemSlots[i].AddItem(inventoryKeyItem.clues[i]);
-            }
-            else
-            {
-                keyItemSlots[i].ClearSlot();
-            }
-        }
-        Debug.Log("UPDATING KEY UI");
     }
 
     //public void toggleInventory()

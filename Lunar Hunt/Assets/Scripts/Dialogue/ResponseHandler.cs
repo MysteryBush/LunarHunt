@@ -17,7 +17,6 @@ public class ResponseHandler : MonoBehaviour
 
     private List<GameObject> tempResponseButtons = new List<GameObject>();
     private float responseSpacing;
-    private List<Response> responseList = new List<Response>();
 
     private void Start()
     {
@@ -33,63 +32,18 @@ public class ResponseHandler : MonoBehaviour
 
     public void ShowResponses(Response[] responses)
     {
-        addResponseList(responses);
         float responseBoxHeight = 0;
 
-        //Array version
-        //for (int i = 0; i <= responses.Length; i++)
-        //{
-        //    if (responses[i].RequireEvent == null || eventTracking.eventObjects.Contains(responses[i].RequireEvent))
-        //    {
-        //        Response response = responses[i];
-        //        int responseIndex = i;
-        //        float addSpacing = 0;
-        //        if (i > 0)
-        //            addSpacing = responseSpacing;
-        //        GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
-        //        responseButton.gameObject.SetActive(true);
-        //        //responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
-        //        responseButton.GetComponentInChildren<TMP_Text>().text = response.ResponseText;
-        //        responseButton.GetComponent<Button>().onClick.AddListener(call: () => OnPickedResponse(response, responseIndex));
-
-        //        tempResponseButtons.Add(responseButton);
-        //        responseBoxHeight += responseButtonTemplate.sizeDelta.y + addSpacing;
-        //    }
-        //    //if (i == responses.Length)
-        //    //{
-        //    //    //add Cancel choice
-        //    //    GameObject CancelButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
-        //    //    CancelButton.gameObject.SetActive(true);
-        //    //    CancelButton.GetComponentInChildren<TMP_Text>().text = "Cancel";
-        //    //    CancelButton.GetComponent<Button>().onClick.AddListener(call: () => CancelResponse());
-
-        //    //    tempResponseButtons.Add(CancelButton);
-        //    //    responseBoxHeight += responseButtonTemplate.sizeDelta.y + responseSpacing;
-        //    //}
-        //    else
-        //    {
-        //        continue;
-        //    }
-        //}
-        ////add Cancel choice
-        //GameObject CancelButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
-        //CancelButton.gameObject.SetActive(true);
-        //CancelButton.GetComponentInChildren<TMP_Text>().text = "Cancel";
-        //CancelButton.GetComponent<Button>().onClick.AddListener(call: () => CancelResponse());
-
-        //tempResponseButtons.Add(CancelButton);
-        //responseBoxHeight += responseButtonTemplate.sizeDelta.y + responseSpacing;
-
-        //List version
-        for (int i = 0; i < responseList.Count; i++)
+        for (int i = 0; i < responses.Length; i++)
         {
-            if (responseList[i].RequireEvent == null || eventTracking.eventObjects.Contains(responseList[i].RequireEvent))
+            if (responses[i].RequireEvent == null || eventTracking.eventObjects.Contains(responses[i].RequireEvent))
             {
-                Response response = responseList[i];
+                Response response = responses[i];
                 int responseIndex = i;
                 float addSpacing = 0;
                 if (i > 0)
                     addSpacing = responseSpacing;
+
                 GameObject responseButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
                 responseButton.gameObject.SetActive(true);
                 //responseButton.GetComponent<TMP_Text>().text = response.ResponseText;
@@ -98,17 +52,6 @@ public class ResponseHandler : MonoBehaviour
 
                 tempResponseButtons.Add(responseButton);
                 responseBoxHeight += responseButtonTemplate.sizeDelta.y + addSpacing;
-            }
-            if (i == responseList.Count)
-            {
-                //add Cancel choice
-                GameObject CancelButton = Instantiate(responseButtonTemplate.gameObject, responseContainer);
-                CancelButton.gameObject.SetActive(true);
-                CancelButton.GetComponentInChildren<TMP_Text>().text = "Cancel";
-                CancelButton.GetComponent<Button>().onClick.AddListener(call: () => CancelResponse());
-
-                tempResponseButtons.Add(CancelButton);
-                responseBoxHeight += responseButtonTemplate.sizeDelta.y + responseSpacing;
             }
             else
             {
@@ -170,28 +113,6 @@ public class ResponseHandler : MonoBehaviour
         {
             Debug.Log("has responses to choose!");
             return true;
-        }
-    }
-
-    private void CancelResponse()
-    {
-        responseBox.gameObject.SetActive(false);
-
-        //destroy choices button
-        foreach (GameObject button in tempResponseButtons)
-        {
-            Destroy(button);
-        }
-        tempResponseButtons.Clear();
-        responseEvents = null;
-        dialogueUI.CloseDialogueBox();
-    }
-
-    private void addResponseList(Response[] responseArray)
-    {
-        for (int i = 0; i < responseArray.Length; i++)
-        {
-            responseList.Add(responseArray[i]);
         }
     }
 }
