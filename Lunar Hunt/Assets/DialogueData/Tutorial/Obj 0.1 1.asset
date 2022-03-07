@@ -18,10 +18,7 @@ MonoBehaviour:
     - (Wait, this axe has some letters carved on it)
     - (Alex... so this is the axe to look for)
   changeConversation: {fileID: 0}
-  responses:
-  - responseText: Look at the axe
-    conversationObject: {fileID: 0}
-    requireEvent: {fileID: 11400000, guid: 7d42f678b7521c047bbad7a0397fd81c, type: 2}
+  responses: []
   gameEvents: []
   items:
   - {fileID: 11400000, guid: bea066d64cd8a04448a13b530fe4612f, type: 2}

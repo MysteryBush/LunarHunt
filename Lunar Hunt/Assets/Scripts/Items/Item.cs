@@ -32,11 +32,30 @@ public class Item : ScriptableObject
     public int itemAmount = 1;
     //for clue
     public string clueFact = "Neutral";
+    //for evidence
+    [SerializeField] public Item[] clueList;
+    //for event
+    public EventObject eventObject;
     public virtual void Use()
     {
         // Use the item
         // Something might happen
 
         Debug.Log("Using " + name);
+
+        //if (itemType == "Clue")
+        //{
+        //    FormEvidence.instance.toggleSelect(this);
+        //}
+
+        switch (itemType)
+        {
+            case "Clue":
+                FormEvidence.instance.toggleSelect(this);
+                break;
+            case "Evidence":
+                EventTracking.instance.eventObjects.Add(eventObject);
+                break;
+        }
     }
 }
