@@ -1,0 +1,112 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &5121967145436721548
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 466796098467021407, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 466796098467021407, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149409, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 7.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149409, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149409, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: -1.97
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149409, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 7.58
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149409, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149410, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 56ee064d8a983444bb08c936d5f3cc11,
+        type: 3}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -155
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 85
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.064987
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149411, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6047989094383149423, guid: 8f67ad4d494f6e743a98172bc4e30410,
+        type: 3}
+      propertyPath: m_Name
+      value: Meeting_Hall
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8f67ad4d494f6e743a98172bc4e30410, type: 3}

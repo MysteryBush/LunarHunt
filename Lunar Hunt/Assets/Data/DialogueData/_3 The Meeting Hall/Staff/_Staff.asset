@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: _Staff
+  m_EditorClassIdentifier: 
+  dialogue: []
+  forceNextConversation: {fileID: 0}
+  changeConversation: {fileID: 0}
+  responses:
+  - responseText: Do you know about missing people?
+    conversationObject: {fileID: 11400000, guid: a2ff92873d1d24842a9af708bdbe1189,
+      type: 2}
+    requireEvent: {fileID: 0}
+    requireItem: {fileID: 0}
+  - responseText: I read the news but...
+    conversationObject: {fileID: 11400000, guid: 29e141eca40b25c49842afc4bb10f7cc,
+      type: 2}
+    requireEvent: {fileID: 0}
+    requireItem: {fileID: 11400000, guid: 60c0d828dc1ba3d448faad7db2906a23, type: 2}
+  - responseText: Do you know about the plague refugee?
+    conversationObject: {fileID: 11400000, guid: b8ff794d80cf6614aa80f8a8714f2a12,
+      type: 2}
+    requireEvent: {fileID: 0}
+    requireItem: {fileID: 11400000, guid: 54b96ee1bf6c76948a6d3143b2536cbe, type: 2}
+  - responseText: (Actually, I don't think I need help this time)
+    conversationObject: {fileID: 0}
+    requireEvent: {fileID: 0}
+    requireItem: {fileID: 0}
+  gameEvents: []
+  items: []
+  skipNotification: 0

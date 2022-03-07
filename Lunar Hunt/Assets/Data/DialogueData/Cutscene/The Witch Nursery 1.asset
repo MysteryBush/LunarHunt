@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: The Witch Nursery 1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - (I should keep going now)
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Oh! Hi again! Did you find something helpful?
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Oh, hi. I did find something useful. Thank you.
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - I'm just glad to help.
+    - Oh, I don't think we know each other's names yet. I'm Athena. What's your name?
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Sebastian.
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - That's a nice name!
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Thanks
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Alright! Sebastian, If you need any other help from me you can find me at the
+      Witch's nursery.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - (Witch?)
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Don't worry. She's a good witch! She raised me when I was gravely ill.
+    - And she also runs this town too! Everyone trusts her and we all do our best
+      to help her!
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - I see, I'll be sure to visit the nursery later-
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Oh wait, I didn't show you the place yet. It's over here!
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Wait, it's fine I don't need to see it now- hey!
+  changeConversation: {fileID: 0}
+  responses: []
+  gameEvents: []
+  items: []
+  skipNotification: 0

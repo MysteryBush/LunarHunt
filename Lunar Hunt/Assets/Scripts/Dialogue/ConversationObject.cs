@@ -8,6 +8,7 @@ public class ConversationObject : ScriptableObject
 {
     //[SerializeField] private SpeakerObject speakerObject;
     [SerializeField] private Dialogue[] dialogue;
+    [SerializeField] private ConversationObject forceNextConversation;
     [SerializeField] private ConversationObject changeConversation;
     [SerializeField] private Response[] responses;
     [SerializeField] private EventObject[] gameEvents;
@@ -17,6 +18,8 @@ public class ConversationObject : ScriptableObject
     //public string Speaker => speakerObject.name;
     //public Sprite Portrait => speakerObject.portrait;
     public Dialogue[] Dialogues => dialogue;
+    public bool HasForceNextConversation => forceNextConversation != null;
+    public ConversationObject ForceNextConversation => forceNextConversation;
     public bool HasChangeConversation => changeConversation != null;
     public ConversationObject ChangeConversation => changeConversation;
     public bool HasResponses => Responses != null && Responses.Length > 0;

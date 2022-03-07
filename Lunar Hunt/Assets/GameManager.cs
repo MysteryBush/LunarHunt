@@ -5,7 +5,22 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ins;
+    private GameObject[] gameManagers;
     //Start is called before the first frame update
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnLevelWasLoaded(int level)
+    {
+        gameManagers = GameObject.FindGameObjectsWithTag("GameManager");
+
+        if(gameManagers.Length > 1)
+        {
+            Destroy(gameManagers[1]);
+        }
+    }
     void Awake()
     {
         ins = this;

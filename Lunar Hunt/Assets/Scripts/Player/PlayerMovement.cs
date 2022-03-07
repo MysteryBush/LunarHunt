@@ -23,8 +23,13 @@ public class PlayerMovement : MonoBehaviour
     //is it facing a target?
     public bool isFacingTarget = false;
 
+    //Spawn point when loaded a scene
+    public GameObject spawnPoint;
+
     void Awake()
     {
+        //This line of code will be used later if I think I need it
+        //DontDestroyOnLoad(gameObject);
         // Set up references.
         playerRigidbody = GetComponent<Rigidbody2D>();
         playerTransform = GetComponent<Transform>();
@@ -34,6 +39,15 @@ public class PlayerMovement : MonoBehaviour
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
     }
 
+    private void OnLevelWasLoaded(int level)
+    {
+        FindStartPos();
+    }
+
+    void FindStartPos()
+    {
+        transform.position = GameObject.FindWithTag("StartPos").transform.position;
+    }
     void FixedUpdate()
     {
         if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().doingAction == false && GetComponent<PlayerControl>().controlUI == false)

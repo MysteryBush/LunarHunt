@@ -220,6 +220,12 @@ public class DialogueUI : MonoBehaviour
         {
             responseHandler.ShowResponses(conversationObject.Responses);
         }
+        if (conversationObject.HasForceNextConversation == true)
+        {
+            CloseDialogueBox();
+            notiferUI.notifierQueue.NotifyAlert();
+            runConversation(conversationObject.ForceNextConversation);
+        }
         else
         {
             CloseDialogueBox();

@@ -9,6 +9,7 @@ public class ResponseHandler : MonoBehaviour
     private DialogueUI dialogueUI;
     private ResponseEvent[] responseEvents;
     [SerializeField] private EventTracking eventTracking;
+    [SerializeField] private InventoryKeyItem itemTracking;
 
     [SerializeField] private RectTransform responseBox;
     [SerializeField] private RectTransform responseButtonTemplate;
@@ -36,7 +37,9 @@ public class ResponseHandler : MonoBehaviour
 
         for (int i = 0; i < responses.Length; i++)
         {
-            if (responses[i].RequireEvent == null || eventTracking.eventObjects.Contains(responses[i].RequireEvent))
+            if ( (responses[i].RequireEvent == null || eventTracking.eventObjects.Contains(responses[i].RequireEvent)) &&
+                 (responses[i].RequireEvent == null || itemTracking.clues.Contains(responses[i].RequireItem))
+                )
             {
                 Response response = responses[i];
                 int responseIndex = i;

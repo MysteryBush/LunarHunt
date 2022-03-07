@@ -1,0 +1,46 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: __Caravan Initial
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - What's going on here? I don't think you guys were staying here before.
+  - speakerObject: {fileID: 11400000, guid: 54a10ab9674db3e4a8223a7bd7772a55, type: 2}
+    dialogue:
+    - Oh hello young man, we just arrived here.
+    - We abandoned our hometown because of prophency about the plague.
+    - So we have to flee to a safe place here.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Plague? I didn't hear anything about it.
+    - Are you going anywhere else?
+  - speakerObject: {fileID: 11400000, guid: 54a10ab9674db3e4a8223a7bd7772a55, type: 2}
+    dialogue:
+    - Well, we don't have anywhere else to go.
+    - Miss Cassandra allowed us to stay just outside the town.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - About the prophency... Where did you get it from?
+  - speakerObject: {fileID: 11400000, guid: 54a10ab9674db3e4a8223a7bd7772a55, type: 2}
+    dialogue:
+    - Miss Cassandra gave us a prophency that there would be plague in our town.
+    - Miss Cassandra is such a great leader. She's so kind to warn us and let us
+      stay safe in her town.
+  forceNextConversation: {fileID: 0}
+  changeConversation: {fileID: 11400000, guid: 17cc773c1f3f6ee40a192bb1cd3fe803, type: 2}
+  responses: []
+  gameEvents: []
+  items:
+  - {fileID: 11400000, guid: 54b96ee1bf6c76948a6d3143b2536cbe, type: 2}
+  skipNotification: 0

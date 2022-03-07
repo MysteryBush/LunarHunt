@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: Exposed Cassandra 1
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speakerObject: {fileID: 11400000, guid: 0e84086138f293f4ca33dd7ba73e690e, type: 2}
+    dialogue:
+    - Cassandra! Why did you do this?!
+  - speakerObject: {fileID: 11400000, guid: 79a8df7de29ed8d4d88169c025013bfc, type: 2}
+    dialogue:
+    - You sold me a glass of water all this time?
+  - speakerObject: {fileID: 11400000, guid: 54a10ab9674db3e4a8223a7bd7772a55, type: 2}
+    dialogue:
+    - We have to abandoned our town just to let the thiefs takes everything!
+  - speakerObject: {fileID: 11400000, guid: 0e84086138f293f4ca33dd7ba73e690e, type: 2}
+    dialogue:
+    - We don't need this fake leader in our town!
+  forceNextConversation: {fileID: 0}
+  changeConversation: {fileID: 0}
+  responses: []
+  gameEvents: []
+  items: []
+  skipNotification: 0

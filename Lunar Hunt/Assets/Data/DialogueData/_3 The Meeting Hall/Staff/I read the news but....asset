@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: I read the news but...
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - I read the news but they didn't talk about "missing people" just "moving out
+      people".
+  - speakerObject: {fileID: 11400000, guid: e5ccab9807c548c4a9ff8589347a5536, type: 2}
+    dialogue:
+    - Really? Well, maybe they really do move out.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - But do you have visitors other than me resting here?
+  - speakerObject: {fileID: 11400000, guid: e5ccab9807c548c4a9ff8589347a5536, type: 2}
+    dialogue:
+    - Right now you're the only one but we used to have several other visitors before
+      today.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - I see
+  - speakerObject: {fileID: 11400000, guid: e5ccab9807c548c4a9ff8589347a5536, type: 2}
+    dialogue:
+    - And like the news said, they didn't make a checkout so they won't get tracked!
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - ... sorry?
+    - Nevermind, thanks for your help.
+  - speakerObject: {fileID: 11400000, guid: e5ccab9807c548c4a9ff8589347a5536, type: 2}
+    dialogue:
+    - I'm just glad to be of service.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - But If I may ask, where did you get these newspaper?
+  - speakerObject: {fileID: 11400000, guid: e5ccab9807c548c4a9ff8589347a5536, type: 2}
+    dialogue:
+    - Oh, we bought these newspaper from the merchant who comes here every morning.
+    - All I know is he's a human with tan colored skin and wear red clothes with
+      turban.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - I see, thanks again.
+  forceNextConversation: {fileID: 11400000, guid: f44c1d8a440283b4f84ac59875d0f1db,
+    type: 2}
+  changeConversation: {fileID: 0}
+  responses: []
+  gameEvents: []
+  items:
+  - {fileID: 11400000, guid: 60c0d828dc1ba3d448faad7db2906a23, type: 2}
+  - {fileID: 11400000, guid: 9921dfc35ff174341b3ea64365f5afeb, type: 2}
+  skipNotification: 0

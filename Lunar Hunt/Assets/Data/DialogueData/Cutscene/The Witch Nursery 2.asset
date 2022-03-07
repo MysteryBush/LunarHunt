@@ -1,0 +1,55 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9fc4667c8415819489f938b101548f40, type: 3}
+  m_Name: The Witch Nursery 2
+  m_EditorClassIdentifier: 
+  dialogue:
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Here it is! The Witch's Nursery!
+    - We also call it the Nursery for short.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - There are children here, they seem to be enjoying themselves.
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Yeah, I helped her take care of them too.
+    - Just like you, their parents were also missing so we took them in.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - "I see\u2026 Is it possible that I can ask them about it?"
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - "Hmm\u2026 It's not an easy thing to ask. But I'll  ask them for you when they're
+      ready."
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - "\u2026 Thanks, sorry if it's too much."
+    - I just wanted to find him
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - It's fine! I'm sure they'll understand.
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Anyway, thanks for showing me around, now I should get going and find my father.
+  - speakerObject: {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
+    dialogue:
+    - Oh! Right! Sorry if I bothered you too much.
+    - Now I should help Ms. Cassandra too. And I hope you can find your father soon!
+  - speakerObject: {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
+    dialogue:
+    - Thank you.
+  changeConversation: {fileID: 0}
+  responses: []
+  gameEvents: []
+  items: []
+  skipNotification: 0
