@@ -32,16 +32,20 @@ public class Item : ScriptableObject
     public int itemAmount = 1;
     //for clue
     public string clueFact = "Neutral";
+<<<<<<< HEAD
     //for evidence
     [SerializeField] public Item[] clueList;
     //for event
     public EventObject eventObject;
+=======
+>>>>>>> parent of 1eb7e33 (Evidence Forming)
     public virtual void Use()
     {
         // Use the item
         // Something might happen
 
         Debug.Log("Using " + name);
+<<<<<<< HEAD
 
         //if (itemType == "Clue")
         //{
@@ -57,5 +61,7 @@ public class Item : ScriptableObject
                 EventTracking.instance.eventObjects.Add(eventObject);
                 break;
         }
+=======
+>>>>>>> parent of 1eb7e33 (Evidence Forming)
     }
 }
