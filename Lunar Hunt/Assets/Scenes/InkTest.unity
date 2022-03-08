@@ -881,6 +881,7 @@ GameObject:
   - component: {fileID: 991205724}
   - component: {fileID: 991205723}
   - component: {fileID: 991205722}
+  - component: {fileID: 991205731}
   m_Layer: 5
   m_Name: CanvasDialogue
   m_TagString: Untagged
@@ -1054,6 +1055,31 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &991205731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 991205721}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2c46b2d5ca0f32440ab7fc3c32b1c79e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inkJSON: {fileID: 4900000, guid: 7ec4e9fc8cecbed429c2668fb45d963f, type: 3}
+  textPrefab: {fileID: 4685947449398883275, guid: 9a33c8a6b772b7c45a8b81a4fd8b4048,
+    type: 3}
+  buttonPrefab: {fileID: 3456107213704846157, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
+    type: 3}
+  dialogueBox: {fileID: 0}
+  textLabel: {fileID: 1098142743}
+  nameLabel: {fileID: 537122443}
+  portraitBox: {fileID: 491415375}
+  openTime: 2
+  anim: {fileID: 991205726}
+  player: {fileID: 0}
+  chatRange: 0
 --- !u!1 &993087740
 GameObject:
   m_ObjectHideFlags: 0
