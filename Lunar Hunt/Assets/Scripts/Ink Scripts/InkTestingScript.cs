@@ -9,6 +9,9 @@ public class InkTestingScript : MonoBehaviour
 {
     public TextAsset inkJSON;
     private Story story;
+    //Jumping to a particular "scene"
+    //https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md#jumping-to-a-particular-scene
+    public string knotName;
 
     public TMP_Text textPrefab;
     public Button buttonPrefab;
@@ -17,17 +20,13 @@ public class InkTestingScript : MonoBehaviour
     void Start()
     {
         story = new Story(inkJSON.text);
-
+        story.ChoosePathString(knotName);
         refreshUI();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-
-        }
     }
 
     void refreshUI()
