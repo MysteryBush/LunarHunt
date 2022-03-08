@@ -98,14 +98,9 @@ public class InkDialogue : MonoBehaviour
 
     void runDialogues()
     {
-        textLabel.text = null;
-        nameLabel.text = null;
-        //portraitBox.SetActive(false);
-
         string text = loadDialogueChunk();
 
         List<string> tags = story.currentTags;
-        Debug.Log(story.currentTags);
         if (tags.Count > 0)
         {
             if (tags[0] == "END")
@@ -123,6 +118,12 @@ public class InkDialogue : MonoBehaviour
                 spriteImage = currentSpeaker.portrait;
                 portraitBox.GetComponent<Image>().sprite = spriteImage;
                 portraitBox.SetActive(true);
+            }
+            if (tags[0].StartsWith("noSpeaker"))
+            {
+                nameLabel.text = null;
+                portraitBox.GetComponent<Image>().sprite = null;
+                portraitBox.SetActive(false);
             }
         }
         textLabel.text = text;
@@ -154,13 +155,17 @@ public class InkDialogue : MonoBehaviour
 
             choiceButton.onClick.AddListener(delegate
             {
+                eraseUI();
                 chooseStoryChoice(choice);
-                eraseResponses();
             });
         }
     }
-    void eraseResponses()
+    void eraseUI()
     {
+        textLabel.text = null;
+        nameLabel.text = null;
+        portraitBox.GetComponent<Image>().sprite = null;
+        portraitBox.SetActive(false);
         for (int i = 0; i < responseBox.transform.childCount; i++)
         {
             Destroy(responseBox.transform.GetChild(i).gameObject);
@@ -200,13 +205,14 @@ public class InkDialogue : MonoBehaviour
         //player.controlUI = false;
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
-        textLabel.text = string.Empty;
+        eraseUI();
     }
 
     public void OpenDialogueBox()
     {
         IsOpen = true;
         anim.SetBool("IsOpen", true);
+        eraseUI();
         runDialogues();
     }
     #endregion

@@ -769,8 +769,12 @@ VAR LocationName = ""
 		- -> Investigate
 	   
 		== Talk_to_Merchant ==
+			#noSpeaker
+			{ ClueList !? Merchant_Sells_the_Newspaper:
+					# clue.Merchant_Sells_the_Newspaper
+					~ GetClue(Merchant_Sells_the_Newspaper)
+				}
 			~ Conversation("Talk to Merchant")
-				~ Speaker("Narration")
 			Talking to Merchant.
 			+ [What are you doing here?] -> What_are_you_doing_here ->
 			+ { ClueList ? Merchant_Sells_the_Newspaper } {ClueList !? CS_Order_to_Forge_The_News}
@@ -785,12 +789,12 @@ VAR LocationName = ""
 					I also have a connection with this town leader too! So next time, don't try to interrupt my business.
 					- ->->
 				= I_heard_that_you_sells_the_Newspaper
-						#speaker.Merchant
-					Well yes, I sells the newspaper to this town.
-						#speaker.Sebastian
-					Then can we talk about how this headline "Movin out people" is fake?
-						#speaker.Merchant
-					Fake? Why would you think that?
+						
+					Well yes, I sells the newspaper to this town. #speaker.Merchant
+						
+					Then can we talk about how this headline "Movin out people" is fake? #speaker.Sebastian 
+						
+					Fake? Why would you think that? #speaker.Merchant
 						#speaker.Sebastian
 					You see, the visitors do not checkout in the Meeting Hall.
 						#speaker.Merchant
