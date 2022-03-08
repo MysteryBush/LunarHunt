@@ -925,8 +925,6 @@ GameObject:
   - component: {fileID: 991205728}
   - component: {fileID: 991205727}
   - component: {fileID: 991205726}
-  - component: {fileID: 991205725}
-  - component: {fileID: 991205724}
   - component: {fileID: 991205723}
   - component: {fileID: 991205722}
   - component: {fileID: 991205731}
@@ -965,44 +963,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typewriterSpeed: 50
---- !u!114 &991205724
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991205721}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7bdac2c57a1cc854ea832d10bf122508, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  eventTracking: {fileID: 0}
-  responseBox: {fileID: 1924673301}
-  responseButtonTemplate: {fileID: 699120557}
-  responseContainer: {fileID: 1320941830}
---- !u!114 &991205725
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 991205721}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 604199883f0ad774eb8b04b74d719737, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  dialogueBox: {fileID: 1787161812}
-  textLabel: {fileID: 1098142743}
-  nameLabel: {fileID: 537122443}
-  portraitBox: {fileID: 1194039730}
-  openTime: 0.5
-  anim: {fileID: 991205726}
-  player: {fileID: 0}
-  chatRange: 0
-  conversationactivator: {fileID: 0}
-  notiferUI: {fileID: 0}
 --- !u!95 &991205726
 Animator:
   serializedVersion: 3
@@ -1116,7 +1076,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inkJSON: {fileID: 4900000, guid: 7ec4e9fc8cecbed429c2668fb45d963f, type: 3}
-  knotName: 
+  knotName: Talk_to_Merchant
   speakerList: {fileID: 636547749}
   textPrefab: {fileID: 4685947449398883275, guid: 9a33c8a6b772b7c45a8b81a4fd8b4048,
     type: 3}
@@ -1125,7 +1085,8 @@ MonoBehaviour:
   dialogueBox: {fileID: 1787161812}
   textLabel: {fileID: 1098142743}
   nameLabel: {fileID: 537122443}
-  portraitBox: {fileID: 491415375}
+  portraitBox: {fileID: 1194039730}
+  responseBox: {fileID: 1320941829}
   openTime: 2
   anim: {fileID: 991205726}
   player: {fileID: 0}
@@ -1408,7 +1369,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1231554821}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fc52340b650071840b44b723f059b6c7, type: 3}
   m_Name: 
@@ -2152,6 +2113,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Button OptionTemplate (TMP)
+      objectReference: {fileID: 0}
+    - target: {fileID: 3456107213704846159, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cc4cfa67e61e2d84fb53cc6223a57d95, type: 3}

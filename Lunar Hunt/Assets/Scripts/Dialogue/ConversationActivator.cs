@@ -41,13 +41,13 @@ public class ConversationActivator : MonoBehaviour, IInteractable
         {
             if (responseEvents.ConversationObject == conversationObject)
             {
-                player.DialogueUI.AddResponseEvents(responseEvents.Events);
+                //player.DialogueUI.AddResponseEvents(responseEvents.Events);
                 break;
             }
         }
         player.DialogueUI.findPlayer(player);
-        player.DialogueUI.conversationactivator = this;
-        player.DialogueUI.runConversation(conversationObject);
+        //player.DialogueUI.conversationactivator = this;
+        //player.DialogueUI.runConversation(conversationObject);
         npcMovement.targetFacing();
         npcMovement.targetPlayer.GetComponent<PlayerMovement>().targetFacing(npcMovement.npcTransform);
     }

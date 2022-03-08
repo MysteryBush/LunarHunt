@@ -127,8 +127,8 @@ public class NotifierUI : MonoBehaviour
 
     private void continueDialogue()
     {
-        if (player.DialogueUI.conversationactivator == null)
-            return;
-        player.DialogueUI.afterDialogue(player.DialogueUI.conversationactivator.conversationObject);
+        //if (player.DialogueUI.conversationactivator == null)
+        //    return;
+        //player.DialogueUI.afterDialogue(player.DialogueUI.conversationactivator.conversationObject);
     }
 }

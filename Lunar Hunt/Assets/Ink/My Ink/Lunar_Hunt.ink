@@ -779,46 +779,46 @@ VAR LocationName = ""
 			- -> Talk_to_Merchant
 			   
 				= What_are_you_doing_here
-						~ Speaker("Merchant")
+						#speaker.Merchant
 					Oh, I'm just continuing my business here.
 					You see, my profit doesn't only come from selling my well earned and clean items.
 					I also have a connection with this town leader too! So next time, don't try to interrupt my business.
 					- ->->
 				= I_heard_that_you_sells_the_Newspaper
-						~ Speaker("Merchant")
+						#speaker.Merchant
 					Well yes, I sells the newspaper to this town.
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					Then can we talk about how this headline "Movin out people" is fake?
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Fake? Why would you think that?
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					You see, the visitors do not checkout in the Meeting Hall.
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Well, I don't care about your problem.
 					It's just good money to make forging commission.
 					//Merchant spilled the beans
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					Forging, so you're the one who faked it?
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Oops.
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					I heard it you know. Don't just pretend to be innocent now.
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Fine, I'm the one who forged it. 
 					But now what are you going to do? Call the police? They aren't around here you know.
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					There maybe no police but I could ask our good friend Alex to talk it out.
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Oh... him... hahaha well what else do you want from me?
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					I just want to know the real content. And also who commissioned you.
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Who commissioned me? I don't know actually. I only communicated with them through the name of "C.S."
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					C.S. ?
-						~ Speaker("Merchant")
+						# speaker.Merchant
 					Yeah that's all I really know. And here's the real content that I got before I forged it.
-						~ Speaker("Sebastian")
+						# speaker.Sebastian
 					Ok, it's a good thing that you did what I asked.
 					{ ClueList !? CS_Order_to_Forge_The_News:
 						# clue.CS_Order_to_Forge_The_News
