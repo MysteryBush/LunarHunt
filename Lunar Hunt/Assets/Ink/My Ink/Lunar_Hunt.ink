@@ -559,7 +559,7 @@ VAR LocationName = ""
 				[I read the news but...] -> I_read_the_news_but ->
 			+ { ClueList ? Cassandra_Prophesied_The_Plague } {ClueList !? No_Record_of_Recent_Plague}
 				[Do you know about the plague refugee?] -> Do_you_know_about_the_plague_refugee ->
-			+ [(Actually, I don't think I need help this time)] {EndCon()} ->->
+			+ [(Actually, I don't think I need help this time)] {EndCon()} -> END # END
 			- -> Talk_to_Staff
 
 			= Do_you_know_about_missing_people
