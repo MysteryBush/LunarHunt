@@ -27,6 +27,8 @@ public class InkDialogue : MonoBehaviour
 
     //save a previous text as reference
     private string lastText;
+    //the state of Ink Dialogue
+    private bool endDialogue;
 
     //object reference
     [SerializeField] private GameObject dialogueBox;
@@ -60,7 +62,8 @@ public class InkDialogue : MonoBehaviour
 
         story = new Story(inkJSON.text);
         story.ChoosePathString(knotName);
-        runDialogues();
+        //test using dialogue without interacting with NPC
+        OpenDialogueBox();
     }
 
     // Update is called once per frame
@@ -97,49 +100,34 @@ public class InkDialogue : MonoBehaviour
     {
         textLabel.text = null;
         nameLabel.text = null;
-        //currentSpeaker = null;
-        //if (spriteImage == null)
-        //    portraitBox.SetActive(false);
+        //portraitBox.SetActive(false);
 
         string text = loadDialogueChunk();
 
         List<string> tags = story.currentTags;
-
+        Debug.Log(story.currentTags);
         if (tags.Count > 0)
         {
             if (tags[0] == "END")
             {
                 text = "<b>" + tags[0] + "</b>" + text;
                 Debug.Log("End of Dialogue");
+                CloseDialogueBox();
+                return;
             }
             if (tags[0].StartsWith("speaker."))
             {
                 var speakerName = tags[0].Substring("speaker.".Length, tags[0].Length - "speaker.".Length);
-                Debug.Log("speakerName =" + speakerName);
                 currentSpeaker = speakerPair[speakerName];
-                Debug.Log(currentSpeaker);
                 nameLabel.text = currentSpeaker.name;
                 spriteImage = currentSpeaker.portrait;
                 portraitBox.GetComponent<Image>().sprite = spriteImage;
+                portraitBox.SetActive(true);
             }
         }
         textLabel.text = text;
     }
-    void responseButtons()
-    {
-        foreach (Choice choice in story.currentChoices)
-        {
-            Button choiceButton = Instantiate(buttonPrefab) as Button;
-            TMP_Text choiceText = choiceButton.GetComponentInChildren<TMP_Text>();
-            choiceText.text = choice.text;
-            choiceButton.transform.SetParent(responseBox.transform, false);
 
-            choiceButton.onClick.AddListener(delegate
-            {
-                chooseStoryChoice(choice);
-            });
-        }
-    }
     private IEnumerator RunTypingEffect(string dialogue)
     {
         typewriterEffect.Run(dialogue, textLabel);
@@ -155,12 +143,28 @@ public class InkDialogue : MonoBehaviour
     }
 
     #region dialogue functions
-    void resetUI()
+    void responseButtons()
     {
-        //for (int i = 0; i < this.transform.childCount; i++)
-        //{
-        //    Destroy(this.transform.GetChild(i).gameObject);
-        //}
+        foreach (Choice choice in story.currentChoices)
+        {
+            Button choiceButton = Instantiate(buttonPrefab) as Button;
+            TMP_Text choiceText = choiceButton.GetComponentInChildren<TMP_Text>();
+            choiceText.text = choice.text;
+            choiceButton.transform.SetParent(responseBox.transform, false);
+
+            choiceButton.onClick.AddListener(delegate
+            {
+                chooseStoryChoice(choice);
+                eraseResponses();
+            });
+        }
+    }
+    void eraseResponses()
+    {
+        for (int i = 0; i < responseBox.transform.childCount; i++)
+        {
+            Destroy(responseBox.transform.GetChild(i).gameObject);
+        }
     }
     void chooseStoryChoice(Choice choice)
     {
@@ -174,13 +178,18 @@ public class InkDialogue : MonoBehaviour
 
         if (story.canContinue)
         {
+            endDialogue = false;
             text = story.Continue();
             lastText = text;
         }
         else
         {
+            if (endDialogue == false)
+            {
+                responseButtons();
+            }
             text = lastText;
-            responseButtons();
+            endDialogue = true;
         }
         return text;
     }
@@ -193,17 +202,17 @@ public class InkDialogue : MonoBehaviour
         //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
     }
+
+    public void OpenDialogueBox()
+    {
+        IsOpen = true;
+        anim.SetBool("IsOpen", true);
+        runDialogues();
+    }
     #endregion
-
-
 
     public void findPlayer(PlayerControl playercontrol)
     {
         player = playercontrol;
-    }
-
-    private void getSpeaker(string speakerName)
-    {
-
     }
 }
