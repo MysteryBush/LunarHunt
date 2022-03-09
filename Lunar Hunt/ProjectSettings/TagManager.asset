@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - GameManager
   layers:
   - Default
   - TransparentFX
@@ -11,13 +12,13 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Minimap
+  - Minimap2
   - Player
   - Obstacle
   - Enemy
-  - 
-  - 
+  - WallCollide
+  - Wall
   - 
   - 
   - 

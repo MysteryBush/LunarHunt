@@ -44,7 +44,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speakerObjects:
-  - {fileID: 11400000, guid: 7fc728ce24279464f92309fce7e2b28e, type: 2}
-  - {fileID: 11400000, guid: 115c2caa2942b314b9bd0ee5c314a1e7, type: 2}
-  - {fileID: 11400000, guid: 7416318eec0f6454f8fb81f3cafe0706, type: 2}
-  - {fileID: 11400000, guid: e529161c7b5460748b827f7aba4bfbd6, type: 2}
+  - {fileID: 11400000, guid: b2daf913ca322a04a94e8574cee6166b, type: 2}
+  - {fileID: 11400000, guid: f9289fbc95f6e10488ec0deb4327a99b, type: 2}
+  - {fileID: 11400000, guid: 3c383da6690f8794dbc5e964636667e9, type: 2}
+  - {fileID: 11400000, guid: 0e816c4d7fc7ffe40aaebca5177aa5e9, type: 2}
+  - {fileID: 11400000, guid: 93fd2372d0a7b7245a63c98f0954f04a, type: 2}
+  - {fileID: 11400000, guid: e5ccab9807c548c4a9ff8589347a5536, type: 2}
+  - {fileID: 11400000, guid: 79a8df7de29ed8d4d88169c025013bfc, type: 2}
+  - {fileID: 11400000, guid: 54a10ab9674db3e4a8223a7bd7772a55, type: 2}
+  - {fileID: 11400000, guid: 0e84086138f293f4ca33dd7ba73e690e, type: 2}

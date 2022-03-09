@@ -15,6 +15,10 @@ public class PlayerControl : MonoBehaviour
     public InkDialogue InkUI => inkUI;
 
     public IInteractable Interactable { get; set; }
+    private void Awake()
+    {
+        inkUI = FindObjectOfType<InkDialogue>().gameObject.GetComponent<InkDialogue>();
+    }
     void Update()
     {
         controlInput();
@@ -27,7 +31,7 @@ public class PlayerControl : MonoBehaviour
         if (inkUI.IsOpen) return;
         if (isControl == true)
         {
-            if (Input.GetKeyDown(KeyCode.E) && controlUI == false)
+            if (Input.GetKeyDown(KeyCode.Space) && controlUI == false)
             {
                 if (inkUI.chatRange == true)
                     //trigger interaction

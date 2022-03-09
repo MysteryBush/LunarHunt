@@ -110,7 +110,7 @@ Animator:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 117092578926074115}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: e33a64104061a5a4498fcfea0a383fd1, type: 2}
   m_CullingMode: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   conversationObject: {fileID: 11400000, guid: f68963110cffd5b4f8c4ca13e275fda6, type: 2}
-  npcMovement: {fileID: 0}
+  npcMovement: {fileID: 117092578926074171}
 --- !u!114 &117092578926074171
 MonoBehaviour:
   m_ObjectHideFlags: 0

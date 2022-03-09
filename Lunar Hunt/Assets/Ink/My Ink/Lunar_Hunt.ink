@@ -573,7 +573,7 @@ VAR LocationName = ""
 				[I read the news but...] -> I_read_the_news_but ->
 			+ { ClueList ? Cassandra_Prophesied_The_Plague } {ClueList !? No_Record_of_Recent_Plague}
 				[Do you know about the plague refugee?] -> Do_you_know_about_the_plague_refugee ->
-			+ [(Actually, I don't think I need help this time)] {EndCon()} ->-> #END
+			+ [(Actually, I don't think I need help this time)] {EndCon()} -> END #END
 			- -> Talk_to_Staff
 
 			= Do_you_know_about_missing_people
@@ -600,6 +600,7 @@ VAR LocationName = ""
 				Nevermind, thanks for your help.
 					#speaker.HallStaff
 				I'm just glad to be of service.
+					#noSpeaker 
 				{ ClueList !? Visitors_do_not_Checkout:
 					#clue.Visitors_do_not_Checkout
 					~ GetClue(Visitors_do_not_Checkout)
@@ -611,11 +612,13 @@ VAR LocationName = ""
 				All I know is he's a human with tan colored skin and wear red clothes with turban.
 					#speaker.Sebastian
 				I see, thanks again.
+					#noSpeaker 
 				{ ClueList !? Merchant_Sells_the_Newspaper:
 					#clue.Merchant_Sells_the_Newspaper
 					~ GetClue(Merchant_Sells_the_Newspaper)
 				}
-				- ->->
+				#END
+				- -> END
 
 			= Do_you_know_about_the_plague_refugee
 					#speaker.Sebastian
@@ -632,15 +635,17 @@ VAR LocationName = ""
 				Is it possible that I could meet her?
 					#speaker.HallStaff
 				I'm sorry, I don't know where she is. But you can try to visit the Witch's Nursery.
+					#noSpeaker 
 				{ ClueList !? No_Record_of_Recent_Plague:
 					#clue.No_Record_of_Recent_Plague
 					~ GetClue(No_Record_of_Recent_Plague)
 				}
-				- ->->
+				#END
+				- -> END
 		== Town_Board ==
 			//~ Conversation("Town Board")
-				#noSpeaker
-			Sebastian approach the Town Board
+			// 	#noSpeaker
+			// Sebastian approach the Town Board
 				#speaker.Sebastian
 			(Let's see what the board got)
 				+ [Newspaper] -> Newspaper ->
@@ -660,21 +665,24 @@ VAR LocationName = ""
 				Pick a headline to read.
 				+ [Moving Out People] -> Moving_Out_People
 				+ [The Strongest Potion] -> The_Strongest_Potion
-				+ [Fishy Fortune] -> Fishy_Fortune
+				// + [Fishy Fortune] -> Fishy_Fortune
 				+ [The Most Beautiful of Them All] -> The_Most_Beautiful_of_Them_All
-				+ [Stop Reading] ->->
+				+ [Stop Reading] -> Town_Board
  
 			= Moving_Out_People
 					#noSpeaker
-				The content read "In the last few months, families have been searching for the location of their own relatives who went to the Sanctuary. But those families didn't consider one of the reason for the travelers to travel is to get away from their own families, therefore, it's normal to keep their location  hidden"
+				The content read "In the last few months, families have been searching for the location of their own relatives who went to the Sanctuary. 
+				But those families didn't consider one of the reason for the travelers to travel is to get away from their own families.
+				Therefore, it's normal to keep their location  hidden"
 					#speaker.Sebastian
 				(This could be the closest headline to help me so far)
 				//(But what is this shrewd logic? "get away from their own families?" "normal to keep their location hidden?")
 				{ ClueList !? News_about_Moving_Out_People:
-					#clue.News_about_Moving_Out_People  
+					#noSpeaker
 					~ GetClue(News_about_Moving_Out_People)
+					#clue.News_about_Moving_Out_People
 				}
-				- ->->
+				- -> END #END
 			= The_Strongest_Potion
 					#noSpeaker
 				The content read "Do not ask for more potion. The potion seller only makes potions that can kills a dragon"
@@ -784,7 +792,7 @@ VAR LocationName = ""
 		- -> Investigate
 	   
 		== Talk_to_Merchant ==
-			#noSpeaker
+			What do you want from me? #speaker.Merchant
 			//~ Conversation("Talk to Merchant")
 			//Talking to Merchant.
 			+ [What are you doing here?] -> What_are_you_doing_here ->
@@ -914,20 +922,20 @@ VAR LocationName = ""
 
 	=== Exposed_Cassandra ===
 	//part 1
-		#speaker.Villagers
+		#speaker.Villager
 	Cassandra! Why did you do this?!
 		#speaker.OldMan
 	You sold me a glass of water all this time?
 		#speaker.Caravan
 	We have to abandoned our town just to let the thiefs takes everything!
-		#speaker.Villagers
+		#speaker.Villager
 	We don't need this fake leader in our town!
 		#noSpeaker
 	The villagers comes towards Cassandra with ill intents.
 	//part 2
 		#speaker.Cassandra
 	No, why are you listening to this child? I did everything for you people all this time.
-		#speaker.Villagers
+		#speaker.Villager
 	What you did is everything that makes our life worse! You just want to leech our work!
 	    #noSpeaker
 	The villagers chase Cassandra out of the Sanctuary.

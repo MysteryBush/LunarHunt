@@ -39,6 +39,9 @@ public class npcMovement : MonoBehaviour
         anim = GetComponent<Animator>();
 
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+
+        //find player
+        targetPlayer = FindObjectOfType<PlayerMovement>().gameObject;
     }
 
     void FixedUpdate()

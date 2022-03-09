@@ -74,7 +74,7 @@ public class InkTestingScript : MonoBehaviour
     void runDialogues()
     {
         eraseUI();
-        TMP_Text storyText = Instantiate(textPrefab) as TMP_Text;
+        //TMP_Text storyText = Instantiate(textPrefab) as TMP_Text;
 
         string text = loadDialogueChunk();
 
@@ -89,8 +89,8 @@ public class InkTestingScript : MonoBehaviour
             }
         }
 
-        storyText.text = text;
-        storyText.transform.SetParent(this.transform, false);
+        //storyText.text = text;
+        //storyText.transform.SetParent(this.transform, false);
     }
 
     void responseButtons()

@@ -43,6 +43,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 4081108718964429589, guid: d6d79834c77140f4db41d1c55f12b543,
         type: 3}
+    - target: {fileID: 3086256229291833734, guid: cd74a4c710aca5441a4846878125fbc7,
+        type: 3}
+      propertyPath: m_WasSpriteAssigned
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3086256229291833735, guid: cd74a4c710aca5441a4846878125fbc7,
         type: 3}
       propertyPath: m_RootOrder
@@ -66,12 +71,12 @@ PrefabInstance:
     - target: {fileID: 3086256229291833735, guid: cd74a4c710aca5441a4846878125fbc7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -99.77
+      value: -129.41
       objectReference: {fileID: 0}
     - target: {fileID: 3086256229291833735, guid: cd74a4c710aca5441a4846878125fbc7,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 85.76
+      value: 55.99
       objectReference: {fileID: 0}
     - target: {fileID: 3086256229291833735, guid: cd74a4c710aca5441a4846878125fbc7,
         type: 3}
@@ -116,7 +121,7 @@ PrefabInstance:
     - target: {fileID: 3086256229291833739, guid: cd74a4c710aca5441a4846878125fbc7,
         type: 3}
       propertyPath: m_Name
-      value: CrateStack3
+      value: CrateStack3 (1)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd74a4c710aca5441a4846878125fbc7, type: 3}

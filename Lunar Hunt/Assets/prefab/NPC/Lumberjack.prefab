@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -121.79
+      value: -151.86
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 80.7
+      value: 68.97
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
@@ -67,6 +67,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumberjack
       objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: e33a64104061a5a4498fcfea0a383fd1, type: 2}
     - target: {fileID: 117092578926074175, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: npcMovement

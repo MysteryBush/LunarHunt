@@ -54,6 +54,8 @@ public class InkDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
+        speakerList = FindObjectOfType<SpeakerList>().gameObject.GetComponent<SpeakerList>();
         addDictionary();
 
         IsOpen = true;
@@ -88,43 +90,85 @@ public class InkDialogue : MonoBehaviour
 
     void addDictionary()
     {
+        //Speaker List
         speakers = speakerList.speakerObjects;
         speakerPair.Add("Sebastian", speakers[0]);
         speakerPair.Add("Athena", speakers[1]);
         speakerPair.Add("Lumberjack", speakers[2]);
         speakerPair.Add("Merchant", speakers[3]);
+        speakerPair.Add("Cassandra", speakers[4]);
+        speakerPair.Add("HallStaff", speakers[5]);
+        speakerPair.Add("OldMan", speakers[6]);
+        speakerPair.Add("Caravan", speakers[7]);
+        speakerPair.Add("Villager", speakers[8]);
         //Debug.Log(speakerPair["Sebastian"]);
+        //Clue List
+
+        //Evidence List
     }
 
     void runDialogues()
     {
-        Debug.Log("start run Dialogues");
+        //Debug.Log("start run Dialogues");
         string text = loadDialogueChunk();
+        //Debug.Log(text);
 
-        List<string> tags = story.currentTags;
-        if (tags.Count > 0)
+        //List<string> tags = story.currentTags;
+        //if (tags.Count > 0)
+        //{
+        //    if (tags[0] == "END")
+        //    {
+        //        //Debug.Log("End of Dialogue");
+        //        CloseDialogueBox();
+        //        return;
+        //    }
+        //    //if (tags[0].StartsWith("noSpeaker"))
+        //    if (tags.Contains("noSpeaker"))
+        //    {
+        //        nameLabel.text = null;
+        //        portraitBox.GetComponent<Image>().sprite = null;
+        //        portraitBox.SetActive(false);
+        //    }
+        //    if (tags[0].StartsWith("speaker."))
+        //    {
+        //        //text = "<b>" + tags[0] + "</b>" + text;
+        //        var speakerName = tags[0].Substring("speaker.".Length, tags[0].Length - "speaker.".Length);
+        //        currentSpeaker = speakerPair[speakerName];
+        //        nameLabel.text = currentSpeaker.name;
+        //        spriteImage = currentSpeaker.portrait;
+        //        portraitBox.GetComponent<Image>().sprite = spriteImage;
+        //        portraitBox.SetActive(true);
+        //    }
+        //    if (tags[0].StartsWith("clue."))
+        //    {
+        //        var clueName = tags[0].Substring("clue.".Length, tags[0].Length - "clue.".Length);
+        //        //add clue to the inventory
+        //    }
+        //}
+
+        foreach (var tag in story.currentTags)
         {
-            if (tags[0] == "END")
+            if (tag.StartsWith("END"))
             {
-                Debug.Log("End of Dialogue");
+                //Debug.Log("End of Dialogue");
                 CloseDialogueBox();
                 return;
             }
-            if (tags[0].StartsWith("speaker."))
+            if (tag.StartsWith("noSpeaker"))
+            {
+                nameLabel.text = null;
+                portraitBox.GetComponent<Image>().sprite = null;
+                portraitBox.SetActive(false);
+            }
+            if (tag.StartsWith("speaker."))
             {
                 //text = "<b>" + tags[0] + "</b>" + text;
-                var speakerName = tags[0].Substring("speaker.".Length, tags[0].Length - "speaker.".Length);
+                var speakerName = tag.Substring("speaker.".Length, tag.Length - "speaker.".Length);
                 currentSpeaker = speakerPair[speakerName];
                 nameLabel.text = currentSpeaker.name;
                 spriteImage = currentSpeaker.portrait;
                 portraitBox.GetComponent<Image>().sprite = spriteImage;
                 portraitBox.SetActive(true);
-            }
-            if (tags[0].StartsWith("noSpeaker"))
-            {
-                nameLabel.text = null;
-                portraitBox.GetComponent<Image>().sprite = null;
-                portraitBox.SetActive(false);
             }
         }
         textLabel.text = text;
@@ -186,15 +230,16 @@ public class InkDialogue : MonoBehaviour
         {
             endDialogue = false;
             text = story.Continue();
+            //Debug.Log("story.Continue(): " + story.Continue());
             lastText = text;
         }
         else
         {
+            text = lastText;
             if (endDialogue == false)
             {
                 responseButtons();
             }
-            text = lastText;
             endDialogue = true;
         }
         return text;
@@ -203,7 +248,7 @@ public class InkDialogue : MonoBehaviour
     public void CloseDialogueBox()
     {
         IsOpen = false;
-        //player.controlUI = false;
+        player.controlUI = false;
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
         eraseUI();
@@ -212,10 +257,12 @@ public class InkDialogue : MonoBehaviour
     public void OpenDialogueBox()
     {
         IsOpen = true;
+        player.controlUI = true;
         anim.SetBool("IsOpen", true);
         //setting knot
         story.ChoosePathString(knotName);
         //run dialogues
+        endDialogue = false;
         eraseUI();
         runDialogues();
     }
