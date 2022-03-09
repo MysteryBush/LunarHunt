@@ -31,7 +31,8 @@ public class ChangeScene : MonoBehaviour
 
         if (collisionGameObject.tag == "Player")
         {
-            GameManager.ins.GetComponent<setSpawn>().spawnNumber = spawnNumber;
+            //GameManager.ins.GetComponent<setSpawn>().spawnNumber = spawnNumber;
+            spawnPoint.ins.spawnNumber = spawnNumber;
             LoadScene();
         }
     }

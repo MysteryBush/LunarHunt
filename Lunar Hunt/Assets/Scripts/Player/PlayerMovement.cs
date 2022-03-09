@@ -32,6 +32,9 @@ public class PlayerMovement : MonoBehaviour
         //isControl = GetComponent<PlayerControl>().isControl;
 
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
+
+        FindObjectOfType<spawnPoint>().setSpawnPoint(this.gameObject);
+        
     }
 
     void FixedUpdate()

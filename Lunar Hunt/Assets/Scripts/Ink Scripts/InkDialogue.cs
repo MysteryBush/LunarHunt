@@ -15,12 +15,18 @@ public class InkDialogue : MonoBehaviour
     public string knotName;
 
     //taking data reference
+    //speaker data
     public SpeakerList speakerList;
     private List<SpeakerObject> speakers;
     private Dictionary<string, SpeakerObject> speakerPair = new Dictionary<string, SpeakerObject>();
     private SpeakerObject currentSpeaker;
     //private SpeakerObject speakerObject;
 
+    //clue data
+    public ClueList clueList;
+    private List<Item> clues;
+    private Dictionary<string, Item> cluePair = new Dictionary<string, Item>();
+    private Item collectedClue;
 
     public TMP_Text textPrefab;
     public Button buttonPrefab;
@@ -55,7 +61,8 @@ public class InkDialogue : MonoBehaviour
     void Start()
     {
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
-        speakerList = FindObjectOfType<SpeakerList>().gameObject.GetComponent<SpeakerList>();
+        speakerList = SpeakerList.instance;
+        clueList = ClueList.instance;
         addDictionary();
 
         IsOpen = true;
@@ -103,8 +110,26 @@ public class InkDialogue : MonoBehaviour
         speakerPair.Add("Villager", speakers[8]);
         //Debug.Log(speakerPair["Sebastian"]);
         //Clue List
+        clues = clueList.clueItems;
+        cluePair.Add("Clue_0-1", clues[0]);
+        cluePair.Add("Clue_0-2", clues[1]);
+        cluePair.Add("Clue_0-3", clues[2]);
+        cluePair.Add("Clue_0-4", clues[3]);
+        cluePair.Add("Clue_0-5", clues[4]);
+        cluePair.Add("Clue_0-6", clues[5]);
+        cluePair.Add("News_about_Moving_Out_People", clues[6]);
+        cluePair.Add("Visitors_do_not_Checkout", clues[7]);
+        cluePair.Add("Merchant_Sells_the_Newspaper", clues[8]);
+        cluePair.Add("CS_Order_to_Forge_The_News", clues[9]);
+        cluePair.Add("CS_Sells_the_potion", clues[10]);
+        cluePair.Add("This_Potion_Improve_Health", clues[11]);
+        cluePair.Add("The_Potion_is_just_Colored_Water", clues[12]);
+        cluePair.Add("Cassandra_Prophesied_The_Plague", clues[13]);
+        cluePair.Add("No_Record_of_Recent_Plague", clues[14]);
+        cluePair.Add("CS_letters", clues[15]);
 
         //Evidence List
+        //CS_Faked_The_News
     }
 
     void runDialogues()
@@ -169,6 +194,13 @@ public class InkDialogue : MonoBehaviour
                 spriteImage = currentSpeaker.portrait;
                 portraitBox.GetComponent<Image>().sprite = spriteImage;
                 portraitBox.SetActive(true);
+            }
+            if (tag.StartsWith("clue."))
+            {
+                var clueName = tag.Substring("clue.".Length, tag.Length - "clue.".Length);
+                collectedClue = cluePair[clueName];
+                //add clue to the inventory
+                InventoryKeyItem.instance.Add(collectedClue);
             }
         }
         textLabel.text = text;

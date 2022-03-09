@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5168723037985592389}
   - component: {fileID: 5168723037985592388}
+  - component: {fileID: 1124484070}
   m_Layer: 0
   m_Name: Datamanager
   m_TagString: Untagged
@@ -53,3 +54,32 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 79a8df7de29ed8d4d88169c025013bfc, type: 2}
   - {fileID: 11400000, guid: 54a10ab9674db3e4a8223a7bd7772a55, type: 2}
   - {fileID: 11400000, guid: 0e84086138f293f4ca33dd7ba73e690e, type: 2}
+--- !u!114 &1124484070
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5168723037985592386}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 563d8c4f103ff064494e3606a9183c99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clueItems:
+  - {fileID: 11400000, guid: 74239e625c9fc354daa439b29cb05185, type: 2}
+  - {fileID: 11400000, guid: 1204f92842a0dae499118c7bd3dc665d, type: 2}
+  - {fileID: 11400000, guid: 7162d76965f28aa4db4ad49c161bedfc, type: 2}
+  - {fileID: 11400000, guid: a55d3069c23b7e443bc46503fd0b8f7b, type: 2}
+  - {fileID: 11400000, guid: c0b88455660dfa744aa3b2d96bca3406, type: 2}
+  - {fileID: 11400000, guid: bea066d64cd8a04448a13b530fe4612f, type: 2}
+  - {fileID: 11400000, guid: bac3618bad2b91a4d8dbef8c0596a4e8, type: 2}
+  - {fileID: 11400000, guid: 60c0d828dc1ba3d448faad7db2906a23, type: 2}
+  - {fileID: 11400000, guid: 9921dfc35ff174341b3ea64365f5afeb, type: 2}
+  - {fileID: 11400000, guid: dc82ae8afe6d6594c9894c811c8d71ea, type: 2}
+  - {fileID: 11400000, guid: 2472acef58224a84e9be1e6f1489c901, type: 2}
+  - {fileID: 11400000, guid: 08813317c95b5a94280480ef19a052c0, type: 2}
+  - {fileID: 11400000, guid: a6a7c67c43f5fad4f86407b6196fdd24, type: 2}
+  - {fileID: 11400000, guid: 54b96ee1bf6c76948a6d3143b2536cbe, type: 2}
+  - {fileID: 11400000, guid: 2bcc221aac7e49242a49627b40489c95, type: 2}
+  - {fileID: 11400000, guid: cc13acebc611faa4c9f6675e91fba184, type: 2}

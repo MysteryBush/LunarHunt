@@ -4,17 +4,32 @@ using UnityEngine;
 
 public class spawnPoint : MonoBehaviour
 {
-    public GameObject[] spawnPoints;
-    private int spawnNumber;
-    private PlayerMovement player;
+    public static spawnPoint ins;
+    private GameObject[] spawnPoints;
+
+    public GameObject[] spawnPrefabs;
+    [SerializeField] public int spawnNumber;
 
     private void Start()
     {
-        spawnNumber = GameManager.ins.GetComponent<setSpawn>().spawnNumber;
-        player = FindObjectOfType<PlayerMovement>().gameObject.GetComponent<PlayerMovement>();
+        DontDestroyOnLoad(gameObject);
+
+        ins = this;
+
     }
-    public void setSpawnPoint()
+
+    private void OnLevelWasLoaded(int level)
     {
-        player.transform.position = spawnPoints[spawnNumber].transform.position;
+        spawnPoints = GameObject.FindGameObjectsWithTag("SpawnManager");
+
+        if (spawnPoints.Length > 1)
+        {
+            Destroy(spawnPoints[1]);
+        }
+    }
+
+    public void setSpawnPoint(GameObject player)
+    {
+        player.transform.position = spawnPrefabs[spawnNumber].transform.position;
     }
 }

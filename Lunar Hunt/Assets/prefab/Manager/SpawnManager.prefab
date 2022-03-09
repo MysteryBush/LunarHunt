@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7340633897337060692}
   m_Layer: 0
   m_Name: SpawnManager
-  m_TagString: Untagged
+  m_TagString: SpawnManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7340633897337060693}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.4976039, y: -0.9804003, z: 9.675781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -43,4 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e995c6fe89a7c55429b706b08481bb86, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPoints: []
+  spawnPrefabs:
+  - {fileID: 3814732077526527665, guid: f5b0a8c9dceb2fe4094fe0424038ee3c, type: 3}
+  - {fileID: 4517341887157265968, guid: 8313703f24219c5428370c75d36049d5, type: 3}
+  - {fileID: 524586067673491379, guid: 8e3322af7ac097440a250da061b70f59, type: 3}
+  - {fileID: 6370255564604739573, guid: 673e1b9b83acbd34cb8267f90273f7e1, type: 3}
+  spawnNumber: 0

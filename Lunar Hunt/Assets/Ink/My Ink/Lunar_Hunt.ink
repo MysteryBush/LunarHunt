@@ -115,13 +115,13 @@ VAR LocationName = ""
 	   
 	== function GetClue(clue) ==
 		~ ClueList += clue
-		- \- Collected Clue: {clue} -
+		- Collected Clue: {clue}
 	== function GetItem(item) ==
 		~ ItemList += item
-		- \- Collected Item: {item} -
+		- Collected Item: {item}
 	== function GetEvidence(evidence) ==
 		~ EvidenceList += evidence
-		- \- Collected Evidence: {evidence} -
+		- Collected Evidence: {evidence}
 	   
 // --- Main Menu Stuff ---
 	==== Main_Menu ====
@@ -677,12 +677,15 @@ VAR LocationName = ""
 					#speaker.Sebastian
 				(This could be the closest headline to help me so far)
 				//(But what is this shrewd logic? "get away from their own families?" "normal to keep their location hidden?")
-				{ ClueList !? News_about_Moving_Out_People:
 					#noSpeaker
-					~ GetClue(News_about_Moving_Out_People)
+				{ ClueList !? News_about_Moving_Out_People:
+					// ~ GetClue(News_about_Moving_Out_People)
 					#clue.News_about_Moving_Out_People
+					// Clues collected: News_about_Moving_Out_People
+					~ GetClue(News_about_Moving_Out_People)
 				}
-				- -> END #END
+				#END
+				- -> END
 			= The_Strongest_Potion
 					#noSpeaker
 				The content read "Do not ask for more potion. The potion seller only makes potions that can kills a dragon"
