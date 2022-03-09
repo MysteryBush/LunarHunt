@@ -10,9 +10,10 @@ public class PlayerControl : MonoBehaviour
     public bool controlUI = false;
     public bool isDead = false;
 
-    //dialogue stuff
-    [SerializeField] public DialogueUI dialogueUI;
-    public DialogueUI DialogueUI => dialogueUI;
+    //ink stuff
+    [SerializeField] public InkDialogue inkUI;
+    public InkDialogue InkUI => inkUI;
+
     public IInteractable Interactable { get; set; }
     void Update()
     {
@@ -23,16 +24,16 @@ public class PlayerControl : MonoBehaviour
 
     void controlInput()
     {
-        if (dialogueUI.IsOpen) return;
+        if (inkUI.IsOpen) return;
         if (isControl == true)
         {
             if (Input.GetKeyDown(KeyCode.E) && controlUI == false)
             {
-                if (dialogueUI.chatRange == true)
+                if (inkUI.chatRange == true)
                     //trigger interaction
                     Interactable?.Interact(player: this);
             }
-            if (Input.GetKeyDown(KeyCode.Tab) && DialogueUI.IsOpen == false)
+            if (Input.GetKeyDown(KeyCode.Tab) && InkUI.IsOpen == false)
             {
                 //trigger Inventory
                 IngameMenu.instance.toggleIngameMenu();

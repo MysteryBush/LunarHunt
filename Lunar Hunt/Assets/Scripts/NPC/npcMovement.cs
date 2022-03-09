@@ -76,7 +76,7 @@ public class npcMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             targetPlayer = collision.gameObject;
-            targetPlayer.GetComponent<PlayerControl>().dialogueUI.chatRange = true;
+            targetPlayer.GetComponent<PlayerControl>().inkUI.chatRange = true;
         }
     }
 
@@ -84,8 +84,8 @@ public class npcMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            targetPlayer.GetComponent<PlayerControl>().dialogueUI.chatRange = false;
-            targetPlayer.GetComponent<PlayerControl>().dialogueUI.conversationactivator = null;
+            targetPlayer.GetComponent<PlayerControl>().inkUI.chatRange = false;
+            targetPlayer.GetComponent<PlayerControl>().inkUI.knotName = null;
             targetPlayer = null;
         }
     }

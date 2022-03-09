@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class DialogueActivator : MonoBehaviour, IInteractable
 {
-    [SerializeField] private DialogueObject dialogueObject;
+    //[SerializeField] private DialogueObject dialogueObject;
+    [SerializeField] private string knotName;
 
-    public void UpdateDialogueObject(DialogueObject dialogueObject)
-    {
-        this.dialogueObject = dialogueObject;
-    }
+    //public void UpdateDialogueObject(DialogueObject dialogueObject)
+    //{
+    //    this.dialogueObject = dialogueObject;
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -31,16 +32,17 @@ public class DialogueActivator : MonoBehaviour, IInteractable
     }
     public void Interact(PlayerControl player)
     {
-        foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
-        {
-            if (responseEvents.ConversationObject == dialogueObject)
-            {
-                player.DialogueUI.AddResponseEvents(responseEvents.Events);
-                break;
-            }
-        }
+        //foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
+        //{
+        //    if (responseEvents.ConversationObject == dialogueObject)
+        //    {
+        //        player.inkUI.AddResponseEvents(responseEvents.Events);
+        //        break;
+        //    }
+        //}
         //player.DialogueUI.dialogueactivator = this;
-        player.DialogueUI.findPlayer(player);
-        player.DialogueUI.ShowDialogue(dialogueObject);
+        player.InkUI.findPlayer(player);
+        player.InkUI.knotName = knotName;
+        player.InkUI.OpenDialogueBox();
     }
 }

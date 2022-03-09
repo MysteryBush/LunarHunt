@@ -110,7 +110,7 @@ public class NotifierUI : MonoBehaviour
     {
         IsOpen = false;
         //check if other UI is closed then make player move
-        if (player.DialogueUI.IsOpen == false)
+        if (player.InkUI.IsOpen == false)
         {
             player.controlUI = false;
         }

@@ -59,10 +59,10 @@ public class DialogueUI : MonoBehaviour
             Dialogue dialogue = conversationObject.Dialogues[i];
             yield return StartCoroutine(runDialogues(dialogue));
         }
-        if (conversationObject.HasChangeConversation == true)
-        {
-            conversationactivator.UpdateConversationObject(conversationObject.ChangeConversation);
-        }
+        //if (conversationObject.HasChangeConversation == true)
+        //{
+        //    conversationactivator.UpdateConversationObject(conversationObject.ChangeConversation);
+        //}
         if (conversationObject.HasEvents == true)
         {
             EventTracking.instance.AddList(conversationObject.GameEvents);

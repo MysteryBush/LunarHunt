@@ -63,7 +63,7 @@ public class InkDialogue : MonoBehaviour
         story = new Story(inkJSON.text);
         story.ChoosePathString(knotName);
         //test using dialogue without interacting with NPC
-        OpenDialogueBox();
+        //OpenDialogueBox();
     }
 
     // Update is called once per frame
@@ -98,6 +98,7 @@ public class InkDialogue : MonoBehaviour
 
     void runDialogues()
     {
+        Debug.Log("start run Dialogues");
         string text = loadDialogueChunk();
 
         List<string> tags = story.currentTags;
@@ -105,13 +106,13 @@ public class InkDialogue : MonoBehaviour
         {
             if (tags[0] == "END")
             {
-                text = "<b>" + tags[0] + "</b>" + text;
                 Debug.Log("End of Dialogue");
                 CloseDialogueBox();
                 return;
             }
             if (tags[0].StartsWith("speaker."))
             {
+                //text = "<b>" + tags[0] + "</b>" + text;
                 var speakerName = tags[0].Substring("speaker.".Length, tags[0].Length - "speaker.".Length);
                 currentSpeaker = speakerPair[speakerName];
                 nameLabel.text = currentSpeaker.name;
@@ -212,6 +213,9 @@ public class InkDialogue : MonoBehaviour
     {
         IsOpen = true;
         anim.SetBool("IsOpen", true);
+        //setting knot
+        story.ChoosePathString(knotName);
+        //run dialogues
         eraseUI();
         runDialogues();
     }

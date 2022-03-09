@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class ConversationActivator : MonoBehaviour, IInteractable
 {
-    [SerializeField] public ConversationObject conversationObject;
+    //[SerializeField] public ConversationObject conversationObject;
+    [SerializeField] public string knotName;
     public npcMovement npcMovement;
 
     private void Start()
@@ -12,10 +13,10 @@ public class ConversationActivator : MonoBehaviour, IInteractable
         npcMovement = GetComponent<npcMovement>();
     }
 
-    public void UpdateConversationObject(ConversationObject conversationObject)
-    {
-        this.conversationObject = conversationObject;
-    }
+    //public void UpdateConversationObject(ConversationObject conversationObject)
+    //{
+    //    this.conversationObject = conversationObject;
+    //}
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -37,18 +38,21 @@ public class ConversationActivator : MonoBehaviour, IInteractable
     }
     public void Interact(PlayerControl player)
     {
-        foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
-        {
-            if (responseEvents.ConversationObject == conversationObject)
-            {
-                //player.DialogueUI.AddResponseEvents(responseEvents.Events);
-                break;
-            }
-        }
-        player.DialogueUI.findPlayer(player);
+        //foreach (DialogueResponseEvents responseEvents in GetComponents<DialogueResponseEvents>())
+        //{
+        //    if (responseEvents.ConversationObject == conversationObject)
+        //    {
+        //        //player.DialogueUI.AddResponseEvents(responseEvents.Events);
+        //        break;
+        //    }
+        //}
+        player.InkUI.findPlayer(player);
         //player.DialogueUI.conversationactivator = this;
         //player.DialogueUI.runConversation(conversationObject);
         npcMovement.targetFacing();
         npcMovement.targetPlayer.GetComponent<PlayerMovement>().targetFacing(npcMovement.npcTransform);
+        //run Ink
+        player.InkUI.knotName = knotName;
+        player.InkUI.OpenDialogueBox();
     }
 }
