@@ -787,7 +787,6 @@ VAR LocationName = ""
 				- -> END
 	=== Location_Forest ===
 		{not Location_Forest} #cutscene.Wake_up
-		{Location_Forest > 2} #debug
 		+ {ClueList !? The_Potion_is_just_Colored_Water}
 			[Talk to Merchant] -> Talk_to_Merchant ->
 		+ {ClueList ? The_Potion_is_just_Colored_Water}

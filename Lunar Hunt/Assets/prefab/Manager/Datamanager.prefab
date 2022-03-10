@@ -100,3 +100,4 @@ MonoBehaviour:
   timelineObjects:
   - {fileID: 11400000, guid: 2ed5c353510de9147b2bdac51e740e78, type: 2}
   - {fileID: 11400000, guid: 90b50edc598f104458ce360b97e1a22e, type: 2}
+  - {fileID: 11400000, guid: 34de0b5278ef98540a0691afeb787ae7, type: 2}

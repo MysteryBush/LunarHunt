@@ -18,6 +18,11 @@ public class CutsceneTrigger: MonoBehaviour
             return;
         }
         instance = this;
+
+        timelineObject.SetActive(false);
+
+        player = FindObjectOfType<PlayerControl>();
+        playableDirector = timelineObject.GetComponent<PlayableDirector>();
     }
 
     #endregion
@@ -28,6 +33,7 @@ public class CutsceneTrigger: MonoBehaviour
     //public GameObject mainCamera;
     //public GameObject transitioncanvas;
 
+    [SerializeField] private PlayerControl player;
     [SerializeField] private GameObject timelineObject;
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] private PlayableAsset cutscene;
@@ -36,26 +42,41 @@ public class CutsceneTrigger: MonoBehaviour
     [SerializeField] private GameObject transitioncanvas;
     private void Start()
     {
-        playableDirector = timelineObject.GetComponent<PlayableDirector>();
+        //playableDirector = timelineObject.GetComponent<PlayableDirector>();
     }
 
     public void GetCutscene(TimelineAsset cutsceneObject)
     {
         CutsceneObject = cutsceneObject;
         playableDirector.playableAsset = CutsceneObject;
-        cutscene = playableDirector.playableAsset;
+        cutscene = CutsceneObject;
     }
     public void TriggerCutscene()
     {
         timelineObject.SetActive(true);
-        StartCoroutine(FinishCut());
+        //StartCoroutine(FinishCut());
+        startCutscene();
     }
 
-    public IEnumerator FinishCut()
+    //using endCutscene via Signal instead
+    //public IEnumerator FinishCut()
+    //{
+    //    yield return new WaitForSeconds(5);
+    //    timelineObject.SetActive(false);
+    //    transitioncanvas.SetActive(false);
+    //    mainCamera.SetActive(true);
+    //}    
+
+    public void startCutscene()
     {
-        yield return new WaitForSeconds(5);
+        player.isControl = false;
+    }
+
+    public void endCutscene()
+    {
+        player.isControl = true;
         timelineObject.SetActive(false);
         transitioncanvas.SetActive(false);
         mainCamera.SetActive(true);
-    }    
+    }
 }

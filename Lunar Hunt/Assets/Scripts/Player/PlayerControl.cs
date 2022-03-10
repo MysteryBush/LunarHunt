@@ -52,15 +52,15 @@ public class PlayerControl : MonoBehaviour
     public void toggleControl()
     {
         //if (DialogueManager.ins.isDone == true && isDead == false)
-        if (isDead == false)
-        {
-            isControl = true;
-            GetComponent<PlayerMovement>().isFacingTarget = false;
-        }
-        else
-        {
-            isControl = false;
-        }
+        //if (isDead == false)
+        //{
+        //    isControl = true;
+        //    GetComponent<PlayerMovement>().isFacingTarget = false;
+        //}
+        //else
+        //{
+        //    isControl = false;
+        //}
     }
 
     public void findInkUI()

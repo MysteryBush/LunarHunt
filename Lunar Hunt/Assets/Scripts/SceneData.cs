@@ -14,7 +14,7 @@ public class SceneData : MonoBehaviour
                 if (SceneVisit.ins.visitForest == false)
                 {
                     SceneVisit.ins.visitForest = true;
-                    Debug.Log("first visit forest!");
+                    //Debug.Log("first visit forest!");
                     //run cutscene
                     CutsceneTrigger.instance.GetCutscene(TimelineList.instance.timelineObjects[0]);
                     CutsceneTrigger.instance.TriggerCutscene();
@@ -25,6 +25,8 @@ public class SceneData : MonoBehaviour
                 if (SceneVisit.ins.visitSanctuary == false)
                 {
                     SceneVisit.ins.visitSanctuary = true;
+                    //CutsceneTrigger.instance.GetCutscene(TimelineList.instance.timelineObjects[2]);
+                    //CutsceneTrigger.instance.TriggerCutscene();
                 }
                 InkManager.ins.runInk();
                 break;
