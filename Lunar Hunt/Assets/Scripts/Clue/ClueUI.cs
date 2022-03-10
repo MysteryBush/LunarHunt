@@ -59,7 +59,7 @@ public class ClueUI : MonoBehaviour
                 slots[i].ClearClueSlot();
             }
         }
-        Debug.Log("UPDATING UI");
+        //Debug.Log("UPDATING UI");
     }
 
     //public void toggleInventory()
