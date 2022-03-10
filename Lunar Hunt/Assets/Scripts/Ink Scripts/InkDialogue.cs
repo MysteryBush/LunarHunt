@@ -219,7 +219,7 @@ public class InkDialogue : MonoBehaviour
                 var clueName = tag.Substring("clue.".Length, tag.Length - "clue.".Length);
                 collectedClue = cluePair[clueName];
                 //add clue to the inventory
-                InventoryKeyItem.instance.Add(collectedClue);
+                Inventory.instance.Add(collectedClue);
             }
         }
         textLabel.text = text;

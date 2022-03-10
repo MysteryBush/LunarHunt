@@ -1,24 +1,20 @@
-﻿using UnityEngine;
+using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-//INVENTORY CODE - Making an RPG in Unity (E06)
-//https://www.youtube.com/watch?v=YLhj7SfaxSE&ab_channel=Brackeys
 
-public class InventorySlot : MonoBehaviour
+public class ClueSlot : MonoBehaviour
 {
     public Image icon;
-    public Button removeButton;
     public TMP_Text text;
 
     Item item;
 
+
     public void AddItem(Item newItem)
     {
         item = newItem;
-        Debug.Log(icon);
         icon.enabled = true;
         icon.sprite = item.icon;
-        removeButton.interactable = true;
     }
 
     public void ClearSlot()
@@ -26,7 +22,6 @@ public class InventorySlot : MonoBehaviour
         item = null;
         icon.sprite = null;
         icon.enabled = false;
-        removeButton.interactable = false;
     }
 
     public void AddClue(Item newItem)

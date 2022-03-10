@@ -24,7 +24,7 @@ public class ClueUI : MonoBehaviour
 
     InventoryKeyItem clues;
 
-    InventorySlot[] slots;
+    [SerializeField] InventorySlot[] slots;
 
     // Use this for initialization
     void Start()
@@ -32,8 +32,18 @@ public class ClueUI : MonoBehaviour
         clues = InventoryKeyItem.instance;
         clues.onItemChangedCallback += UpdateUI;
 
-        //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
+        slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        //slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
+
+        //when loaded from another scene
+        UpdateUI();
+    }
+
+    //https://forum.unity.com/threads/the-object-of-type-image-has-been-destroyed-but-you-are-still-trying-to-access-it-your-script-sho.277287/ #14
+    private void OnDestroy()
+    {
+        //EventManager.OnEvent -= SomeMethod;
+        clues.onItemChangedCallback -= UpdateUI;
     }
 
     void UpdateUI()

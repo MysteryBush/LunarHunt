@@ -17,6 +17,13 @@ public class FormEvidence : MonoBehaviour
             return;
         }
         instance = this;
+
+        inventory = Inventory.instance;
+        inventoryKeyItem = InventoryKeyItem.instance;
+        inventory.onItemChangedCallback += UpdateUI;
+
+        //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        //slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
     }
 
     #endregion
@@ -46,12 +53,12 @@ public class FormEvidence : MonoBehaviour
 
     void Start()
     {
-        inventory = Inventory.instance;
-        inventoryKeyItem = InventoryKeyItem.instance;
-        inventory.onItemChangedCallback += UpdateUI;
+        //inventory = Inventory.instance;
+        //inventoryKeyItem = InventoryKeyItem.instance;
+        //inventory.onItemChangedCallback += UpdateUI;
 
-        //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
-        //slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
+        ////slots = itemsParent.GetComponentsInChildren<InventorySlot>();
+        ////slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
     }
 
     void UpdateUI()
@@ -76,7 +83,7 @@ public class FormEvidence : MonoBehaviour
 
             tempClueButtons.Add(clueButton);
         }
-        Debug.Log("UPDATING UI");
+        //Debug.Log("UPDATING UI");
     }
 
     public bool toggleSelect(Item item)

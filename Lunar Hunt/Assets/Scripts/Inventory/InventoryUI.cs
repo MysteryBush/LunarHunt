@@ -35,6 +35,7 @@ public class InventoryUI : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+
         inventory = Inventory.instance;
         inventory.onItemChangedCallback += UpdateUI;
         inventoryKeyItem = InventoryKeyItem.instance;
@@ -43,6 +44,16 @@ public class InventoryUI : MonoBehaviour
         //slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
         keyItemSlots = keyItemsParent.GetComponentsInChildren<InventorySlot>(true);
+
+        //when loaded from another scene
+        UpdateUI();
+        UpdateKeyUI();
+    }
+    private void OnDestroy()
+    {
+        //EventManager.OnEvent -= SomeMethod;
+        inventory.onItemChangedCallback -= UpdateUI;
+        inventoryKeyItem.onItemChangedCallback -= UpdateKeyUI;
     }
 
     // Update is called once per frame
@@ -67,7 +78,7 @@ public class InventoryUI : MonoBehaviour
                 slots[i].ClearSlot();
             }
         }
-        Debug.Log("UPDATING UI");
+        //Debug.Log("UPDATING UI");
     }
 
     void UpdateKeyUI()
@@ -87,7 +98,7 @@ public class InventoryUI : MonoBehaviour
                 keyItemSlots[i].ClearSlot();
             }
         }
-        Debug.Log("UPDATING KEY UI");
+        //Debug.Log("UPDATING KEY UI");
     }
 
     //public void toggleInventory()
