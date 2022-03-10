@@ -918,7 +918,7 @@ VAR LocationName = ""
 	Sebastian walked to the center of the plaza.
 		#speaker.Sebastian
 	Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
-
+	
 	\---------
 	There's supposed to be some choices to choose again to answer the villagers
 	If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
