@@ -236,14 +236,14 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 25
-  m_fontSizeBase: 25
+  m_fontSize: 20
+  m_fontSizeBase: 20
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 8
   m_VerticalAlignment: 256
   m_textAlignment: 65535
   m_characterSpacing: 0
@@ -657,7 +657,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 10, y: 0}
-  m_SizeDelta: {x: 790, y: 110}
+  m_SizeDelta: {x: 790, y: 75}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &2772167575359356493
 CanvasRenderer:
@@ -1202,7 +1202,7 @@ PrefabInstance:
     - target: {fileID: 3456107213704846158, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 110
+      value: 75
       objectReference: {fileID: 0}
     - target: {fileID: 3456107213704846158, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
         type: 3}
@@ -1267,7 +1267,7 @@ PrefabInstance:
     - target: {fileID: 3456107213704846159, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
         type: 3}
       propertyPath: m_Name
-      value: Button OptionTemplate (TMP) (3)
+      value: Button OptionTemplate (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 3456107213704846159, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
         type: 3}
