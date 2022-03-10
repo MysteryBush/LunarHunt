@@ -32,7 +32,6 @@ public class InventorySlot : MonoBehaviour
     public void AddClue(Item newItem)
     {
         item = newItem;
-
         icon.sprite = item.icon;
         icon.enabled = true;
         text.text = item.name;

@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -88.75
+      value: -138.89
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 84.27
+      value: 69.61
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
@@ -69,6 +69,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
       propertyPath: m_Controller
       value: 
       objectReference: {fileID: 9100000, guid: 57c3e6886366a404bbea5fbadd090df5, type: 2}
@@ -78,6 +83,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: -3456532010920386237, guid: 13579d45eef14c5438f0f47d462dc5b5,
         type: 3}
+    - target: {fileID: 117092578926074169, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074175, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: knotName
+      value: Talk_to_Merchant
+      objectReference: {fileID: 0}
     - target: {fileID: 117092578926074175, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: npcMovement

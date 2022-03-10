@@ -13,7 +13,7 @@ public class EventTracking : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one instance of EventTracking found!");
+            //Debug.LogWarning("More than one instance of EventTracking found!");
             return;
         }
         instance = this;

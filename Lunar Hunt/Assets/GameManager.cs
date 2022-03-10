@@ -7,40 +7,42 @@ public class GameManager : MonoBehaviour
     public static GameManager ins;
     private GameObject[] gameManagers;
     //Start is called before the first frame update
+    private void Start()
+    {
+        DontDestroyOnLoad(gameObject);
+        ins = this;
+    }
     void Awake()
     {
-        //DontDestroyOnLoad(gameObject);
-
-        ins = this;
-        getRoot();
+        //getRoot();
     }
-    //private void OnLevelWasLoaded(int level)
-    //{
-    //    gameManagers = GameObject.FindGameObjectsWithTag("GameManager");
-
-    //    if (gameManagers.Length > 1)
-    //    {
-    //        Destroy(gameManagers[1]);
-    //    }
-    //}
-
-    void getRoot()
+    private void OnLevelWasLoaded(int level)
     {
-        // get root objects in scene
-        List<GameObject> rootObjects = new List<GameObject>();
-        Scene scene = SceneManager.GetActiveScene();
-        scene.GetRootGameObjects(rootObjects);
+        gameManagers = GameObject.FindGameObjectsWithTag("GameManager");
 
-        // iterate root objects and do something
-        for (int i = 0; i < rootObjects.Count; ++i)
+        if (gameManagers.Length > 1)
         {
-            GameObject gameObject = rootObjects[i];
-            ins.transformZ(gameObject);
+            Destroy(gameManagers[1]);
         }
     }
 
-    void transformZ(GameObject gameObject)
-    {
-        gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
-    }
+    //void getRoot()
+    //{
+    //    // get root objects in scene
+    //    List<GameObject> rootObjects = new List<GameObject>();
+    //    Scene scene = SceneManager.GetActiveScene();
+    //    scene.GetRootGameObjects(rootObjects);
+
+    //    // iterate root objects and do something
+    //    for (int i = 0; i < rootObjects.Count; ++i)
+    //    {
+    //        GameObject gameObject = rootObjects[i];
+    //        ins.transformZ(gameObject);
+    //    }
+    //}
+
+    //void transformZ(GameObject gameObject)
+    //{
+    //    gameObject.transform.position = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+    //}
 }

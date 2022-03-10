@@ -44,6 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6ac8a5c0475e37409545c078cdfe358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  narratorObject: {fileID: 11400000, guid: e7bb9b485acc5204198231fbb9427d87, type: 2}
   speakerObjects:
   - {fileID: 11400000, guid: b2daf913ca322a04a94e8574cee6166b, type: 2}
   - {fileID: 11400000, guid: f9289fbc95f6e10488ec0deb4327a99b, type: 2}

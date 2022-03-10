@@ -7,6 +7,11 @@ using UnityEngine.UI;
 
 public class InkDialogue : MonoBehaviour
 {
+    public static InkDialogue ins;
+
+    //for don't destroy on load
+    private GameObject[] inkDialogues;
+
     public TextAsset inkJSON;
     private Story story;
 
@@ -60,9 +65,13 @@ public class InkDialogue : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DontDestroyOnLoad(gameObject);
+        ins = this;
+
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
+
         addDictionary();
 
         IsOpen = true;
@@ -73,6 +82,8 @@ public class InkDialogue : MonoBehaviour
         story.ChoosePathString(knotName);
         //test using dialogue without interacting with NPC
         //OpenDialogueBox();
+
+        player.findInkUI();
     }
 
     // Update is called once per frame
@@ -83,17 +94,20 @@ public class InkDialogue : MonoBehaviour
             runDialogues();
         }
     }
-    //public void runConversation()
-    //{
-    //    dialogueBox.SetActive(true);
-    //    portraitBox.SetActive(true);
-    //    //Let PlayerControl know controlUI = true
-    //    player.controlUI = true;
-    //    //run conversation
-    //    StartCoroutine(routine: StepThroughConversation(story));
-    //    //animation start dialogue
-    //    anim.SetBool("IsOpen", true);
-    //}
+    private void OnLevelWasLoaded(int level)
+    {
+        inkDialogues = GameObject.FindGameObjectsWithTag("InkDialogue");
+        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
+        speakerList = SpeakerList.instance;
+        clueList = ClueList.instance;
+
+        if (inkDialogues.Length > 1)
+        {
+            Destroy(inkDialogues[1]);
+        }
+
+        player.findInkUI();
+    }
 
     void addDictionary()
     {
@@ -181,9 +195,14 @@ public class InkDialogue : MonoBehaviour
             }
             if (tag.StartsWith("noSpeaker"))
             {
-                nameLabel.text = null;
-                portraitBox.GetComponent<Image>().sprite = null;
-                portraitBox.SetActive(false);
+                //nameLabel.text = null;
+                //portraitBox.GetComponent<Image>().sprite = null;
+                //portraitBox.SetActive(false);
+                currentSpeaker = speakerList.narratorObject;
+                nameLabel.text = currentSpeaker.name;
+                spriteImage = currentSpeaker.portrait;
+                portraitBox.GetComponent<Image>().sprite = spriteImage;
+                portraitBox.SetActive(true);
             }
             if (tag.StartsWith("speaker."))
             {
@@ -240,8 +259,10 @@ public class InkDialogue : MonoBehaviour
     void eraseUI()
     {
         textLabel.text = null;
-        nameLabel.text = null;
-        portraitBox.GetComponent<Image>().sprite = null;
+        currentSpeaker = speakerList.narratorObject;
+        nameLabel.text = currentSpeaker.name;
+        spriteImage = currentSpeaker.portrait;
+        portraitBox.GetComponent<Image>().sprite = spriteImage;
         portraitBox.SetActive(false);
         for (int i = 0; i < responseBox.transform.childCount; i++)
         {

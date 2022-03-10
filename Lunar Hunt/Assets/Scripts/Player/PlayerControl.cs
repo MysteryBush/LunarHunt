@@ -17,7 +17,7 @@ public class PlayerControl : MonoBehaviour
     public IInteractable Interactable { get; set; }
     private void Awake()
     {
-        inkUI = FindObjectOfType<InkDialogue>().gameObject.GetComponent<InkDialogue>();
+        
     }
     void Update()
     {
@@ -61,5 +61,10 @@ public class PlayerControl : MonoBehaviour
         {
             isControl = false;
         }
+    }
+
+    public void findInkUI()
+    {
+        inkUI = InkDialogue.ins.GetComponent<InkDialogue>();
     }
 }

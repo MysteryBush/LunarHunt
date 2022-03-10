@@ -990,7 +990,7 @@ GameObject:
   - component: {fileID: 2772167575640698853}
   m_Layer: 5
   m_Name: CanvasDialogue
-  m_TagString: Untagged
+  m_TagString: InkDialogue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1138,6 +1138,7 @@ MonoBehaviour:
   inkJSON: {fileID: 4900000, guid: 7ec4e9fc8cecbed429c2668fb45d963f, type: 3}
   knotName: 
   speakerList: {fileID: 0}
+  clueList: {fileID: 0}
   textPrefab: {fileID: 4685947449398883275, guid: 9a33c8a6b772b7c45a8b81a4fd8b4048,
     type: 3}
   buttonPrefab: {fileID: 3456107213704846157, guid: cc4cfa67e61e2d84fb53cc6223a57d95,

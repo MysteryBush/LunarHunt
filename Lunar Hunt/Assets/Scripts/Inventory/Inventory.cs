@@ -33,7 +33,7 @@ public class Inventory : MonoBehaviour
     {
         if (instance != null)
         {
-            Debug.LogWarning("More than one instance of Inventory found!");
+            //Debug.LogWarning("More than one instance of Inventory found!");
             return;
         }
         instance = this;

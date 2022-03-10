@@ -21,12 +21,19 @@ public class CutsceneTrigger: MonoBehaviour
     }
 
     #endregion
-    public GameObject timelineObject;
-    private PlayableDirector playableDirector;
-    public PlayableAsset cutscene;
-    public TimelineAsset CutsceneObject;
-    public GameObject mainCamera;
-    public GameObject transitioncanvas;
+    //public GameObject timelineObject;
+    //private PlayableDirector playableDirector;
+    //public PlayableAsset cutscene;
+    //public TimelineAsset CutsceneObject;
+    //public GameObject mainCamera;
+    //public GameObject transitioncanvas;
+
+    [SerializeField] private GameObject timelineObject;
+    [SerializeField] private PlayableDirector playableDirector;
+    [SerializeField] private PlayableAsset cutscene;
+    [SerializeField] private TimelineAsset CutsceneObject;
+    [SerializeField] private GameObject mainCamera;
+    [SerializeField] private GameObject transitioncanvas;
     private void Start()
     {
         playableDirector = timelineObject.GetComponent<PlayableDirector>();
@@ -36,6 +43,7 @@ public class CutsceneTrigger: MonoBehaviour
     {
         CutsceneObject = cutsceneObject;
         playableDirector.playableAsset = CutsceneObject;
+        cutscene = playableDirector.playableAsset;
     }
     public void TriggerCutscene()
     {

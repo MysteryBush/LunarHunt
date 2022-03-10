@@ -6,6 +6,7 @@ TagManager:
   tags:
   - GameManager
   - SpawnManager
+  - InkDialogue
   layers:
   - Default
   - TransparentFX

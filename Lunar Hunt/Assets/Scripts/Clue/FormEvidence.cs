@@ -47,6 +47,7 @@ public class FormEvidence : MonoBehaviour
     void Start()
     {
         inventory = Inventory.instance;
+        inventoryKeyItem = InventoryKeyItem.instance;
         inventory.onItemChangedCallback += UpdateUI;
 
         //slots = itemsParent.GetComponentsInChildren<InventorySlot>();

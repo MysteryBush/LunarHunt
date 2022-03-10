@@ -35,6 +35,7 @@ public class NotifierUI : MonoBehaviour
 
     private void Start()
     {
+        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         IsOpen = true;
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseNotifierBox();

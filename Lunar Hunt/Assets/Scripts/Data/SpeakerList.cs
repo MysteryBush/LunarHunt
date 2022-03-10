@@ -20,6 +20,7 @@ public class SpeakerList : MonoBehaviour
 
     #endregion
 
+    public SpeakerObject narratorObject;
     public List<SpeakerObject> speakerObjects = new List<SpeakerObject>();
 
     public void getSpeakerObject(string name)

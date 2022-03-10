@@ -850,6 +850,7 @@ VAR LocationName = ""
 						#clue.CS_Order_to_Forge_The_News
 						~ GetClue(CS_Order_to_Forge_The_News)
 					}
+						#noSpeaker
 					{ ItemList !? Original_Newspaper:
 						#item.Original_Newspaper
 						~ GetItem(Original_Newspaper)
