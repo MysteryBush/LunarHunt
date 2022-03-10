@@ -712,7 +712,7 @@ VAR LocationName = ""
 			~ ChangeLocation(Nursery)
 		+ [Go to the Forest]
 			~ ChangeLocation(Forest)
-		- -> Investigate
+		- -> END
 	   
 	=== Location_Nursery ===
 		+ [Talk to Athena] -> Talk_to_Athena ->
@@ -786,13 +786,15 @@ VAR LocationName = ""
 				#END
 				- -> END
 	=== Location_Forest ===
+		{not Location_Forest} #cutscene.Wake_up
+		{Location_Forest > 2} #debug
 		+ {ClueList !? The_Potion_is_just_Colored_Water}
 			[Talk to Merchant] -> Talk_to_Merchant ->
 		+ {ClueList ? The_Potion_is_just_Colored_Water}
 			[Talk to Caravan] -> Talk_to_Caravan ->
 		+ [Go to the Sanctuary]
 			~ ChangeLocation(Sanctuary)
-		- -> Investigate
+		- -> END
 	   
 		== Talk_to_Merchant ==
 			What do you want from me? #speaker.Merchant

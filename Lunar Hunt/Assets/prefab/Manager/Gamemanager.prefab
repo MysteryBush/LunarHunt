@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 6968752486176079027}
   - component: {fileID: 6968752486176079024}
   - component: {fileID: 867698769}
+  - component: {fileID: 6255606092935743170}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: GameManager
@@ -102,3 +103,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnNumber: 0
+--- !u!114 &6255606092935743170
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968752486176079030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a232897bc0de24147af91c93d040dbe4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  visitForest: 0
+  visitSanctuary: 0
+  visitHall: 0

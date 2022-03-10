@@ -12,10 +12,6 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ins = this;
     }
-    void Awake()
-    {
-        //getRoot();
-    }
     private void OnLevelWasLoaded(int level)
     {
         gameManagers = GameObject.FindGameObjectsWithTag("GameManager");
@@ -24,6 +20,10 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameManagers[1]);
         }
+    }
+    void Awake()
+    {
+        //getRoot();
     }
 
     //void getRoot()
