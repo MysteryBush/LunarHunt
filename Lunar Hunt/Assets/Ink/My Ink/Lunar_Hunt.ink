@@ -957,6 +957,12 @@ VAR LocationName = ""
 				#END
 				-> END
 
+			= no_axe
+					#speaker.Sebastian
+				(The axe is returned to the right owner now)
+				#END
+				- -> END
+
 		== Talk_to_Caravan ==
 			~Conversation("Talk to Caravan")
 				#speaker.Sebastian

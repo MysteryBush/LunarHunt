@@ -3793,6 +3793,10 @@ PlayableDirector:
     value: {fileID: 791163234}
   - key: {fileID: -723521231997966127, guid: 5f025b46b4e4e024186eda95c1e88a5a, type: 2}
     value: {fileID: 1887260756}
+  - key: {fileID: -5233875027977862724, guid: 5f025b46b4e4e024186eda95c1e88a5a, type: 2}
+    value: {fileID: 1035674692}
+  - key: {fileID: 5070528700860921754, guid: 5f025b46b4e4e024186eda95c1e88a5a, type: 2}
+    value: {fileID: 1035674693}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &421582547
@@ -9716,6 +9720,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1687370729515775569, guid: b53cd130bb24c0f4eb830b57ae5eee19,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 4464718120857608405, guid: d6d79834c77140f4db41d1c55f12b543,
+        type: 3}
     - target: {fileID: 1687370729515775580, guid: b53cd130bb24c0f4eb830b57ae5eee19,
         type: 3}
       propertyPath: m_Name
@@ -9793,6 +9803,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1035674693
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1035674688}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 0}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 1035674689}
+          m_TargetAssemblyTypeName: ConversationActivator, Assembly-CSharp
+          m_MethodName: changeKnot
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Item_on_Sale.no_axe
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!4 &1035674695 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1687370729515775568, guid: b53cd130bb24c0f4eb830b57ae5eee19,

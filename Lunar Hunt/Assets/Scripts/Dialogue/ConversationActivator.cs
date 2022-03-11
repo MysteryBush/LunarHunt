@@ -55,4 +55,10 @@ public class ConversationActivator : MonoBehaviour, IInteractable
         player.InkUI.knotName = knotName;
         player.InkUI.OpenDialogueBox();
     }
+
+    //use on Signal Emitter
+    public void changeKnot(string changeKnot)
+    {
+        knotName = changeKnot;
+    }
 }
