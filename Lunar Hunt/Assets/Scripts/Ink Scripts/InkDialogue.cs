@@ -81,6 +81,9 @@ public class InkDialogue : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ins = this;
 
+        //sceneData give initial name
+        knotName = SceneData.ins.initialKnot;
+
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
@@ -99,6 +102,8 @@ public class InkDialogue : MonoBehaviour
         //OpenDialogueBox();
 
         player.findInkUI();
+
+        if (knotName != "") OpenDialogueBox();
     }
 
     // Update is called once per frame
@@ -163,7 +168,9 @@ public class InkDialogue : MonoBehaviour
         //Timeline List
         timelines = timelineList.timelineObjects;
         //timelinePair.Add("", timelines[]);
+        timelinePair.Add("Lumberjack_clear_the_path", timelines[1]);
         timelinePair.Add("Lumberjack_go_to_the_Log", timelines[4]);
+        timelinePair.Add("Athena", timelines[5]);
     }
 
     void runDialogues()
@@ -225,11 +232,16 @@ public class InkDialogue : MonoBehaviour
             {
                 var timelineName = tag.Substring("timeline.".Length, tag.Length - "timeline.".Length);
                 useTimeline = timelinePair[timelineName];
-                Debug.Log(CutsceneTrigger.instance);
-                Debug.Log("useTimeline: " + useTimeline);
+                //Debug.Log(CutsceneTrigger.instance);
+                //Debug.Log("useTimeline: " + useTimeline);
                 CutsceneTrigger.instance.GetCutscene(useTimeline);
                 CutsceneTrigger.instance.TriggerCutscene();
-                Debug.Log("play cutscene");
+                //Debug.Log("play cutscene");
+            }
+            if (tag.StartsWith("knot."))
+            {
+                var changeToKnot = tag.Substring("knot.".Length, tag.Length - "knot.".Length);
+                knotName = changeToKnot;
             }
         }
         textLabel.text = text;
@@ -353,4 +365,15 @@ public class InkDialogue : MonoBehaviour
     {
         player = playercontrol;
     }
+
+    //use on Signal Emitter
+    //public void changeKnot(string knot)
+    //{
+    //    knotName = knot;
+    //}
+    //public void triggerDialogue()
+    //{
+    //    //changeKnot(knot);
+    //    OpenDialogueBox();
+    //}
 }

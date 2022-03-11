@@ -986,8 +986,8 @@ GameObject:
   - component: {fileID: 2772167575640698841}
   - component: {fileID: 2772167575640698840}
   - component: {fileID: 2772167575640698845}
-  - component: {fileID: 2772167575640698844}
   - component: {fileID: 2772167575640698853}
+  - component: {fileID: 2772167575640698844}
   m_Layer: 5
   m_Name: CanvasDialogue
   m_TagString: InkDialogue
@@ -1108,21 +1108,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   typewriterSpeed: 50
---- !u!114 &2772167575640698844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2772167575640698847}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Events:
-    m_Signals: []
-    m_Events: []
 --- !u!114 &2772167575640698853
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1143,6 +1128,7 @@ MonoBehaviour:
     type: 3}
   buttonPrefab: {fileID: 3456107213704846157, guid: cc4cfa67e61e2d84fb53cc6223a57d95,
     type: 3}
+  timelineList: {fileID: 0}
   dialogueBox: {fileID: 2772167574274316882}
   textLabel: {fileID: 2772167573856035473}
   nameLabel: {fileID: 2772167575457243149}
@@ -1152,6 +1138,37 @@ MonoBehaviour:
   anim: {fileID: 2772167575640698840}
   player: {fileID: 0}
   chatRange: 0
+  notifyIsOpen: 0
+--- !u!114 &2772167575640698844
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2772167575640698847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: 926fc04283854ca4580af4f2faca11e5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2772167575640698853}
+          m_TargetAssemblyTypeName: InkDialogue, Assembly-CSharp
+          m_MethodName: OpenDialogueBox
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1001 &8339311863345644231
 PrefabInstance:
   m_ObjectHideFlags: 0

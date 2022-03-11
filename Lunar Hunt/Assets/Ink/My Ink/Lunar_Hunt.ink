@@ -265,13 +265,22 @@ VAR LocationName = ""
 // --- Cutscenes list ---
 	=== Cutscene_Welcome_to_Sanctuary ===
 		//\--- Welcome to Sanctuary ---
-			#noSpeaker
-		While entering the entrance of the Sanctuary town. Sebastian was wondering for himself.
+		//play cutscene 
+		// 	#noSpeaker
+		// While entering the entrance of the Sanctuary town. Sebastian was wondering for himself.
+		//resume
+		= first
 			#speaker.Sebastian
 		(Now that I got here, I should ask if someone knows about missing people.)
 		(That way, I should be able to find a lead about my father.)
-			#noSpeaker
-		Athena, who was re-painting the town sign, noticed Sebastian.
+		//Sebastian walk until in front of Athena
+		#knot.Cutscene_Welcome_to_Sanctuary.Athena
+		#timeline.Athena
+		#END
+		- -> END
+		// 	#noSpeaker
+		// Athena, who was re-painting the town sign, noticed Sebastian.
+		= Athena
 			#speaker.Athena
 		Hello there, you seem to be new here, do you need any help?
 			#speaker.Sebastian
@@ -295,15 +304,20 @@ VAR LocationName = ""
 			#speaker.Sebastian
 		(She's so eager to help)
 		(But I guess it's the first place to go anyway)
+		//play cutscene
+		= to_meeting_hall
 			#noSpeaker
 		Athena leads the way to the town meeting hall and Sebastian follows behind her.
 		They arrived at the front of the town's meeting hall.
+
+		= At_meeting_hall
 			#speaker.Athena
 		Here it is! The meeting hall!
 			#speaker.Sebastian
 		Thank you, I hope I can find my father soon.
 			#speaker.Athena
 		I'm sure you can!
+		= Go_in
 			#noSpeaker
 		Athena walked away to the east.
 		Sebastian walks up to the door and go inside the town's meeting hall.
@@ -791,6 +805,12 @@ VAR LocationName = ""
 		- -> END
 		
 	    == Talk_to_Lumberjack ==
+			{ Clear_the_path:
+				-> Thanks
+			}
+			{ About_the_axe:
+				-> Clear_the_path
+			}
 			{ not Lost_axe: 
 				-> Lost_axe
 			}
@@ -839,12 +859,23 @@ VAR LocationName = ""
 						#speaker.Lumberjack
 					It was with the merchant this whole time?
 						#speaker.Lumberjack
-					I'll go find him and take it back.
+					I'll go find him and take it back
 					// run cutscene about Lumberjack taking back his axe
 
 					#timeline.Lumberjack_go_to_the_Log
 					#END 
 					- -> END
+				= Clear_the_path
+						#speaker.Lumberjack
+					Alright, let's clear the path now
+					#timeline.Lumberjack_clear_the_path
+					#END 
+					- -> END
+				= Thanks
+						#speaker.Lumberjack
+					Thanks for the help kid
+					#END 
+					-> END
 			//chapter 1
 
 		== Talk_to_Merchant ==
@@ -936,6 +967,9 @@ VAR LocationName = ""
 				- ->->
  
 		== Item_on_Sale ==
+			{ Talk_to_Lumberjack.About_the_axe:
+				-> no_axe
+			}
 			{ Talk_to_Lumberjack:
 				-> Look_closer_at_the_axe
 			}
