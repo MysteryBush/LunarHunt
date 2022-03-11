@@ -9,9 +9,9 @@ VAR MaxList = 0
  
 LIST ItemList = Original_Newspaper
  
+LIST ClueTutorialList = Clue_01, Clue_02, Clue_03, Clue_04, Clue_05, Clue_06
 LIST ClueList = News_about_Moving_Out_People, Visitors_do_not_Checkout, Merchant_Sells_the_Newspaper, CS_Order_to_Forge_The_News, CS_Sells_the_potion, This_Potion_Improve_Health, The_Potion_is_just_Colored_Water, Cassandra_Prophesied_The_Plague, No_Record_of_Recent_Plague, CS_letters
-
-LIST EvidenceList = CS_Faked_The_News
+LIST EvidenceList = Merchant_took_the_axe, CS_Faked_The_News, CS_Sells_Fake_Potion, Cassandra_lied_about_the_plague
  
 LIST KeyList = Empty
  
@@ -115,6 +115,9 @@ VAR LocationName = ""
 	   
 	== function GetClue(clue) ==
 		~ ClueList += clue
+		- Collected Clue: {clue}
+	== function GetClueTutorial(clue) ==
+		~ ClueTutorialList += clue
 		- Collected Clue: {clue}
 	== function GetItem(item) ==
 		~ ItemList += item
@@ -542,13 +545,7 @@ VAR LocationName = ""
 		- -> The_Reveal
 // --- Location List ---
 	=== Location_Meeting_Hall ===
-			{ ClueList !? News_about_Moving_Out_People:
-					#noSpeaker
-				Sebastian is searching inside the meeting hall
-			}
-		+ [Talk to Staff] -> Talk_to_Staff ->
-		+ [Look at town board] -> Town_Board ->
-		+ [Leave the meeting hall]
+		= Leave_the_meeting_hall
 			{
 			- ClueList ? News_about_Moving_Out_People && not Cutscene_The_Witch_Nursery:
 				-> Cutscene_The_Witch_Nursery
@@ -706,18 +703,9 @@ VAR LocationName = ""
 				- ->->
  
 	=== Location_The_Sanctuary ===
-		+ [Go to the Meeting Hall]
-			~ ChangeLocation(Meeting_Hall)
-		+ [Go to the Nursery]
-			~ ChangeLocation(Nursery)
-		+ [Go to the Forest]
-			~ ChangeLocation(Forest)
 		- -> END
 	   
 	=== Location_Nursery ===
-		+ [Talk to Athena] -> Talk_to_Athena ->
-		+ [Leave Nursery]
-			~ ChangeLocation(Sanctuary)
 		- -> Investigate
 
 		= Talk_to_Athena
@@ -787,77 +775,172 @@ VAR LocationName = ""
 				- -> END
 	=== Location_Forest ===
 		{not Location_Forest} #cutscene.Wake_up
-		+ {ClueList !? The_Potion_is_just_Colored_Water}
-			[Talk to Merchant] -> Talk_to_Merchant ->
-		+ {ClueList ? The_Potion_is_just_Colored_Water}
-			[Talk to Caravan] -> Talk_to_Caravan ->
-		+ [Go to the Sanctuary]
-			~ ChangeLocation(Sanctuary)
 		- -> END
-	   
-		== Talk_to_Merchant ==
-			What do you want from me? #speaker.Merchant
-			//~ Conversation("Talk to Merchant")
-			//Talking to Merchant.
-			+ [What are you doing here?] -> What_are_you_doing_here ->
-			+ { ClueList ? Merchant_Sells_the_Newspaper } {ClueList !? CS_Order_to_Forge_The_News}
-				[I heard that you sells the Newspaper] -> I_heard_that_you_sells_the_Newspaper ->
-			+ [(Nevermind)] {EndCon()} -> END #END
-			- -> Talk_to_Merchant
-			   
-				= What_are_you_doing_here
-						#speaker.Merchant
-					Oh, I'm just continuing my business here. 
-					You see, my profit doesn't only come from selling my well earned and clean items.
-					I also have a connection with this town leader too! So next time, don't try to interrupt my business.
-					- ->->
-				= I_heard_that_you_sells_the_Newspaper
-						#speaker.Merchant
-					Well yes, I sells the newspaper to this town. 
-						#speaker.Sebastian
-					Then can we talk about how this headline "Movin out people" is fake?  
-						#speaker.Merchant
-					Fake? Why would you think that? 
-						#speaker.Sebastian
-					You see, the visitors do not checkout in the Meeting Hall.
-						#speaker.Merchant
-					Well, I don't care about your problem.
-					It's just good money to make forging commission.
-					//Merchant spilled the beans
-						#speaker.Sebastian
-					Forging, so you're the one who faked it?
-						#speaker.Merchant
-					Oops.
-						#speaker.Sebastian
-					I heard it you know. Don't just pretend to be innocent now.
-						#speaker.Merchant
-					Fine, I'm the one who forged it. 
-					But now what are you going to do? Call the police? They aren't around here you know.
-						#speaker.Sebastian
-					There maybe no police but I could ask our good friend Alex to talk it out.
-						#speaker.Merchant
-					Oh... him... hahaha well what else do you want from me?
-						#speaker.Sebastian
-					I just want to know the real content. And also who commissioned you.
-						#speaker.Merchant
-					Who commissioned me? I don't know actually. I only communicated with them through the name of "C.S."
-						#speaker.Sebastian
-					C.S. ?
-						#speaker.Merchant
-					Yeah that's all I really know. And here's the real content that I got before I forged it.
-						#speaker.Sebastian
-					Ok, it's a good thing that you did what I asked.
-					{ ClueList !? CS_Order_to_Forge_The_News:
-						#clue.CS_Order_to_Forge_The_News
-						~ GetClue(CS_Order_to_Forge_The_News)
-					}
+		
+	    == Talk_to_Lumberjack ==
+			{ not Lost_axe: 
+				-> Lost_axe
+			}
+			{ Lost_axe: 
+				Hey there kid  #speaker.Lumberjack
+			} 
+			//Hey kid, have you found my axe?
+				+ [When were you fainted?]-> When_were_you_fainted ->
+				+ { Talk_to_Merchant } [Do you know about the merchant?]-> Do_you_know_about_the_merchant ->
+				+ { EvidenceList ? Merchant_took_the_axe } [About the Axe...] -> About_the_axe ->
+				+ [(Nevermind)] {EndCon()} -> END #END
+				- -> Talk_to_Lumberjack
+			//tutorial
+				= Lost_axe
+						#speaker.Lumberjack
+					Hey, can you help me out?
+					I got unconscious and when I woke up again. My axe is gone!
+					I need the axe so I can clear this tree that blocks the way to our town.
+					I also wrote my name, Alex, on my axe. 
 						#noSpeaker
-					{ ItemList !? Original_Newspaper:
-						#item.Original_Newspaper
-						~ GetItem(Original_Newspaper)
+					{ ClueList !? Clue_01:
+						#clue.Clue_01
+						~ GetClue(Clue_01)
 					}
-					- ->->
+					#END
+					- -> END
+				= When_were_you_fainted
+						#speaker.Lumberjack
+					Not too long, I just got fainted this morning
+						#noSpeaker
+					{ ClueList !? Clue_03:
+						#clue.Clue_03
+						~ GetClue(Clue_03)
+					}
+					- -> Talk_to_Lumberjack
+				= Do_you_know_about_the_merchant
+						#speaker.Lumberjack
+					That merchant? He has a habit of picking up someone's else belonging and sell them
+						#noSpeaker
+					{ ClueList !? Clue_02:
+						#clue.Clue_02
+						~ GetClue(Clue_02)
+					}
+					- -> Talk_to_Lumberjack
+				= About_the_axe
+						#speaker.Lumberjack
+					It was with the merchant this whole time?
+						#speaker.Lumberjack
+					I'll go find him and take it back.
+					// run cutscene about Lumberjack taking back his axe
+
+					#END
+					- -> END
+			//chapter 1
+
+		== Talk_to_Merchant ==
+				#speaker.Merchant
+			What do you want from me?
+				//~ Conversation("Talk to Merchant")
+				//Talking to Merchant.
+				//Tutorial
+				+ {Talk_to_Lumberjack} {not Talk_to_Lumberjack.About_the_axe} [Have you seen an axe?] -> Have_you_seen_an_axe ->
+				+ {Talk_to_Lumberjack} {not Talk_to_Lumberjack.About_the_axe} [Were you there when the lumberjack fainted?] -> Were_you_there ->
+				//chapter 1
+				+ [What are you doing here?] -> What_are_you_doing_here ->
+				+ { ClueList ? Merchant_Sells_the_Newspaper } {ClueList !? CS_Order_to_Forge_The_News}
+					[I heard that you sells the Newspaper] -> I_heard_that_you_sells_the_Newspaper ->
+
+				+ [(Nevermind)] {EndCon()} -> END #END
+				- -> Talk_to_Merchant
+			// Tutorial
+				= Have_you_seen_an_axe
+						#speaker.Merchant
+					An axe? I found this one by the river far from here
+						#noSpeaker
+					{ ClueList !? Clue_04:
+						#clue.Clue_04
+						~ GetClue(Clue_04)
+					}
+					-> Talk_to_Merchant
+				= Were_you_there
+						#speaker.Merchant
+					A lumberjack? Haven't see one today. I only got here this morning.
+						#noSpeaker
+					{ ClueList !? Clue_05:
+						#clue.Clue_05
+						~ GetClue(Clue_05)
+					}
+					-> Talk_to_Merchant
+			// chapter 1
+			= What_are_you_doing_here
+					#speaker.Merchant
+				Oh, I'm just continuing my business here. 
+				You see, my profit doesn't only come from selling my well earned and clean items.
+				I also have a connection with this town leader too! So next time, don't try to interrupt my business.
+				- ->->
+			= I_heard_that_you_sells_the_Newspaper
+					#speaker.Merchant
+				Well yes, I sells the newspaper to this town. 
+					#speaker.Sebastian
+				Then can we talk about how this headline "Movin out people" is fake?  
+					#speaker.Merchant
+				Fake? Why would you think that? 
+					#speaker.Sebastian
+				You see, the visitors do not checkout in the Meeting Hall.
+					#speaker.Merchant
+				Well, I don't care about your problem.
+				It's just good money to make forging commission.
+				//Merchant spilled the beans
+					#speaker.Sebastian
+				Forging, so you're the one who faked it?
+					#speaker.Merchant
+				Oops.
+					#speaker.Sebastian
+				I heard it you know. Don't just pretend to be innocent now.
+					#speaker.Merchant
+				Fine, I'm the one who forged it. 
+				But now what are you going to do? Call the police? They aren't around here you know.
+					#speaker.Sebastian
+				There maybe no police but I could ask our good friend Alex to talk it out.
+					#speaker.Merchant
+				Oh... him... hahaha well what else do you want from me?
+					#speaker.Sebastian
+				I just want to know the real content. And also who commissioned you.
+					#speaker.Merchant
+				Who commissioned me? I don't know actually. I only communicated with them through the name of "C.S."
+					#speaker.Sebastian
+				C.S. ?
+					#speaker.Merchant
+				Yeah that's all I really know. And here's the real content that I got before I forged it.
+					#speaker.Sebastian
+				Ok, it's a good thing that you did what I asked.
+				{ ClueList !? CS_Order_to_Forge_The_News:
+					#clue.CS_Order_to_Forge_The_News
+					~ GetClue(CS_Order_to_Forge_The_News)
+				}
+					#noSpeaker
+				{ ItemList !? Original_Newspaper:
+					#item.Original_Newspaper
+					~ GetItem(Original_Newspaper)
+				}
+				- ->->
  
+		== Item_on_Sale ==
+				#speaker.Sebastian
+			(Some items are put on sale here)
+			+ [Look closer at the axe] -> Look_closer_at_the_axe ->
+			// + { Talk_to_Lumberjack } [Look closer at the axe] -> Look_closer_at_the_axe
+			#END
+			- -> END
+
+			= Look_closer_at_the_axe
+					#speaker.Sebastian
+				(Wait, this axe has some letters carved on it)
+				(Alex... so this is the axe to look for)
+					#noSpeaker
+				{ ClueList !? Clue_06:
+					#clue.Clue_06
+					~ GetClue(Clue_06)
+				}
+				#END
+				-> END
+
 		== Talk_to_Caravan ==
 			~Conversation("Talk to Caravan")
 				#speaker.Sebastian
@@ -882,11 +965,10 @@ VAR LocationName = ""
 			}
 		- ->->
 	=== Location_Inside_Nursery ===
-		+ [Cassandra's Room] -> Cassandra_Room
-		+ [The kitchen]
+		= The_kitchen
 				#noSpeaker
 			The kitchen is locked.
-		- -> DONE
+			- -> DONE
 			// The kitchen is locked and you can hear Athena hummed along with some soft noise.
 		
 		= Cassandra_Room
@@ -913,62 +995,62 @@ VAR LocationName = ""
 			}
 			- -> Cutscene_Cassandra_Return
 	//Chapter 3 stuff
-	=== The_Reveal ===
-		#noSpeaker
-	Sebastian walked to the center of the plaza.
-		#speaker.Sebastian
-	Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
-	
-	\---------
-	There's supposed to be some choices to choose again to answer the villagers
-	If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
-	\---------
-	- -> Exposed_Cassandra
+		=== The_Reveal ===
+				#noSpeaker
+			Sebastian walked to the center of the plaza.
+				#speaker.Sebastian
+			Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
+			
+			\---------
+			There's supposed to be some choices to choose again to answer the villagers
+			If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
+			\---------
+			- -> Exposed_Cassandra
 
-	=== Exposed_Cassandra ===
-	//part 1
-		#speaker.Villager
-	Cassandra! Why did you do this?!
-		#speaker.OldMan
-	You sold me a glass of water all this time?
-		#speaker.Caravan
-	We have to abandoned our town just to let the thiefs takes everything!
-		#speaker.Villager
-	We don't need this fake leader in our town!
-		#noSpeaker
-	The villagers comes towards Cassandra with ill intents.
-	//part 2
-		#speaker.Cassandra
-	No, why are you listening to this child? I did everything for you people all this time.
-		#speaker.Villager
-	What you did is everything that makes our life worse! You just want to leech our work!
-	    #noSpeaker
-	The villagers chase Cassandra out of the Sanctuary.
-	- -> Confessed_Cassandra
+		=== Exposed_Cassandra ===
+			//part 1
+				#speaker.Villager
+			Cassandra! Why did you do this?!
+				#speaker.OldMan
+			You sold me a glass of water all this time?
+				#speaker.Caravan
+			We have to abandoned our town just to let the thiefs takes everything!
+				#speaker.Villager
+			We don't need this fake leader in our town!
+				#noSpeaker
+			The villagers comes towards Cassandra with ill intents.
+			//part 2
+				#speaker.Cassandra
+			No, why are you listening to this child? I did everything for you people all this time.
+				#speaker.Villager
+			What you did is everything that makes our life worse! You just want to leech our work!
+				#noSpeaker
+			The villagers chase Cassandra out of the Sanctuary.
+			- -> Confessed_Cassandra
 
-	=== Confessed_Cassandra ===
-	    #noSpeaker
-	Sebastian followed Cassandra outside the town.
-		#speaker.Cassandra
-	I'll tell you, Sebastian. As a reward for being able to expose me.
-		#speaker.Sebastian
-	Well, I already read it from your letters. You're also the one who captured my father.
-	So, where is he now?
-		#speaker.Cassandra
-	Alright... Listen closely, your father...
-	Is already dead.
-		#speaker.Sebastian
-	...
-	You're not done with lying?
-		#speaker.Cassandra
-	Ha, how funny, now you're the one who wants to hear some lies instead.
-	If you don't believe me, head toward the forest to the east of my Nursery. 
-	There's a hidden shack there that I use to do my ritual.
-		#speaker.Sebastian
-	Ritual?
-		#speaker.Cassandra
-	Yes Sebastian, ritual, the dark ones.
-	I would love to tell you more but you must be dying to find your father now.
-		#speaker.Sebastian
-	... You better not be scheming again.
+		=== Confessed_Cassandra ===
+			#noSpeaker
+		Sebastian followed Cassandra outside the town.
+			#speaker.Cassandra
+		I'll tell you, Sebastian. As a reward for being able to expose me.
+			#speaker.Sebastian
+		Well, I already read it from your letters. You're also the one who captured my father.
+		So, where is he now?
+			#speaker.Cassandra
+		Alright... Listen closely, your father...
+		Is already dead.
+			#speaker.Sebastian
+		...
+		You're not done with lying?
+			#speaker.Cassandra
+		Ha, how funny, now you're the one who wants to hear some lies instead.
+		If you don't believe me, head toward the forest to the east of my Nursery. 
+		There's a hidden shack there that I use to do my ritual.
+			#speaker.Sebastian
+		Ritual?
+			#speaker.Cassandra
+		Yes Sebastian, ritual, the dark ones.
+		I would love to tell you more but you must be dying to find your father now.
+			#speaker.Sebastian
+		... You better not be scheming again.
 -> END

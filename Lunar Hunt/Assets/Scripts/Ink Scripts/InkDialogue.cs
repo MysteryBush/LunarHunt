@@ -89,7 +89,7 @@ public class InkDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true)
         {
             runDialogues();
         }
@@ -125,12 +125,12 @@ public class InkDialogue : MonoBehaviour
         //Debug.Log(speakerPair["Sebastian"]);
         //Clue List
         clues = clueList.clueItems;
-        cluePair.Add("Clue_0-1", clues[0]);
-        cluePair.Add("Clue_0-2", clues[1]);
-        cluePair.Add("Clue_0-3", clues[2]);
-        cluePair.Add("Clue_0-4", clues[3]);
-        cluePair.Add("Clue_0-5", clues[4]);
-        cluePair.Add("Clue_0-6", clues[5]);
+        cluePair.Add("Clue_01", clues[0]);
+        cluePair.Add("Clue_02", clues[1]);
+        cluePair.Add("Clue_03", clues[2]);
+        cluePair.Add("Clue_04", clues[3]);
+        cluePair.Add("Clue_05", clues[4]);
+        cluePair.Add("Clue_06", clues[5]);
         cluePair.Add("News_about_Moving_Out_People", clues[6]);
         cluePair.Add("Visitors_do_not_Checkout", clues[7]);
         cluePair.Add("Merchant_Sells_the_Newspaper", clues[8]);
@@ -187,9 +187,14 @@ public class InkDialogue : MonoBehaviour
 
         foreach (var tag in story.currentTags)
         {
+            if (tag.StartsWith("debug"))
+            {
+                Debug.Log("INK DEBUG");
+                return;
+            }
             if (tag.StartsWith("END"))
             {
-                //Debug.Log("End of Dialogue");
+                Debug.Log("End of Dialogue");
                 CloseDialogueBox();
                 return;
             }
@@ -301,9 +306,11 @@ public class InkDialogue : MonoBehaviour
     public void CloseDialogueBox()
     {
         IsOpen = false;
+        Debug.Log(IsOpen);
         player.controlUI = false;
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
+        Debug.Log(anim.GetBool("IsOpen"));
         eraseUI();
     }
 

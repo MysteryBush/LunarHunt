@@ -2,13 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class SwitchPages : MonoBehaviour
 {
     public int currentPage;
     public GameObject pageParent;
-    //[SerializeField] public GameObject[] pages;
-    public List<GameObject> pages = new List<GameObject>();
+    [SerializeField] public GameObject[] pages;
+    [SerializeField] public string[] pageName;
+
+
+    //Text ref
+    public TMP_Text pageTitle;
 
     //Buttons ref
     [SerializeField] GameObject nextButton;
@@ -18,17 +23,17 @@ public class SwitchPages : MonoBehaviour
     private void Start()
     {
         showPage();
-        Debug.Log(pages.Count);
     }
 
     public void showPage()
     {
-        for (int i = 0; i < pages.Count; i++)
+        for (int i = 0; i < pages.Length; i++)
         {
             pages[i].SetActive(false);
         }
 
         pages[currentPage].SetActive(true);
+        pageTitle.text = pageName[currentPage];
         checkInteractable();
     }
 
@@ -47,7 +52,7 @@ public class SwitchPages : MonoBehaviour
     public void checkInteractable()
     {
         //if reach the last page
-        if (currentPage == pages.Count-1)
+        if (currentPage == pages.Length - 1)
         {
             //nextPage disable
             nextButton.SetActive(false);

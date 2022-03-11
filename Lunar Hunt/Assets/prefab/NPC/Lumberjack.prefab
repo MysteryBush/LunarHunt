@@ -79,6 +79,11 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: e33a64104061a5a4498fcfea0a383fd1, type: 2}
     - target: {fileID: 117092578926074175, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
+      propertyPath: knotName
+      value: Talk_to_Lumberjack
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074175, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
       propertyPath: npcMovement
       value: 
       objectReference: {fileID: 2007070916380113399}

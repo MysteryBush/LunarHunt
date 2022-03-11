@@ -31,7 +31,7 @@ public class PlayerControl : MonoBehaviour
         if (inkUI.IsOpen) return;
         if (isControl == true)
         {
-            if (Input.GetKeyDown(KeyCode.Space) && controlUI == false)
+            if (Input.GetKeyDown(KeyCode.E) && controlUI == false)
             {
                 if (inkUI.chatRange == true)
                     //trigger interaction

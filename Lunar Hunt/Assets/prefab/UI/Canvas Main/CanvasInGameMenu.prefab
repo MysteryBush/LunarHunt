@@ -98,7 +98,7 @@ MonoBehaviour:
   m_ChildAlignment: 3
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 60, y: 60}
+  m_CellSize: {x: 40, y: 40}
   m_Spacing: {x: 80, y: 23.4}
   m_Constraint: 1
   m_ConstraintCount: 1
@@ -1660,6 +1660,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemsParent: {fileID: 3231274689678596282}
   clueUI: {fileID: 3231274688501401264}
+  slots: []
 --- !u!1 &3231274688744927106
 GameObject:
   m_ObjectHideFlags: 0

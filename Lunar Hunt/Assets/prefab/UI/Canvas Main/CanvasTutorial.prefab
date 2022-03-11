@@ -1222,6 +1222,11 @@ MonoBehaviour:
   - {fileID: 5861912723841931814}
   - {fileID: 5819876197767111545}
   - {fileID: 4138294066292889872}
+  pageName:
+  - Basic Control
+  - Dialogue
+  - Form Evidence
+  pageTitle: {fileID: 1684075937603546369}
   nextButton: {fileID: 8852232323235738172}
   previousButton: {fileID: 8221156791460721960}
   endButton: {fileID: 6876041648859207901}
