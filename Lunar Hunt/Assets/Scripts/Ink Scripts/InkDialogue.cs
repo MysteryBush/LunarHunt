@@ -5,6 +5,7 @@ using Ink.Runtime;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.Timeline;
+using UnityEngine.SceneManagement;
 
 public class InkDialogue : MonoBehaviour
 {
@@ -82,7 +83,7 @@ public class InkDialogue : MonoBehaviour
         ins = this;
 
         //sceneData give initial name
-        knotName = SceneData.ins.initialKnot;
+        //knotName = SceneData.ins.initialKnot;
 
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
@@ -246,6 +247,11 @@ public class InkDialogue : MonoBehaviour
             {
                 var changeToKnot = tag.Substring("knot.".Length, tag.Length - "knot.".Length);
                 knotName = changeToKnot;
+            }
+            if (tag.StartsWith("scene."))
+            {
+                var changeScene = tag.Substring("scene.".Length, tag.Length - "scene.".Length);
+                SceneManager.LoadScene(changeScene);
             }
         }
         textLabel.text = text;

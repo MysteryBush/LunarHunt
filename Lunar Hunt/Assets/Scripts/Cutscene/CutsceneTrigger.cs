@@ -77,6 +77,6 @@ public class CutsceneTrigger: MonoBehaviour
         player.isControl = true;
         timelineObject.SetActive(false);
         transitioncanvas.SetActive(false);
-        mainCamera.SetActive(true);
+        //mainCamera.SetActive(true);
     }
 }
