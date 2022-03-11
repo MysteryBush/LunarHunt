@@ -36,17 +36,19 @@ public class NotifierUI : MonoBehaviour
     private void Start()
     {
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
-        IsOpen = true;
+        IsOpen = false;
         typewriterEffect = GetComponent<TypewriterEffect>();
-        CloseNotifierBox();
+        //CloseNotifierBox();
     }
     #region Conversation and Dialogue
     public void runNotifications(NotifierQueue notifierQueue)
     {
+        InkDialogue.ins.notifyIsOpen = true;
         notificationBox.SetActive(true);
         //Let PlayerControl know controlUI = true
         player.controlUI = true;
         //run conversation
+        Debug.Log("start runNotifications");
         StartCoroutine(routine: StepThroughNotifications(notifierQueue));
         //animation start dialogue
         anim.SetBool("IsOpen", true);
@@ -54,6 +56,7 @@ public class NotifierUI : MonoBehaviour
     //start notification on each of them
     private IEnumerator StepThroughNotifications(NotifierQueue notifierQueue)
     {
+        Debug.Log("stepping StepThroughNotifications");
         //for (int i = 0; i < notifierQueue.notifierList.Count; i++)
         //{
         //    Notifier notifer = notifierQueue.notifierList[i];
@@ -109,6 +112,7 @@ public class NotifierUI : MonoBehaviour
 
     public void CloseNotifierBox()
     {
+
         IsOpen = false;
         //check if other UI is closed then make player move
         if (player.InkUI.IsOpen == false)
@@ -118,6 +122,9 @@ public class NotifierUI : MonoBehaviour
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
         textLabel.text = string.Empty;
+
+        InkDialogue.ins.notifyIsOpen = false;
+        Debug.Log("reached CloseNotifierBox with: " + InkDialogue.ins.notifyIsOpen);
         //continueDialogue();
     }
 
@@ -128,6 +135,9 @@ public class NotifierUI : MonoBehaviour
 
     private void continueDialogue()
     {
+        //InkDialogue.ins.notifyIsOpen = false;
+        //Debug.Log("reached continueDialogue with: " + InkDialogue.ins.notifyIsOpen);
+
         //if (player.DialogueUI.conversationactivator == null)
         //    return;
         //player.DialogueUI.afterDialogue(player.DialogueUI.conversationactivator.conversationObject);

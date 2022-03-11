@@ -65,7 +65,10 @@ public class NotifierQueue : MonoBehaviour
     public void NotifyAlert()
     {
         if (notifierList.Count > 0)
+        {
+            Debug.Log("Run NotifyAlert -> notifierUi.runNotifications");
             notifierUi.runNotifications(this);
+        }
         //Remove(notifierList[0]);
     }
     //public Notifier formNotify(string title, string obj, string[] desc)
@@ -93,7 +96,7 @@ public class NotifierQueue : MonoBehaviour
         if (eventObject.DescList.Length == 0)
         {
             return;
-        }    
+        }
         string[] descList = new string[eventObject.DescList.Length];
         descList = eventObject.DescList;
 
@@ -107,6 +110,27 @@ public class NotifierQueue : MonoBehaviour
         descList[0] = item.itemType + " collected \"" + item.name + "\"";
 
         Add(formNotify("Item", item.name, descList));
-        //NotifyAlert();
+        Debug.Log("formed notifyItem");
+        NotifyAlert();
+    }
+
+    public void notifyFormEvidence(EvidenceRequirement currentRequirement, int value)
+    {
+        string[] descList = new string[1];
+        string issue = "";
+        switch (value)
+        {
+            case 0:
+                issue = " because of fake news!";
+                break;
+            case 1:
+                issue = " because lack of clues!";
+                break;
+        }
+
+
+        descList[0] = "Can't solve " + currentRequirement.caseName + issue;
+
+        Add(formNotify("Failed Evidence", currentRequirement.caseName, descList));
     }
 }

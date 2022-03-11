@@ -125,6 +125,8 @@ public class FormEvidence : MonoBehaviour
             {
                 //requirement = false;
                 //Debug.Log("FAKE Clue");
+                NotifierQueue.instance.notifyFormEvidence(currentRequirement, 0);
+                NotifierQueue.instance.NotifyAlert();
                 return null;
             }
         }
@@ -145,6 +147,8 @@ public class FormEvidence : MonoBehaviour
             else
             {
                 //requirement = false;
+                NotifierQueue.instance.notifyFormEvidence(currentRequirement, 1);
+                NotifierQueue.instance.NotifyAlert();
                 return null;
             }
 
@@ -166,7 +170,7 @@ public class FormEvidence : MonoBehaviour
             inventoryKeyItem.Add(evidence);
             Debug.Log("Added evidence: " + evidence);
             //evidence.Use();
-            //NotifierQueue.instance.NotifyAlert();
+            NotifierQueue.instance.NotifyAlert();
 
             //the knotname for Ink
             string knotname = "Evidence_" + evidence.inkName;

@@ -115,16 +115,16 @@ VAR LocationName = ""
 	   
 	== function GetClue(clue) ==
 		~ ClueList += clue
-		- Collected Clue: {clue}
+		// - Collected Clue: {clue}
 	== function GetClueTutorial(clue) ==
 		~ ClueTutorialList += clue
-		- Collected Clue: {clue}
+		// - Collected Clue: {clue}
 	== function GetItem(item) ==
 		~ ItemList += item
-		- Collected Item: {item}
+		// - Collected Item: {item}
 	== function GetEvidence(evidence) ==
 		~ EvidenceList += evidence
-		- Collected Evidence: {evidence}
+		// - Collected Evidence: {evi	dence}
 	   
 // --- Main Menu Stuff ---
 	==== Main_Menu ====

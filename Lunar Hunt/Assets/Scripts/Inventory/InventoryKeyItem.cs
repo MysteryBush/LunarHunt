@@ -35,13 +35,15 @@ public class InventoryKeyItem : MonoBehaviour
         if (keyItem.itemType == "Clue")
         {
             clues.Add(keyItem);
+            Debug.Log("Add Clue");
         }
         if (keyItem.itemType == "Evidence")
         {
             evidences.Add(keyItem);
         }
-        Debug.Log("Added " + keyItem.name);
         NotifierQueue.instance.notifyItem(keyItem);
+        Debug.Log("notifyItem added: " + keyItem.name);
+        //Debug.Log("Added " + keyItem.name);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
 

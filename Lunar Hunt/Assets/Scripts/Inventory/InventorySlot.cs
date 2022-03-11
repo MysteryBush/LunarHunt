@@ -15,7 +15,6 @@ public class InventorySlot : MonoBehaviour
     public void AddItem(Item newItem)
     {
         item = newItem;
-        Debug.Log(icon);
         icon.enabled = true;
         icon.sprite = item.icon;
         removeButton.interactable = true;

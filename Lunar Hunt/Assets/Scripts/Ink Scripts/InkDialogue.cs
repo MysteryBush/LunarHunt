@@ -58,6 +58,9 @@ public class InkDialogue : MonoBehaviour
 
     public bool IsOpen { get; private set; }
 
+    //track if notiferbox is open or not
+    public bool notifyIsOpen;
+
     private Sprite spriteImage;
 
     private TypewriterEffect typewriterEffect;
@@ -75,6 +78,7 @@ public class InkDialogue : MonoBehaviour
         addDictionary();
 
         IsOpen = true;
+        notifyIsOpen = false;
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseDialogueBox();
 
@@ -89,7 +93,7 @@ public class InkDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true)
+        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true && notifyIsOpen == false)
         {
             runDialogues();
         }
@@ -148,42 +152,10 @@ public class InkDialogue : MonoBehaviour
 
     void runDialogues()
     {
+        Debug.Log("runDialogues: " + notifyIsOpen);
         //Debug.Log("start run Dialogues");
         string text = loadDialogueChunk();
         //Debug.Log(text);
-
-        //List<string> tags = story.currentTags;
-        //if (tags.Count > 0)
-        //{
-        //    if (tags[0] == "END")
-        //    {
-        //        //Debug.Log("End of Dialogue");
-        //        CloseDialogueBox();
-        //        return;
-        //    }
-        //    //if (tags[0].StartsWith("noSpeaker"))
-        //    if (tags.Contains("noSpeaker"))
-        //    {
-        //        nameLabel.text = null;
-        //        portraitBox.GetComponent<Image>().sprite = null;
-        //        portraitBox.SetActive(false);
-        //    }
-        //    if (tags[0].StartsWith("speaker."))
-        //    {
-        //        //text = "<b>" + tags[0] + "</b>" + text;
-        //        var speakerName = tags[0].Substring("speaker.".Length, tags[0].Length - "speaker.".Length);
-        //        currentSpeaker = speakerPair[speakerName];
-        //        nameLabel.text = currentSpeaker.name;
-        //        spriteImage = currentSpeaker.portrait;
-        //        portraitBox.GetComponent<Image>().sprite = spriteImage;
-        //        portraitBox.SetActive(true);
-        //    }
-        //    if (tags[0].StartsWith("clue."))
-        //    {
-        //        var clueName = tags[0].Substring("clue.".Length, tags[0].Length - "clue.".Length);
-        //        //add clue to the inventory
-        //    }
-        //}
 
         foreach (var tag in story.currentTags)
         {
@@ -226,10 +198,12 @@ public class InkDialogue : MonoBehaviour
             }
             if (tag.StartsWith("clue."))
             {
+                Debug.Log("start get clue: " + notifyIsOpen);
                 var clueName = tag.Substring("clue.".Length, tag.Length - "clue.".Length);
                 collectedClue = cluePair[clueName];
                 //add clue to the inventory
                 Inventory.instance.Add(collectedClue);
+                Debug.Log("reached clue with: " + notifyIsOpen);
             }
             //if (tag.StartsWith())
         }
@@ -269,6 +243,7 @@ public class InkDialogue : MonoBehaviour
     }
     void eraseUI()
     {
+        Debug.Log("eraseUI: " + notifyIsOpen);
         textLabel.text = null;
         currentSpeaker = speakerList.narratorObject;
         nameLabel.text = currentSpeaker.name;
@@ -282,6 +257,7 @@ public class InkDialogue : MonoBehaviour
     }
     void chooseStoryChoice(Choice choice)
     {
+        Debug.Log("chooseStoryChoice: " + notifyIsOpen);
         story.ChooseChoiceIndex(choice.index);
         runDialogues();
     }
