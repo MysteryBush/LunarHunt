@@ -249,6 +249,19 @@ VAR LocationName = ""
 		// 	[Use all 4 clues] -> 
 		+ [Back to Inventory] ->->
  
+// --- Get Evidence Knots ---
+	=== Evidence_Merchant_took_the_axe ===
+		~ GetEvidence(Merchant_took_the_axe)
+		-> END
+	=== Evidence_CS_Faked_The_News ===
+		~ GetEvidence(CS_Faked_The_News)
+		-> END
+	=== Evidence_CS_Sells_Fake_Potion ===
+		~ GetEvidence(CS_Sells_Fake_Potion)
+		-> END
+	=== Evidence_Cassandra_lied_about_the_plague ===
+		~ GetEvidence(Cassandra_lied_about_the_plague)
+		-> END
 // --- Cutscenes list ---
 	=== Cutscene_Welcome_to_Sanctuary ===
 		//\--- Welcome to Sanctuary ---
@@ -922,9 +935,11 @@ VAR LocationName = ""
 				- ->->
  
 		== Item_on_Sale ==
+			{ Talk_to_Lumberjack:
+				-> Look_closer_at_the_axe
+			}
 				#speaker.Sebastian
 			(Some items are put on sale here)
-			+ [Look closer at the axe] -> Look_closer_at_the_axe ->
 			// + { Talk_to_Lumberjack } [Look closer at the axe] -> Look_closer_at_the_axe
 			#END
 			- -> END

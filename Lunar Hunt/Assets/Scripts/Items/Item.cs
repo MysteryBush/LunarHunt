@@ -26,6 +26,7 @@ After you've got it working properly, just setup a Text object inside the Invent
 public class Item : ScriptableObject
 {
     new public string name = "New Item";
+    public string inkName = "Ink Name";
     public Sprite icon = null;
     public string itemType = "Consumable";
     public bool isUniqueItem = false;
@@ -41,7 +42,7 @@ public class Item : ScriptableObject
         // Use the item
         // Something might happen
 
-        Debug.Log("Using " + name);
+        //Debug.Log("Using " + name);
 
         //if (itemType == "Clue")
         //{

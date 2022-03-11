@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc7510100f474d5489a72b46dbe9a603, type: 3}
+  m_Name: CS_Sells_Fake_Potion
+  m_EditorClassIdentifier: 
+  caseName: Suspicious potion
+  outputEvidence: {fileID: 11400000, guid: 4bcda58c233b9b04c8c47ed8c4bc07bc, type: 2}
+  clueRequirement:
+  - {fileID: 11400000, guid: 2472acef58224a84e9be1e6f1489c901, type: 2}
+  - {fileID: 11400000, guid: a6a7c67c43f5fad4f86407b6196fdd24, type: 2}

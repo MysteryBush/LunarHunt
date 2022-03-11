@@ -711,6 +711,9 @@ MonoBehaviour:
   clueContainer: {fileID: 3231274688317475185}
   evidenceRequirementList:
   - {fileID: 11400000, guid: bfabc8bda51a8f046b1d3c1a49336eee, type: 2}
+  - {fileID: 11400000, guid: 8b58b69964101da4fac342eaf22edb1c, type: 2}
+  - {fileID: 11400000, guid: bde66721e60d1cd46b81d43aa853e2e5, type: 2}
+  - {fileID: 11400000, guid: 21cfa6b585974ac48b253ba64c07fef4, type: 2}
   clues: []
 --- !u!1 &3231274688511143543
 GameObject:

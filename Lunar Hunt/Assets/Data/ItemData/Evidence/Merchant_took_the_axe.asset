@@ -9,11 +9,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc7510100f474d5489a72b46dbe9a603, type: 3}
-  m_Name: Evidence Tutorial
+  m_Script: {fileID: 11500000, guid: fc31cbb7db8da344693335cc46bf1e7a, type: 3}
+  m_Name: Merchant_took_the_axe
   m_EditorClassIdentifier: 
-  caseName: The missing axe
-  outputEvidence: {fileID: 11400000, guid: de8a196a502334649aa199b910825c73, type: 2}
-  clueRequirement:
+  name: Merchant took the axe
+  inkName: Merchant_took_the_axe
+  icon: {fileID: -7434387975494846865, guid: 626c8d1185a69714280619cde52b9734, type: 3}
+  itemType: Evidence
+  isUniqueItem: 1
+  itemAmount: 1
+  clueFact: Neutral
+  clueList:
   - {fileID: 11400000, guid: 74239e625c9fc354daa439b29cb05185, type: 2}
   - {fileID: 11400000, guid: bea066d64cd8a04448a13b530fe4612f, type: 2}
+  eventObject: {fileID: 11400000, guid: 1e65a76f05c818d4aac6a60b368ae0ef, type: 2}

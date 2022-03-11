@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc31cbb7db8da344693335cc46bf1e7a, type: 3}
+  m_Name: CS_Faked_The_News
+  m_EditorClassIdentifier: 
+  name: CS Faked The News
+  inkName: CS_Faked_The_News
+  icon: {fileID: -7434387975494846865, guid: 626c8d1185a69714280619cde52b9734, type: 3}
+  itemType: Evidence
+  isUniqueItem: 1
+  itemAmount: 1
+  clueFact: Neutral
+  clueList:
+  - {fileID: 11400000, guid: 74239e625c9fc354daa439b29cb05185, type: 2}
+  - {fileID: 11400000, guid: bea066d64cd8a04448a13b530fe4612f, type: 2}
+  eventObject: {fileID: 11400000, guid: 1e65a76f05c818d4aac6a60b368ae0ef, type: 2}

@@ -42,6 +42,7 @@ public class FormEvidence : MonoBehaviour
     [SerializeField] private RectTransform clueContainer;
 
     //Forming Evidence
+    [SerializeField] public int currentEvidenceRequirement;
     [SerializeField] private List<EvidenceRequirement> evidenceRequirementList;
 
     Inventory inventory;
@@ -73,6 +74,7 @@ public class FormEvidence : MonoBehaviour
         for (int i = 0; i < clues.Count; i++)
         {
             Item clue = clues[i];
+            Debug.Log("clue: " + clue);
             int clueIndex = i;
 
             GameObject clueButton = Instantiate(clueButtonTemplate.gameObject, clueContainer);
@@ -113,41 +115,69 @@ public class FormEvidence : MonoBehaviour
 
     private Item GetRequirementOutput()
     {
-        foreach (EvidenceRequirement evidenceRequirement in evidenceRequirementList)
+        EvidenceRequirement currentRequirement = evidenceRequirementList[currentEvidenceRequirement];
+        //Item[] clueRequirement = currentRequirement.clueRequirement;
+        //what if the clue is fake? If so, then return null. CANNOT form evidence.
+        //Debug.Log(clues.Count);
+        for (int x = 0; x < clues.Count; x++)
         {
-            bool requirement = true;
-            for (int i = 0; i < evidenceRequirement.clueRequirement.Length; i++)
+            if (clues[x].clueFact == "Fake")
             {
-                //when there is required clue
-                if (clues.Contains(evidenceRequirement.clueRequirement[i]))
-                {
-                    //what if there are no required clue at all?
-                    if (!clues.Contains(evidenceRequirement.clueRequirement[i]))
-                        requirement = false;
-                    //what if the clue is fake?
-                    for (int x = 0; x < clues.Count; x++)
-                    {
-                        if (clues[x].itemType == "fake") requirement = false;
-                    }
-                }
-            }
-            if (requirement)
-            {
-                return evidenceRequirement.outputEvidence;
+                //requirement = false;
+                //Debug.Log("FAKE Clue");
+                return null;
             }
         }
-        return null;
+
+        //bool requirement = true;
+        //foreach (EvidenceRequirement evidenceRequirement in evidenceRequirementList)
+        //foreach (Item[] clueRequirement in currentRequirement)
+        //{
+        for (int i = 0; i < currentRequirement.clueRequirement.Length; i++)
+        {
+            //when there is required clue
+            if (clues.Contains(currentRequirement.clueRequirement[i]))
+            {
+                //Do nothing
+            }
+            //what if one of the required clue cannot be found in the inventory, then return null. CANNOT form evidence!
+            //else if (!clues.Contains(evidenceRequirement.clueRequirement[i]))
+            else
+            {
+                //requirement = false;
+                return null;
+            }
+
+        }
+        //if (requirement)
+        //{
+        //}
+        return currentRequirement.outputEvidence;
+        //}
+        //return null;
     }
 
 
     public void createEvidence()
     {
         Item evidence = GetRequirementOutput();
-        if (!inventoryKeyItem.evidences.Contains(evidence))
+        if (!inventoryKeyItem.evidences.Contains(evidence) && evidence != null)
         {
             inventoryKeyItem.Add(evidence);
-            evidence.Use();
-            NotifierQueue.instance.NotifyAlert();
+            Debug.Log("Added evidence: " + evidence);
+            //evidence.Use();
+            //NotifierQueue.instance.NotifyAlert();
+
+            //the knotname for Ink
+            string knotname = "Evidence_" + evidence.inkName;
+            Debug.Log("Sending Ink's Knot Name: " + knotname);
+            //Tell Ink that the evidence is collected
+            InkDialogue.ins.runInkKnot(knotname);
         }
+    }
+
+    public void nextFormingEvidence()
+    {
+        currentEvidenceRequirement += 1;
     }
 }

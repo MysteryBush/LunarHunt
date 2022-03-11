@@ -187,17 +187,22 @@ public class InkDialogue : MonoBehaviour
 
         foreach (var tag in story.currentTags)
         {
-            if (tag.StartsWith("debug"))
+            if (tag.StartsWith("debug."))
             {
-                Debug.Log("INK DEBUG");
-                return;
+                var debugLog = tag.Substring("debug.".Length, tag.Length - "debug.".Length);
+                Debug.Log("INK DEBUG: " + debugLog);
             }
             if (tag.StartsWith("END"))
             {
-                Debug.Log("End of Dialogue");
+                //Debug.Log("End of Dialogue");
                 CloseDialogueBox();
                 return;
             }
+            if (tag.StartsWith("OPEN"))
+            {
+                OpenDialogueBox();
+                return;
+            }    
             if (tag.StartsWith("noSpeaker"))
             {
                 //nameLabel.text = null;
@@ -226,6 +231,7 @@ public class InkDialogue : MonoBehaviour
                 //add clue to the inventory
                 Inventory.instance.Add(collectedClue);
             }
+            //if (tag.StartsWith())
         }
         textLabel.text = text;
     }
@@ -306,11 +312,11 @@ public class InkDialogue : MonoBehaviour
     public void CloseDialogueBox()
     {
         IsOpen = false;
-        Debug.Log(IsOpen);
+        //Debug.Log(IsOpen);
         player.controlUI = false;
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
-        Debug.Log(anim.GetBool("IsOpen"));
+        //Debug.Log(anim.GetBool("IsOpen"));
         eraseUI();
     }
 
@@ -327,6 +333,15 @@ public class InkDialogue : MonoBehaviour
         runDialogues();
     }
     #endregion
+
+    //run only Ink just to change variables in Ink
+    public void runInkKnot(string knot)
+    {
+        knotName = knot;
+        //setting knot
+        story.ChoosePathString(knotName);
+        runDialogues();
+    }
 
     public void findPlayer(PlayerControl playercontrol)
     {
