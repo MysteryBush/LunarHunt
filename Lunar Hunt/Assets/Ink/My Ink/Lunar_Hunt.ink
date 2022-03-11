@@ -304,11 +304,19 @@ VAR LocationName = ""
 			#speaker.Sebastian
 		(She's so eager to help)
 		(But I guess it's the first place to go anyway)
+		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
+		#timeline.To_meeting_hall
+		#END
+		- -> END
 		//play cutscene
-		= to_meeting_hall
+		= To_meeting_hall
 			#noSpeaker
 		Athena leads the way to the town meeting hall and Sebastian follows behind her.
 		They arrived at the front of the town's meeting hall.
+		#knot.Cutscene_Welcome_to_Sanctuary.At_meeting_hall
+		#timeline.At_meeting_hall
+		#END
+		- -> END
 
 		= At_meeting_hall
 			#speaker.Athena
@@ -317,10 +325,16 @@ VAR LocationName = ""
 		Thank you, I hope I can find my father soon.
 			#speaker.Athena
 		I'm sure you can!
+		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
+		#timeline.Go_in
+		#END
+		- -> END
+
 		= Go_in
 			#noSpeaker
 		Athena walked away to the east.
 		Sebastian walks up to the door and go inside the town's meeting hall.
+		#scene.Meeting_Hall
 		#END
 		-> END 
 		//-> Cutscene_Meeting_in_the_Meeting_Hall

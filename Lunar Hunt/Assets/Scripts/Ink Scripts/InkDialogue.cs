@@ -171,6 +171,10 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("Lumberjack_clear_the_path", timelines[1]);
         timelinePair.Add("Lumberjack_go_to_the_Log", timelines[4]);
         timelinePair.Add("Athena", timelines[5]);
+        timelinePair.Add("To_meeting_hall", timelines[6]);
+        timelinePair.Add("At_meeting_hall", timelines[7]);
+        timelinePair.Add("Go_in", timelines[8]);
+        timelinePair.Add("Meeting_Hall", timelines[9]);
     }
 
     void runDialogues()
