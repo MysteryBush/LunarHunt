@@ -842,7 +842,8 @@ VAR LocationName = ""
 					I'll go find him and take it back.
 					// run cutscene about Lumberjack taking back his axe
 
-					#END
+					#timeline.Lumberjack_go_to_the_Log
+					#END 
 					- -> END
 			//chapter 1
 

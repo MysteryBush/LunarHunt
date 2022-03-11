@@ -57,7 +57,7 @@ public class Inventory : MonoBehaviour
         if (item.itemType == "Clue" || item.itemType == "Evidence")
         {
             keyItem.Add(item);
-            Debug.Log("Add keyItem");
+            //Debug.Log("Add keyItem");
         }    
         if (!item.isUniqueItem && item.itemType == "Consumable")
         {

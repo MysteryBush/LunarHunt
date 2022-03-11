@@ -4,6 +4,7 @@ using UnityEngine;
 using Ink.Runtime;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.Timeline;
 
 public class InkDialogue : MonoBehaviour
 {
@@ -19,6 +20,8 @@ public class InkDialogue : MonoBehaviour
     //https://github.com/inkle/ink/blob/master/Documentation/RunningYourInk.md#jumping-to-a-particular-scene
     public string knotName;
 
+    #region DICTIONARY
+    //DICTIONARY
     //taking data reference
     //speaker data
     public SpeakerList speakerList;
@@ -27,7 +30,7 @@ public class InkDialogue : MonoBehaviour
     private SpeakerObject currentSpeaker;
     //private SpeakerObject speakerObject;
 
-    //clue data
+    //clue data 
     public ClueList clueList;
     private List<Item> clues;
     private Dictionary<string, Item> cluePair = new Dictionary<string, Item>();
@@ -36,6 +39,13 @@ public class InkDialogue : MonoBehaviour
     public TMP_Text textPrefab;
     public Button buttonPrefab;
 
+    //timeline data
+    public TimelineList timelineList;
+    private List<TimelineAsset> timelines;
+    private Dictionary<string, TimelineAsset> timelinePair = new Dictionary<string, TimelineAsset>();
+    private TimelineAsset useTimeline;
+
+    #endregion
     //save a previous text as reference
     private string lastText;
     //the state of Ink Dialogue
@@ -74,6 +84,7 @@ public class InkDialogue : MonoBehaviour
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
+        timelineList = TimelineList.instance;
 
         addDictionary();
 
@@ -148,11 +159,16 @@ public class InkDialogue : MonoBehaviour
 
         //Evidence List
         //CS_Faked_The_News
+
+        //Timeline List
+        timelines = timelineList.timelineObjects;
+        //timelinePair.Add("", timelines[]);
+        timelinePair.Add("Lumberjack_go_to_the_Log", timelines[4]);
     }
 
     void runDialogues()
     {
-        Debug.Log("runDialogues: " + notifyIsOpen);
+        //Debug.Log("runDialogues: " + notifyIsOpen);
         //Debug.Log("start run Dialogues");
         string text = loadDialogueChunk();
         //Debug.Log(text);
@@ -198,14 +214,23 @@ public class InkDialogue : MonoBehaviour
             }
             if (tag.StartsWith("clue."))
             {
-                Debug.Log("start get clue: " + notifyIsOpen);
+                //Debug.Log("start get clue: " + notifyIsOpen);
                 var clueName = tag.Substring("clue.".Length, tag.Length - "clue.".Length);
                 collectedClue = cluePair[clueName];
                 //add clue to the inventory
                 Inventory.instance.Add(collectedClue);
-                Debug.Log("reached clue with: " + notifyIsOpen);
+                //Debug.Log("reached clue with: " + notifyIsOpen);
             }
-            //if (tag.StartsWith())
+            if (tag.StartsWith("timeline."))
+            {
+                var timelineName = tag.Substring("timeline.".Length, tag.Length - "timeline.".Length);
+                useTimeline = timelinePair[timelineName];
+                Debug.Log(CutsceneTrigger.instance);
+                Debug.Log("useTimeline: " + useTimeline);
+                CutsceneTrigger.instance.GetCutscene(useTimeline);
+                CutsceneTrigger.instance.TriggerCutscene();
+                Debug.Log("play cutscene");
+            }
         }
         textLabel.text = text;
     }
@@ -243,7 +268,7 @@ public class InkDialogue : MonoBehaviour
     }
     void eraseUI()
     {
-        Debug.Log("eraseUI: " + notifyIsOpen);
+        //Debug.Log("eraseUI: " + notifyIsOpen);
         textLabel.text = null;
         currentSpeaker = speakerList.narratorObject;
         nameLabel.text = currentSpeaker.name;
@@ -257,7 +282,7 @@ public class InkDialogue : MonoBehaviour
     }
     void chooseStoryChoice(Choice choice)
     {
-        Debug.Log("chooseStoryChoice: " + notifyIsOpen);
+        //Debug.Log("chooseStoryChoice: " + notifyIsOpen);
         story.ChooseChoiceIndex(choice.index);
         runDialogues();
     }

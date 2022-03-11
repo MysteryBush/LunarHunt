@@ -174,7 +174,7 @@ public class FormEvidence : MonoBehaviour
 
             //the knotname for Ink
             string knotname = "Evidence_" + evidence.inkName;
-            Debug.Log("Sending Ink's Knot Name: " + knotname);
+            //Debug.Log("Sending Ink's Knot Name: " + knotname);
             //Tell Ink that the evidence is collected
             InkDialogue.ins.runInkKnot(knotname);
         }
