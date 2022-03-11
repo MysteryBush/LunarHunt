@@ -4194,7 +4194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -140.33, y: 63.000008, z: -14.969999}
+  m_LocalPosition: {x: -147.8261, y: 65.9091, z: -14.969999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -18910,6 +18910,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Sign Papers
       objectReference: {fileID: 0}
+    - target: {fileID: 6930027234728444955, guid: e43c8ad285e86aa40a819ce40f729008,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e43c8ad285e86aa40a819ce40f729008, type: 3}
 --- !u!1 &1206091612 stripped
@@ -33083,7 +33088,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017588027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -140.33, y: 62.23, z: -14.969999}
+  m_LocalPosition: {x: -149.69, y: 65.91, z: -14.969999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 821980185}
@@ -66934,12 +66939,12 @@ PrefabInstance:
     - target: {fileID: 7184573319834072958, guid: ea5e10b84b1f81f4a84f3d59a736fb12,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -140.33
+      value: -149.69
       objectReference: {fileID: 0}
     - target: {fileID: 7184573319834072958, guid: ea5e10b84b1f81f4a84f3d59a736fb12,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 62.23
+      value: 65.91
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ea5e10b84b1f81f4a84f3d59a736fb12, type: 3}

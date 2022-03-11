@@ -44,6 +44,7 @@ public class NotifierUI : MonoBehaviour
     public void runNotifications(NotifierQueue notifierQueue)
     {
         InkDialogue.ins.notifyIsOpen = true;
+        player.controlUI = true;
         notificationBox.SetActive(true);
         //Let PlayerControl know controlUI = true
         player.controlUI = true;
@@ -118,6 +119,7 @@ public class NotifierUI : MonoBehaviour
         if (player.InkUI.IsOpen == false)
         {
             player.controlUI = false;
+            player.GetComponent<PlayerMovement>().isFacingTarget = false;
         }
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);

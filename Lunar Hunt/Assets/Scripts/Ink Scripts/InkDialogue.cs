@@ -314,7 +314,12 @@ public class InkDialogue : MonoBehaviour
     {
         IsOpen = false;
         //Debug.Log(IsOpen);
-        player.controlUI = false;
+        //check if NotifierUI is closed then make player move
+        if (notifyIsOpen == false)
+        {
+            player.controlUI = false;
+            player.GetComponent<PlayerMovement>().isFacingTarget = false;
+        }
         anim.SetBool("IsOpen", false);
         //dialogueBox.SetActive(false);
         //Debug.Log(anim.GetBool("IsOpen"));
