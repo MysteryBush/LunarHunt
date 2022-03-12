@@ -83,7 +83,7 @@ public class InkDialogue : MonoBehaviour
         ins = this;
 
         //sceneData give initial name
-        //knotName = SceneData.ins.initialKnot;
+        knotName = SceneData.ins.initialKnot;
 
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
@@ -104,7 +104,7 @@ public class InkDialogue : MonoBehaviour
 
         player.findInkUI();
 
-        if (knotName != "") OpenDialogueBox();
+        //if (knotName != "") OpenDialogueBox();
     }
 
     // Update is called once per frame
@@ -121,6 +121,7 @@ public class InkDialogue : MonoBehaviour
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
+        timelineList = TimelineList.instance;
 
         if (inkDialogues.Length > 1)
         {
@@ -170,7 +171,8 @@ public class InkDialogue : MonoBehaviour
         timelines = timelineList.timelineObjects;
         //timelinePair.Add("", timelines[]);
         timelinePair.Add("Lumberjack_clear_the_path", timelines[1]);
-        timelinePair.Add("Lumberjack_go_to_the_Log", timelines[4]);
+        timelinePair.Add("Lumberjack_go_to_the_Log", timelines[2]);
+        timelinePair.Add("At_Sanctuary", timelines[4]);
         timelinePair.Add("Athena", timelines[5]);
         timelinePair.Add("To_meeting_hall", timelines[6]);
         timelinePair.Add("At_meeting_hall", timelines[7]);
