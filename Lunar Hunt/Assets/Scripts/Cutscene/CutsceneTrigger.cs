@@ -40,6 +40,8 @@ public class CutsceneTrigger: MonoBehaviour
     [SerializeField] private TimelineAsset CutsceneObject;
     [SerializeField] private GameObject mainCamera;
     [SerializeField] private GameObject transitioncanvas;
+
+    public bool timelineBlock;
     private void Start()
     {
         //playableDirector = timelineObject.GetComponent<PlayableDirector>();
@@ -71,6 +73,8 @@ public class CutsceneTrigger: MonoBehaviour
     {
         player.isControl = false;
         player.GetComponent<CapsuleCollider2D>().enabled = false;
+        //dialogue can't continue during timeline until other function say so
+        timelineBlock = true;
     }
 
     public void endCutscene()

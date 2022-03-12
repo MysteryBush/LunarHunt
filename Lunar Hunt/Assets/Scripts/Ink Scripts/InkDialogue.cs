@@ -71,6 +71,8 @@ public class InkDialogue : MonoBehaviour
 
     //track if notiferbox is open or not
     public bool notifyIsOpen;
+    //track if timeline should stop dialogue from continuing;
+    //public bool timelineBlock;
 
     private Sprite spriteImage;
 
@@ -94,6 +96,7 @@ public class InkDialogue : MonoBehaviour
 
         IsOpen = true;
         notifyIsOpen = false;
+        CutsceneTrigger.instance.timelineBlock = false;
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseDialogueBox();
 
@@ -109,7 +112,7 @@ public class InkDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true && notifyIsOpen == false)
+        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.instance.timelineBlock == false)
         {
             runDialogues();
         }
@@ -363,6 +366,8 @@ public class InkDialogue : MonoBehaviour
         IsOpen = true;
         player.controlUI = true;
         anim.SetBool("IsOpen", true);
+        //let dialogue continue during or after timeline
+        CutsceneTrigger.instance.timelineBlock = false;
         //setting knot
         story.ChoosePathString(knotName);
         //run dialogues
