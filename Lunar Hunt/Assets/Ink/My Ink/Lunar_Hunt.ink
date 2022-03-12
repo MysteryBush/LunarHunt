@@ -341,43 +341,62 @@ VAR LocationName = ""
 	   
 	=== Cutscene_Meeting_in_the_Meeting_Hall ===
 		//\--- Meeting in the Meeting Hall ---
-			#noSpeaker
-		Sebastian walked in from the south door.
-		//part 1
+		// 	#noSpeaker
+		// Sebastian walked in from the south door.
+		= first
 			#speaker.Sebastian
 		(So this is the town's meeting hall. It is well tended here)
 			#speaker.Cassandra
 		Here's the correct Headline
 			#speaker.HallStaff
 		Yes ma'am, it will be done.
-			#noSpeaker
-		Cassandra walks away from the staff to the door in the south.
-		Cassandra noticed Sebastian.
-		//part 2
-			#speaker.Cassandra
-		Oh! Welcome! You look new here.
-			#speaker.Sebastian
-		Yes, I'm new here.
-			#speaker.Cassandra
-		You also looked young, are you traveling alone?
-			#speaker.Sebastian
-		No, I'm here to find my missing father.
-		//This scene may need more dialogues or a simpler, shorter talk.
-			#speaker.Cassandra
-		Well, feel free to look around here. If you need a room you can ask the staff here.
-			#speaker.Sebastian
-		I'll keep that in mind
-			#noSpeaker
-		Cassandra exited the hall.
-		//part 3
-			#speaker.Sebastian
-		(Alright, it's time to look around for some leads here)
-		(I should ask the Staff here)
-		//  -> Investigate_Meeting_Hall
-		~ ChangeLocation(Meeting_Hall)
+		// #knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_approach
+		// #timeline.Cassandra_approach
+		#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
+		#timeline.Cassandra_welcome
 		#END
-		// -> Investigate 
-		-> END
+		- -> END
+
+		// = Cassandra_approach
+		// 		#noSpeaker
+		// 	Cassandra walks away from the staff to the door in the south.
+		// 	Cassandra noticed Sebastian.
+		// 	#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
+		// 	#timeline.Cassandra_welcome
+		// 	#END
+		
+		= Cassandra_welcome
+				#speaker.Cassandra
+			Oh! Welcome! You look new here.
+				#speaker.Sebastian
+			Yes, I just got here. 
+				#speaker.Cassandra
+			You also looked young, are you traveling alone?
+				#speaker.Sebastian
+			No, I'm here to find my missing father.
+			//This scene may need more dialogues or a simpler, shorter talk.
+				#speaker.Cassandra
+			Well, feel free to look around here. If you need a room you can ask the staff here.
+				#speaker.Sebastian
+			I'll keep that in mind
+			#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_leave
+			#timeline.Cassandra_leave
+			#END
+		= Cassandra_leave
+				#noSpeaker
+			Cassandra exited the hall.
+			#knot.Cutscene_Meeting_in_the_Meeting_Hall.look_around_meeting_hall
+			#timeline.look_around_meeting_hall
+			#END
+		= look_around_meeting_hall
+				#speaker.Sebastian
+			(Alright, it's time to look around for some leads here)
+			(I should ask the Staff here)
+			//  -> Investigate_Meeting_Hall
+			~ ChangeLocation(Meeting_Hall)
+			#END
+			// -> Investigate 
+			-> END
   
 	=== Cutscene_The_Witch_Nursery ===
 	    //\--- Cutscene The Witch Nursery ---

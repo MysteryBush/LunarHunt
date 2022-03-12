@@ -40,7 +40,8 @@ public class SceneData : MonoBehaviour
                 if (SceneVisit.ins.visitHall == false)
                 {
                     SceneVisit.ins.visitHall = true;
-                    //CutsceneTrigger.instance.GetCutscene(TimelineList.instance.timelineObjects[4]);
+                    initialKnot = "Cutscene_Meeting_in_the_Meeting_Hall.first";
+                    CutsceneTrigger.instance.GetCutscene(TimelineList.instance.timelineObjects[9]);
                     CutsceneTrigger.instance.TriggerCutscene();
                 }
                 //InkManager.ins.runInk();

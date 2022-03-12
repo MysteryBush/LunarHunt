@@ -15,9 +15,10 @@ public class PlayerControl : MonoBehaviour
     public InkDialogue InkUI => inkUI;
 
     public IInteractable Interactable { get; set; }
-    private void Awake()
+    private void Start()
     {
-        
+        //inkUI = InkDialogue.ins.GetComponent<InkDialogue>();
+        //findInkUI();
     }
     void Update()
     {
@@ -63,8 +64,8 @@ public class PlayerControl : MonoBehaviour
         //}
     }
 
-    public void findInkUI()
+    public void findInkUI(InkDialogue inkDialogue)
     {
-        inkUI = InkDialogue.ins.GetComponent<InkDialogue>();
+        inkUI = inkDialogue;
     }
 }

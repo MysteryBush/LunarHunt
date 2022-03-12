@@ -102,8 +102,7 @@ public class InkDialogue : MonoBehaviour
         //test using dialogue without interacting with NPC
         //OpenDialogueBox();
 
-        player.findInkUI();
-
+        player.findInkUI(this);
         //if (knotName != "") OpenDialogueBox();
     }
 
@@ -128,7 +127,7 @@ public class InkDialogue : MonoBehaviour
             Destroy(inkDialogues[1]);
         }
 
-        player.findInkUI();
+        player.findInkUI(this);
     }
 
     void addDictionary()
@@ -178,6 +177,9 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("At_meeting_hall", timelines[7]);
         timelinePair.Add("Go_in", timelines[8]);
         timelinePair.Add("Meeting_Hall", timelines[9]);
+        timelinePair.Add("Cassandra_welcome", timelines[10]);
+        timelinePair.Add("Cassandra_leave", timelines[11]);
+        timelinePair.Add("look_around_meeting_hall", timelines[12]);
     }
 
     void runDialogues()

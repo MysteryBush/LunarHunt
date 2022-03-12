@@ -506,7 +506,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8055
+    m_Bits: 8119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -883,7 +883,7 @@ GameObject:
   - component: {fileID: 179267229}
   - component: {fileID: 179267228}
   - component: {fileID: 179267227}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tilemap Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4308,7 +4308,7 @@ Camera:
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
-    m_Bits: 8055
+    m_Bits: 8119
   m_RenderingPath: -1
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
@@ -9037,7 +9037,7 @@ GameObject:
   - component: {fileID: 903103415}
   - component: {fileID: 903103417}
   - component: {fileID: 903103416}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tilemap Road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19272,7 +19272,7 @@ GameObject:
   - component: {fileID: 1239276151}
   - component: {fileID: 1239276153}
   - component: {fileID: 1239276152}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tilemap Grass Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -29362,7 +29362,7 @@ GameObject:
   - component: {fileID: 1569482640}
   - component: {fileID: 1569482639}
   - component: {fileID: 1569482638}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tilemap Block (order 0)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33514,7 +33514,7 @@ GameObject:
   - component: {fileID: 2069500340}
   - component: {fileID: 2069500339}
   - component: {fileID: 2069500342}
-  m_Layer: 6
+  m_Layer: 7
   m_Name: Tilemap Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
