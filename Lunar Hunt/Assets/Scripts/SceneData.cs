@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class SceneData : MonoBehaviour
 {
-    public static SceneData ins;
+    //public static SceneData ins;
     public string knotLocationName;
     public string initialKnot;
+    public bool initialRun;
+
     private void Start()
     {
-        ins = this;
+        //ins = this;
         initialKnot = "";
+        initialRun = false;
         switch (knotLocationName)
         {
             case "Location_Forest":
@@ -47,5 +50,6 @@ public class SceneData : MonoBehaviour
                 //InkManager.ins.runInk();
                 break;
         }
+        initialRun = true;
     }
 }

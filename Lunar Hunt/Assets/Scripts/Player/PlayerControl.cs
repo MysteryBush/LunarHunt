@@ -13,6 +13,9 @@ public class PlayerControl : MonoBehaviour
     //ink stuff
     [SerializeField] public InkDialogue inkUI;
     public InkDialogue InkUI => inkUI;
+    public bool inkOpen;
+    public bool chatRange;
+
 
     public IInteractable Interactable { get; set; }
     private void Start()
@@ -64,8 +67,9 @@ public class PlayerControl : MonoBehaviour
         //}
     }
 
-    public void findInkUI(InkDialogue inkDialogue)
+    public void findInkUI()
     {
-        inkUI = inkDialogue;
+        inkUI = FindObjectOfType<InkDialogue>();
+        inkUI.getPlayer(this.gameObject);
     }
 }

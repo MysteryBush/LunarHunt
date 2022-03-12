@@ -41,7 +41,7 @@ public class DialogueActivator : MonoBehaviour, IInteractable
         //    }
         //}
         //player.DialogueUI.dialogueactivator = this;
-        player.InkUI.findPlayer(player);
+        //player.InkUI.getPlayer(player);
         player.InkUI.knotName = knotName;
         player.InkUI.OpenDialogueBox();
     }

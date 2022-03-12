@@ -70204,14 +70204,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
-      propertyPath: timelineObjects.Array.data[11]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
-      propertyPath: timelineObjects.Array.data[12]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5168723037985592386, guid: c4d3c1bad80995b4cb4d6db329cd3968,
         type: 3}
       propertyPath: m_Name
@@ -70431,6 +70423,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneData
+      objectReference: {fileID: 0}
+    - target: {fileID: 7470120722449647017, guid: f29992da1ea693e4eb7ab31c39fcae49,
+        type: 3}
+      propertyPath: initialKnot
+      value: Cutscene_Welcome_to_Sanctuary
       objectReference: {fileID: 0}
     - target: {fileID: 7470120722449647017, guid: f29992da1ea693e4eb7ab31c39fcae49,
         type: 3}
