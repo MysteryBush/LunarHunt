@@ -7,7 +7,7 @@ public class SceneData : MonoBehaviour
     public static SceneData ins;
     public string knotLocationName;
     public string initialKnot;
-    private void Start()
+    private void Awake()
     {
         ins = this;
         initialKnot = "";

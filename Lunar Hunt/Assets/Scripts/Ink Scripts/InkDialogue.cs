@@ -258,6 +258,7 @@ public class InkDialogue : MonoBehaviour
             {
                 var changeToKnot = tag.Substring("knot.".Length, tag.Length - "knot.".Length);
                 knotName = changeToKnot;
+                Debug.Log("knot tag");
             }
             if (tag.StartsWith("scene."))
             {
@@ -364,8 +365,8 @@ public class InkDialogue : MonoBehaviour
         IsOpen = true;
         player.controlUI = true;
         anim.SetBool("IsOpen", true);
-        //let dialogue continue during or after timeline
-        CutsceneTrigger.instance.timelineBlock = false;
+        ////let dialogue continue during or after timeline
+        //CutsceneTrigger.instance.timelineBlock = false;
         //setting knot
         story.ChoosePathString(knotName);
         //run dialogues

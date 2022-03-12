@@ -85,4 +85,10 @@ public class CutsceneTrigger: MonoBehaviour
         transitioncanvas.SetActive(false);
         //mainCamera.SetActive(true);
     }
+
+    public void dialogueCutscene()
+    {
+        timelineBlock = false;
+        FindObjectOfType<InkDialogue>().OpenDialogueBox();
+    }
 }

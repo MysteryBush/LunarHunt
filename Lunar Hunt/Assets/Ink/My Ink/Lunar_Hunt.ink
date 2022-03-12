@@ -325,6 +325,7 @@ VAR LocationName = ""
 		Thank you, I hope I can find my father soon.
 			#speaker.Athena
 		I'm sure you can!
+			#noSpeaker
 		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
 		#timeline.Go_in
 		// #END

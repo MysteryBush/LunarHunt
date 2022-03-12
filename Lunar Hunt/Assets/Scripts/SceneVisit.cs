@@ -31,6 +31,6 @@ public class SceneVisit : MonoBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-
+        //get instant timeline to run like a level state change
     }
 }
