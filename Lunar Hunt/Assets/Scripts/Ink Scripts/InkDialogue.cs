@@ -63,7 +63,7 @@ public class InkDialogue : MonoBehaviour
     public float openTime = 2;
     public Animator anim;
     //find player for playerControl script
-    [SerializeField] private PlayerControl player;
+    public PlayerControl player;
     //Is player in the chatRange?
     public bool chatRange = false;
 
@@ -76,28 +76,19 @@ public class InkDialogue : MonoBehaviour
 
     private TypewriterEffect typewriterEffect;
 
-    //ref SceneData
-    [SerializeField] private SceneData sceneData;
-
-
+    // Start is called before the first frame update
     void Start()
     {
         DontDestroyOnLoad(gameObject);
         ins = this;
 
         //sceneData give initial name
-        sceneData = FindObjectOfType<SceneData>();
-        knotName = sceneData.initialKnot;
-        Debug.Log("scenData Start: " + sceneData);
+        knotName = SceneData.ins.initialKnot;
 
+        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
         timelineList = TimelineList.instance;
-
-        //Make Ink and Player find eachother
-        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
-        player.findInkUI();
-        //if (knotName != "") OpenDialogueBox();
 
         addDictionary();
 
@@ -112,6 +103,8 @@ public class InkDialogue : MonoBehaviour
         //test using dialogue without interacting with NPC
         //OpenDialogueBox();
 
+        player.findInkUI(this);
+        //if (knotName != "") OpenDialogueBox();
     }
 
     // Update is called once per frame
@@ -126,27 +119,19 @@ public class InkDialogue : MonoBehaviour
     {
         inkDialogues = GameObject.FindGameObjectsWithTag("InkDialogue");
 
+        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
         timelineList = TimelineList.instance;
 
-        //knotName = SceneData.ins.initialKnot;
+        knotName = SceneData.ins.initialKnot;
         if (inkDialogues.Length > 1)
         {
             Destroy(inkDialogues[1]);
         }
 
-        Debug.Log("after Destroy");
-        player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
-        player.findInkUI();
-        //sceneData give initial name
-        sceneData = FindObjectOfType<SceneData>();
-        //knotName = sceneData.initialKnot;
-        knotName = FindObjectOfType<SceneData>().initialKnot;
-        Debug.Log("scenData OnLevelWasLoaded: " + sceneData);
-        Debug.Log("knotName OnLevelWasLoaded: " + sceneData.initialKnot);
+        player.findInkUI(this);
     }
-
 
     void addDictionary()
     {
@@ -379,8 +364,6 @@ public class InkDialogue : MonoBehaviour
         IsOpen = true;
         player.controlUI = true;
         anim.SetBool("IsOpen", true);
-        //initialKnot?
-        if (sceneData.initialRun = false) { knotName = sceneData.initialKnot;  }
         //let dialogue continue during or after timeline
         CutsceneTrigger.instance.timelineBlock = false;
         //setting knot
@@ -401,10 +384,9 @@ public class InkDialogue : MonoBehaviour
         runDialogues();
     }
 
-    public void getPlayer(GameObject playercontrol)
+    public void findPlayer(PlayerControl playercontrol)
     {
-       
-        player = playercontrol.GetComponent<PlayerControl>();
+        player = playercontrol;
     }
 
     //use on Signal Emitter

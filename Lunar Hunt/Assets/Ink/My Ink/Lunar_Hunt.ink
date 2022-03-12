@@ -304,10 +304,10 @@ VAR LocationName = ""
 			#speaker.Sebastian
 		(She's so eager to help)
 		(But I guess it's the first place to go anyway)
-		// #knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
+		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
 		#timeline.To_meeting_hall
 		// #END
-		-> To_meeting_hall
+		-> END
 		//play cutscene
 		= To_meeting_hall
 			#noSpeaker
@@ -325,10 +325,10 @@ VAR LocationName = ""
 		Thank you, I hope I can find my father soon.
 			#speaker.Athena
 		I'm sure you can!
-		// #knot.Cutscene_Welcome_to_Sanctuary.Go_in
+		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
 		#timeline.Go_in
 		// #END
-		-> Go_in
+		-> END
 
 		= Go_in
 			#noSpeaker

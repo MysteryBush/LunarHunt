@@ -3802,7 +3802,7 @@ PrefabInstance:
     - target: {fileID: 4560950842941116691, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
       propertyPath: m_Enabled
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4560950842941116693, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
@@ -7486,6 +7486,12 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &560536917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4560950842941116717, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
+    type: 3}
+  m_PrefabInstance: {fileID: 1401403636}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &576141229
 GameObject:
   m_ObjectHideFlags: 0
@@ -67932,6 +67938,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Athena
       objectReference: {fileID: 0}
+    - target: {fileID: 4560950842941116717, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead, type: 3}
 --- !u!4 &1401403637 stripped
@@ -68321,6 +68332,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa07ec1a2350f2f4e9440a43c6e0880b, type: 3}
+--- !u!1 &1496775522 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4560950842941116717, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
+    type: 3}
+  m_PrefabInstance: {fileID: 244326863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1501241289
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -70204,6 +70221,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
+      propertyPath: timelineObjects.Array.data[11]
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
+      propertyPath: timelineObjects.Array.data[12]
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 5168723037985592386, guid: c4d3c1bad80995b4cb4d6db329cd3968,
         type: 3}
       propertyPath: m_Name
@@ -70423,11 +70448,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SceneData
-      objectReference: {fileID: 0}
-    - target: {fileID: 7470120722449647017, guid: f29992da1ea693e4eb7ab31c39fcae49,
-        type: 3}
-      propertyPath: initialKnot
-      value: Cutscene_Welcome_to_Sanctuary
       objectReference: {fileID: 0}
     - target: {fileID: 7470120722449647017, guid: f29992da1ea693e4eb7ab31c39fcae49,
         type: 3}
@@ -71210,7 +71230,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1930896375}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 1d4de9d0974c2ae45bb70770bf9b12db, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 02f37edd28eccfd4bb82d9ae20401d79, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -71352,6 +71372,10 @@ PlayableDirector:
     value: {fileID: 102594509}
   - key: {fileID: -2170705469621706994, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
     value: {fileID: 2289740677442374516}
+  - key: {fileID: 1882071660919179525, guid: 02f37edd28eccfd4bb82d9ae20401d79, type: 2}
+    value: {fileID: 560536917}
+  - key: {fileID: 6967990580573996846, guid: 02f37edd28eccfd4bb82d9ae20401d79, type: 2}
+    value: {fileID: 1496775522}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1930896377

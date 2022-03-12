@@ -1462,7 +1462,7 @@ PlayableDirector:
   m_GameObject: {fileID: 461217479}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: e156a58fc2443a349808f06280b11e0f, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 0abfd9597034ec44e9c74334a0dff1b0, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -5485,11 +5485,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SortingOrder
       value: -1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5507104788461108192, guid: 98a1912c4a458d949bbe4a0f3eb650bc,
-        type: 3}
-      propertyPath: m_AdditionalShaderChannelsFlag
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5507104788461108193, guid: 98a1912c4a458d949bbe4a0f3eb650bc,
         type: 3}
@@ -18878,11 +18873,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cassandra
       objectReference: {fileID: 0}
-    - target: {fileID: 1268729435193246330, guid: 73abe28ab62d1e94892d72176f56e68c,
-        type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: acefc7a9a9340484ca81fb392d52f41d, type: 2}
     - target: {fileID: 1268729435193246335, guid: 73abe28ab62d1e94892d72176f56e68c,
         type: 3}
       propertyPath: m_Enabled

@@ -46,7 +46,7 @@ public class ConversationActivator : MonoBehaviour, IInteractable
         //        break;
         //    }
         //}
-        //player.InkUI.getPlayer(player);
+        player.InkUI.findPlayer(player);
         //player.DialogueUI.conversationactivator = this;
         //player.DialogueUI.runConversation(conversationObject);
         npcMovement.targetFacing();
