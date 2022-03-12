@@ -34,7 +34,7 @@ public class CutsceneTrigger: MonoBehaviour
     //public GameObject transitioncanvas;
 
     [SerializeField] private PlayerControl player;
-    [SerializeField] private GameObject timelineObject;
+    [SerializeField] public GameObject timelineObject;
     [SerializeField] private PlayableDirector playableDirector;
     [SerializeField] private PlayableAsset cutscene;
     [SerializeField] private TimelineAsset CutsceneObject;
@@ -70,11 +70,13 @@ public class CutsceneTrigger: MonoBehaviour
     public void startCutscene()
     {
         player.isControl = false;
+        player.GetComponent<CapsuleCollider2D>().enabled = false;
     }
 
     public void endCutscene()
     {
         player.isControl = true;
+        player.GetComponent<CapsuleCollider2D>().enabled = true;
         timelineObject.SetActive(false);
         transitioncanvas.SetActive(false);
         //mainCamera.SetActive(true);

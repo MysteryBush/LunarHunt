@@ -117,11 +117,13 @@ public class InkDialogue : MonoBehaviour
     private void OnLevelWasLoaded(int level)
     {
         inkDialogues = GameObject.FindGameObjectsWithTag("InkDialogue");
+
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
         timelineList = TimelineList.instance;
 
+        knotName = SceneData.ins.initialKnot;
         if (inkDialogues.Length > 1)
         {
             Destroy(inkDialogues[1]);
@@ -176,10 +178,11 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("To_meeting_hall", timelines[6]);
         timelinePair.Add("At_meeting_hall", timelines[7]);
         timelinePair.Add("Go_in", timelines[8]);
-        timelinePair.Add("Meeting_Hall", timelines[9]);
-        timelinePair.Add("Cassandra_welcome", timelines[10]);
-        timelinePair.Add("Cassandra_leave", timelines[11]);
-        timelinePair.Add("look_around_meeting_hall", timelines[12]);
+        timelinePair.Add("At_Meeting_Hall", timelines[9]);
+        timelinePair.Add("Cassandra_approach", timelines[10]);
+        timelinePair.Add("Cassandra_welcome", timelines[11]);
+        timelinePair.Add("Cassandra_leave", timelines[12]);
+        timelinePair.Add("look_around_meeting_hall", timelines[13]);
     }
 
     void runDialogues()
@@ -243,6 +246,9 @@ public class InkDialogue : MonoBehaviour
                 useTimeline = timelinePair[timelineName];
                 //Debug.Log(CutsceneTrigger.instance);
                 //Debug.Log("useTimeline: " + useTimeline);
+                //may not be needed but this line make sure the timeline object is set inactive
+                //CutsceneTrigger.instance.timelineObject.SetActive(false);
+                //trigger cutscene
                 CutsceneTrigger.instance.GetCutscene(useTimeline);
                 CutsceneTrigger.instance.TriggerCutscene();
                 //Debug.Log("play cutscene");

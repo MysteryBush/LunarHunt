@@ -277,7 +277,7 @@ VAR LocationName = ""
 		#knot.Cutscene_Welcome_to_Sanctuary.Athena
 		#timeline.Athena
 		#END
-		- -> END
+		-> END
 		// 	#noSpeaker
 		// Athena, who was re-painting the town sign, noticed Sebastian.
 		= Athena
@@ -304,10 +304,10 @@ VAR LocationName = ""
 			#speaker.Sebastian
 		(She's so eager to help)
 		(But I guess it's the first place to go anyway)
-		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
+		// #knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
 		#timeline.To_meeting_hall
-		#END
-		- -> END
+		// #END
+		-> To_meeting_hall
 		//play cutscene
 		= To_meeting_hall
 			#noSpeaker
@@ -316,7 +316,7 @@ VAR LocationName = ""
 		#knot.Cutscene_Welcome_to_Sanctuary.At_meeting_hall
 		#timeline.At_meeting_hall
 		#END
-		- -> END
+		-> END
 
 		= At_meeting_hall
 			#speaker.Athena
@@ -325,10 +325,10 @@ VAR LocationName = ""
 		Thank you, I hope I can find my father soon.
 			#speaker.Athena
 		I'm sure you can!
-		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
+		// #knot.Cutscene_Welcome_to_Sanctuary.Go_in
 		#timeline.Go_in
-		#END
-		- -> END
+		// #END
+		-> Go_in
 
 		= Go_in
 			#noSpeaker
@@ -343,7 +343,7 @@ VAR LocationName = ""
 		//\--- Meeting in the Meeting Hall ---
 		// 	#noSpeaker
 		// Sebastian walked in from the south door.
-		= first
+		= At_Meeting_Hall
 			#speaker.Sebastian
 		(So this is the town's meeting hall. It is well tended here)
 			#speaker.Cassandra
@@ -351,11 +351,12 @@ VAR LocationName = ""
 			#speaker.HallStaff
 		Yes ma'am, it will be done.
 		// #knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_approach
-		// #timeline.Cassandra_approach
+		#timeline.Cassandra_approach
 		#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
-		#timeline.Cassandra_welcome
-		#END
-		- -> END
+		// #timeline.Cassandra_welcome
+		// #END
+		#noSpeaker
+		-> END
 
 		// = Cassandra_approach
 		// 		#noSpeaker
@@ -379,21 +380,26 @@ VAR LocationName = ""
 			Well, feel free to look around here. If you need a room you can ask the staff here.
 				#speaker.Sebastian
 			I'll keep that in mind
+			
 			#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_leave
 			#timeline.Cassandra_leave
-			#END
+			// #END
+			#noSpeaker
+			- -> END
 		= Cassandra_leave
-				#noSpeaker
-			Cassandra exited the hall.
-			#knot.Cutscene_Meeting_in_the_Meeting_Hall.look_around_meeting_hall
-			#timeline.look_around_meeting_hall
-			#END
+			#noSpeaker
+		Cassandra exited the hall.
+		#knot.Cutscene_Meeting_in_the_Meeting_Hall.look_around_meeting_hall
+		#timeline.look_around_meeting_hall
+		// #END
+		#noSpeaker
+		- -> END
 		= look_around_meeting_hall
 				#speaker.Sebastian
 			(Alright, it's time to look around for some leads here)
 			(I should ask the Staff here)
 			//  -> Investigate_Meeting_Hall
-			~ ChangeLocation(Meeting_Hall)
+			// ~ ChangeLocation(Meeting_Hall)
 			#END
 			// -> Investigate 
 			-> END
@@ -619,7 +625,7 @@ VAR LocationName = ""
 			I just got here, I should look around first.
 			#END
 		// - -> Investigate
-		- -> END
+		-> END
  
 		== Talk_to_Staff ==
 			//~ Conversation("Talk to Staff")
@@ -675,7 +681,7 @@ VAR LocationName = ""
 					~ GetClue(Merchant_Sells_the_Newspaper)
 				}
 				#END
-				- -> END
+				-> END
 
 			= Do_you_know_about_the_plague_refugee
 					#speaker.Sebastian
@@ -698,7 +704,7 @@ VAR LocationName = ""
 					~ GetClue(No_Record_of_Recent_Plague)
 				}
 				#END
-				- -> END
+				-> END
 		== Town_Board ==
 			//~ Conversation("Town Board")
 			// 	#noSpeaker
@@ -742,7 +748,7 @@ VAR LocationName = ""
 					~ GetClue(News_about_Moving_Out_People)
 				}
 				#END
-				- -> END
+				-> END
 			= The_Strongest_Potion
 					#noSpeaker
 				The content read "Do not ask for more potion. The potion seller only makes potions that can kills a dragon"
@@ -763,7 +769,7 @@ VAR LocationName = ""
 				- ->->
  
 	=== Location_The_Sanctuary ===
-		- -> END
+		-> END
 	   
 	=== Location_Nursery ===
 		- -> Investigate
@@ -832,10 +838,10 @@ VAR LocationName = ""
 				(I should go and search this house while I can)
 				~ ChangeLocation(Inside_Nursery)
 				#END
-				- -> END
+				-> END
 	=== Location_Forest ===
 		{not Location_Forest} #cutscene.Wake_up
-		- -> END
+		-> END
 		
 	    == Talk_to_Lumberjack ==
 			{ Clear_the_path:
@@ -869,7 +875,7 @@ VAR LocationName = ""
 						~ GetClue(Clue_01)
 					}
 					#END
-					- -> END
+					-> END
 				= When_were_you_fainted
 						#speaker.Lumberjack
 					Not too long, I just got fainted this morning
@@ -897,13 +903,13 @@ VAR LocationName = ""
 
 					#timeline.Lumberjack_go_to_the_Log
 					#END 
-					- -> END
+					-> END
 				= Clear_the_path
 						#speaker.Lumberjack
 					Alright, let's clear the path now
 					#timeline.Lumberjack_clear_the_path
 					#END 
-					- -> END
+					-> END
 				= Thanks
 						#speaker.Lumberjack
 					Thanks for the help kid
@@ -1010,7 +1016,7 @@ VAR LocationName = ""
 			(Some items are put on sale here)
 			// + { Talk_to_Lumberjack } [Look closer at the axe] -> Look_closer_at_the_axe
 			#END
-			- -> END
+			-> END
 
 			= Look_closer_at_the_axe
 					#speaker.Sebastian
@@ -1028,7 +1034,7 @@ VAR LocationName = ""
 					#speaker.Sebastian
 				(The axe is returned to the right owner now)
 				#END
-				- -> END
+				-> END
 
 		== Talk_to_Caravan ==
 			~Conversation("Talk to Caravan")
