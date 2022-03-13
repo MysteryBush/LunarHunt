@@ -18,6 +18,11 @@ public class MainMenu : MonoBehaviour
 
     public void toMainMenu()
     {
+        GameObject gameManager = GameObject.Find("GameManager");
+        if (gameManager != null)
+        {
+            gameManager.GetComponent<SceneVisit>().allFalse();
+        }
         SceneManager.LoadScene(0);
     }
 }

@@ -52,7 +52,7 @@ public class SceneVisit : MonoBehaviour
     }
 
 
-    private void allFalse()
+    public void allFalse()
     {
         visitForest = false;
         visitSanctuary = false;

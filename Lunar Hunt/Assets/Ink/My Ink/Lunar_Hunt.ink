@@ -283,6 +283,7 @@ VAR LocationName = ""
 		-> END
 	=== Evidence_Cassandra_lied_about_the_plague ===
 		~ GetEvidence(Cassandra_lied_about_the_plague)
+		#END
 		-> END
 // --- Cutscenes list ---
 	=== Cutscene_Welcome_to_Sanctuary ===
@@ -849,7 +850,7 @@ VAR LocationName = ""
 				(I should go find someone with closest connection to C.S. )
 				(hmm...)
 				(I think I should go find merchant for now.)
-				#TimelineState_caravan_arrive
+				#timelineState.TimelineState_caravan_arrive
 				#END
 				-> END
  
