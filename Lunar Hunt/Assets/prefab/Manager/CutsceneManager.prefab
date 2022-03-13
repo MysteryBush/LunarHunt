@@ -25,7 +25,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7391548853142621928}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 1.4976039, y: -0.9804003, z: 9.675781}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -51,6 +51,8 @@ MonoBehaviour:
   CutsceneObject: {fileID: 0}
   mainCamera: {fileID: 0}
   transitioncanvas: {fileID: 0}
+  cutScenecanvas: {fileID: 0}
+  timelineBlock: 0
 --- !u!114 &5665653969387751625
 MonoBehaviour:
   m_ObjectHideFlags: 0

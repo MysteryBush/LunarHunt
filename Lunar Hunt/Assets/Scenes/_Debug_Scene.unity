@@ -534,6 +534,12 @@ PrefabInstance:
       propertyPath: currentEvidenceRequirement
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2071704507357211453, guid: ed58d34bea4133f4b80e5b63bb192eee,
+        type: 3}
+      propertyPath: timelineSanctuary
+      value: 
+      objectReference: {fileID: 11400000, guid: 014269e53ee29ba40b7eb6142f829bbf,
+        type: 2}
     - target: {fileID: 6255606092935743170, guid: ed58d34bea4133f4b80e5b63bb192eee,
         type: 3}
       propertyPath: visitSanctuary
@@ -1399,6 +1405,11 @@ PrefabInstance:
       objectReference: {fileID: 519420028}
     - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
         type: 3}
+      propertyPath: cutScenecanvas
+      value: 
+      objectReference: {fileID: 411597930}
+    - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
+        type: 3}
       propertyPath: timelineObject
       value: 
       objectReference: {fileID: 461217479}
@@ -1754,6 +1765,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c46b2d5ca0f32440ab7fc3c32b1c79e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &411597930 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5507104788461108205, guid: 98a1912c4a458d949bbe4a0f3eb650bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 346665003}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &461217479
 GameObject:
   m_ObjectHideFlags: 0
@@ -5676,6 +5693,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Lumberjack
+      objectReference: {fileID: 0}
+    - target: {fileID: 2007070916380113395, guid: 5af0794a4cf43c84ea769a49155a5a63,
+        type: 3}
+      propertyPath: knotName
+      value: Talk_to_Athena.skip_to_cassandra_room
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af0794a4cf43c84ea769a49155a5a63, type: 3}

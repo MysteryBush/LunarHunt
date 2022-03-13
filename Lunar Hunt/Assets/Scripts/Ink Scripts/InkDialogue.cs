@@ -275,6 +275,21 @@ public class InkDialogue : MonoBehaviour
                 GameObject.Find(timelineState).GetComponent<TimelineState>().setTimeline();
                 Debug.Log("tag timelineState: " + timelineState);
             }
+            if (tag.StartsWith("transition"))
+            {
+                var transitionState = tag.Substring("transition.".Length, tag.Length - "transition.".Length);
+                GameObject transitionObj = CutsceneTrigger.ins.cutScenecanvas;
+                if (transitionState == "open")
+                {
+                    transitionObj.SetActive(true);
+                    transitionObj.GetComponent<Animator>().SetBool("isOpen", true);
+                }
+                if (transitionState == "close")
+                {
+                    transitionObj.GetComponent<Animator>().SetBool("isOpen",false);
+                    //transitionObj.SetActive(false);
+                }
+            }
 
         }
         textLabel.text = text;

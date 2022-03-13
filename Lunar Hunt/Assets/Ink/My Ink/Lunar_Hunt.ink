@@ -550,9 +550,9 @@ VAR LocationName = ""
 		Ok I will.
 		(Well, I don't know who else to go for)
 		(Now I should find Athena for help)
-		~ ChangeLocation(Sanctuary)
 		#timelineState.TimelineState_Sanctuary_1
 		#END
+		~ ChangeLocation(Sanctuary)
 		// -> Investigate
 		-> END
 	//This cutscene is unused for now
@@ -862,7 +862,7 @@ VAR LocationName = ""
 				I don't know where she is. But you can come inside. I think she will be back soon.
 				// #knot.Talk_to_Athena.go_in_nursery
 				#knot.Talk_to_Athena.skip_to_cassandra_room
-				#timeline.go_in_nursery
+				// #timeline.go_in_nursery
 				#END
 				-> END
 
@@ -900,14 +900,17 @@ VAR LocationName = ""
 				~ ChangeLocation(Inside_Nursery)
 
 				= skip_to_cassandra_room
+				#transition.open
 					#noSpeaker
 				Sebastian and Athena went inside the Witch's Nursery.	
 				As Sebastian went inside the house. Athena went to the kitchen to get some tea for Sebastian.
 				Sebastian took this chance to investigate further in the house.
 				He found himself in a particular room.
-				#scene.Cassandra_Room
-				#spawn.5
-				#END
+
+				-> That_is_all
+				// #scene.Cassandra_Room
+				// #spawn.5
+				// #END
 				-> END
 	=== Location_Forest ===
 		{not Location_Forest} #cutscene.Wake_up
@@ -1223,4 +1226,15 @@ VAR LocationName = ""
 		I would love to tell you more but you must be dying to find your father now.
 			#speaker.Sebastian
 		... You better not be scheming again.
+
+	//Sorry this is all I got for now
+	=== That_is_all ===
+			#transition.open
+				#noSpeaker
+			This is the end of the story... for now.
+			If you wish to, you can still walk and look around the game.
+			Thank you for taking your time trying out the game.
+			#transition.close
+			#END
+			-> END
 -> END

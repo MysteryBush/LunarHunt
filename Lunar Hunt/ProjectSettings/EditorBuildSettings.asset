@@ -20,7 +20,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Meeting_Hall.unity
     guid: 747145c8ea7b3624899d36dea44fa808
+  - enabled: 1
+    path: Assets/Scenes/Cassandra_Room.unity
+    guid: 4a56eb1836435994e932f61e36fd8273
   - enabled: 0
-    path: Assets/Scenes/Inside_Nursery.unity
+    path: Assets/Scenes/_Debug_Scene.unity
     guid: 2d3d62a244be00e4888d708a1ae86c39
   m_configObjects: {}
