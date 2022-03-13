@@ -34,6 +34,9 @@ public class IngameMenu : MonoBehaviour
     //state to be called on other script
     public bool isOpen;
 
+    //force transitionCanvas to disable itself;
+    [SerializeField] private GameObject transitionCanvas;
+
     private void Start()
     {
         ingameMenu.SetActive(false);
@@ -59,5 +62,7 @@ public class IngameMenu : MonoBehaviour
         firstButton.GetComponent<SwitchButtonsPanelScript>().OnButtonClicked(firstButton);
         ingameMenu.SetActive(!ingameMenu.activeSelf);
         isOpen = ingameMenu.activeSelf;
+        //force transitionCanvas to disable itself;
+        transitionCanvas.SetActive(false);
     }
 }
