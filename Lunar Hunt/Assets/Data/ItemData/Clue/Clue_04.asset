@@ -13,8 +13,12 @@ MonoBehaviour:
   m_Name: Clue_04
   m_EditorClassIdentifier: 
   name: The merchant found the axe by the river
-  icon: {fileID: -7434387975494846865, guid: 626c8d1185a69714280619cde52b9734, type: 3}
+  inkName: Ink Name
+  icon: {fileID: -2986842665835311991, guid: 626c8d1185a69714280619cde52b9734, type: 3}
   itemType: Clue
   isUniqueItem: 1
   itemAmount: 1
   clueFact: Fake
+  caseNumber: 0
+  clueList: []
+  eventObject: {fileID: 0}

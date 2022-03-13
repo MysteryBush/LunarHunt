@@ -931,7 +931,7 @@ VAR LocationName = ""
 				Hey there kid  #speaker.Lumberjack
 			} 
 			//Hey kid, have you found my axe?
-				+ [When were you fainted?]-> When_were_you_fainted ->
+				// + [When were you fainted?]-> When_were_you_fainted ->
 				+ { Talk_to_Merchant } [Do you know about the merchant?]-> Do_you_know_about_the_merchant ->
 				+ { EvidenceList ? Merchant_took_the_axe } [About the Axe...] -> About_the_axe ->
 				+ [(Nevermind)] {EndCon()} -> END #END
@@ -998,7 +998,7 @@ VAR LocationName = ""
 				//Talking to Merchant.
 				//Tutorial
 				+ {Talk_to_Lumberjack} {not Talk_to_Lumberjack.About_the_axe} [Have you seen an axe?] -> Have_you_seen_an_axe ->
-				+ {Talk_to_Lumberjack} {not Talk_to_Lumberjack.About_the_axe} [Were you there when the lumberjack fainted?] -> Were_you_there ->
+				// + {Talk_to_Lumberjack} {not Talk_to_Lumberjack.About_the_axe} [Were you there when the lumberjack fainted?] -> Were_you_there ->
 				//chapter 1
 				+ [What are you doing here?] -> What_are_you_doing_here ->
 				+ { ClueList ? Merchant_Sells_the_Newspaper } {ClueList !? CS_Order_to_Forge_The_News}

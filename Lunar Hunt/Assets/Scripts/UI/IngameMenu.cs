@@ -25,8 +25,8 @@ public class IngameMenu : MonoBehaviour
     public GameObject ingameMenu;
     public Button firstButton;
 
-    [SerializeField]
-    private GameObject[] sections;
+    [SerializeField] private int initialSection;
+    [SerializeField] private GameObject[] sections;
     [SerializeField] private string[] titleName;
     [SerializeField] public TMP_Text sectionText;
     int selectedTab;
@@ -55,7 +55,7 @@ public class IngameMenu : MonoBehaviour
 
     public void toggleIngameMenu()
     {
-        selectMenuTab(0);
+        selectMenuTab(initialSection);
         firstButton.GetComponent<SwitchButtonsPanelScript>().OnButtonClicked(firstButton);
         ingameMenu.SetActive(!ingameMenu.activeSelf);
         isOpen = ingameMenu.activeSelf;
