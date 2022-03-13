@@ -19,6 +19,7 @@ public class SwitchPages : MonoBehaviour
     [SerializeField] GameObject nextButton;
     [SerializeField] GameObject previousButton;
     [SerializeField] GameObject endButton;
+    [SerializeField] GameObject mainMenuButton;
 
     private void Start()
     {
@@ -51,6 +52,11 @@ public class SwitchPages : MonoBehaviour
 
     public void checkInteractable()
     {
+        nextButton.SetActive(true);
+        previousButton.SetActive(true);
+        endButton.SetActive(false);
+        mainMenuButton.SetActive(false);
+
         //if reach the last page
         if (currentPage == pages.Length - 1)
         {
@@ -63,12 +69,14 @@ public class SwitchPages : MonoBehaviour
         {
             //previousPage disable
             previousButton.SetActive(false);
+            mainMenuButton.SetActive(true);
         }
         else
         {
-            nextButton.SetActive(true);
-            previousButton.SetActive(true);
-            endButton.SetActive(false);
+            //nextButton.SetActive(true);
+            //previousButton.SetActive(true);
+            //endButton.SetActive(false);
+            //mainMenuButton.SetActive(false);
         }
     }
 }

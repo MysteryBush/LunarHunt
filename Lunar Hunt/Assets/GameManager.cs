@@ -11,8 +11,13 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         ins = this;
-        SceneVisit.ins.runVisit();
-        //SceneState.ins.runSceneState();
+        if (FindObjectOfType<SceneData>().runInitial == false)
+        {
+            FindObjectOfType<SceneData>().runInitial = true;
+            //gameManagers[0].GetComponent<SceneVisit>().runVisit();
+            SceneVisit.ins.runVisit();
+            //SceneState.ins.runSceneState();
+        }
     }
     private void OnLevelWasLoaded(int level)
     {
