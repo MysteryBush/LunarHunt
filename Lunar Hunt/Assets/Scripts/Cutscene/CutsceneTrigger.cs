@@ -8,16 +8,18 @@ using UnityEngine.UI;
 public class CutsceneTrigger: MonoBehaviour
 {
     #region Singleton
-    public static CutsceneTrigger instance;
+    public static CutsceneTrigger ins;
 
     private void Awake()
     {
-        if (instance != null)
+        if (ins != null)
         {
             Debug.LogWarning("More than one instance of CutsceneTrigger found!");
             return;
         }
-        instance = this;
+        ins = this;
+
+        timelineObject.SetActive(false);
 
         player = FindObjectOfType<PlayerControl>();
         playableDirector = timelineObject.GetComponent<PlayableDirector>();
@@ -53,6 +55,7 @@ public class CutsceneTrigger: MonoBehaviour
         //playableDirector.playableAsset = CutsceneObject;
         //playableDirector.playableAsset = cutscene;
         timelineObject.GetComponent<PlayableDirector>().playableAsset = cutscene;
+        Debug.Log("Playing cutscene: " + cutscene);
     }
     public void TriggerCutscene()
     {

@@ -91,7 +91,7 @@ public class InkDialogue : MonoBehaviour
 
         IsOpen = true;
         notifyIsOpen = false;
-        CutsceneTrigger.instance.timelineBlock = false;
+        CutsceneTrigger.ins.timelineBlock = false;
         typewriterEffect = GetComponent<TypewriterEffect>();
         CloseDialogueBox();
 
@@ -107,7 +107,7 @@ public class InkDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.instance.timelineBlock == false)
+        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.ins.timelineBlock == false)
         {
             runDialogues();
         }
@@ -241,20 +241,21 @@ public class InkDialogue : MonoBehaviour
             {
                 var timelineName = tag.Substring("timeline.".Length, tag.Length - "timeline.".Length);
                 useTimeline = timelinePair[timelineName];
+                Debug.Log("timeline tag: " + timelineName);
                 //Debug.Log(CutsceneTrigger.instance);
                 //Debug.Log("useTimeline: " + useTimeline);
                 //may not be needed but this line make sure the timeline object is set inactive
                 //CutsceneTrigger.instance.timelineObject.SetActive(false);
                 //trigger cutscene
-                CutsceneTrigger.instance.GetCutscene(useTimeline);
-                CutsceneTrigger.instance.TriggerCutscene();
+                CutsceneTrigger.ins.GetCutscene(useTimeline);
+                CutsceneTrigger.ins.TriggerCutscene();
                 //Debug.Log("play cutscene");
             }
             if (tag.StartsWith("knot."))
             {
                 var changeToKnot = tag.Substring("knot.".Length, tag.Length - "knot.".Length);
                 knotName = changeToKnot;
-                Debug.Log("knot tag");
+                Debug.Log("knot tag: " + changeToKnot);
             }
             if (tag.StartsWith("scene."))
             {

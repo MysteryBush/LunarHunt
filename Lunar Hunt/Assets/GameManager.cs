@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
     {
         DontDestroyOnLoad(gameObject);
         ins = this;
+        SceneVisit.ins.runVisit();
+        SceneState.ins.runSceneState();
     }
     private void OnLevelWasLoaded(int level)
     {
@@ -22,6 +24,7 @@ public class GameManager : MonoBehaviour
         }
 
         SceneVisit.ins.runVisit();
+        SceneState.ins.runSceneState();
     }
     void Awake()
     {

@@ -19,8 +19,8 @@ public class EventObject : ScriptableObject
     {
         //TimelineAsset GiveCutscene = eventObject.triggerCutscene;
         //CutsceneTrigger.instance.TriggerCutscene(GiveCutscene);
-        CutsceneTrigger.instance.GetCutscene(triggerCutscene);
-        CutsceneTrigger.instance.TriggerCutscene();
+        CutsceneTrigger.ins.GetCutscene(triggerCutscene);
+        CutsceneTrigger.ins.TriggerCutscene();
         //CutsceneTrigger.instance.gameObject.SetActive(true);
     }
 }

@@ -3804,10 +3804,20 @@ PrefabInstance:
       propertyPath: knotName
       value: Cutscene_Welcome_to_Sanctuary.Athena
       objectReference: {fileID: 0}
+    - target: {fileID: 4560950842941116689, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4560950842941116691, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
       propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4560950842941116693, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4560950842941116693, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
@@ -70224,14 +70234,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
-      propertyPath: timelineObjects.Array.data[11]
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
-      propertyPath: timelineObjects.Array.data[12]
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 5168723037985592386, guid: c4d3c1bad80995b4cb4d6db329cd3968,
         type: 3}
       propertyPath: m_Name
@@ -71247,7 +71249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!320 &1930896376
 PlayableDirector:
   m_ObjectHideFlags: 0
@@ -71257,7 +71259,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1930896375}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 02f37edd28eccfd4bb82d9ae20401d79, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 3cc62c4b23d6e8b42a6295c7a98efe92, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1

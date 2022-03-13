@@ -100,14 +100,12 @@ public class SceneVisit : MonoBehaviour
                 }
                 break;
             case "Location_Meeting_Hall":
-                Debug.Log("SceneVisit: " + visitHall);
                 if (visitHall == false)
                 {
                     visitHall = true;
                     initialKnot = "Cutscene_Meeting_in_the_Meeting_Hall.At_Meeting_Hall";
                     inkDialogue.knotName = initialKnot;
                     cutsceneTrigger.GetCutscene(timelineList.timelineObjects[9]);
-                    Debug.Log(inkDialogue.knotName);
                     cutsceneTrigger.TriggerCutscene();
                 }
                 break;

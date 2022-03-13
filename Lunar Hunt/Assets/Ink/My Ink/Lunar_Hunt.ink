@@ -329,7 +329,7 @@ VAR LocationName = ""
 		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
 		#timeline.Go_in
 		// #END
-		-> END
+		- -> END
 
 		= Go_in
 			#noSpeaker
