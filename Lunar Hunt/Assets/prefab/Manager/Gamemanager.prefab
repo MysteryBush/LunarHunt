@@ -118,6 +118,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   knotLocationName: 
   initialKnot: 
+  firstVisit: 0
   visitForest: 0
   visitSanctuary: 0
   visitHall: 0
@@ -137,3 +138,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb046e76e3b28d446a75d56b66eda276, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cutsceneTrigger: {fileID: 0}
+  sceneVisit: {fileID: 6255606092935743170}
+  setTimeline: {fileID: 0}
+  timelineForest: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
+  timelineSanctuary: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+  timelineHall: {fileID: 11400000, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}

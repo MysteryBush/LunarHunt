@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class spawnPoint : MonoBehaviour
+public class SpawnPoint : MonoBehaviour
 {
-    public static spawnPoint ins;
+    public static SpawnPoint ins;
     private GameObject[] spawnPoints;
 
     public GameObject[] spawnPrefabs;

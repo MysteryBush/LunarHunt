@@ -9,6 +9,8 @@ public class SceneVisit : MonoBehaviour
     public string knotLocationName;
     public string initialKnot;
 
+    public bool firstVisit;
+
     public bool visitForest;
     public bool visitSanctuary;
     public bool visitHall;
@@ -43,6 +45,7 @@ public class SceneVisit : MonoBehaviour
     public void runVisit()
     {
         initialKnot = "";
+        firstVisit = false;
         getRef();
         getKnot();
         triggerKnot();
@@ -75,11 +78,13 @@ public class SceneVisit : MonoBehaviour
 
     private void triggerKnot()
     {
+        checkFirstVisit();
         switch (knotLocationName)
         {
             case "Location_Forest":
                 if (visitForest == false)
                 {
+                    firstVisit = true;
                     //Debug.Log("Forest First Time!");
                     visitForest = true;
                     //run cutscene
@@ -91,6 +96,7 @@ public class SceneVisit : MonoBehaviour
             case "Location_The_Sanctuary":
                 if (visitSanctuary == false)
                 {
+                    firstVisit = true;
                     visitSanctuary = true;
                     initialKnot = "Cutscene_Welcome_to_Sanctuary";
                     inkDialogue.knotName = initialKnot;
@@ -102,6 +108,7 @@ public class SceneVisit : MonoBehaviour
             case "Location_Meeting_Hall":
                 if (visitHall == false)
                 {
+                    firstVisit = true;
                     visitHall = true;
                     initialKnot = "Cutscene_Meeting_in_the_Meeting_Hall.At_Meeting_Hall";
                     inkDialogue.knotName = initialKnot;
@@ -110,6 +117,36 @@ public class SceneVisit : MonoBehaviour
                 }
                 break;
         }
+        //SceneState.ins.runSceneState();
+    }
+
+    public void checkFirstVisit()
+    {
+        switch (knotLocationName)
+        {
+            case "Location_Forest":
+                if (visitForest == false)
+                {
+                    firstVisit = true;
+                }
+                break;
+            case "Location_The_Sanctuary":
+                if (visitSanctuary == false)
+                {
+                    firstVisit = true;
+                }
+                break;
+            case "Location_Meeting_Hall":
+                if (visitHall == false)
+                {
+                    firstVisit = true;
+                }
+                break;
+        }
+        Debug.Log("firstVisit = " + firstVisit);
+        SceneState.ins.runSceneState();
+        firstVisit = false;
+
     }
 
 }

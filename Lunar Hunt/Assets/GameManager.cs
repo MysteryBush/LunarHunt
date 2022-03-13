@@ -5,14 +5,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager ins;
-    private GameObject[] gameManagers;
+    [SerializeField] private GameObject[] gameManagers;
     //Start is called before the first frame update
     private void Start()
     {
         DontDestroyOnLoad(gameObject);
         ins = this;
         SceneVisit.ins.runVisit();
-        SceneState.ins.runSceneState();
+        //SceneState.ins.runSceneState();
     }
     private void OnLevelWasLoaded(int level)
     {
@@ -23,8 +23,14 @@ public class GameManager : MonoBehaviour
             Destroy(gameManagers[1]);
         }
 
-        SceneVisit.ins.runVisit();
-        SceneState.ins.runSceneState();
+
+        if (FindObjectOfType<SceneData>().runInitial == false)
+        {
+            FindObjectOfType<SceneData>().runInitial = true;
+            //gameManagers[0].GetComponent<SceneVisit>().runVisit();
+            SceneVisit.ins.runVisit();
+            //SceneState.ins.runSceneState();
+        }
     }
     void Awake()
     {

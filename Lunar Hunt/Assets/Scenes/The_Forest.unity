@@ -4022,7 +4022,7 @@ PlayableDirector:
   m_GameObject: {fileID: 421582545}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 90b50edc598f104458ce360b97e1a22e, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -4096,6 +4096,22 @@ PlayableDirector:
     value: {fileID: 1344363478}
   - key: {fileID: -3432560152458839230, guid: 90b50edc598f104458ce360b97e1a22e, type: 2}
     value: {fileID: 1344363479}
+  - key: {fileID: 5514778656975586746, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5921208021495451588, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1260661703655997675, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -62383628938201311, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 2040741536}
+  - key: {fileID: 7040553342891076610, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 1887260757}
+  - key: {fileID: -5899959380854193084, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3750579687104612730, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3733582233964546615, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &421582547
@@ -32952,6 +32968,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+--- !u!114 &1887260757 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5665653969387751625, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
+    type: 3}
+  m_PrefabInstance: {fileID: 1887260753}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1887260754}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1920301528
 GameObject:
   m_ObjectHideFlags: 0

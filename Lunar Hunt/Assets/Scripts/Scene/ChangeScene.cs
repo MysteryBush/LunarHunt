@@ -14,9 +14,13 @@ public class ChangeScene : MonoBehaviour
     //to carry the number to next scene
     public int spawnNumber;
 
+    //ref
+    [SerializeField] private SpawnPoint spawnPoint;
+
+
     void Start()
     {
-
+        spawnPoint = GameObject.Find("SpawnManager").GetComponent<SpawnPoint>();
     }
 
     // Update is called once per frame
@@ -32,7 +36,7 @@ public class ChangeScene : MonoBehaviour
         if (collisionGameObject.tag == "Player")
         {
             //GameManager.ins.GetComponent<setSpawn>().spawnNumber = spawnNumber;
-            spawnPoint.ins.spawnNumber = spawnNumber;
+            spawnPoint.spawnNumber = spawnNumber;
             LoadScene();
         }
     }

@@ -8,11 +8,11 @@ public class SceneData : MonoBehaviour
     public string knotLocationName;
     public string initialKnot;
 
-    public bool giveKnot;
+    public bool runInitial;
 
     private void Awake()
     {
-        giveKnot = true;
+        runInitial = false;
 
         //Debug.Log("SceneData is Awake!");
         ins = this;

@@ -304,6 +304,7 @@ VAR LocationName = ""
 			#speaker.Sebastian
 		(She's so eager to help)
 		(But I guess it's the first place to go anyway)
+			#noSpeaker
 		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
 		#timeline.To_meeting_hall
 		// #END

@@ -33,7 +33,8 @@ public class PlayerMovement : MonoBehaviour
 
         transform.position = new Vector3(transform.position.x, transform.position.y, transform.position.y);
 
-        FindObjectOfType<spawnPoint>().setSpawnPoint(this.gameObject);
+        //FindObjectOfType<SpawnPoint>().setSpawnPoint(this.gameObject);
+        GameObject.Find("SpawnManager").GetComponent<SpawnPoint>().setSpawnPoint(this.gameObject);
 
         anim.SetBool("isWalking", true);
     }
