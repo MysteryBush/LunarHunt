@@ -5,16 +5,16 @@ using UnityEngine;
 public class NotifierQueue : MonoBehaviour
 {
     #region Singleton
-    public static NotifierQueue instance;
+    public static NotifierQueue ins;
 
     private void Awake()
     {
-        if (instance != null)
+        if (ins != null)
         {
             Debug.LogWarning("More than one instance of NotifierQueue found!");
             return;
         }
-        instance = this;
+        ins = this;
     }
 
     #endregion

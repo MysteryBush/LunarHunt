@@ -878,6 +878,7 @@ MonoBehaviour:
   sLevelToLoad: The_Forest
   useIntegerToLoadLevel: 0
   spawnNumber: 0
+  spawnPoint: {fileID: 0}
 --- !u!212 &102594511
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1139,7 +1140,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: 0
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -3669,12 +3670,12 @@ PrefabInstance:
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -153.01
+      value: -151.72
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 59.56
+      value: 59.06
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
@@ -4337,7 +4338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -145.67122, y: 62.20063, z: -16.935013}
+  m_LocalPosition: {x: -145.67122, y: 62.20063, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -20311,12 +20312,12 @@ PrefabInstance:
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -143.32
+      value: -143.07
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60.29
+      value: 59.38
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
@@ -20426,6 +20427,7 @@ MonoBehaviour:
   sLevelToLoad: Meeting_Hall
   useIntegerToLoadLevel: 0
   spawnNumber: 3
+  spawnPoint: {fileID: 0}
 --- !u!212 &1082452204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -68465,12 +68467,12 @@ PrefabInstance:
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -143.8
+      value: -144.87
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 56.5
+      value: 56.44
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
@@ -71259,7 +71261,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1930896375}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -71557,12 +71559,12 @@ PrefabInstance:
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -146.28
+      value: -148.9
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 59.03
+      value: 56.63
       objectReference: {fileID: 0}
     - target: {fileID: 2322445225012059442, guid: 30b9b6a6da0eb8841b03f5f26e4b7512,
         type: 3}
@@ -71741,7 +71743,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2017588027}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -153.51, y: 62.22, z: -16.935013}
+  m_LocalPosition: {x: -153.51, y: 62.22, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 821980185}
@@ -93922,7 +93924,7 @@ PrefabInstance:
     - target: {fileID: 7184573319834072958, guid: ea5e10b84b1f81f4a84f3d59a736fb12,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.064987
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7184573319834072958, guid: ea5e10b84b1f81f4a84f3d59a736fb12,
         type: 3}
@@ -95668,6 +95670,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CutsceneManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 7391548853142621928, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
         type: 3}

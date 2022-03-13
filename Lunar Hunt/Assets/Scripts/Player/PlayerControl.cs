@@ -14,11 +14,15 @@ public class PlayerControl : MonoBehaviour
     [SerializeField] public InkDialogue inkUI;
     public InkDialogue InkUI => inkUI;
 
+    [SerializeField] private IngameMenu ingameMenu;
+
     public IInteractable Interactable { get; set; }
     private void Start()
     {
         //inkUI = InkDialogue.ins.GetComponent<InkDialogue>();
         //findInkUI();
+        inkUI = GameObject.Find("CanvasDialogue").GetComponent<InkDialogue>();
+        ingameMenu = FindObjectOfType<IngameMenu>();
     }
     void Update()
     {
@@ -41,11 +45,11 @@ public class PlayerControl : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Tab) && InkUI.IsOpen == false)
             {
                 //trigger Inventory
-                IngameMenu.instance.toggleIngameMenu();
+                IngameMenu.ins.toggleIngameMenu();
                 //Debug.Log("toggling In-game Menu");
                 //doingAction = true;
                 //doingAction = IngameMenu.instance.ingameMenu.activeSelf;
-                controlUI = IngameMenu.instance.isOpen;
+                controlUI = IngameMenu.ins.isOpen;
             }
         }
     }

@@ -41,7 +41,7 @@ public class InventoryKeyItem : MonoBehaviour
         {
             evidences.Add(keyItem);
         }
-        NotifierQueue.instance.notifyItem(keyItem);
+        NotifierQueue.ins.notifyItem(keyItem);
         Debug.Log("notifyItem added: " + keyItem.name);
         //Debug.Log("Added " + keyItem.name);
         if (onItemChangedCallback != null)

@@ -8,16 +8,16 @@ public class IngameMenu : MonoBehaviour
 {
     #region Singleton
 
-    public static IngameMenu instance;
+    public static IngameMenu ins;
 
     private void Awake()
     {
-        if (instance != null)
+        if (ins != null)
         {
             Debug.LogWarning("More than one instance of IngameMenu found!");
             return;
         }
-        instance = this;
+        ins = this;
     }
 
     #endregion

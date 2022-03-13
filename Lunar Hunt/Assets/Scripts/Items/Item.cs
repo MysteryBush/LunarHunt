@@ -33,6 +33,7 @@ public class Item : ScriptableObject
     public int itemAmount = 1;
     //for clue
     public string clueFact = "Neutral";
+    public int caseNumber = 0;
     //for evidence
     [SerializeField] public Item[] clueList;
     //for event

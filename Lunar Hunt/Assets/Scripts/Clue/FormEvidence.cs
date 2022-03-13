@@ -33,7 +33,7 @@ public class FormEvidence : MonoBehaviour
 
     //public List<InventoryKeyItem> clueForming = new List<InventoryKeyItem>();
 
-    private ClueUI clueUI;
+    [SerializeField] private ClueUI clueUI;
     //private ResponseEvent[] clueChoices;
     [SerializeField] private InventoryKeyItem inventoryKeyItem;
 
@@ -42,7 +42,8 @@ public class FormEvidence : MonoBehaviour
     [SerializeField] private RectTransform clueContainer;
 
     //Forming Evidence
-    [SerializeField] public int currentEvidenceRequirement;
+    //[SerializeField] public int currentEvidenceRequirement;
+    [SerializeField] private CurrentCase currentCase;
     [SerializeField] private List<EvidenceRequirement> evidenceRequirementList;
 
     Inventory inventory;
@@ -54,6 +55,8 @@ public class FormEvidence : MonoBehaviour
 
     void Start()
     {
+        currentCase = GameObject.Find("GameManager").GetComponent<CurrentCase>();
+
         //inventory = Inventory.instance;
         //inventoryKeyItem = InventoryKeyItem.instance;
         //inventory.onItemChangedCallback += UpdateUI;
@@ -105,7 +108,7 @@ public class FormEvidence : MonoBehaviour
 
     private bool checkInList(Item item)
     {
-        if (clues.Contains(item))
+        if (clues.Contains(item) )
         {
             return true;
         }
@@ -115,7 +118,7 @@ public class FormEvidence : MonoBehaviour
 
     private Item GetRequirementOutput()
     {
-        EvidenceRequirement currentRequirement = evidenceRequirementList[currentEvidenceRequirement];
+        EvidenceRequirement currentRequirement = evidenceRequirementList[currentCase.currentEvidenceRequirement];
         //Item[] clueRequirement = currentRequirement.clueRequirement;
         //what if the clue is fake? If so, then return null. CANNOT form evidence.
         //Debug.Log(clues.Count);
@@ -125,8 +128,8 @@ public class FormEvidence : MonoBehaviour
             {
                 //requirement = false;
                 //Debug.Log("FAKE Clue");
-                NotifierQueue.instance.notifyFormEvidence(currentRequirement, 0);
-                NotifierQueue.instance.NotifyAlert();
+                NotifierQueue.ins.notifyFormEvidence(currentRequirement, 0);
+                NotifierQueue.ins.NotifyAlert();
                 return null;
             }
         }
@@ -147,8 +150,8 @@ public class FormEvidence : MonoBehaviour
             else
             {
                 //requirement = false;
-                NotifierQueue.instance.notifyFormEvidence(currentRequirement, 1);
-                NotifierQueue.instance.NotifyAlert();
+                NotifierQueue.ins.notifyFormEvidence(currentRequirement, 1);
+                NotifierQueue.ins.NotifyAlert();
                 return null;
             }
 
@@ -169,8 +172,17 @@ public class FormEvidence : MonoBehaviour
         {
             inventoryKeyItem.Add(evidence);
             Debug.Log("Added evidence: " + evidence);
+
+            //function on what happens when the evidence is formed
+            nextFormingEvidence();
+
+            //go to next evidence case
+
+
             //evidence.Use();
-            NotifierQueue.instance.NotifyAlert();
+            NotifierQueue.ins.NotifyAlert();
+
+
 
             //the knotname for Ink
             string knotname = "Evidence_" + evidence.inkName;
@@ -182,6 +194,12 @@ public class FormEvidence : MonoBehaviour
 
     public void nextFormingEvidence()
     {
-        currentEvidenceRequirement += 1;
+        currentCase.currentEvidenceRequirement += 1;
+
+        clueUI.UpdateUI();
+
+        clues.Clear();
+
+        UpdateUI();
     }
 }

@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 867698769}
   - component: {fileID: 6255606092935743170}
   - component: {fileID: 2071704507357211453}
+  - component: {fileID: 1382141042304815023}
   m_Layer: 0
   m_Name: Gamemanager
   m_TagString: GameManager
@@ -49,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 645aecc1895639448930831c666210db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameManagers: []
 --- !u!114 &6968752486176079026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +146,15 @@ MonoBehaviour:
   timelineForest: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
   timelineSanctuary: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
   timelineHall: {fileID: 11400000, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}
+--- !u!114 &1382141042304815023
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6968752486176079030}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa81dec19ae074d4fad16729e8713676, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

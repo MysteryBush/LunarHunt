@@ -9401,6 +9401,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3231274688501401229, guid: efedbad1be54e58418053ce15faab47d,
+        type: 3}
+      propertyPath: clueUI
+      value: 
+      objectReference: {fileID: 1590209294}
     - target: {fileID: 3231274688606480681, guid: efedbad1be54e58418053ce15faab47d,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -31769,6 +31774,18 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1590209294 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3231274688701613181, guid: efedbad1be54e58418053ce15faab47d,
+    type: 3}
+  m_PrefabInstance: {fileID: 904422787}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a1803f5c5303944091daca75a4f2d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1632217197
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -67398,6 +67415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627205981296373299, guid: e53cf1c292ca987448181c55daf0f933,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5627205981296373311, guid: e53cf1c292ca987448181c55daf0f933,
         type: 3}

@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().doingAction == false && GetComponent<PlayerControl>().controlUI == false)
+        if (GetComponent<PlayerControl>().isControl == true && GetComponent<PlayerControl>().doingAction == false && GetComponent<PlayerControl>().controlUI == false && IngameMenu.ins.isOpen == false)
         {
             // Store the input axes.
             xValue = Input.GetAxisRaw("Horizontal");

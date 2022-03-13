@@ -274,8 +274,8 @@ VAR LocationName = ""
 		(Now that I got here, I should ask if someone knows about missing people.)
 		(That way, I should be able to find a lead about my father.)
 		//Sebastian walk until in front of Athena
-		#knot.Cutscene_Welcome_to_Sanctuary.Athena
 		#timeline.Athena
+		#knot.Cutscene_Welcome_to_Sanctuary.Athena
 		#END
 		-> END
 		// 	#noSpeaker
@@ -305,8 +305,8 @@ VAR LocationName = ""
 		(She's so eager to help)
 		(But I guess it's the first place to go anyway)
 			#noSpeaker
-		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
 		#timeline.To_meeting_hall
+		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
 		// #END
 		-> END
 		//play cutscene
@@ -314,8 +314,8 @@ VAR LocationName = ""
 			#noSpeaker
 		Athena leads the way to the town meeting hall and Sebastian follows behind her.
 		They arrived at the front of the town's meeting hall.
-		#knot.Cutscene_Welcome_to_Sanctuary.At_meeting_hall
 		#timeline.At_meeting_hall
+		#knot.Cutscene_Welcome_to_Sanctuary.At_meeting_hall
 		#END
 		-> END
 
@@ -327,15 +327,16 @@ VAR LocationName = ""
 			#speaker.Athena
 		I'm sure you can!
 			#noSpeaker
-		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
 		#timeline.Go_in
+		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
 		// #END
-		- -> END
+		- -> Go_in
 
 		= Go_in
 			#noSpeaker
 		Athena walked away to the east.
 		Sebastian walks up to the door and go inside the town's meeting hall.
+		#spawn.3
 		#scene.Meeting_Hall
 		#END
 		-> END 
@@ -356,7 +357,6 @@ VAR LocationName = ""
 		#timeline.Cassandra_approach
 		#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
 		// #timeline.Cassandra_welcome
-		// #END
 		#noSpeaker
 		-> END
 

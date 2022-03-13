@@ -58,7 +58,7 @@ public class EventTracking : MonoBehaviour
         {
             eventObjects.Add(eventObject);
             //Debug.Log("Added " + eventObject.name);
-            NotifierQueue.instance.notifyEvent(eventObject);
+            NotifierQueue.ins.notifyEvent(eventObject);
             if (onEventChangedCallback != null)
                 onEventChangedCallback.Invoke();
         }

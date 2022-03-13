@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-
+using System.Collections.Generic;
 
 public class ClueUI : MonoBehaviour
 {
@@ -26,7 +26,11 @@ public class ClueUI : MonoBehaviour
 
     [SerializeField] InventorySlot[] slots;
 
-    // Use this for initialization
+    //current case clues
+    [SerializeField] private CurrentCase currentCase;
+
+    //ref 
+    [SerializeField] private FormEvidence formEvidence;
     void Start()
     {
         clues = InventoryKeyItem.instance;
@@ -34,6 +38,11 @@ public class ClueUI : MonoBehaviour
 
         slots = itemsParent.GetComponentsInChildren<InventorySlot>();
         //slots = itemsParent.GetComponentsInChildren<InventorySlot>(true);
+
+        //currentCaseClues
+        currentCase = GameObject.Find("GameManager").GetComponent<CurrentCase>();
+
+        //formEvidence = GameObject.Find("CanvasDialogue").GetComponentInChildren<FormEvidence>();
 
         //when loaded from another scene
         UpdateUI();
@@ -46,13 +55,15 @@ public class ClueUI : MonoBehaviour
         clues.onItemChangedCallback -= UpdateUI;
     }
 
-    void UpdateUI()
+    public void UpdateUI()
     {
+        checkCurrentCaseClues();
         for (int i = 0; i < slots.Length; i++)
         {
-            if (i < clues.clues.Count)
+            //if (i < clues.clues.Count)
+            if (i < currentCase.currentCaseClues.Count)
             {
-                slots[i].AddClue(clues.clues[i]);
+                slots[i].AddClue(currentCase.currentCaseClues[i]);
             }
             else
             {
@@ -62,6 +73,17 @@ public class ClueUI : MonoBehaviour
         //Debug.Log("UPDATING UI");
     }
 
+    void checkCurrentCaseClues()
+    {
+        currentCase.currentCaseClues.Clear();
+        for (int i = 0; i < clues.clues.Count; i++)
+        {
+            if (clues.clues[i].caseNumber == currentCase.currentEvidenceRequirement)
+            {
+                currentCase.currentCaseClues.Add(clues.clues[i]);
+            }
+        }
+    }
     //public void toggleInventory()
     //{
     //    inventoryUI.SetActive(!inventoryUI.activeSelf);

@@ -13,10 +13,12 @@ MonoBehaviour:
   m_Name: CS Sells the potion
   m_EditorClassIdentifier: 
   name: CS Sells the potion
+  inkName: Ink Name
   icon: {fileID: -2986842665835311991, guid: 626c8d1185a69714280619cde52b9734, type: 3}
   itemType: Clue
   isUniqueItem: 1
   itemAmount: 1
   clueFact: Truth
+  caseNumber: 2
   clueList: []
   eventObject: {fileID: 0}

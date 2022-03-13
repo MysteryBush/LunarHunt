@@ -113,8 +113,10 @@ public class NotifierUI : MonoBehaviour
 
     public void CloseNotifierBox()
     {
-
-        IsOpen = false;
+        if (IngameMenu.ins.isOpen == false)
+        {
+            IsOpen = false;
+        }
         //check if other UI is closed then make player move
         if (player.InkUI.IsOpen == false)
         {

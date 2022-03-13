@@ -262,6 +262,12 @@ public class InkDialogue : MonoBehaviour
                 var changeScene = tag.Substring("scene.".Length, tag.Length - "scene.".Length);
                 SceneManager.LoadScene(changeScene);
             }
+            if (tag.StartsWith("spawn."))
+            {
+                var spawnNumber = int.Parse(tag.Substring("spawn.".Length, tag.Length - "spawn.".Length));
+                GameObject.Find("SpawnManager").GetComponent<SpawnPoint>().spawnNumber = spawnNumber;
+                Debug.Log(spawnNumber);
+            }
         }
         textLabel.text = text;
     }
