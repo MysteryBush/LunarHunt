@@ -19,8 +19,6 @@ public class CutsceneTrigger: MonoBehaviour
         }
         instance = this;
 
-        timelineObject.SetActive(false);
-
         player = FindObjectOfType<PlayerControl>();
         playableDirector = timelineObject.GetComponent<PlayableDirector>();
     }
@@ -44,18 +42,23 @@ public class CutsceneTrigger: MonoBehaviour
     public bool timelineBlock;
     private void Start()
     {
-        //playableDirector = timelineObject.GetComponent<PlayableDirector>();
+        player = FindObjectOfType<PlayerControl>();
+        playableDirector = timelineObject.GetComponent<PlayableDirector>();
     }
 
     public void GetCutscene(TimelineAsset cutsceneObject)
     {
         CutsceneObject = cutsceneObject;
-        playableDirector.playableAsset = CutsceneObject;
         cutscene = CutsceneObject;
+        //playableDirector.playableAsset = CutsceneObject;
+        //playableDirector.playableAsset = cutscene;
+        timelineObject.GetComponent<PlayableDirector>().playableAsset = cutscene;
     }
     public void TriggerCutscene()
     {
-        timelineObject.SetActive(true);
+        //timelineObject.SetActive(true);
+        //Debug.Log(timelineObject);
+        //Debug.Log("SetActive True to timelineObject");
         //StartCoroutine(FinishCut());
         startCutscene();
     }
@@ -71,19 +74,29 @@ public class CutsceneTrigger: MonoBehaviour
 
     public void startCutscene()
     {
+        player = FindObjectOfType<PlayerControl>();
         player.isControl = false;
         player.GetComponent<CapsuleCollider2D>().enabled = false;
         //dialogue can't continue during timeline until other function say so
         timelineBlock = true;
+
+        //trigger Play On Awake
+        timelineObject.SetActive(false);
+        timelineObject.SetActive(true);
+
+        //Debug.Log("timelineBlock: " + timelineBlock);
+
     }
 
     public void endCutscene()
     {
+        //Debug.Log("Ending cutscene");
         player.isControl = true;
         player.GetComponent<CapsuleCollider2D>().enabled = true;
         timelineObject.SetActive(false);
         transitioncanvas.SetActive(false);
         //mainCamera.SetActive(true);
+        timelineBlock = false;
     }
 
     public void dialogueCutscene()
