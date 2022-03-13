@@ -42,7 +42,7 @@ public class InventoryKeyItem : MonoBehaviour
             evidences.Add(keyItem);
         }
         NotifierQueue.ins.notifyItem(keyItem);
-        Debug.Log("notifyItem added: " + keyItem.name);
+        //Debug.Log("notifyItem added: " + keyItem.name);
         //Debug.Log("Added " + keyItem.name);
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();

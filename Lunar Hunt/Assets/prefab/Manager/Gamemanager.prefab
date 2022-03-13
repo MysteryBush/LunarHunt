@@ -158,3 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa81dec19ae074d4fad16729e8713676, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  currentEvidenceRequirement: 0
+  currentCaseClues: []

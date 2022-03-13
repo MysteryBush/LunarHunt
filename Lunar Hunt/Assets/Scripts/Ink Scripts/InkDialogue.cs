@@ -180,6 +180,7 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("Cassandra_welcome", timelines[11]);
         timelinePair.Add("Cassandra_leave", timelines[12]);
         timelinePair.Add("look_around_meeting_hall", timelines[13]);
+        timelinePair.Add("go_in_nursery", timelines[14]);
     }
 
     void runDialogues()
@@ -206,7 +207,7 @@ public class InkDialogue : MonoBehaviour
             {
                 OpenDialogueBox();
                 return;
-            }    
+            }
             if (tag.StartsWith("noSpeaker"))
             {
                 //nameLabel.text = null;
@@ -268,6 +269,13 @@ public class InkDialogue : MonoBehaviour
                 GameObject.Find("SpawnManager").GetComponent<SpawnPoint>().spawnNumber = spawnNumber;
                 Debug.Log(spawnNumber);
             }
+            if (tag.StartsWith("timelineState."))
+            {
+                var timelineState = tag.Substring("timelineState.".Length, tag.Length - "timelineState.".Length);
+                GameObject.Find(timelineState).GetComponent<TimelineState>().setTimeline();
+                Debug.Log("tag timelineState: " + timelineState);
+            }
+
         }
         textLabel.text = text;
     }

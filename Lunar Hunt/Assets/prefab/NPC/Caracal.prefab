@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3903132255118117217
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -121.79
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 80.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 2.234402
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074115, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_Name
+      value: Caracal
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: a7d905227bd2d504cab53d46afd03635, type: 2}
+    - target: {fileID: 117092578926074169, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -456181904466746750, guid: 506174f4af28c904aa3a80ea9dfb5b90,
+        type: 3}
+    - target: {fileID: 117092578926074175, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: knotName
+      value: Talk_to_Caravan
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 8b6b020e4b1d84c4983b3367eb6b40cb, type: 3}

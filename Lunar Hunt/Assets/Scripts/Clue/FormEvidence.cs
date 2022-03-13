@@ -77,7 +77,7 @@ public class FormEvidence : MonoBehaviour
         for (int i = 0; i < clues.Count; i++)
         {
             Item clue = clues[i];
-            Debug.Log("clue: " + clue);
+            //Debug.Log("clue: " + clue);
             int clueIndex = i;
 
             GameObject clueButton = Instantiate(clueButtonTemplate.gameObject, clueContainer);
@@ -108,7 +108,7 @@ public class FormEvidence : MonoBehaviour
 
     private bool checkInList(Item item)
     {
-        if (clues.Contains(item) )
+        if (clues.Contains(item))
         {
             return true;
         }
@@ -170,26 +170,32 @@ public class FormEvidence : MonoBehaviour
         Item evidence = GetRequirementOutput();
         if (!inventoryKeyItem.evidences.Contains(evidence) && evidence != null)
         {
+            //the knotname for Ink
+            string knotname = "Evidence_" + evidence.inkName;
+            //Debug.Log("Sending Ink's Knot Name: " + knotname);
+            //Tell Ink that the evidence is collected
+            //InkDialogue.ins.runInkKnot(knotname);
+            //InkDialogue.ins.knotName = knotname;
+            //InkDialogue.ins.OpenDialogueBox();
+
             inventoryKeyItem.Add(evidence);
-            Debug.Log("Added evidence: " + evidence);
+            //Debug.Log("Added evidence: " + evidence);
+            //Add a queue to NotfierUI to open the dialogue
+            NotifierQueue.ins.notifyOpenDialogue(knotname);
 
             //function on what happens when the evidence is formed
             nextFormingEvidence();
 
             //go to next evidence case
 
+            //close the ingame menu
+            IngameMenu.ins.ingameMenu.SetActive(true);
+            IngameMenu.ins.toggleIngameMenu();
 
             //evidence.Use();
-            NotifierQueue.ins.NotifyAlert();
 
-
-
-            //the knotname for Ink
-            string knotname = "Evidence_" + evidence.inkName;
-            //Debug.Log("Sending Ink's Knot Name: " + knotname);
-            //Tell Ink that the evidence is collected
-            InkDialogue.ins.runInkKnot(knotname);
         }
+        //NotifierQueue.ins.NotifyAlert();
     }
 
     public void nextFormingEvidence()

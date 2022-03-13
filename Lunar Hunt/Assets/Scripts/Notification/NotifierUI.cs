@@ -33,12 +33,17 @@ public class NotifierUI : MonoBehaviour
     public bool IsOpen { get; private set; }
     private TypewriterEffect typewriterEffect;
 
+    //ref
+    [SerializeField] private InkDialogue inkDialogue;
+
     private void Start()
     {
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         IsOpen = false;
         typewriterEffect = GetComponent<TypewriterEffect>();
         //CloseNotifierBox();
+
+        inkDialogue = GameObject.Find("CanvasDialogue").GetComponent<InkDialogue>();
     }
     #region Conversation and Dialogue
     public void runNotifications(NotifierQueue notifierQueue)
@@ -58,7 +63,7 @@ public class NotifierUI : MonoBehaviour
     //start notification on each of them
     private IEnumerator StepThroughNotifications(NotifierQueue notifierQueue)
     {
-        Debug.Log("stepping StepThroughNotifications");
+        //Debug.Log("stepping StepThroughNotifications");
         //for (int i = 0; i < notifierQueue.notifierList.Count; i++)
         //{
         //    Notifier notifer = notifierQueue.notifierList[i];
@@ -76,6 +81,13 @@ public class NotifierUI : MonoBehaviour
     //run a notification
     private IEnumerator runNotifer(Notifier notifier)
     {
+        if (notifier.notificationTitle == "OpenDialogue")
+        {
+            CloseNotifierBox();
+            inkDialogue.knotName = notifier.notifyObj;
+            inkDialogue.OpenDialogueBox();
+        }
+        
         textLabel.text = null;
 
         if (anim.GetBool("IsOpen") == false)
@@ -130,7 +142,7 @@ public class NotifierUI : MonoBehaviour
         textLabel.text = string.Empty;
 
         InkDialogue.ins.notifyIsOpen = false;
-        Debug.Log("reached CloseNotifierBox with: " + InkDialogue.ins.notifyIsOpen);
+        //Debug.Log("reached CloseNotifierBox with: " + InkDialogue.ins.notifyIsOpen);
         //continueDialogue();
     }
 

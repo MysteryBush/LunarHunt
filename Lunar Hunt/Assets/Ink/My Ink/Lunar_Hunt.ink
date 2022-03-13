@@ -252,12 +252,34 @@ VAR LocationName = ""
 // --- Get Evidence Knots ---
 	=== Evidence_Merchant_took_the_axe ===
 		~ GetEvidence(Merchant_took_the_axe)
+		-> go_tell_lumberjack
+		= go_tell_lumberjack
+			#speaker.Sebastian
+		(So... 
+		(This axe that the merchant selling is really belong to Alex)
+		(I should go back and tell Alex about it)
+			#noSpeaker
+		Now it's time to go back and talk to the lumberjack
+		#END
 		-> END
 	=== Evidence_CS_Faked_The_News ===
 		~ GetEvidence(CS_Faked_The_News)
+		-> who_is_CS
+		= who_is_CS
+			#speaker.Sebastian
+		(Who is this C.S. and why are they making fake news?)
+		(Even though I'm here to find my father this C.S. is only making it harder for me)
+		(I should go back to town for more answers)
+			#noSpeaker
+		Go back to town to continue the search
+		#timelineState.TimelineState_sanctuary_old_man
+		#END
 		-> END
 	=== Evidence_CS_Sells_Fake_Potion ===
 		~ GetEvidence(CS_Sells_Fake_Potion)
+
+		#timelineState.TimelineState_caravan_arrive
+		#END
 		-> END
 	=== Evidence_Cassandra_lied_about_the_plague ===
 		~ GetEvidence(Cassandra_lied_about_the_plague)
@@ -529,6 +551,7 @@ VAR LocationName = ""
 		(Well, I don't know who else to go for)
 		(Now I should find Athena for help)
 		~ ChangeLocation(Sanctuary)
+		#timelineState.TimelineState_Sanctuary_1
 		#END
 		// -> Investigate
 		-> END
@@ -772,14 +795,21 @@ VAR LocationName = ""
  
 	=== Location_The_Sanctuary ===
 		-> END
+
+		== Talk_to_Old_Man ==
+				#speaker.OldMan
+			Live your life while you still can young lad
+			#END
+			-> END
 	   
 	=== Location_Nursery ===
 		- -> Investigate
 
-		= Talk_to_Athena
+		== Talk_to_Athena ==
 			//~ Conversation("Talk to Athena")
 				#speaker.Athena
-			Hello Sebastian! Are you lost? Do you need any help?
+			// Hello Sebastian! Are you lost? Do you need any help?
+			Hello Sebastian! Do you need any help?
 			+ { ClueList ? CS_Sells_the_potion } {ClueList !? The_Potion_is_just_Colored_Water}
 				[Can you help me test this potion?] -> Can_you_help_me_test_this_potion ->
 			+ { ClueList ? No_Record_of_Recent_Plague } {ClueList !? CS_letters}
@@ -797,10 +827,9 @@ VAR LocationName = ""
 					#speaker.Athena
 				Sure, give me a moment.
 				    #noSpeaker
-				Athena doing her alchemist thing. 
+				// Athena doing her alchemist thing. 
 				She took the potion from Sebastian's hand, put it on the table nearby with some dust and mixer tools.
-				Turns out the potion is just colored water.
-				It does nothing good or bad.
+				Turns out the potion is just colored water.It does nothing good or bad.
 				{ ClueList !? The_Potion_is_just_Colored_Water:
 					#clue.The_Potion_is_just_Colored_Water
 					~ GetClue(The_Potion_is_just_Colored_Water)
@@ -820,25 +849,64 @@ VAR LocationName = ""
 				(I should go find someone with closest connection to C.S. )
 				(hmm...)
 				(I think I should go find merchant for now.)
-				- ->->
+				#TimelineState_caravan_arrive
+				#END
+				-> END
  
 			= Do_you_know_where_Cassandra_is
-					#noSpeaker
-				Sebastian went to the Witch's Nursery and asked Athena
+				// 	#noSpeaker
+				// Sebastian went to the Witch's Nursery and asked Athena
 					#speaker.Sebastian
 				Is Cassandra here? I want to ask her something.
 					#speaker.Athena
 				I don't know where she is. But you can come inside. I think she will be back soon.
+				// #knot.Talk_to_Athena.go_in_nursery
+				#knot.Talk_to_Athena.skip_to_cassandra_room
+				#timeline.go_in_nursery
+				#END
+				-> END
+
+				= go_in_nursery
 					#noSpeaker
 				Sebastian and Athena went inside the Witch's Nursery.
+				//change scene to inside nursery
+				// #knot.Talk_to_Athena.Inside_Nursery
+				// #scene.Inside_Nursery
+				// #spawn.4
+				#knot.Talk_to_Athena.skip_to_cassandra_room
+				#scene.Cassandra_Room
+				#spawn.5
+				#END
+				-> END
+
+			= Inside_Nursery
 					#speaker.Athena
 				You can sit back and relax here, I'll make some tea for you.
+				//fade black
+
+				#knot.Talk_to_Athena.athena_to_kitchen
+				#timeline.athena_to_kitchen
+				#END
+				-> END
+
+				= athena_to_kitchen
 					#noSpeaker
-				Athena walk away to the kitchen
+				Athena walk away to the kitchen.
 				// The kitchen will be locked
 					#speaker.Sebastian
 				(I should go and search this house while I can)
+					#noSpeaker
+				Sebastian investigate the house and went into a particular room.
 				~ ChangeLocation(Inside_Nursery)
+
+				= skip_to_cassandra_room
+					#noSpeaker
+				Sebastian and Athena went inside the Witch's Nursery.	
+				As Sebastian went inside the house. Athena went to the kitchen to get some tea for Sebastian.
+				Sebastian took this chance to investigate further in the house.
+				He found himself in a particular room.
+				#scene.Cassandra_Room
+				#spawn.5
 				#END
 				-> END
 	=== Location_Forest ===
@@ -1039,11 +1107,13 @@ VAR LocationName = ""
 				-> END
 
 		== Talk_to_Caravan ==
-			~Conversation("Talk to Caravan")
+			// ~Conversation("Talk to Caravan")
 				#speaker.Sebastian
-			What's going on here? I don't think you guys were staying here before.
+			// What's going on here? I don't think you guys were staying here before.
+			Hello, I didn't see you here before. What's going on?
 				#speaker.Caravan
-			Oh hello young man, we just arrived here.
+			// Oh hello young man, we just arrived here.
+			Oh hello young man, I just traveled here together with my families
 			We abandoned our hometown because of prophency about the plague. So we have to flee to a safe place here.
 				#speaker.Sebastian
 			Plague? I didn't hear anything about it.
@@ -1060,7 +1130,10 @@ VAR LocationName = ""
 					#clue.Cassandra_Prophesied_The_Plague
 					~ GetClue(Cassandra_Prophesied_The_Plague)
 			}
-		- ->->
+				#speaker.Sebastian
+			(If I want to learn about the plague. I should find some records at the meeting hall)
+			#END
+			-> END
 	=== Location_Inside_Nursery ===
 		= The_kitchen
 				#noSpeaker

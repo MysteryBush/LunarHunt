@@ -66,7 +66,7 @@ public class NotifierQueue : MonoBehaviour
     {
         if (notifierList.Count > 0)
         {
-            Debug.Log("Run NotifyAlert -> notifierUi.runNotifications");
+            //Debug.Log("Run NotifyAlert -> notifierUi.runNotifications");
             notifierUi.runNotifications(this);
         }
         //Remove(notifierList[0]);
@@ -110,7 +110,7 @@ public class NotifierQueue : MonoBehaviour
         descList[0] = item.itemType + " collected \"" + item.name + "\"";
 
         Add(formNotify("Item", item.name, descList));
-        Debug.Log("formed notifyItem");
+        //Debug.Log("formed notifyItem");
         NotifyAlert();
     }
 
@@ -132,5 +132,11 @@ public class NotifierQueue : MonoBehaviour
         descList[0] = "Can't solve " + currentRequirement.caseName + issue;
 
         Add(formNotify("Failed Evidence", currentRequirement.caseName, descList));
+    }
+
+    public void notifyOpenDialogue(string knotName)
+    {
+        string[] descList = new string[1];
+        Add(formNotify("OpenDialogue", knotName, descList));
     }
 }

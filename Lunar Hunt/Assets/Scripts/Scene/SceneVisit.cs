@@ -143,7 +143,7 @@ public class SceneVisit : MonoBehaviour
                 }
                 break;
         }
-        Debug.Log("firstVisit = " + firstVisit);
+        //Debug.Log("firstVisit = " + firstVisit);
         SceneState.ins.runSceneState();
         firstVisit = false;
 
