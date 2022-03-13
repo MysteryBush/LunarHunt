@@ -42,7 +42,7 @@ public class PlayerControl : MonoBehaviour
                     //trigger interaction
                     Interactable?.Interact(player: this);
             }
-            if (Input.GetKeyDown(KeyCode.Tab) && InkUI.IsOpen == false)
+            if (Input.GetKeyDown(KeyCode.Tab) && InkUI.IsOpen == false && NotifierUI.ins.IsOpen == false)
             {
                 //trigger Inventory
                 IngameMenu.ins.toggleIngameMenu();

@@ -9,16 +9,16 @@ using System;
 public class NotifierUI : MonoBehaviour
 {
     #region Singleton
-    public static NotifierUI instance;
+    public static NotifierUI ins;
 
     private void Awake()
     {
-        if (instance != null)
+        if (ins != null)
         {
             Debug.LogWarning("More than one instance of EventTracking found!");
             return;
         }
-        instance = this;
+        ins = this;
     }
 
     #endregion
@@ -43,6 +43,7 @@ public class NotifierUI : MonoBehaviour
     #region Conversation and Dialogue
     public void runNotifications(NotifierQueue notifierQueue)
     {
+        IsOpen = true;
         InkDialogue.ins.notifyIsOpen = true;
         player.controlUI = true;
         notificationBox.SetActive(true);
@@ -113,10 +114,11 @@ public class NotifierUI : MonoBehaviour
 
     public void CloseNotifierBox()
     {
-        if (IngameMenu.ins.isOpen == false)
-        {
-            IsOpen = false;
-        }
+        IsOpen = false;
+        //if (IngameMenu.ins.isOpen == false)
+        //{
+        //    IsOpen = false;
+        //}
         //check if other UI is closed then make player move
         if (player.InkUI.IsOpen == false)
         {
