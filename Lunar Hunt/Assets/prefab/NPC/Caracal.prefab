@@ -69,9 +69,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
       propertyPath: m_Controller
       value: 
-      objectReference: {fileID: 9100000, guid: a7d905227bd2d504cab53d46afd03635, type: 2}
+      objectReference: {fileID: 9100000, guid: 2d9152b2716a17f4981bdb6c0e6b7326, type: 2}
     - target: {fileID: 117092578926074169, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_Sprite
