@@ -15,6 +15,8 @@ public class SceneVisit : MonoBehaviour
 
     //find object of type
     [SerializeField] private SceneData sceneData;
+
+    [SerializeField] private InkDialogue inkDialogue;
     [SerializeField] private CutsceneTrigger cutsceneTrigger;
     [SerializeField] private TimelineList timelineList;
 
@@ -27,19 +29,25 @@ public class SceneVisit : MonoBehaviour
         }
         ins = this;
 
-        sceneData = SceneData.ins;
-        cutsceneTrigger = FindObjectOfType<CutsceneTrigger>();
-        timelineList = FindObjectOfType<TimelineList>();
         allFalse();
-        getKnot();
-        triggerKnot();
+
+        //Let GameManager call it
+        //runVisit();
     }
     private void OnLevelWasLoaded(int level)
     {
-        sceneData = SceneData.ins;
+        //Let GameManager call it
+        //runVisit();
+    }
+
+    public void runVisit()
+    {
+        initialKnot = "";
+        getRef();
         getKnot();
         triggerKnot();
     }
+
 
     private void allFalse()
     {
@@ -48,11 +56,22 @@ public class SceneVisit : MonoBehaviour
         visitHall = false;
     }
 
+    private void getRef()
+    {
+        sceneData = SceneData.ins;
+
+        //inkDialogue = FindObjectOfType<InkDialogue>();
+        inkDialogue = GameObject.Find("CanvasDialogue").GetComponent<InkDialogue>();
+        cutsceneTrigger = FindObjectOfType<CutsceneTrigger>();
+        timelineList = FindObjectOfType<TimelineList>();
+    }
+
     private void getKnot()
     {
         knotLocationName = sceneData.knotLocationName;
-        initialKnot = sceneData.initialKnot;
+        //initialKnot = sceneData.initialKnot;
     }
+
 
     private void triggerKnot()
     {
@@ -68,18 +87,17 @@ public class SceneVisit : MonoBehaviour
                     cutsceneTrigger.GetCutscene(timelineList.timelineObjects[0]);
                     cutsceneTrigger.TriggerCutscene();
                 }
-                //InkManager.ins.runInk();
                 break;
             case "Location_The_Sanctuary":
                 if (visitSanctuary == false)
                 {
                     visitSanctuary = true;
                     initialKnot = "Cutscene_Welcome_to_Sanctuary";
+                    inkDialogue.knotName = initialKnot;
                     cutsceneTrigger.GetCutscene(timelineList.timelineObjects[4]);
                     cutsceneTrigger.TriggerCutscene();
                     //Debug.Log("should give knot");
                 }
-                //InkManager.ins.runInk();
                 break;
             case "Location_Meeting_Hall":
                 Debug.Log("SceneVisit: " + visitHall);
@@ -87,10 +105,11 @@ public class SceneVisit : MonoBehaviour
                 {
                     visitHall = true;
                     initialKnot = "Cutscene_Meeting_in_the_Meeting_Hall.At_Meeting_Hall";
+                    inkDialogue.knotName = initialKnot;
                     cutsceneTrigger.GetCutscene(timelineList.timelineObjects[9]);
+                    Debug.Log(inkDialogue.knotName);
                     cutsceneTrigger.TriggerCutscene();
                 }
-                //InkManager.ins.runInk();
                 break;
         }
     }

@@ -82,9 +82,6 @@ public class InkDialogue : MonoBehaviour
         DontDestroyOnLoad(gameObject);
         ins = this;
 
-        //sceneData give initial name
-        knotName = SceneData.ins.initialKnot;
-
         player = FindObjectOfType<PlayerControl>().gameObject.GetComponent<PlayerControl>();
         speakerList = SpeakerList.instance;
         clueList = ClueList.instance;
@@ -124,7 +121,6 @@ public class InkDialogue : MonoBehaviour
         clueList = ClueList.instance;
         timelineList = TimelineList.instance;
 
-        knotName = SceneData.ins.initialKnot;
         if (inkDialogues.Length > 1)
         {
             Destroy(inkDialogues[1]);

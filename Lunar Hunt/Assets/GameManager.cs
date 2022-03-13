@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameManagers[1]);
         }
+
+        SceneVisit.ins.runVisit();
     }
     void Awake()
     {
