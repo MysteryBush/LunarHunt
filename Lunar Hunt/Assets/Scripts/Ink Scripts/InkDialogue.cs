@@ -278,7 +278,7 @@ public class InkDialogue : MonoBehaviour
             if (tag.StartsWith("transition"))
             {
                 var transitionState = tag.Substring("transition.".Length, tag.Length - "transition.".Length);
-                GameObject transitionObj = CutsceneTrigger.ins.cutScenecanvas;
+                GameObject transitionObj = CutsceneTrigger.ins.transitioncanvas;
                 if (transitionState == "open")
                 {
                     transitionObj.SetActive(true);

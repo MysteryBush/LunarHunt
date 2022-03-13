@@ -1359,6 +1359,11 @@ PrefabInstance:
       objectReference: {fileID: 519420028}
     - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
         type: 3}
+      propertyPath: cutScenecanvas
+      value: 
+      objectReference: {fileID: 488171765}
+    - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
+        type: 3}
       propertyPath: timelineObject
       value: 
       objectReference: {fileID: 461217479}

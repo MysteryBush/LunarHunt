@@ -39,7 +39,7 @@ public class CutsceneTrigger: MonoBehaviour
     [SerializeField] private PlayableAsset cutscene;
     [SerializeField] private TimelineAsset CutsceneObject;
     [SerializeField] private GameObject mainCamera;
-    [SerializeField] private GameObject transitioncanvas;
+    [SerializeField] public GameObject transitioncanvas;
     [SerializeField] public GameObject cutScenecanvas;
 
     public bool timelineBlock;

@@ -3934,6 +3934,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a1912c4a458d949bbe4a0f3eb650bc, type: 3}
+--- !u!1 &370460810 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5507104788461108205, guid: 98a1912c4a458d949bbe4a0f3eb650bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 370460809}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &391660590
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4103,7 +4109,7 @@ PlayableDirector:
   m_GameObject: {fileID: 421582545}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 4b7818ad45f139f4983b271b069ae6bf, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -4217,6 +4223,12 @@ PlayableDirector:
     value: {fileID: 223471153}
   - key: {fileID: -8696869913716035316, guid: 4b7818ad45f139f4983b271b069ae6bf, type: 2}
     value: {fileID: 3903132254240238037}
+  - key: {fileID: -2853667058123290816, guid: 5f025b46b4e4e024186eda95c1e88a5a, type: 2}
+    value: {fileID: 578049893}
+  - key: {fileID: 2688343692953018342, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 578049893}
+  - key: {fileID: -8993439028285616414, guid: 726fce5112ba41c489172c0158782168, type: 2}
+    value: {fileID: 1035674692}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &421582547
@@ -33052,6 +33064,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
+        type: 3}
+      propertyPath: cutScenecanvas
+      value: 
+      objectReference: {fileID: 370460810}
     - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
         type: 3}
       propertyPath: timelineObject

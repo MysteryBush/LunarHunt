@@ -453,7 +453,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &4021277391208071445
 MonoBehaviour:
@@ -545,6 +545,7 @@ MonoBehaviour:
   anim: {fileID: 4021277391208071447}
   player: {fileID: 0}
   notifierQueue: {fileID: 4021277391208071449}
+  inkDialogue: {fileID: 0}
 --- !u!114 &4021277391208071449
 MonoBehaviour:
   m_ObjectHideFlags: 0

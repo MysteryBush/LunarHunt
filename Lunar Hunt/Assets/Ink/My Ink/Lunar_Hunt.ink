@@ -861,10 +861,11 @@ VAR LocationName = ""
 					#speaker.Athena
 				I don't know where she is. But you can come inside. I think she will be back soon.
 				// #knot.Talk_to_Athena.go_in_nursery
-				#knot.Talk_to_Athena.skip_to_cassandra_room
+				// #knot.Talk_to_Athena.skip_to_cassandra_room
 				// #timeline.go_in_nursery
-				#END
-				-> END
+				-> skip_to_cassandra_room
+				// #END
+				// -> END
 
 				= go_in_nursery
 					#noSpeaker

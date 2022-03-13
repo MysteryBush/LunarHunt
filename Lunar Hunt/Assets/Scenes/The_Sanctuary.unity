@@ -920,7 +920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sceneState: {fileID: 0}
   timeline: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
-  setNumber: 0
+  setNumber: 1
 --- !u!4 &79238081
 Transform:
   m_ObjectHideFlags: 0
@@ -84650,7 +84650,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1930896375}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 08ce2e5738664f44a9b15472e945980a, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -84728,8 +84728,6 @@ PlayableDirector:
     value: {fileID: 2289740677442374515}
   - key: {fileID: 7040553342891076610, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
     value: {fileID: 1383180220}
-  - key: {fileID: -3750579687104612730, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
-    value: {fileID: 519420028}
   - key: {fileID: -5899959380854193084, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
     value: {fileID: 1663397791}
   - key: {fileID: 632452836750478877, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
@@ -84844,6 +84842,8 @@ PlayableDirector:
     value: {fileID: 2104242333}
   - key: {fileID: 1052680614156433365, guid: 08ce2e5738664f44a9b15472e945980a, type: 2}
     value: {fileID: 2104242334}
+  - key: {fileID: -6240310023864786555, guid: 3cc62c4b23d6e8b42a6295c7a98efe92, type: 2}
+    value: {fileID: 2289740677442374516}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1930896377
@@ -109100,6 +109100,11 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420028}
+    - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
+        type: 3}
+      propertyPath: cutScenecanvas
+      value: 
+      objectReference: {fileID: 2104242334}
     - target: {fileID: 7391548853142621929, guid: f0440e5fd97a59f4fac2da8e0f73e5c4,
         type: 3}
       propertyPath: timelineObject
