@@ -8,6 +8,7 @@ TagManager:
   - SpawnManager
   - InkDialogue
   - InkManager
+  - sourceBG
   layers:
   - Default
   - TransparentFX

@@ -78,7 +78,7 @@ public class DialogueManager : MonoBehaviour
 
     void DisplayControl()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && isDone == false)
+        if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)) && isDone == false)
         //if (Input.GetKeyDown(KeyCode.Space))
         {
             DisplayNextSentence();

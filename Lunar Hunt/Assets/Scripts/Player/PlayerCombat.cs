@@ -39,7 +39,7 @@ public class PlayerCombat : MonoBehaviour
             {
                 GetComponent<PlayerControl>().doingAction = false;
                 //When attack time finished, able to move again
-                if (Input.GetKeyDown(KeyCode.Mouse0))
+                if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)))
                 //if (inputAttack == true)
                 {
                     inputAttack = false;

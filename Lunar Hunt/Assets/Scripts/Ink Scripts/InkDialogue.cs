@@ -107,7 +107,7 @@ public class InkDialogue : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.ins.timelineBlock == false)
+        if ( (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) ) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.ins.timelineBlock == false)
         {
             runDialogues();
         }
@@ -302,7 +302,7 @@ public class InkDialogue : MonoBehaviour
         while (typewriterEffect.IsRunning)
         {
             yield return null;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if ((Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)))
             {
                 typewriterEffect.Stop();
             }

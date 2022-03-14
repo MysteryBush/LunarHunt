@@ -105,7 +105,7 @@ public class NotifierUI : MonoBehaviour
             if (i == notifier.NotifyDesc.Length - 0) break;
 
             yield return null;
-            yield return new WaitUntil(() => Input.GetKeyDown(KeyCode.Space));
+            yield return new WaitUntil(() => (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0)));
         }
     }
     #endregion
@@ -117,7 +117,7 @@ public class NotifierUI : MonoBehaviour
         while (typewriterEffect.IsRunning)
         {
             yield return null;
-            if (Input.GetKeyDown(KeyCode.Space))
+            if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
                 typewriterEffect.Stop();
             }
