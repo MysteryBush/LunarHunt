@@ -12327,6 +12327,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: CanvasInGameMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 3231274688701613180, guid: efedbad1be54e58418053ce15faab47d,
+        type: 3}
+      propertyPath: transitionCanvas
+      value: 
+      objectReference: {fileID: 1787094396}
     - target: {fileID: 3231274688925270171, guid: efedbad1be54e58418053ce15faab47d,
         type: 3}
       propertyPath: m_AnchorMax.y

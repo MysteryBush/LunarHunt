@@ -39,6 +39,7 @@ public class IngameMenu : MonoBehaviour
 
     private void Start()
     {
+        //transitionCanvas = GameObject.Find("CanvasTransition");
         ingameMenu.SetActive(false);
     }
 

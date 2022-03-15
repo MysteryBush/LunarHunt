@@ -15,6 +15,12 @@ public class SceneState : MonoBehaviour
     public TimelineAsset timelineHall;
     //public PlayableAsset timelineNursery;
 
+    //initial scenestate when start new game
+    [SerializeField] private TimelineAsset initialForest;
+    [SerializeField] private TimelineAsset initialSanctuary;
+    [SerializeField] private TimelineAsset initialHall;
+
+
     private void Awake()
     {
         if (ins != null)
@@ -57,5 +63,12 @@ public class SceneState : MonoBehaviour
                 Debug.Log("setSceneState()");
             }
         }
+    }
+
+    public void resetSceneState()
+    {
+        timelineForest = initialForest;
+        timelineSanctuary = initialSanctuary;
+        timelineHall = initialHall;
     }
 }

@@ -146,6 +146,9 @@ MonoBehaviour:
   timelineForest: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
   timelineSanctuary: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
   timelineHall: {fileID: 11400000, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}
+  initialForest: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
+  initialSanctuary: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+  initialHall: {fileID: 11400000, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}
 --- !u!114 &1382141042304815023
 MonoBehaviour:
   m_ObjectHideFlags: 0
