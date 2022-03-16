@@ -275,7 +275,7 @@ public class InkDialogue : MonoBehaviour
                 GameObject.Find(timelineState).GetComponent<TimelineState>().setTimeline();
                 Debug.Log("tag timelineState: " + timelineState);
             }
-            if (tag.StartsWith("transition"))
+            if (tag.StartsWith("transition."))
             {
                 var transitionState = tag.Substring("transition.".Length, tag.Length - "transition.".Length);
                 GameObject transitionObj = CutsceneTrigger.ins.transitioncanvas;
