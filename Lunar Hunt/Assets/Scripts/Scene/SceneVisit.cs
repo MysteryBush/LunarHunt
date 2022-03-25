@@ -14,6 +14,7 @@ public class SceneVisit : MonoBehaviour
     public bool visitForest;
     public bool visitSanctuary;
     public bool visitHall;
+    public bool visitCassandra;
 
     //find object of type
     [SerializeField] private SceneData sceneData;
@@ -114,6 +115,17 @@ public class SceneVisit : MonoBehaviour
                     inkDialogue.knotName = initialKnot;
                     cutsceneTrigger.GetCutscene(timelineList.timelineObjects[9]);
                     cutsceneTrigger.TriggerCutscene();
+                }
+                break;
+            case "Location_Cassandra_Room":
+                if (visitCassandra == false)
+                {
+                    firstVisit = true;
+                    visitCassandra = true;
+                    //initialKnot = "Cutscene_Meeting_in_the_Meeting_Hall.At_Meeting_Hall";
+                    //inkDialogue.knotName = initialKnot;
+                    //cutsceneTrigger.GetCutscene(timelineList.timelineObjects[9]);
+                    //cutsceneTrigger.TriggerCutscene();
                 }
                 break;
         }
