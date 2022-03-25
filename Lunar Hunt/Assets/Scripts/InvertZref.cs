@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class invertZref : MonoBehaviour
+public class InvertZref : MonoBehaviour
 {
     public GameObject refObject;
     // Start is called before the first frame update
