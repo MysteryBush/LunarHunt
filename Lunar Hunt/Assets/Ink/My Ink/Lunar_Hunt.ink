@@ -616,6 +616,7 @@ VAR LocationName = ""
 		/--- Cutscene Cassandra Return ---
 			#noSpeaker
 		The door opened and it was Cassandra who came into the room.
+			#transition.close
 			#speaker.Cassandra
 		What are you doing in my room?
 			#speaker.Sebastian
@@ -633,8 +634,14 @@ VAR LocationName = ""
 		If you really did nothing wrong then I challenge you to gather everyone at the town plaza
 			#speaker.Cassandra
 		Really? Fine. I'll let you do your little show performance. See if they will take it seriously.
+
 		~ ChangeLocation(Sanctuary)
-		- -> The_Reveal
+		// - -> The_Reveal
+		#knot.The_Reveal
+		#scene.The_Sanctuary
+		#spawn.2
+		#END
+		-> END
 // --- Location List ---
 	=== Location_Meeting_Hall ===
 		= Leave_the_meeting_hall
@@ -1167,22 +1174,27 @@ VAR LocationName = ""
 			// ^ get clues and items functions
 			{ ClueList !? CS_letters:
 				#clue.CS_letters
-				~ GetClue(CS_letters)
+				// ~ GetClue(CS_letters)
 			}
 // 			- -> Cutscene_Cassandra_Return
+			#timeline.Cutscene_Cassandra_Return
+			#knot.Cutscene_Cassandra_Return
+			#transition.open
             #END
             -> END
 	//Chapter 3 stuff
 		=== The_Reveal ===
+			#transition.close
 				#noSpeaker
 			Sebastian walked to the center of the plaza.
+			#transition.open
 				#speaker.Sebastian
 			Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
 			
-			\---------
-			There's supposed to be some choices to choose again to answer the villagers
-			If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
-			\---------
+			// \---------
+			// There's supposed to be some choices to choose again to answer the villagers
+			// If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
+			// \---------
 			- -> Exposed_Cassandra
 
 		=== Exposed_Cassandra ===
@@ -1202,9 +1214,13 @@ VAR LocationName = ""
 			No, why are you listening to this child? I did everything for you people all this time.
 				#speaker.Villager
 			What you did is everything that makes our life worse! You just want to leech our work!
+			#transition.open
 				#noSpeaker
 			The villagers chase Cassandra out of the Sanctuary.
-			- -> Confessed_Cassandra
+			#transition.close
+			// - -> Confessed_Cassandra
+			#END
+			-> END
 
 		=== Confessed_Cassandra ===
 			#noSpeaker
