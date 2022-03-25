@@ -17200,7 +17200,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efc7d80cd18fd67498081f3bf2c55df5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  knotName: 
+  knotName: Location_Inside_Nursery.Look_on_The_Table
   npcMovement: {fileID: 0}
 --- !u!61 &1490607063
 BoxCollider2D:

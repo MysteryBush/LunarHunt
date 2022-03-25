@@ -900,6 +900,7 @@ VAR LocationName = ""
 					#noSpeaker
 				Sebastian investigate the house and went into a particular room.
 				~ ChangeLocation(Inside_Nursery)
+				-> END
 
 				= skip_to_cassandra_room
 				#transition.open
@@ -1168,7 +1169,9 @@ VAR LocationName = ""
 				#clue.CS_letters
 				~ GetClue(CS_letters)
 			}
-			- -> Cutscene_Cassandra_Return
+// 			- -> Cutscene_Cassandra_Return
+            #END
+            -> END
 	//Chapter 3 stuff
 		=== The_Reveal ===
 				#noSpeaker
@@ -1228,6 +1231,7 @@ VAR LocationName = ""
 		I would love to tell you more but you must be dying to find your father now.
 			#speaker.Sebastian
 		... You better not be scheming again.
+		-> END
 
 	//Sorry this is all I got for now
 	=== That_is_all ===
