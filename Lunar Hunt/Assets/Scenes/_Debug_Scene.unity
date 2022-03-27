@@ -551,6 +551,11 @@ PrefabInstance:
         type: 2}
     - target: {fileID: 6255606092935743170, guid: ed58d34bea4133f4b80e5b63bb192eee,
         type: 3}
+      propertyPath: visitCassandra
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6255606092935743170, guid: ed58d34bea4133f4b80e5b63bb192eee,
+        type: 3}
       propertyPath: visitSanctuary
       value: 1
       objectReference: {fileID: 0}

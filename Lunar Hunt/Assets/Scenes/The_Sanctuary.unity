@@ -21261,6 +21261,36 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!1 &585394641
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 585394642}
+  m_Layer: 0
+  m_Name: ----- NPC (The Reveal) -----
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &585394642
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 585394641}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 116
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &641181467
 GameObject:
   m_ObjectHideFlags: 0
@@ -99089,7 +99119,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1930896375}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: e1a4c0a122daf7f4383c298e522dd5e7, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -99293,6 +99323,26 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 3733582233964546615, guid: 28cd5b1bd6daeca4d91ff7971cfd7d7b, type: 2}
     value: {fileID: 0}
+  - key: {fileID: -6240310023864786555, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5514778656975586746, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5921208021495451588, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 154544040}
+  - key: {fileID: 7040553342891076610, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 1383180220}
+  - key: {fileID: 7675236518746143154, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 1383180220}
+  - key: {fileID: -3750579687104612730, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 519420028}
+  - key: {fileID: 977975231153237545, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 1663397796}
+  - key: {fileID: -5899959380854193084, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 1663397791}
+  - key: {fileID: 2862893355449466650, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 1770709444}
+  - key: {fileID: 3733582233964546615, guid: 0e9a620c919934b41ab69e8137440154, type: 2}
+    value: {fileID: 1770709443}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1930896377

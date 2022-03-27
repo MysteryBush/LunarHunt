@@ -105,6 +105,14 @@ public class SceneVisit : MonoBehaviour
                     cutsceneTrigger.TriggerCutscene();
                     //Debug.Log("should give knot");
                 }
+                if (visitCassandra == true)
+                {
+                    initialKnot = "The_Reveal";
+                    inkDialogue.knotName = initialKnot;
+                    cutsceneTrigger.GetCutscene(timelineList.timelineObjects[16]);
+                    cutsceneTrigger.TriggerCutscene();
+                    //Debug.Log("should give knot");
+                }
                 break;
             case "Location_Meeting_Hall":
                 if (visitHall == false)

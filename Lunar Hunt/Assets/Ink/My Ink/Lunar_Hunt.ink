@@ -1186,10 +1186,13 @@ VAR LocationName = ""
             -> END
 	//Chapter 3 stuff
 		=== The_Reveal ===
-			#transition.close
+			// #transition.close
+
 				#noSpeaker
 			Sebastian walked to the center of the plaza.
-			#transition.open
+
+			// #transition.open
+
 				#speaker.Sebastian
 			Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
 			
@@ -1216,10 +1219,10 @@ VAR LocationName = ""
 			No, why are you listening to this child? I did everything for you people all this time.
 				#speaker.Villager
 			What you did is everything that makes our life worse! You just want to leech our work!
-			#transition.open
+			// #transition.open
 				#noSpeaker
 			The villagers chase Cassandra out of the Sanctuary.
-			#transition.close
+			// #transition.close
 			// - -> Confessed_Cassandra
 			#END
 			-> END
