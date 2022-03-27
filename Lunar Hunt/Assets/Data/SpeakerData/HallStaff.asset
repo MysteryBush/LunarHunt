@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: HallStaff
   m_EditorClassIdentifier: 
   name: Staff
-  portrait: {fileID: -3787302009874761571, guid: a85877d58af75a044bb56af15a42ac16,
-    type: 3}
+  portrait: {fileID: 21300000, guid: 08389624338b37a4490b61004033b072, type: 3}

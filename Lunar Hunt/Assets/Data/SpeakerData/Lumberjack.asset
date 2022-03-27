@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Lumberjack
   m_EditorClassIdentifier: 
   name: Lumber Jack
-  portrait: {fileID: -3320139556789477900, guid: 32e9bf98b2755644a919f0593bc0d188,
-    type: 3}
+  portrait: {fileID: 21300000, guid: 8bae1e39979beef459b76b140515c559, type: 3}

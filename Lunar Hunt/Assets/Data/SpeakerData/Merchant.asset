@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Merchant
   m_EditorClassIdentifier: 
   name: Merchant
-  portrait: {fileID: -3456532010920386237, guid: 13579d45eef14c5438f0f47d462dc5b5,
-    type: 3}
+  portrait: {fileID: 21300000, guid: 81968ed17d5a498458183b129ef16748, type: 3}

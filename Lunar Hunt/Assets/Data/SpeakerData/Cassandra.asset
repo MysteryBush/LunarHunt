@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: Cassandra
   m_EditorClassIdentifier: 
   name: Cassandra
-  portrait: {fileID: 1463159187816587950, guid: 13d09ca80684faf4fba0792cfae09536,
-    type: 3}
+  portrait: {fileID: 21300000, guid: fb18740721ccc5744b515809192bc9e1, type: 3}

@@ -13,5 +13,4 @@ MonoBehaviour:
   m_Name: OldMan
   m_EditorClassIdentifier: 
   name: Old man
-  portrait: {fileID: 6330761572577246771, guid: 3ed02c79627695d42bf648c9d4e75a0d,
-    type: 3}
+  portrait: {fileID: 21300000, guid: 9b57f1f2c012e6d408335ff41c771cc2, type: 3}

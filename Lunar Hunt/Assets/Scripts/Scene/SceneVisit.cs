@@ -32,7 +32,7 @@ public class SceneVisit : MonoBehaviour
         }
         ins = this;
 
-        allFalse();
+        //allFalse();
 
         //Let GameManager call it
         //runVisit();
