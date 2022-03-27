@@ -633,7 +633,7 @@ VAR LocationName = ""
 			#speaker.Sebastian
 		If you really did nothing wrong then I challenge you to gather everyone at the town plaza
 			#speaker.Cassandra
-		Really? Fine. I'll let you do your little show performance. See if they will take it seriously.
+		Really? Fine. I'll let you do your little show. See if they will take it seriously.
 
 		~ ChangeLocation(Sanctuary)
 		// - -> The_Reveal
@@ -917,10 +917,10 @@ VAR LocationName = ""
 				Sebastian took this chance to investigate further in the house.
 				He found himself in a particular room.
 
-				-> That_is_all
-				// #scene.Cassandra_Room
-				// #spawn.5
-				// #END
+				// -> That_is_all
+				#scene.Cassandra_Room
+				#spawn.5
+				#END
 				-> END
 	=== Location_Forest ===
 		{not Location_Forest} #cutscene.Wake_up
@@ -1176,6 +1176,8 @@ VAR LocationName = ""
 				#clue.CS_letters
 				// ~ GetClue(CS_letters)
 			}
+				#speaker.Sebastian
+			Now I should go back and tell people about this.
 // 			- -> Cutscene_Cassandra_Return
 			#timeline.Cutscene_Cassandra_Return
 			#knot.Cutscene_Cassandra_Return

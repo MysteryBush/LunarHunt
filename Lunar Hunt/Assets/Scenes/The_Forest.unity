@@ -474,7 +474,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 44638106}
-  m_Enabled: 0
+  m_Enabled: 1
 --- !u!20 &44638110
 Camera:
   m_ObjectHideFlags: 0
@@ -3954,7 +3954,7 @@ PlayableDirector:
   m_GameObject: {fileID: 421582545}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 726fce5112ba41c489172c0158782168, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 2ed5c353510de9147b2bdac51e740e78, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -4078,6 +4078,8 @@ PlayableDirector:
     value: {fileID: 578049893}
   - key: {fileID: 4885974288372623380, guid: 726fce5112ba41c489172c0158782168, type: 2}
     value: {fileID: 1035674692}
+  - key: {fileID: -7235450904466478853, guid: 2ed5c353510de9147b2bdac51e740e78, type: 2}
+    value: {fileID: 44638106}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &421582547

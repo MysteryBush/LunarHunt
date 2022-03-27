@@ -23,4 +23,14 @@ public class TimelineList : MonoBehaviour
 
     public List<TimelineAsset> timelineObjects = new List<TimelineAsset>();
 
+    //private void InitializeDictionarySet()
+    //{
+    //    foreach (var @object in timelineObjects)
+    //    {
+    //        _clips.Add(@object.name
+    //            .ToLower()
+    //            .Replace("", "")
+    //            , @object);
+    //    }
+    //}
 }

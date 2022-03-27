@@ -76,6 +76,9 @@ public class InkDialogue : MonoBehaviour
 
     private TypewriterEffect typewriterEffect;
 
+    //
+    Dictionary<string, AudioClip> _clips = new Dictionary<string, AudioClip>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -182,6 +185,25 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("look_around_meeting_hall", timelines[13]);
         timelinePair.Add("go_in_nursery", timelines[14]);
         timelinePair.Add("Cutscene_Cassandra_Return", timelines[15]);
+    }
+
+    //private void InitializeDictionarySet()
+    //{
+    //    foreach (var @object in timelines)
+    //    {
+    //        _clips.Add(@object.name
+    //            .ToLower()
+    //            .Replace("","")
+    //            , @object);
+    //    }
+    //}
+
+    private void PlayTimeline(string timelineName)
+    {
+        if (_clips.TryGetValue(timelineName, out var clip))
+        {
+            //play timeline
+        }
     }
 
     void runDialogues()

@@ -16969,7 +16969,7 @@ PrefabInstance:
     - target: {fileID: 4560950842941116691, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4560950842941116693, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
@@ -17568,7 +17568,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -145.66495, y: 62.20439, z: -19}
+  m_LocalPosition: {x: -145.65527, y: 62.204372, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -97696,6 +97696,7 @@ GameObject:
   - component: {fileID: 1663397793}
   - component: {fileID: 1663397792}
   - component: {fileID: 1663397796}
+  - component: {fileID: 1663397797}
   m_Layer: 0
   m_Name: Cutscene Camera
   m_TagString: MainCamera
@@ -97806,6 +97807,14 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!81 &1663397797
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1663397791}
+  m_Enabled: 1
 --- !u!1 &1665120062
 GameObject:
   m_ObjectHideFlags: 0

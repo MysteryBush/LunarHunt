@@ -167,6 +167,7 @@ GameObject:
   - component: {fileID: 14058304}
   - component: {fileID: 14058303}
   - component: {fileID: 14058302}
+  - component: {fileID: 14058307}
   m_Layer: 0
   m_Name: Cutscene Camera
   m_TagString: MainCamera
@@ -277,6 +278,14 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!81 &14058307
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 14058301}
+  m_Enabled: 1
 --- !u!1 &16188999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1778,7 +1787,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.49823, y: 67.005, z: -14.969999}
+  m_LocalPosition: {x: -160.49823, y: 67.00499, z: -14.969999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
