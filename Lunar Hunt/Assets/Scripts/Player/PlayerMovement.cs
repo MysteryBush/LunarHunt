@@ -155,6 +155,8 @@ public class PlayerMovement : MonoBehaviour
                 x = -1; y = 0;
                 break;
         }
+        xFace = x;
+        yFace = y;
         anim.SetFloat("FaceHorizontal", x);
         anim.SetFloat("FaceVertical", y);
     }

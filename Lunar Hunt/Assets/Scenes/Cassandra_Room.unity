@@ -1515,8 +1515,6 @@ PlayableDirector:
     value: {fileID: 895167575}
   - key: {fileID: -8481067587392216993, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
     value: {fileID: 165983679}
-  - key: {fileID: -7051360793946329908, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
-    value: {fileID: 4926786540284948367}
   - key: {fileID: -651467151001984894, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
     value: {fileID: 1061753588}
   m_ExposedReferences:
@@ -11913,7 +11911,7 @@ MonoBehaviour:
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
+            m_IntArgument: 2
             m_FloatArgument: 2
             m_StringArgument: 
             m_BoolArgument: 0
