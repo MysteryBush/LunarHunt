@@ -129,4 +129,33 @@ public class PlayerMovement : MonoBehaviour
         bool isWalking = x != 0f || y != 0f;
         anim.SetBool("isWalking", isWalking);
     }
+
+    //
+    //public void selfFacing(float x, float y)
+    public void selfFacing(int facing)
+    {
+        float x = 0;
+        float y = 0;
+        switch (facing)
+        {
+            //up
+            case 0: 
+                x = 0; y = 1;
+                break;
+            //right
+            case 1:
+                x = 1; y = 0;
+                break;
+            //down
+            case 2:
+                x = 0; y = -1;
+                break;
+            //left
+            case 3:
+                x = -1; y = 0;
+                break;
+        }
+        anim.SetFloat("FaceHorizontal", x);
+        anim.SetFloat("FaceVertical", y);
+    }
 }

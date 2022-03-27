@@ -5,7 +5,7 @@ using UnityEngine.Timeline;
 using UnityEngine.Playables;
 using UnityEngine.UI;
 
-public class CutsceneTrigger: MonoBehaviour
+public class CutsceneTrigger : MonoBehaviour
 {
     #region Singleton
     public static CutsceneTrigger ins;
