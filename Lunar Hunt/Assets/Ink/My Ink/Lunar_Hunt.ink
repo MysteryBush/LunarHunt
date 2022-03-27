@@ -613,7 +613,7 @@ VAR LocationName = ""
 	    // -> Investigate
 		-> END
 	=== Cutscene_Cassandra_Return ===
-		/--- Cutscene Cassandra Return ---
+		// /--- Cutscene Cassandra Return ---
 			#noSpeaker
 		The door opened and it was Cassandra who came into the room.
 			#transition.close

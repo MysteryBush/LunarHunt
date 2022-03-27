@@ -67899,11 +67899,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 766554192, guid: e59acf03487520e4586ce936ace2273e, type: 3}
       propertyPath: m_text
-      value: Where did they took my father?
+      value: Where did they take my father?
       objectReference: {fileID: 0}
     - target: {fileID: 766554192, guid: e59acf03487520e4586ce936ace2273e, type: 3}
       propertyPath: m_fontColor32.rgba
-      value: 13619151
+      value: 3033518031
       objectReference: {fileID: 0}
     - target: {fileID: 1261133116337578627, guid: e59acf03487520e4586ce936ace2273e,
         type: 3}
