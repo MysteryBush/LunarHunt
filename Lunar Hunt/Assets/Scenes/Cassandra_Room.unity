@@ -347,6 +347,24 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1124484070, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
+      propertyPath: clueItems.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1124484070, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
+      propertyPath: clueItems.Array.data[16]
+      value: 
+      objectReference: {fileID: 11400000, guid: cc13acebc611faa4c9f6675e91fba184,
+        type: 2}
+    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
+      propertyPath: timelineObjects.Array.size
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 1216851857, guid: c4d3c1bad80995b4cb4d6db329cd3968, type: 3}
+      propertyPath: timelineObjects.Array.data[15]
+      value: 
+      objectReference: {fileID: 11400000, guid: a6394f5d2624fb7449c6856a57ecc811,
+        type: 2}
     - target: {fileID: 5168723037985592386, guid: c4d3c1bad80995b4cb4d6db329cd3968,
         type: 3}
       propertyPath: m_Name
@@ -1310,7 +1328,7 @@ PlayableDirector:
   m_GameObject: {fileID: 461217479}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1444,6 +1462,30 @@ PlayableDirector:
     value: {fileID: 519420028}
   - key: {fileID: 3733582233964546615, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 7040553342891076610, guid: 64a7ef6b1296d8241a10223d58fff080, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3750579687104612730, guid: 64a7ef6b1296d8241a10223d58fff080, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5899959380854193084, guid: 64a7ef6b1296d8241a10223d58fff080, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 2862893355449466650, guid: 64a7ef6b1296d8241a10223d58fff080, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3733582233964546615, guid: 64a7ef6b1296d8241a10223d58fff080, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7040553342891076610, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -3750579687104612730, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 519420028}
+  - key: {fileID: -5899959380854193084, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 895167574}
+  - key: {fileID: 2862893355449466650, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 1353982701}
+  - key: {fileID: 3733582233964546615, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 1787094396}
+  - key: {fileID: 6422037847661360511, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 1850664736}
+  - key: {fileID: 6639108562462150223, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+    value: {fileID: 895167575}
   m_ExposedReferences:
     m_References:
     - b2d56f022dd89aa408b665a5a59df055: {fileID: 1633195661}
@@ -14569,6 +14611,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98a1912c4a458d949bbe4a0f3eb650bc, type: 3}
+--- !u!95 &1353982701 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5507104788461108198, guid: 98a1912c4a458d949bbe4a0f3eb650bc,
+    type: 3}
+  m_PrefabInstance: {fileID: 1353982700}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1372594664
 GameObject:
   m_ObjectHideFlags: 0
@@ -18991,12 +19039,12 @@ PrefabInstance:
     - target: {fileID: 1268729435193246272, guid: 73abe28ab62d1e94892d72176f56e68c,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -158.97
+      value: -160.48
       objectReference: {fileID: 0}
     - target: {fileID: 1268729435193246272, guid: 73abe28ab62d1e94892d72176f56e68c,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 63.83
+      value: 63.36
       objectReference: {fileID: 0}
     - target: {fileID: 1268729435193246272, guid: 73abe28ab62d1e94892d72176f56e68c,
         type: 3}

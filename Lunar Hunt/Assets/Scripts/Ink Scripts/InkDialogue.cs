@@ -181,6 +181,7 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("Cassandra_leave", timelines[12]);
         timelinePair.Add("look_around_meeting_hall", timelines[13]);
         timelinePair.Add("go_in_nursery", timelines[14]);
+        timelinePair.Add("Cutscene_Cassandra_Return", timelines[15]);
     }
 
     void runDialogues()
@@ -241,10 +242,10 @@ public class InkDialogue : MonoBehaviour
             if (tag.StartsWith("timeline."))
             {
                 var timelineName = tag.Substring("timeline.".Length, tag.Length - "timeline.".Length);
-                useTimeline = timelinePair[timelineName];
                 Debug.Log("timeline tag: " + timelineName);
-                //Debug.Log(CutsceneTrigger.instance);
+                useTimeline = timelinePair[timelineName];
                 //Debug.Log("useTimeline: " + useTimeline);
+                //Debug.Log(CutsceneTrigger.instance);
                 //may not be needed but this line make sure the timeline object is set inactive
                 //CutsceneTrigger.instance.timelineObject.SetActive(false);
                 //trigger cutscene
