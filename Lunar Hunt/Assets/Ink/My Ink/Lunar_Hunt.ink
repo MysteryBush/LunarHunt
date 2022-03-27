@@ -1220,12 +1220,19 @@ VAR LocationName = ""
 				#speaker.Villager
 			What you did is everything that makes our life worse! You just want to leech our work!
 			// #transition.open
+			#timeline.Exile_Cassandra
+			#knot.Exposed_Cassandra.Exile_Cassandra
+			-> Exile_Cassandra
+			
+			= Exile_Cassandra
 				#noSpeaker
 			The villagers chase Cassandra out of the Sanctuary.
-			// #transition.close
-			// - -> Confessed_Cassandra
+			#timeline.After_Reveal
 			#END
 			-> END
+
+			// #transition.close
+			// - -> Confessed_Cassandra
 
 		=== Confessed_Cassandra ===
 			#noSpeaker
@@ -1254,6 +1261,9 @@ VAR LocationName = ""
 		... You better not be scheming again.
 		-> END
 
+	=== The_End ===
+		#noSpeaker
+		
 	//Sorry this is all I got for now
 	=== That_is_all ===
 			#transition.open

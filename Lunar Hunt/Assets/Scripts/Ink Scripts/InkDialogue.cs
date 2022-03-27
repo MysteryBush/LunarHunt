@@ -186,6 +186,8 @@ public class InkDialogue : MonoBehaviour
         timelinePair.Add("go_in_nursery", timelines[14]);
         timelinePair.Add("Cutscene_Cassandra_Return", timelines[15]);
         timelinePair.Add("The_Reveal", timelines[16]);
+        timelinePair.Add("Exile_Cassandra", timelines[17]);
+        timelinePair.Add("After_Reveal", timelines[18]);
     }
 
     //private void InitializeDictionarySet()
