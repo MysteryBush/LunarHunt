@@ -341,7 +341,7 @@ Rigidbody2D:
   m_AngularDrag: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 4
@@ -379,6 +379,7 @@ MonoBehaviour:
   controlUI: 0
   isDead: 0
   inkUI: {fileID: 0}
+  ingameMenu: {fileID: 0}
 --- !u!114 &7184573319834072952
 MonoBehaviour:
   m_ObjectHideFlags: 0
