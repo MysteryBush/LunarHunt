@@ -55,6 +55,9 @@ public class SceneState : MonoBehaviour
                 case "Location_Meeting_Hall":
                     setTimeline = timelineHall;
                     break;
+                case "Credit":
+                    setTimeline = null;
+                    break;
             }
             if (setTimeline != null)
             {

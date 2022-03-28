@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Timeline;
 using UnityEngine.Playables;
 using UnityEngine.UI;
-
+using UnityEngine.SceneManagement;
 public class CutsceneTrigger : MonoBehaviour
 {
     #region Singleton
@@ -107,5 +107,10 @@ public class CutsceneTrigger : MonoBehaviour
     {
         timelineBlock = false;
         FindObjectOfType<InkDialogue>().OpenDialogueBox();
+    }
+
+    public void changeScene()
+    {
+        SceneManager.LoadScene(0);
     }
 }

@@ -136,6 +136,11 @@ public class SceneVisit : MonoBehaviour
                     //cutsceneTrigger.TriggerCutscene();
                 }
                 break;
+            case "Credit":
+                {
+                    cutsceneTrigger.TriggerCutscene();
+                }
+                break;
         }
         //SceneState.ins.runSceneState();
     }
@@ -161,6 +166,8 @@ public class SceneVisit : MonoBehaviour
                 {
                     firstVisit = true;
                 }
+                break;
+            case "Credit":
                 break;
         }
         //Debug.Log("firstVisit = " + firstVisit);

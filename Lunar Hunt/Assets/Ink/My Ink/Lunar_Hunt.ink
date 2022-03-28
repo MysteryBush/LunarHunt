@@ -1146,7 +1146,6 @@ VAR LocationName = ""
 				#speaker.Sebastian
 			(If I want to learn about the plague. I should find some records at the meeting hall)
 			// #hint.
-			#scene.Credit_Scene
 			#END
 			-> END
 	=== Location_Inside_Nursery ===
@@ -1269,6 +1268,7 @@ VAR LocationName = ""
 		And the fake news in town has been swept away with Cassandra. 
 		Sebastian then continue his search for his father and found him captive under the Nursery basement.
 		With this reunion, Sebastian leaves the town with his father.
+		#scene.Credit_Scene
 		#END
 		-> END
 
