@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Merchant
       objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074115, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_Enabled
@@ -104,6 +109,22 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 3f74a86c251f4864c98dd8ebbcb7152c,
         type: 2}
+    - target: {fileID: 871163727103364675, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -2163910151575223652, guid: ed5ff350a3c5d5f48bf29d20c24ef17c,
+        type: 3}
+    - target: {fileID: 871163727103364675, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2494671023389732749, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b6b020e4b1d84c4983b3367eb6b40cb, type: 3}
 --- !u!114 &8034385444718214524 stripped
