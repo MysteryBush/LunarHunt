@@ -1145,6 +1145,8 @@ VAR LocationName = ""
 			}
 				#speaker.Sebastian
 			(If I want to learn about the plague. I should find some records at the meeting hall)
+			// #hint.
+			#scene.Credit_Scene
 			#END
 			-> END
 	=== Location_Inside_Nursery ===
@@ -1178,7 +1180,7 @@ VAR LocationName = ""
 			}
 				#speaker.Sebastian
 			Now I should go back and tell people about this.
-// 			- -> Cutscene_Cassandra_Return
+			//-> Cutscene_Cassandra_Return
 			#timeline.Cutscene_Cassandra_Return
 			#knot.Cutscene_Cassandra_Return
 			#transition.open
@@ -1227,43 +1229,49 @@ VAR LocationName = ""
 			= Exile_Cassandra
 				#noSpeaker
 			The villagers chase Cassandra out of the Sanctuary.
-			#timeline.After_Reveal
-			#END
-			-> END
+			// #timeline.After_Reveal
+			// #END
+			// -> END
+			-> The_End
 
 			// #transition.close
 			// - -> Confessed_Cassandra
 
 		=== Confessed_Cassandra ===
-			#noSpeaker
-		Sebastian followed Cassandra outside the town.
-			#speaker.Cassandra
-		I'll tell you, Sebastian. As a reward for being able to expose me.
-			#speaker.Sebastian
-		Well, I already read it from your letters. You're also the one who captured my father.
-		So, where is he now?
-			#speaker.Cassandra
-		Alright... Listen closely, your father...
-		Is already dead.
-			#speaker.Sebastian
-		...
-		You're not done with lying?
-			#speaker.Cassandra
-		Ha, how funny, now you're the one who wants to hear some lies instead.
-		If you don't believe me, head toward the forest to the east of my Nursery. 
-		There's a hidden shack there that I use to do my ritual.
-			#speaker.Sebastian
-		Ritual?
-			#speaker.Cassandra
-		Yes Sebastian, ritual, the dark ones.
-		I would love to tell you more but you must be dying to find your father now.
-			#speaker.Sebastian
-		... You better not be scheming again.
-		-> END
+				#noSpeaker
+			Sebastian followed Cassandra outside the town.
+				#speaker.Cassandra
+			I'll tell you, Sebastian. As a reward for being able to expose me.
+				#speaker.Sebastian
+			Well, I already read it from your letters. You're also the one who captured my father.
+			So, where is he now?
+				#speaker.Cassandra
+			Alright... Listen closely, your father...
+			Is already dead.
+				#speaker.Sebastian
+			...
+			You're not done with lying?
+				#speaker.Cassandra
+			Ha, how funny, now you're the one who wants to hear some lies instead.
+			If you don't believe me, head toward the forest to the east of my Nursery. 
+			There's a hidden shack there that I use to do my ritual.
+				#speaker.Sebastian
+			Ritual?
+				#speaker.Cassandra
+			Yes Sebastian, ritual, the dark ones.
+			I would love to tell you more but you must be dying to find your father now.
+				#speaker.Sebastian
+			... You better not be scheming again.
+			-> END
 
 	=== The_End ===
-		#noSpeaker
-		
+			#noSpeaker
+		And the fake news in town has been swept away with Cassandra. 
+		Sebastian then continue his search for his father and found him captive under the Nursery basement.
+		With this reunion, Sebastian leaves the town with his father.
+		#END
+		-> END
+
 	//Sorry this is all I got for now
 	=== That_is_all ===
 			#transition.open

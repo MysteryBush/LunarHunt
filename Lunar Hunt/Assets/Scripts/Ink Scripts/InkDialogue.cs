@@ -10,7 +10,6 @@ using UnityEngine.SceneManagement;
 public class InkDialogue : MonoBehaviour
 {
     public static InkDialogue ins;
-
     //for don't destroy on load
     private GameObject[] inkDialogues;
 
@@ -315,6 +314,11 @@ public class InkDialogue : MonoBehaviour
                     transitionObj.GetComponent<Animator>().SetBool("isOpen",false);
                     //transitionObj.SetActive(false);
                 }
+            }
+            if (tag.StartsWith("hint."))
+            {
+                var hintText = tag.Substring("hint.".Length, tag.Length - "hint.".Length);
+                Debug.Log("tag hint: " + hintText);
             }
 
         }
