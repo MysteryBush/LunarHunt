@@ -260,6 +260,7 @@ VAR LocationName = ""
 		(I should go back and tell Alex about it)
 			#noSpeaker
 		Now it's time to go back and talk to the lumberjack
+		#hint.Now_it's_time_to_go_back_and_talk_to_the_lumberjack
 		#END
 		-> END
 	=== Evidence_CS_Faked_The_News ===
@@ -272,6 +273,7 @@ VAR LocationName = ""
 		(I should go back to town for more answers)
 			#noSpeaker
 		Go back to town to continue the search
+		#hint.Go_back_to_town_to_continue_the_search
 		#timelineState.TimelineState_sanctuary_old_man
 		#END
 		-> END
@@ -293,76 +295,76 @@ VAR LocationName = ""
 		// While entering the entrance of the Sanctuary town. Sebastian was wondering for himself.
 		//resume
 		= first
-			#speaker.Sebastian
-		(Now that I got here, I should ask if someone knows about missing people.)
-		(That way, I should be able to find a lead about my father.)
-		//Sebastian walk until in front of Athena
-		#timeline.Athena
-		#knot.Cutscene_Welcome_to_Sanctuary.Athena
-		#END
-		-> END
-		// 	#noSpeaker
+				#speaker.Sebastian
+			(Now that I got here, I should ask if someone knows about missing people.)
+			(That way, I should be able to find a lead about my father.)
+			//Sebastian walk until in front of Athena
+			#timeline.Athena
+			#knot.Cutscene_Welcome_to_Sanctuary.Athena
+			#END
+			-> END
+			// 	#noSpeaker
 		// Athena, who was re-painting the town sign, noticed Sebastian.
 		= Athena
-			#speaker.Athena
-		Hello there, you seem to be new here, do you need any help?
-			#speaker.Sebastian
-		Well, yes, I'm looking for a place to know more about something.
-			#speaker.Athena
-		What happened?
-			#speaker.Sebastian
-		I was traveling with my father but he got kidnapped by someone.
-			#speaker.Athena
-		Oh dear… I'm so sorry to hear that…
-			#speaker.Sebastian
-		No, don't be, father is a strong willed man. I believe he's still out there somewhere.
-			#speaker.Athena
-		Well, that's good to know.
-		I'll help you however I can. I'll make sure you can find your father.
-		If you're looking for leads, the town's meeting hall can help you. There are people who like to tell stories, town board, and also some rooms for visitors to rest.
-			#speaker.Sebastian
-		Thank you, I'll keep that in mind. I'll be sure to go ther-
-			#speaker.Athena
-		We can go there right now let's go!
-			#speaker.Sebastian
-		(She's so eager to help)
-		(But I guess it's the first place to go anyway)
-			#noSpeaker
-		#timeline.To_meeting_hall
-		#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
-		// #END
-		-> END
+				#speaker.Athena
+			Hello there, you seem to be new here, do you need any help?
+				#speaker.Sebastian
+			Well, yes, I'm looking for a place to know more about something.
+				#speaker.Athena
+			What happened?
+				#speaker.Sebastian
+			I was traveling with my father but he got kidnapped by someone.
+				#speaker.Athena
+			Oh dear… I'm so sorry to hear that…
+				#speaker.Sebastian
+			No, don't be, father is a strong willed man. I believe he's still out there somewhere.
+				#speaker.Athena
+			Well, that's good to know.
+			I'll help you however I can. I'll make sure you can find your father.
+			If you're looking for leads, the town's meeting hall can help you. There are people who like to tell stories, town board, and also some rooms for visitors to rest.
+				#speaker.Sebastian
+			Thank you, I'll keep that in mind. I'll be sure to go ther-
+				#speaker.Athena
+			We can go there right now let's go!
+				#speaker.Sebastian
+			(She's so eager to help)
+			(But I guess it's the first place to go anyway)
+				#noSpeaker
+			#timeline.To_meeting_hall
+			#knot.Cutscene_Welcome_to_Sanctuary.To_meeting_hall
+			// #END
+			-> END
 		//play cutscene
 		= To_meeting_hall
-			#noSpeaker
-		Athena leads the way to the town meeting hall and Sebastian follows behind her.
-		They arrived at the front of the town's meeting hall.
-		#timeline.At_meeting_hall
-		#knot.Cutscene_Welcome_to_Sanctuary.At_meeting_hall
-		#END
-		-> END
+				#noSpeaker
+			Athena leads the way to the town meeting hall and Sebastian follows behind her.
+			They arrived at the front of the town's meeting hall.
+			#timeline.At_meeting_hall
+			#knot.Cutscene_Welcome_to_Sanctuary.At_meeting_hall
+			#END
+			-> END
 
 		= At_meeting_hall
-			#speaker.Athena
-		Here it is! The meeting hall!
-			#speaker.Sebastian
-		Thank you, I hope I can find my father soon.
-			#speaker.Athena
-		I'm sure you can!
-			#noSpeaker
-		#timeline.Go_in
-		#knot.Cutscene_Welcome_to_Sanctuary.Go_in
-		// #END
-		- -> Go_in
+				#speaker.Athena
+			Here it is! The meeting hall!
+				#speaker.Sebastian
+			Thank you, I hope I can find my father soon.
+				#speaker.Athena
+			I'm sure you can!
+				#noSpeaker
+			#timeline.Go_in
+			#knot.Cutscene_Welcome_to_Sanctuary.Go_in
+			// #END
+			- -> Go_in
 
 		= Go_in
-			#noSpeaker
-		Athena walked away to the east.
-		Sebastian walks up to the door and go inside the town's meeting hall.
-		#spawn.3
-		#scene.Meeting_Hall
-		#END
-		-> END 
+				#noSpeaker
+			Athena walked away to the east.
+			Sebastian walks up to the door and go inside the town's meeting hall.
+			#spawn.3
+			#scene.Meeting_Hall
+			#END
+			-> END 
 		//-> Cutscene_Meeting_in_the_Meeting_Hall
 	   
 	=== Cutscene_Meeting_in_the_Meeting_Hall ===
@@ -370,26 +372,26 @@ VAR LocationName = ""
 		// 	#noSpeaker
 		// Sebastian walked in from the south door.
 		= At_Meeting_Hall
-			#speaker.Sebastian
-		(So this is the town's meeting hall. It is well tended here)
-			#speaker.Cassandra
-		Here's the correct Headline
-			#speaker.HallStaff
-		Yes ma'am, it will be done.
-		// #knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_approach
-		#timeline.Cassandra_approach
-		#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
-		// #timeline.Cassandra_welcome
-		#noSpeaker
-		-> END
+				#speaker.Sebastian
+			(So this is the town's meeting hall. It is well tended here)
+				#speaker.Cassandra
+			Here's the correct Headline
+				#speaker.HallStaff
+			Yes ma'am, it will be done.
+			// #knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_approach
+			#timeline.Cassandra_approach
+			#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
+			// #timeline.Cassandra_welcome
+			#noSpeaker
+			-> END
 
-		// = Cassandra_approach
-		// 		#noSpeaker
-		// 	Cassandra walks away from the staff to the door in the south.
-		// 	Cassandra noticed Sebastian.
-		// 	#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
-		// 	#timeline.Cassandra_welcome
-		// 	#END
+			// = Cassandra_approach
+			// 		#noSpeaker
+			// 	Cassandra walks away from the staff to the door in the south.
+			// 	Cassandra noticed Sebastian.
+			// 	#knot.Cutscene_Meeting_in_the_Meeting_Hall.Cassandra_welcome
+			// 	#timeline.Cassandra_welcome
+			// 	#END
 		
 		= Cassandra_welcome
 				#speaker.Cassandra
@@ -412,19 +414,20 @@ VAR LocationName = ""
 			#noSpeaker
 			- -> END
 		= Cassandra_leave
+				#noSpeaker
+			Cassandra exited the hall.
+			#knot.Cutscene_Meeting_in_the_Meeting_Hall.look_around_meeting_hall
+			#timeline.look_around_meeting_hall
+			// #END
 			#noSpeaker
-		Cassandra exited the hall.
-		#knot.Cutscene_Meeting_in_the_Meeting_Hall.look_around_meeting_hall
-		#timeline.look_around_meeting_hall
-		// #END
-		#noSpeaker
-		- -> END
+			- -> END
 		= look_around_meeting_hall
 				#speaker.Sebastian
 			(Alright, it's time to look around for some leads here)
 			(I should ask the Staff here)
 			//  -> Investigate_Meeting_Hall
 			// ~ ChangeLocation(Meeting_Hall)
+			#hint.Investigate_the_meeting_hall_for_more_clues
 			#END
 			// -> Investigate 
 			-> END
@@ -432,76 +435,76 @@ VAR LocationName = ""
 	=== Cutscene_The_Witch_Nursery ===
 	    //\--- Cutscene The Witch Nursery ---
 		//part 1
-			#speaker.Sebastian
-		(I should keep going now)
-			#speaker.Athena
-		Oh! Hi again! Did you find something helpful?
-			#speaker.Sebastian
-		Oh, hi. I did find something useful. Thank you.
-			#speaker.Athena
-		I'm just glad to help.
-		Oh, I don't think we know each other's names yet. I'm Athena. What's your name?
-			#speaker.Sebastian
-		Sebastian.
-			#speaker.Athena
-		That's a nice name!
-			#speaker.Sebastian
-		Thanks
-			#speaker.Athena
-		Alright! Sebastian, If you need any other help from me you can find me at the Witch's nursery.
-			#speaker.Sebastian
-		(Witch?)
-			#speaker.Athena
-		Don't worry. She's a good witch! She raised me when I was gravely ill.
-		And she also runs this town too! Everyone trusts her and we all do our best to help her!
-			#speaker.Sebastian
-		I see, I'll be sure to visit the nursery later-
-			#speaker.Athena
-		Oh wait, I didn't show you the place yet. It's over here!
-			#speaker.Sebastian
-		Wait, it's fine I don't need to see it now- hey!
-			#noSpeaker
-		Athena dragged Sebastian to the Witch's Nursery.
+				#speaker.Sebastian
+			(I should keep going now)
+				#speaker.Athena
+			Oh! Hi again! Did you find something helpful?
+				#speaker.Sebastian
+			Oh, hi. I did find something useful. Thank you.
+				#speaker.Athena
+			I'm just glad to help.
+			Oh, I don't think we know each other's names yet. I'm Athena. What's your name?
+				#speaker.Sebastian
+			Sebastian.
+				#speaker.Athena
+			That's a nice name!
+				#speaker.Sebastian
+			Thanks
+				#speaker.Athena
+			Alright! Sebastian, If you need any other help from me you can find me at the Witch's nursery.
+				#speaker.Sebastian
+			(Witch?)
+				#speaker.Athena
+			Don't worry. She's a good witch! She raised me when I was gravely ill.
+			And she also runs this town too! Everyone trusts her and we all do our best to help her!
+				#speaker.Sebastian
+			I see, I'll be sure to visit the nursery later-
+				#speaker.Athena
+			Oh wait, I didn't show you the place yet. It's over here!
+				#speaker.Sebastian
+			Wait, it's fine I don't need to see it now- hey!
+				#noSpeaker
+			Athena dragged Sebastian to the Witch's Nursery.
 		//part 2
-			#speaker.Athena
-		Here it is! The Witch's Nursery!
-		We also call it the Nursery for short.
-			#speaker.Sebastian
-		There are children here, they seem to be enjoying themselves.
-			#speaker.Athena
-		Yeah, I helped her take care of them too.
-		Just like you, their parents were also missing so we took them in.
-			#speaker.Sebastian
-		I see… Is it possible that I can ask them about it?
-			#speaker.Athena
-		Hmm… It's not an easy thing to ask. But I'll  ask them for you when they're ready.
-			#speaker.Sebastian
-		… Thanks, sorry if it's too much.
-		I just wanted to find him.
-			#speaker.Athena
-		It's fine! I'm sure they'll understand.
-			#speaker.Sebastian
-		Anyway, thanks for showing me around, now I should get going and find my father.
-			#speaker.Athena
-		Oh! Right! Sorry if I bothered you too much.
-		Now I should help Ms. Cassandra too. And I hope you can find your father soon!
-			#speaker.Sebastian
-		Thank you.
-			#noSpeaker
-		Athena walked into the Witch's Nursery
+				#speaker.Athena
+			Here it is! The Witch's Nursery!
+			We also call it the Nursery for short.
+				#speaker.Sebastian
+			There are children here, they seem to be enjoying themselves.
+				#speaker.Athena
+			Yeah, I helped her take care of them too.
+			Just like you, their parents were also missing so we took them in.
+				#speaker.Sebastian
+			I see… Is it possible that I can ask them about it?
+				#speaker.Athena
+			Hmm… It's not an easy thing to ask. But I'll  ask them for you when they're ready.
+				#speaker.Sebastian
+			… Thanks, sorry if it's too much.
+			I just wanted to find him.
+				#speaker.Athena
+			It's fine! I'm sure they'll understand.
+				#speaker.Sebastian
+			Anyway, thanks for showing me around, now I should get going and find my father.
+				#speaker.Athena
+			Oh! Right! Sorry if I bothered you too much.
+			Now I should help Ms. Cassandra too. And I hope you can find your father soon!
+				#speaker.Sebastian
+			Thank you.
+				#noSpeaker
+			Athena walked into the Witch's Nursery
 		//part 3
-			#speaker.Sebastian
-		(Now I can really start searching for clues)
-		~ ChangeLocation(Sanctuary)
-		#END
-		// -> Investigate
-		-> END
+				#speaker.Sebastian
+			(Now I can really start searching for clues)
+			~ ChangeLocation(Sanctuary)
+			#END
+			// -> Investigate
+			-> END
 	   
 		= skip
-		~ ChangeLocation(Sanctuary)
-		#END
-		// - -> Investigate
-		-> END
+			~ ChangeLocation(Sanctuary)
+			#END
+			// - -> Investigate
+			-> END
 	 
 	=== Cutscene_CS_Potion ===
 		//\--- Cutscene C.S. Potion ---
@@ -551,6 +554,7 @@ VAR LocationName = ""
 		Ok I will.
 		(Well, I don't know who else to go for)
 		(Now I should find Athena for help)
+		#hint.Find_Athena_to_test_the_potion
 		#timelineState.TimelineState_Sanctuary_1
 		#END
 		~ ChangeLocation(Sanctuary)
@@ -676,6 +680,7 @@ VAR LocationName = ""
 					#speaker.HallStaff
 				Oh, I think the newspaper talks about it. You should go take a look.
 				The latest edition should be pinned at the town board over there.
+				#hint.Look_at_the_board_for_more_hint
 				- ->->
 
 			= I_read_the_news_but
@@ -713,6 +718,7 @@ VAR LocationName = ""
 					#clue.Merchant_Sells_the_Newspaper
 					~ GetClue(Merchant_Sells_the_Newspaper)
 				}
+				#hint.Ask_the_merchant_about_the_newspaper
 				#END
 				-> END
 
@@ -736,6 +742,7 @@ VAR LocationName = ""
 					#clue.No_Record_of_Recent_Plague
 					~ GetClue(No_Record_of_Recent_Plague)
 				}
+				#hint.Ask_Athena_about_Cassandra
 				#END
 				-> END
 		== Town_Board ==
@@ -780,6 +787,7 @@ VAR LocationName = ""
 					// Clues collected: News_about_Moving_Out_People
 					~ GetClue(News_about_Moving_Out_People)
 				}
+				#hint.Talk_to_town_hall_staff_about_the_news
 				#END
 				-> END
 			= The_Strongest_Potion
@@ -857,6 +865,7 @@ VAR LocationName = ""
 				(I should go find someone with closest connection to C.S. )
 				(hmm...)
 				(I think I should go find merchant for now.)
+				#hint.Go_back_to_the_forest_and_find_the_merchant
 				#timelineState.TimelineState_caravan_arrive
 				#END
 				-> END
@@ -882,6 +891,7 @@ VAR LocationName = ""
 				// #knot.Talk_to_Athena.Inside_Nursery
 				// #scene.Inside_Nursery
 				// #spawn.4
+				#hint.Investigate_Cassandra's_room
 				#knot.Talk_to_Athena.skip_to_cassandra_room
 				#scene.Cassandra_Room
 				#spawn.5
@@ -899,29 +909,29 @@ VAR LocationName = ""
 				-> END
 
 				= athena_to_kitchen
-					#noSpeaker
-				Athena walk away to the kitchen.
-				// The kitchen will be locked
-					#speaker.Sebastian
-				(I should go and search this house while I can)
-					#noSpeaker
-				Sebastian investigate the house and went into a particular room.
-				~ ChangeLocation(Inside_Nursery)
-				-> END
+						#noSpeaker
+					Athena walk away to the kitchen.
+					// The kitchen will be locked
+						#speaker.Sebastian
+					(I should go and search this house while I can)
+						#noSpeaker
+					Sebastian investigate the house and went into a particular room.
+					~ ChangeLocation(Inside_Nursery)
+					-> END
 
 				= skip_to_cassandra_room
-				#transition.open
-					#noSpeaker
-				Sebastian and Athena went inside the Witch's Nursery.	
-				As Sebastian went inside the house. Athena went to the kitchen to get some tea for Sebastian.
-				Sebastian took this chance to investigate further in the house.
-				He found himself in a particular room.
+					#transition.open
+						#noSpeaker
+					Sebastian and Athena went inside the Witch's Nursery.	
+					As Sebastian went inside the house. Athena went to the kitchen to get some tea for Sebastian.
+					Sebastian took this chance to investigate further in the house.
+					He found himself in a particular room.
 
-				// -> That_is_all
-				#scene.Cassandra_Room
-				#spawn.5
-				#END
-				-> END
+					// -> That_is_all
+					#scene.Cassandra_Room
+					#spawn.5
+					#END
+					-> END
 	=== Location_Forest ===
 		{not Location_Forest} #cutscene.Wake_up
 		-> END
@@ -957,6 +967,7 @@ VAR LocationName = ""
 						#clue.Clue_01
 						~ GetClue(Clue_01)
 					}
+					#hint.Find_clues_about_the_lumberjack's_axe
 					#END
 					-> END
 				= When_were_you_fainted
@@ -984,12 +995,14 @@ VAR LocationName = ""
 					I'll go find him and take it back
 					// run cutscene about Lumberjack taking back his axe
 
+					#hint.Lumberjack_will_help_clearing_the_path
 					#timeline.Lumberjack_go_to_the_Log
 					#END 
 					-> END
 				= Clear_the_path
 						#speaker.Lumberjack
 					Alright, let's clear the path now
+					#hint.Go_to_the_Sanctuary
 					#timeline.Lumberjack_clear_the_path
 					#END 
 					-> END
@@ -1086,6 +1099,7 @@ VAR LocationName = ""
 					#item.Original_Newspaper
 					~ GetItem(Original_Newspaper)
 				}
+				#hint.There_are_enough_clues_to_form_evidence_now
 				- ->->
  
 		== Item_on_Sale ==
@@ -1110,12 +1124,13 @@ VAR LocationName = ""
 					#clue.Clue_06
 					~ GetClue(Clue_06)
 				}
+				#hint.There_are_enough_clues_to_form_evidence_now
 				#END
 				-> END
 
 			= no_axe
 					#speaker.Sebastian
-				(The axe is returned to the right owner now)
+				(The axe is returned to the right owner)
 				#END
 				-> END
 
@@ -1146,6 +1161,7 @@ VAR LocationName = ""
 				#speaker.Sebastian
 			(If I want to learn about the plague. I should find some records at the meeting hall)
 			// #hint.
+			#hint.Ask_the_meeting_hall_staff_about_the_plague
 			#END
 			-> END
 	=== Location_Inside_Nursery ===
@@ -1185,58 +1201,58 @@ VAR LocationName = ""
 			#transition.open
             #END
             -> END
-	//Chapter 3 stuff
-		=== The_Reveal ===
-			// #transition.close
+		//Chapter 3 stuff
+			=== The_Reveal ===
+				// #transition.close
 
-				#noSpeaker
-			Sebastian walked to the center of the plaza.
+					#noSpeaker
+				Sebastian walked to the center of the plaza.
 
-			// #transition.open
+				// #transition.open
 
-				#speaker.Sebastian
-			Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
-			
-			// \---------
-			// There's supposed to be some choices to choose again to answer the villagers
-			// If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
-			// \---------
-			- -> Exposed_Cassandra
+					#speaker.Sebastian
+				Attention everyone, I'm here to let everyone know that you have been living with lies and fake news all this time.
+				
+				// \---------
+				// There's supposed to be some choices to choose again to answer the villagers
+				// If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
+				// \---------
+				- -> Exposed_Cassandra
 
-		=== Exposed_Cassandra ===
-			//part 1
-				#speaker.Villager
-			Cassandra! Why did you do this?!
-				#speaker.OldMan
-			You sold me a glass of water all this time?
-				#speaker.Caravan
-			We have to abandoned our town just to let the thiefs takes everything!
-				#speaker.Villager
-			We don't need this fake leader in our town!
-				#noSpeaker
-			The villagers comes towards Cassandra with ill intents.
-			//part 2
-				#speaker.Cassandra
-			No, why are you listening to this child? I did everything for you people all this time.
-				#speaker.Villager
-			What you did is everything that makes our life worse! You just want to leech our work!
-			// #transition.open
-			#timeline.Exile_Cassandra
-			#knot.Exposed_Cassandra.Exile_Cassandra
-			-> Exile_Cassandra
-			
-			= Exile_Cassandra
-				#noSpeaker
-			The villagers chase Cassandra out of the Sanctuary.
-			// #timeline.After_Reveal
-			// #END
-			// -> END
-			-> The_End
+			=== Exposed_Cassandra ===
+				//part 1
+					#speaker.Villager
+				Cassandra! Why did you do this?!
+					#speaker.OldMan
+				You sold me a glass of water all this time?
+					#speaker.Caravan
+				We have to abandoned our town just to let the thiefs takes everything!
+					#speaker.Villager
+				We don't need this fake leader in our town!
+					#noSpeaker
+				The villagers comes towards Cassandra with ill intents.
+				//part 2
+					#speaker.Cassandra
+				No, why are you listening to this child? I did everything for you people all this time.
+					#speaker.Villager
+				What you did is everything that makes our life worse! You just want to leech our work!
+				// #transition.open
+				#timeline.Exile_Cassandra
+				#knot.Exposed_Cassandra.Exile_Cassandra
+				-> Exile_Cassandra
+				
+				= Exile_Cassandra
+					#noSpeaker
+				The villagers chase Cassandra out of the Sanctuary.
+				// #timeline.After_Reveal
+				// #END
+				// -> END
+				-> The_End
 
-			// #transition.close
-			// - -> Confessed_Cassandra
+				// #transition.close
+				// - -> Confessed_Cassandra
 
-		=== Confessed_Cassandra ===
+			=== Confessed_Cassandra ===
 				#noSpeaker
 			Sebastian followed Cassandra outside the town.
 				#speaker.Cassandra

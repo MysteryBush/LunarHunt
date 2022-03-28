@@ -75,8 +75,14 @@ public class InkDialogue : MonoBehaviour
 
     private TypewriterEffect typewriterEffect;
 
-    //
-    Dictionary<string, AudioClip> _clips = new Dictionary<string, AudioClip>();
+    //testing dictionary
+    // Dictionary<string, AudioClip> _clips = new Dictionary<string, AudioClip>();
+
+    //Ingame UI object
+    private GameObject ingameMenu;
+
+    //Hint system
+    public string setHint;
 
     // Start is called before the first frame update
     void Start()
@@ -104,12 +110,15 @@ public class InkDialogue : MonoBehaviour
 
         player.findInkUI(this);
         //if (knotName != "") OpenDialogueBox();
+
+        //
+        ingameMenu = FindObjectOfType<IngameMenu>().gameObject;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ( (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) ) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.ins.timelineBlock == false)
+        if ( (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0) ) && player.controlUI == true && notifyIsOpen == false && CutsceneTrigger.ins.timelineBlock == false & ingameMenu.GetComponent<IngameMenu>().isOpen == false)
         {
             runDialogues();
         }
@@ -129,6 +138,10 @@ public class InkDialogue : MonoBehaviour
         }
 
         player.findInkUI(this);
+
+        ingameMenu = FindObjectOfType<IngameMenu>().gameObject;
+        //Hint system
+        ingameMenu.GetComponent<HintUI>().changeHint(setHint);
     }
 
     void addDictionary()
@@ -200,13 +213,13 @@ public class InkDialogue : MonoBehaviour
     //    }
     //}
 
-    private void PlayTimeline(string timelineName)
-    {
-        if (_clips.TryGetValue(timelineName, out var clip))
-        {
-            //play timeline
-        }
-    }
+    // private void PlayTimeline(string timelineName)
+    // {
+    //     if (_clips.TryGetValue(timelineName, out var clip))
+    //     {
+    //         //play timeline
+    //     }
+    // }
 
     void runDialogues()
     {
@@ -319,6 +332,9 @@ public class InkDialogue : MonoBehaviour
             {
                 var hintText = tag.Substring("hint.".Length, tag.Length - "hint.".Length);
                 Debug.Log("tag hint: " + hintText);
+                string newString = hintText.Replace("_", " ");
+                setHint = newString;
+                ingameMenu.GetComponent<HintUI>().changeHint(setHint);
             }
 
         }

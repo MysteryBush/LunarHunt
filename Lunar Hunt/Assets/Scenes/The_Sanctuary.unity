@@ -17417,6 +17417,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caracal
       objectReference: {fileID: 0}
+    - target: {fileID: 4014194974816358498, guid: 34b4709c19e455040b8e979ffe626800,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4014194974816358499, guid: 34b4709c19e455040b8e979ffe626800,
         type: 3}
       propertyPath: m_RootOrder
@@ -17616,6 +17621,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Athena (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4560950842941116717, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead, type: 3}
 --- !u!1 &476760032 stripped
@@ -17718,7 +17728,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -145.66762, y: 62.204395, z: -19}
+  m_LocalPosition: {x: -145.66592, y: 62.20439, z: -19}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -21507,6 +21517,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Oldman (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4760309587782312579, guid: 5c45138ca98bdb243aa598f674cc7885,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c45138ca98bdb243aa598f674cc7885, type: 3}
@@ -34124,6 +34139,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cassandra
+      objectReference: {fileID: 0}
+    - target: {fileID: 1268729435193246273, guid: 73abe28ab62d1e94892d72176f56e68c,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73abe28ab62d1e94892d72176f56e68c, type: 3}
@@ -93269,6 +93289,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TownHallStaff
       objectReference: {fileID: 0}
+    - target: {fileID: 521874459044937057, guid: db77a79f5c3342a4a9ce79877d34b2c1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db77a79f5c3342a4a9ce79877d34b2c1, type: 3}
 --- !u!1 &1313475247 stripped
@@ -96035,6 +96060,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lumberjack
       objectReference: {fileID: 0}
+    - target: {fileID: 2007070916380113359, guid: 5af0794a4cf43c84ea769a49155a5a63,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af0794a4cf43c84ea769a49155a5a63, type: 3}
 --- !u!1 &1413765062 stripped
@@ -96053,7 +96083,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1434103331}
   - component: {fileID: 1434103330}
-  - component: {fileID: 1434103329}
   - component: {fileID: 1434103328}
   m_Layer: 0
   m_Name: Minimap Camera
@@ -96076,14 +96105,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 519420032}
   smoothing: 100
---- !u!81 &1434103329
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1434103327}
-  m_Enabled: 0
 --- !u!20 &1434103330
 Camera:
   m_ObjectHideFlags: 0
@@ -99569,7 +99590,7 @@ PlayableDirector:
   m_GameObject: {fileID: 1930896375}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 8deb25392956e4145b40890a0d2c6dc8, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -100352,6 +100373,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Merchant
+      objectReference: {fileID: 0}
+    - target: {fileID: 8034385444718214468, guid: 25193384ae6b9d349a361fc81bdfad21,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8034385444718214469, guid: 25193384ae6b9d349a361fc81bdfad21,
         type: 3}

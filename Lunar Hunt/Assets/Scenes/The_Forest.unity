@@ -439,7 +439,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &44638107
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9732,6 +9732,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -30
+      objectReference: {fileID: 0}
+    - target: {fileID: 6074452292436986855, guid: efedbad1be54e58418053ce15faab47d,
+        type: 3}
+      propertyPath: initialHint
+      value: Investigate around the Forest
       objectReference: {fileID: 0}
     - target: {fileID: 8009191261766234817, guid: efedbad1be54e58418053ce15faab47d,
         type: 3}

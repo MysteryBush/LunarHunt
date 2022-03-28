@@ -1343,7 +1343,7 @@ PlayableDirector:
   m_GameObject: {fileID: 461217479}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1505,6 +1505,22 @@ PlayableDirector:
     value: {fileID: 257667764}
   - key: {fileID: -651467151001984894, guid: a6394f5d2624fb7449c6856a57ecc811, type: 2}
     value: {fileID: 1061753588}
+  - key: {fileID: 5514778656975586746, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 5921208021495451588, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 1260661703655997675, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -62383628938201311, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 7040553342891076610, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 257667764}
+  - key: {fileID: -3750579687104612730, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: -5899959380854193084, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
+  - key: {fileID: 3733582233964546615, guid: a565c46b9c14bef4c844c6d16d6f04c5, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References:
     - b2d56f022dd89aa408b665a5a59df055: {fileID: 1633195661}
@@ -1616,7 +1632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.49823, y: 67.00499, z: -14.969999}
+  m_LocalPosition: {x: -160.49823, y: 67.005, z: -14.969999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

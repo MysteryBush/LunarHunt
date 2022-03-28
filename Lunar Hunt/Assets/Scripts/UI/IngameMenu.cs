@@ -59,6 +59,7 @@ public class IngameMenu : MonoBehaviour
 
     public void toggleIngameMenu()
     {
+        //Wait, why do I use initialSection if firstButton is used next anyway?
         selectMenuTab(initialSection);
         firstButton.GetComponent<SwitchButtonsPanelScript>().OnButtonClicked(firstButton);
         ingameMenu.SetActive(!ingameMenu.activeSelf);
