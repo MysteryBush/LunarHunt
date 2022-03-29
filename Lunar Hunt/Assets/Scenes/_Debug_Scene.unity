@@ -552,7 +552,7 @@ PrefabInstance:
     - target: {fileID: 6255606092935743170, guid: ed58d34bea4133f4b80e5b63bb192eee,
         type: 3}
       propertyPath: visitCassandra
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6255606092935743170, guid: ed58d34bea4133f4b80e5b63bb192eee,
         type: 3}
@@ -1792,7 +1792,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.49823, y: 67.005, z: -14.969999}
+  m_LocalPosition: {x: -160.49823, y: 67.005005, z: -14.969999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

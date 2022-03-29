@@ -1828,7 +1828,7 @@ PlayableDirector:
   m_GameObject: {fileID: 461217479}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 0abfd9597034ec44e9c74334a0dff1b0, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: 30dba750b6689d14ab81289dc0404bd6, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -1962,6 +1962,14 @@ PlayableDirector:
     value: {fileID: 519420028}
   - key: {fileID: 3733582233964546615, guid: 23e5708be49581947b1f9b55e134f9f7, type: 2}
     value: {fileID: 0}
+  - key: {fileID: 613940298052738445, guid: 93c637149a4a3464ca89f771e307dd45, type: 2}
+    value: {fileID: 1850664737}
+  - key: {fileID: -4965007588369658407, guid: 93c637149a4a3464ca89f771e307dd45, type: 2}
+    value: {fileID: 1880633159}
+  - key: {fileID: 5461468215674473778, guid: 30dba750b6689d14ab81289dc0404bd6, type: 2}
+    value: {fileID: 1850664737}
+  - key: {fileID: -740408223767544469, guid: 30dba750b6689d14ab81289dc0404bd6, type: 2}
+    value: {fileID: 1880633159}
   m_ExposedReferences:
     m_References:
     - b2d56f022dd89aa408b665a5a59df055: {fileID: 1633195661}
@@ -2073,7 +2081,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -160.49823, y: 67.005, z: -14.969999}
+  m_LocalPosition: {x: -160.49823, y: 67.005005, z: -14.969999}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -19673,6 +19681,12 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1850664735}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &1850664737 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 1268729435193246330, guid: 73abe28ab62d1e94892d72176f56e68c,
+    type: 3}
+  m_PrefabInstance: {fileID: 1850664735}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1880633158
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19758,6 +19772,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db77a79f5c3342a4a9ce79877d34b2c1, type: 3}
+--- !u!95 &1880633159 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 521874459044937050, guid: db77a79f5c3342a4a9ce79877d34b2c1,
+    type: 3}
+  m_PrefabInstance: {fileID: 1880633158}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1920225778
 PrefabInstance:
   m_ObjectHideFlags: 0

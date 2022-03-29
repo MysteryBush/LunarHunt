@@ -15,12 +15,12 @@ PrefabInstance:
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -121.79
+      value: -118.16
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 80.7
+      value: 77.17
       objectReference: {fileID: 0}
     - target: {fileID: 117092578926074114, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
@@ -67,6 +67,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Caracal
       objectReference: {fileID: 0}
+    - target: {fileID: 117092578926074117, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: offsetZ
+      value: 0.739
+      objectReference: {fileID: 0}
     - target: {fileID: 117092578926074168, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_Enabled
@@ -88,11 +93,21 @@ PrefabInstance:
       propertyPath: knotName
       value: Talk_to_Caravan
       objectReference: {fileID: 0}
+    - target: {fileID: 117092580055214720, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 1.2
+      objectReference: {fileID: 0}
     - target: {fileID: 871163727103364675, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
         type: 3}
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 5040920265682631653, guid: ed5ff350a3c5d5f48bf29d20c24ef17c,
         type: 3}
+    - target: {fileID: 2883310209123275172, guid: 8b6b020e4b1d84c4983b3367eb6b40cb,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.72
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8b6b020e4b1d84c4983b3367eb6b40cb, type: 3}
