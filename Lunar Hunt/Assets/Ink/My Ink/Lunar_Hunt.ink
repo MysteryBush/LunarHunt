@@ -1221,20 +1221,20 @@ VAR LocationName = ""
 
 			=== Exposed_Cassandra ===
 				//part 1
-					#speaker.Villager
+					#speaker.HallStaff
 				Cassandra! Why did you do this?!
 					#speaker.OldMan
 				You sold me a glass of water all this time?
 					#speaker.Caravan
 				We have to abandoned our town just to let the thieves takes everything!
-					#speaker.Villager
+					#speaker.Lumberjack
 				We don't need this fake leader in our town!
 					#noSpeaker
 				The villagers come towards Cassandra with ill intentions.
 				//part 2
 					#speaker.Cassandra
 				No, why are you listening to this child? I did everything for you people all this time.
-					#speaker.Villager
+					#speaker.Lumberjack
 				What you did is everything that makes our life worse! You just want to leech our work!
 				// #transition.open
 				#timeline.Exile_Cassandra
