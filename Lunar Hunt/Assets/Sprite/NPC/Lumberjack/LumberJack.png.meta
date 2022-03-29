@@ -332,7 +332,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 608
-        y: 530
+        y: 532
         width: 156
         height: 236
       alignment: 0
@@ -394,7 +394,7 @@ TextureImporter:
       name: LumberJack_11
       rect:
         serializedVersion: 2
-        x: 215
+        x: 216
         y: 272
         width: 156
         height: 236

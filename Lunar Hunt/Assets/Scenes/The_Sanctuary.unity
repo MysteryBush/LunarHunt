@@ -17352,7 +17352,7 @@ PrefabInstance:
     - target: {fileID: 4014194974816358498, guid: 34b4709c19e455040b8e979ffe626800,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4014194974816358499, guid: 34b4709c19e455040b8e979ffe626800,
         type: 3}
@@ -17562,7 +17562,7 @@ PrefabInstance:
     - target: {fileID: 4560950842941116717, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1bd6ddb1a640ed24d9f55e1f3f28fead, type: 3}
@@ -21548,7 +21548,7 @@ PrefabInstance:
     - target: {fileID: 4760309587782312579, guid: 5c45138ca98bdb243aa598f674cc7885,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c45138ca98bdb243aa598f674cc7885, type: 3}
@@ -34182,7 +34182,7 @@ PrefabInstance:
     - target: {fileID: 1268729435193246273, guid: 73abe28ab62d1e94892d72176f56e68c,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 73abe28ab62d1e94892d72176f56e68c, type: 3}
@@ -93420,7 +93420,7 @@ PrefabInstance:
     - target: {fileID: 521874459044937057, guid: db77a79f5c3342a4a9ce79877d34b2c1,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db77a79f5c3342a4a9ce79877d34b2c1, type: 3}
@@ -96128,7 +96128,7 @@ PrefabInstance:
     - target: {fileID: 2007070916380113359, guid: 5af0794a4cf43c84ea769a49155a5a63,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5af0794a4cf43c84ea769a49155a5a63, type: 3}
@@ -100474,7 +100474,7 @@ PrefabInstance:
     - target: {fileID: 8034385444718214468, guid: 25193384ae6b9d349a361fc81bdfad21,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8034385444718214469, guid: 25193384ae6b9d349a361fc81bdfad21,
         type: 3}
