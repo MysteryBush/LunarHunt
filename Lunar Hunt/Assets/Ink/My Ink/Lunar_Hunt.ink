@@ -143,7 +143,7 @@ VAR LocationName = ""
  
 	== Bookmark ==
 		\-- Bookmark --
-		Click to jump into different part of story progress.
+		Click to jump into different parts of the story progress.
 			+ [Start Chapter 1] -> Progress_Setup.Fresh_Start -> Cutscene_Welcome_to_Sanctuary
 			+ [Cutscene Meeting in the Meeting Hall] -> Progress_Setup.Fresh_Start -> Cutscene_Meeting_in_the_Meeting_Hall
 			+ [Investigate Meeting Hall] -> Progress_Setup.Fresh_Start -> Investigate
@@ -360,7 +360,7 @@ VAR LocationName = ""
 		= Go_in
 				#noSpeaker
 			Athena walked away to the east.
-			Sebastian walks up to the door and go inside the town's meeting hall.
+			Sebastian walks up to the door and goes inside the town's meeting hall.
 			#spawn.3
 			#scene.Meeting_Hall
 			#END
@@ -510,7 +510,7 @@ VAR LocationName = ""
 		//\--- Cutscene C.S. Potion ---
 		//part 1
 		    #speaker.Sebastian
-	    (Now I need to find this someone known as C.S.)
+	    (Now I need to find someone known as C.S.)
 		(I should go back to the town again)
 			#noSpeaker
 		Sebastian went back inside the town and as he was walking by the shopping stalls...
@@ -518,15 +518,15 @@ VAR LocationName = ""
 		//part 2
 			#speaker.Sebastian
 		(Did he just put some coins inside his mailbox?)
-		(Is this some kind of this town's culture custom? No, I think this might be a scheme.)
+		(Is this some kind of this town's cultural custom? No, I think this might be a scheme.)
 			#speaker.OldMan
 		Oh, young lad, I just put some coins in there to buy some potion.
 			#speaker.Sebastian
-		Really? How did it all started?
+		Really? How did it all start?
 			#speaker.OldMan
 		Oh, one day, there was a mail delivered to me.
 		It said that they know my health is poor and I could use some healthy potion.
-		The seller name goes by C.S. and they had their workers to help check the mailbox and deliver potion to me.
+		The seller's name goes by C.S. and they had their workers help check the mailbox and deliver potion to me.
 			#speaker.Sebastian
 		I see, thanks for the information.
 		{ ClueList !? CS_Sells_the_potion:
@@ -539,13 +539,13 @@ VAR LocationName = ""
 		}
 		//part 3
 			#speaker.OldMan
-		Oh, Athena can help. There was a time when she brew a soothing potion for me. But she's so busy now. What a hardworking lass.
-		I'm too old and it gets too tiring to walk even around my house. I did thought I would ask Athena to check my potion. 
+		Oh, Athena can help. There was a time when she brewed a soothing potion for me. But she's so busy now. What a hardworking lass.
+		I'm too old and it gets too tiring to walk even around my house. I did think I would ask Athena to check my potion. 
 		But when I heard she's so busy with work I thought I would test the potion myself.
 			#speaker.Sebastian
-		... And did it gets better?
+		... And did it get better?
 			#speaker.OldMan
-		Well, no. But my body could be getting worse too you know? Even so I can't be sure.
+		Well, no. But my body could be getting worse too, you know? Even so I can't be sure.
 			#speaker.Sebastian
 		Alright, I'll find someone to check this potion for you.
 			#speaker.OldMan
@@ -627,7 +627,7 @@ VAR LocationName = ""
 		So you're the one who goes by the name C.S. ?
 		Why are you doing this to your own people?
 			#speaker.Cassandra
-		Yes, I'm C.S. . Now that you know about it what will you do?
+		Yes, I'm C.S. . Now that you know about it, what will you do?
 		They will only listen to me, as they always have been.
 		Nobody in this town will believe a stranger like you.
 			#speaker.Sebastian
@@ -672,7 +672,7 @@ VAR LocationName = ""
 			+ { ClueList ? News_about_Moving_Out_People } {ClueList !? Visitors_do_not_Checkout}
 				[I read the news but...] -> I_read_the_news_but ->
 			+ { ClueList ? Cassandra_Prophesied_The_Plague } {ClueList !? No_Record_of_Recent_Plague}
-				[Do you know about the plague refugee?] -> Do_you_know_about_the_plague_refugee ->
+				[Do you know about the plague refugees?] -> Do_you_know_about_the_plague_refugee ->
 			+ [(Actually, I don't think I need help this time)] {EndCon()} -> END #END
 			- -> Talk_to_Staff
 
@@ -707,10 +707,10 @@ VAR LocationName = ""
 					~ GetClue(Visitors_do_not_Checkout)
 				}
 					#speaker.Sebastian
-				But If I may ask, where did you get these newspaper?
+				But If I may ask, where did you get these newspapers?
 					#speaker.HallStaff
-				Oh, we bought these newspaper from the merchant who comes here every morning.
-				All I know is he's a human with tan colored skin and wear red clothes with turban.
+				Oh, we bought these newspapers from the merchant who comes here every morning.
+				All I know is he's a human with tan colored skin and wears red clothes with a turban.
 					#speaker.Sebastian
 				I see, thanks again.
 					#noSpeaker 
@@ -724,16 +724,16 @@ VAR LocationName = ""
 
 			= Do_you_know_about_the_plague_refugee
 					#speaker.Sebastian
-				Do you know about plague refugee outside the town?
+				Do you know about plague refugees outside the town?
 					#speaker.HallStaff
 				Hmm? There's a plague going on?
 				//Oh dear god
 					#speaker.Sebastian
 				Yes, I heard from the caravan that Cassandra was the one who told them to flee and stay in the Sanctuary.
 					#speaker.HallStaff
-				Suddenly there's an unknown plague appeared out of nowhere? Isn't that unreasonable.
+				Suddenly an unknown plague appeared out of nowhere? Isn't that unreasonable.
 					#speaker.Sebastian
-				Well, I'm curious about how Cassandra make her prophency.
+				Well, I'm curious about how Cassandra made her prophecy.
 				Is it possible that I could meet her?
 					#speaker.HallStaff
 				I'm sorry, I don't know where she is. But you can try to visit the Witch's Nursery.
@@ -775,7 +775,7 @@ VAR LocationName = ""
 			= Moving_Out_People
 					#noSpeaker
 				The content read "In the last few months, families have been searching for the location of their own relatives who went to the Sanctuary. 
-				But those families didn't consider one of the reason for the travelers to travel is to get away from their own families.
+				But those families didn't consider one of the reasons for the travelers to travel is to get away from their own families.
 				Therefore, it's normal to keep their location  hidden"
 					#speaker.Sebastian
 				(This could be the closest headline to help me so far)
@@ -794,7 +794,7 @@ VAR LocationName = ""
 					#noSpeaker
 				The content read "Do not ask for more potion. The potion seller only makes potions that can kills a dragon"
 					//#speaker.Sebastian
-				//(Doesn't that sounds... too much?)
+				//(Doesn't that sound... too much?)
 				- ->->
 			= Fishy_Fortune
 					#noSpeaker
@@ -851,20 +851,20 @@ VAR LocationName = ""
 					~ GetClue(The_Potion_is_just_Colored_Water)
 				}
 					#speaker.Athena
-				Wait this is a scam. Why would anyone do this?!
+				Wait, this is a scam. Why would anyone do this?!
 				Where did you get this potion from again?
 					#speaker.Sebastian
 				Well, this senile old man bought this potion from C.S.
 				And the way they deliver the potion is suspicious.
 					#speaker.Athena
 				C.S. ? That name sounds familiar...
-				I wish I know who they are. If you know something please tell me about it.
+				I wish I knew who they were. If you know something please tell me about it.
 					#speaker.Sebastian
 				Sure, I'm still working on finding C.S. anyway.
 				(Why would C.S. do this... this is not good for the town.)
 				(I should go find someone with closest connection to C.S. )
 				(hmm...)
-				(I think I should go find merchant for now.)
+				(I think I should go find the merchant for now.)
 				#hint.Go_back_to_the_forest_and_find_the_merchant
 				#timelineState.TimelineState_caravan_arrive
 				#END
@@ -910,12 +910,12 @@ VAR LocationName = ""
 
 				= athena_to_kitchen
 						#noSpeaker
-					Athena walk away to the kitchen.
+					Athena walks away to the kitchen.
 					// The kitchen will be locked
 						#speaker.Sebastian
 					(I should go and search this house while I can)
 						#noSpeaker
-					Sebastian investigate the house and went into a particular room.
+					Sebastian investigated the house and went into a particular room.
 					~ ChangeLocation(Inside_Nursery)
 					-> END
 
@@ -1040,7 +1040,7 @@ VAR LocationName = ""
 					-> Talk_to_Merchant
 				= Were_you_there
 						#speaker.Merchant
-					A lumberjack? Haven't see one today. I only got here this morning.
+					A lumberjack? Haven't seen one today. I only got here this morning.
 						#noSpeaker
 					{ ClueList !? Clue_05:
 						#clue.Clue_05
@@ -1056,7 +1056,7 @@ VAR LocationName = ""
 				- ->->
 			= I_heard_that_you_sells_the_Newspaper
 					#speaker.Merchant
-				Well yes, I sells the newspaper to this town. 
+				Well yes, I sels the newspaper to this town. 
 					#speaker.Sebastian
 				Then can we talk about how this headline "Movin out people" is fake?  
 					#speaker.Merchant
@@ -1065,25 +1065,25 @@ VAR LocationName = ""
 				You see, the visitors do not checkout in the Meeting Hall.
 					#speaker.Merchant
 				Well, I don't care about your problem.
-				It's just good money to make forging commission.
+				It's just good money to make a forging commission.
 				//Merchant spilled the beans
 					#speaker.Sebastian
 				Forging, so you're the one who faked it?
 					#speaker.Merchant
 				Oops.
 					#speaker.Sebastian
-				I heard it you know. Don't just pretend to be innocent now.
+				I heard it, you know. Don't just pretend to be innocent now.
 					#speaker.Merchant
 				Fine, I'm the one who forged it. 
 				But now what are you going to do? Call the police? They aren't around here you know.
 					#speaker.Sebastian
-				There maybe no police but I could ask our good friend Alex to talk it out.
+				There may be no police but I could ask our good friend Alex to talk it out.
 					#speaker.Merchant
 				Oh... him... hahaha well what else do you want from me?
 					#speaker.Sebastian
 				I just want to know the real content. And also who commissioned you.
 					#speaker.Merchant
-				Who commissioned me? I don't know actually. I only communicated with them through the name of "C.S."
+				Who commissioned me? I don't actually know. I only communicated with them through the name of "C.S."
 					#speaker.Sebastian
 				C.S. ?
 					#speaker.Merchant
@@ -1142,7 +1142,7 @@ VAR LocationName = ""
 				#speaker.Caravan
 			// Oh hello young man, we just arrived here.
 			Oh hello young man, I just traveled here together with my families
-			We abandoned our hometown because of prophency about the plague. So we have to flee to a safe place here.
+			We abandoned our hometown because of prophecy about the plague. So we have to flee to a safe place here.
 				#speaker.Sebastian
 			Plague? I didn't hear anything about it.
 			Are you going anywhere else?
@@ -1150,9 +1150,9 @@ VAR LocationName = ""
 			Well, we don't have anywhere else to go.
 			Miss Cassandra allowed us to stay just outside the town.
 				#speaker.Sebastian
-			About the prophency... Where did you get it from?
+			About the prophecy... Where did you get it from?
 				#speaker.Caravan
-			Miss Cassandra gave us a prophency that there would be plague in our town.
+			Miss Cassandra gave us a prophecy that there would be plague in our town.
 			Miss Cassandra is such a great leader. She's so kind to warn us and let us stay safe in her town.
 			{ ClueList !? Cassandra_Prophesied_The_Plague:
 					#clue.Cassandra_Prophesied_The_Plague
@@ -1173,15 +1173,15 @@ VAR LocationName = ""
 		
 		= Cassandra_Room
 				#noSpeaker
-			Sebastian searching inside Cassandra's room.
+			Sebastian searches inside Cassandra's room.
 				+ [Look on the table] -> Look_on_The_Table
 		
 		= Look_on_The_Table
 				#noSpeaker
-			Sebastian look at Cassandra's table.
+			Sebastian looks at Cassandra's table.
 				#speaker.Sebastian
 			(What is this letter?)
-			(Change the headlines, Selling potion, Working with thiefs? Why is it here?)
+			(Change the headlines, Selling potions, Working with thiefs? Why is it here?)
 				#noSpeaker
 			The letter is signed as C.S.
 				#speaker.Sebastian
@@ -1215,7 +1215,7 @@ VAR LocationName = ""
 				
 				// \---------
 				// There's supposed to be some choices to choose again to answer the villagers
-				// If player get most of them correct, the villagers will believe that Sebastian is telling the truth.
+				// If the player gets most of them correct, the villagers will believe that Sebastian is telling the truth.
 				// \---------
 				- -> Exposed_Cassandra
 
@@ -1226,11 +1226,11 @@ VAR LocationName = ""
 					#speaker.OldMan
 				You sold me a glass of water all this time?
 					#speaker.Caravan
-				We have to abandoned our town just to let the thiefs takes everything!
+				We have to abandoned our town just to let the thieves takes everything!
 					#speaker.Villager
 				We don't need this fake leader in our town!
 					#noSpeaker
-				The villagers comes towards Cassandra with ill intents.
+				The villagers come towards Cassandra with ill intentions.
 				//part 2
 					#speaker.Cassandra
 				No, why are you listening to this child? I did everything for you people all this time.
@@ -1282,7 +1282,7 @@ VAR LocationName = ""
 	=== The_End ===
 			#noSpeaker
 		And the fake news in town has been swept away with Cassandra. 
-		Sebastian then continue his search for his father and found him captive under the Nursery basement.
+		Sebastian then continued his search for his father and found him captive under the Nursery basement.
 		With this reunion, Sebastian leaves the town with his father.
 		#scene.Credit_Scene
 		#END
